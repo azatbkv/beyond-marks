@@ -35,6 +35,6 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"katex": "^0.16.22"
+		"svelte-katex": "^0.2.0"
 	}
 }
