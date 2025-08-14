@@ -8,7 +8,7 @@
         "description": "Determine the electron's velocity $v$ in a circular orbit of radius $r$.",
         "solution": [
           "Newton's second law on the electron in the electrical field of the proton for a circular orbit and projected on $\\vec{u}_r$ :",
-          "\\[ -m_e \\frac{v^2}{r} = -\\frac{e^2}{4\\pi\\varepsilon_0 r^2} \\]",
+          "$$ -m_e \\frac{v^2}{r} = -\\frac{e^2}{4\\pi\\varepsilon_0 r^2} $$",
           "hence $v = \\sqrt{\\frac{e^2}{4\\pi\\varepsilon_0 m_e r}}$"
         ],
         "subparts": [
@@ -185,9 +185,9 @@
         "solution": [
           "On the one hand, writing Gauss' theorem on a sphere of radius $r$ gives $\\oint \\vec{g}(r) \\cdot d\\vec{S} = 4\\pi r^2 g(r) = -4\\pi G M_{int}$ and thus $g(r) = G M_{int}(r)/r^2$. As long as this final formula is given it doesn't matter the method.",
           "But, on the other hand $M_{int} = \\int_0^r 4\\pi x^2 \\rho(x) dx = 4\\pi C_m [r-r_m \\arctan(\\frac{r}{r_m})]$ hence",
-          "\\[ g_m(r) = \\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r^2} \\]",
+          "$$ g_m(r) = \\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$",
           "But as $-m\\frac{v_{c,m}^2}{r} = -m g_m(r)$ we finally get $v_{c,m} = \\sqrt{r g_m(r)}$ which writes",
-          "\\[ v_{c,m} = \\sqrt{\\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r}} \\]",
+          "$$ v_{c,m} = \\sqrt{\\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r}} $$",
           "One can then read $k_1 = 4\\pi C_m G$ and $k_2 = 4\\pi C_m G r_m$",
           "Two regime could be considered:",
           "if $r \\ll r_m$, a third order Taylor expansion of arctan gives $v_{c,m} \\approx \\sqrt{\\frac{4\\pi C_m G r^2}{3 r_m}}$",
@@ -275,7 +275,7 @@
         "description": "Identify the regime, either $r \\gg r_m$ or $r \\ll r_m$, in which the model of Eq. 1 recovers a potential of the form $\\psi_g(r, 0)$ with a suitable definition of $\\psi_0$. Under this condition $v_c(r)$ no longer depends on $r$. Express it in terms of $\\psi_0$.",
         "solution": [
           "Using the density given by equation (1) in part B, we have obtained",
-          "\\[ g_m(r) = -\\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r^2} \\]",
+          "$$ g_m(r) = -\\frac{4\\pi C_m G [r-r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$",
           "Hence, considering $r \\gg r_m$, one can simplify this relation to $g_m(r) = -\\frac{4\\pi C_m G}{r}$. The gravitational potential can be obtained by integration, we then have : $\\varphi(r) = +4\\pi C_m G \\ln(r) + cst$. The constant can be found by correctly choosing the origin of the potential. This potential corresponds to: $\\psi_G(r, z=0) = \\psi_0 \\ln(\\frac{r}{r_0})$ with $\\psi_0 = +4\\pi C_m G$. In that case, the equation of motion in the galactic plane gives $-m\\frac{v_c^2}{r} = -m g_m(r)$ which writes $v_c = \\sqrt{r g_m(r)} = \\sqrt{4\\pi C_m G}$, so that $v_c = \\sqrt{\\psi_0}$"
         ],
         "subparts": [
@@ -485,11 +485,11 @@
         "description": "Considering relevant cases, determine $v_c(r)$ for all values of $r$ in the MOND theory in the case of a gravitational field due to a homogeneously distributed mass $M$ with radius $R_b$.",
         "solution": [
           "Taking the full formula for $\\mu$, the modified second law with circular velocity $v_c$ at radius $r$ writes now $\\mathcal{G}(r) m = -m \\frac{a^2}{a_0 r \\sqrt{1+\\frac{a^2}{a_0^2 r^2}}}$ where $\\mathcal{G}(r)$ is the gravitational field of the homogeneous ball of mass $M$ and with radius $R_b$. This field can be deduced from Gauss' theorem it is",
-          "\\[ \\mathcal{G}(r) = \\begin{cases} -GM/r^2 & \\text{if } r > R_b \\\\ -GMr/R_b^3 & \\text{if } r \\le R_b \\end{cases} \\]",
+          "$$ \\mathcal{G}(r) = \\begin{cases} -GM/r^2 & \\text{if } r > R_b \\\\ -GMr/R_b^3 & \\text{if } r \\le R_b \\end{cases} $$",
           "Outside the ball : $r > R_b$. After a small reorganisation, $v_c$ appears to be solution of the biquadratic equation $v_c^4 - \\frac{GM}{r}v_c^2 - a_0 GM = 0$. The positive root of this equation is",
-          "\\[ v_c(r) = \\sqrt{\\frac{GM}{2r} \\left(1 + \\sqrt{1+\\frac{4a_0 r^2}{GM}}\\right)} \\text{ which is valid only if } r > R_b \\]",
+          "$$ v_c(r) = \\sqrt{\\frac{GM}{2r} \\left(1 + \\sqrt{1+\\frac{4a_0 r^2}{GM}}\\right)} \\text{ which is valid only if } r > R_b $$",
           "When $r \\rightarrow \\infty$, $v_c$ is asymptotically constant and $M \\rightarrow \\frac{v_{c,\\infty}^4}{a_0 G}$ which is the Tully-Fisher relation. Inside the ball : $r \\le R_b$. With a similar reorganisation, $v_c$ appears now to be solution of another biquadratic equation which is $v_c^4 - GM(\\frac{r}{R_b})^3 v_c^2 - a_0 GM (\\frac{r}{R_b})^3 = 0$. The positive solution is now",
-          "\\[ v_c(r) \\approx \\sqrt{\\frac{GM}{2r}(\\frac{r}{R_b})^3 \\left(1 + \\sqrt{1 + \\frac{4a_0 r^2 (R_b/r)^3}{GM}} \\right)} \\text{ which is valid only if } r \\le R_b \\]",
+          "$$ v_c(r) \\approx \\sqrt{\\frac{GM}{2r}(\\frac{r}{R_b})^3 \\left(1 + \\sqrt{1 + \\frac{4a_0 r^2 (R_b/r)^3}{GM}} \\right)} \\text{ which is valid only if } r \\le R_b $$",
           "When $r \\rightarrow 0$, we recover $v_c \\rightarrow 0$ as in the experimental data."
         ],
         "subparts": [
@@ -542,11 +542,11 @@
         "description": "For the configuration shown in Fig. 2 (case b), express the pressure $P_w$ in the water at the top of the tube. Also express the force $\\vec{F}$ necessary to maintain the tube at this position. Expressions must be written in terms of $P_0, \\rho, m, S, h, g$ and $\\vec{u}_z$.",
         "solution": [
           "According to the hydrostatic law, one has",
-          "\\[ P_w = P_a - \\rho g h = P_0 - \\rho g h \\]",
+          "$$ P_w = P_a - \\rho g h = P_0 - \\rho g h $$",
           "In the configuration shown in Fig. 2 (case b), the tube is submitted to three forces: its weight, the resultant of the pressure forces and the force exerted by the operator. Thus, at equilibrium, one has",
-          "\\[ \\vec{0} = m \\vec{g} + (P_w - P_0) S \\vec{u}_z + \\vec{F} \\]",
+          "$$ \\vec{0} = m \\vec{g} + (P_w - P_0) S \\vec{u}_z + \\vec{F} $$",
           "which leads to",
-          "\\[ \\vec{F} = - [m+\\rho S h]\\vec{g} = [m+\\rho S h] g \\vec{u}_z \\]"
+          "$$ \\vec{F} = - [m+\\rho S h]\\vec{g} = [m+\\rho S h] g \\vec{u}_z $$"
         ],
         "subparts": [
           {
@@ -564,13 +564,13 @@
         "description": "For each experiment, complete the table in the answer sheet to indicate the expected behaviour and the numerical values for $F_{max}$ and for $h^*$ (when pertinent), where $F_{max}$ and $h^*$ are defined in the figures illustrating the two behaviours.",
         "solution": [
           "Physically, the altitude $h^*$ corresponds to the threshold at which saturated vapour appears in the tube. This altitude can be expressed using the hydrostatic law, writing",
-          "\\[ P_w = P_0 - \\rho g h^* = P_{sat}(T_a). \\]",
+          "$$ P_w = P_0 - \\rho g h^* = P_{sat}(T_a). $$",
           "One can find",
-          "\\[ h^* = \\frac{P_0 - P_{sat}(T_a)}{\\rho g}, \\]",
+          "$$ h^* = \\frac{P_0 - P_{sat}(T_a)}{\\rho g}, $$",
           "and calculate its numerical value for each experiment. If the value obtained is higher than $H$, behaviour A is observed; otherwise, behaviour B is observed. According to the previous question, the force $F$ is related to $h$ by",
-          "\\[ F = [m+\\rho S h] g \\]",
+          "$$ F = [m+\\rho S h] g $$",
           "which leads to",
-          "\\[ F_{max} = \\begin{cases} [m+\\rho SH]g & \\text{for behaviour A} \\\\ [m+\\rho Sh^*]g & \\text{for behaviour B} \\end{cases} \\]",
+          "$$ F_{max} = \\begin{cases} [m+\\rho SH]g & \\text{for behaviour A} \\\\ [m+\\rho Sh^*]g & \\text{for behaviour B} \\end{cases} $$",
           "One can deduce the following predictions:",
           "Experiment 1: Behaviour A, $F_{max}$ (N): 14.7",
           "Experiment 2: Behaviour A, $F_{max}$ (N): 14.4",
@@ -604,11 +604,11 @@
         "description": "Express the relative error, denoted $\\epsilon$, committed when we evaluate the maximal force $F_{max}$ neglecting $P_{sat}$ compared to $P_0$. Give the numerical value of $\\epsilon$.",
         "solution": [
           "For behaviour B, the expression of $F_{max}$ previously obtained can be reformulated as",
-          "\\[ F_{max} = mg + (P_0 - P_{sat})S \\]",
+          "$$ F_{max} = mg + (P_0 - P_{sat})S $$",
           "Neglecting the saturated vapour pressure compared to the atmospheric pressure, one obtains",
-          "\\[ F_{max} = mg + P_0S \\]",
+          "$$ F_{max} = mg + P_0S $$",
           "Thus, the relative error $\\epsilon$ is given by",
-          "\\[ \\epsilon = \\frac{P_{sat}}{P_0+mg/S} \\approx 1.6 \\times 10^{-6} \\]"
+          "$$ \\epsilon = \\frac{P_{sat}}{P_0+mg/S} \\approx 1.6 \\times 10^{-6} $$"
         ],
         "subparts": [
           {
@@ -639,7 +639,7 @@
         "description": "Sketch the evolution of the mass $m_{add}$ as a function of $h_t$ for $h_t \\in [-H_b, H_t]$. On the graph, provide the expression for the slopes of the different segments, as well as the $h_t$ analytical value of any angular points, in terms of $P_0, \\rho, g, S_b, S_t, H_b$ and $H_t$.",
         "solution": [
           "Using the same reasoning as in question A2, one can determine that saturated vapour appears in the two-part barometric tube when the altitude of the liquid column in the tube reaches the critical value",
-          "\\[ z_e^* = \\frac{P_0 - P_{sat}}{\\rho g} = \\frac{P_0}{\\rho g} = 76 \\text{ cm} \\]",
+          "$$ z_e^* = \\frac{P_0 - P_{sat}}{\\rho g} = \\frac{P_0}{\\rho g} = 76 \\text{ cm} $$",
           "taking $P_{sat}=0$. Combining this result with that of the previous question, one obtains the following graph:",
           "The slopes are: $\\rho S_b$, $\\rho S_t$, $-\\rho(S_b - S_t)$, and 0.",
           "The angular points are at $h_t = -H_b$, $h_t=0$, $h_t = z_e^* - H_b = 56$ cm, and $h_t = z_e^* = 76$ cm."
@@ -680,11 +680,11 @@
         "description": "Given that $S_t = 5 \\text{cm}^2$ and $S_b = 200 \\text{cm}^2$, express the amplitude $\\Delta m_{add}$ of the variations of the mass $m_{add}$ over time, then give its numerical value. Assume that the liquid surface always stays in the bulb.",
         "solution": [
           "By neglecting the saturated vapour pressure in the bulb, the altitude $z_e$ of the free surface of the liquid in the tube is given by",
-          "\\[ z_e(t) = \\frac{P_a(t)}{\\rho g} = \\frac{P_0}{\\rho g} + \\frac{P_1(t)}{\\rho g} = \\underbrace{h_t + \\frac{H_b}{2}}_{\\text{mean value } z_{e,o}} + \\underbrace{\\frac{P_1(t)}{\\rho g}}_{\\text{perturbative term}} \\]",
+          "$$ z_e(t) = \\frac{P_a(t)}{\\rho g} = \\frac{P_0}{\\rho g} + \\frac{P_1(t)}{\\rho g} = \\underbrace{h_t + \\frac{H_b}{2}}_{\\text{mean value } z_{e,o}} + \\underbrace{\\frac{P_1(t)}{\\rho g}}_{\\text{perturbative term}} $$",
           "which leads to",
-          "\\[ m_{add}(t) = \\rho[S_t h_t + S_b(z_e(t) - h_t)] = \\rho[S_t h_t + S_b(z_{e,o}-h_t)] + \\frac{S_b P_1(t)}{g} \\]",
+          "$$ m_{add}(t) = \\rho[S_t h_t + S_b(z_e(t) - h_t)] = \\rho[S_t h_t + S_b(z_{e,o}-h_t)] + \\frac{S_b P_1(t)}{g} $$",
           "The first term gives the mean value of the mass $m_{add}(t)$, while the last term characterizes its temporal variations. One can deduce the magnitude",
-          "\\[ \\Delta m_{add} = \\frac{S_b A}{g} = 1 \\text{ kg} \\]"
+          "$$ \\Delta m_{add} = \\frac{S_b A}{g} = 1 \\text{ kg} $$"
         ],
         "subparts": [
           {
@@ -706,21 +706,21 @@
           "* $-[F_0 + m_{1,c} g] \\vec{u}_x$ for the cable on the left, suspending the cistern.",
           "According to the principle of mass conservation, one can immediately state that $m_{1,tb}=-m_{1,c}$. Subsequently, we choose to keep only $m_{1,c}$ in the expressions (but all the calculations can be carried out while keeping $m_{1,tb}$).",
           "The friction force between the support and the mass M needed to maintain the equilibrium is therefore given by",
-          "\\[ \\vec{R_t} = -[-[F_0 - m_{1,c}g]\\vec{u}_x + [F_0 + m_{1,c}g]\\vec{u}_x] = 2m_{1,c}g \\vec{u}_x \\]",
+          "$$ \\vec{R_t} = -[-[F_0 - m_{1,c}g]\\vec{u}_x + [F_0 + m_{1,c}g]\\vec{u}_x] = 2m_{1,c}g \\vec{u}_x $$",
           "In addition, according to the sketch above (where displacements $\\delta_b$ and $\\delta_c$ are algebraic), we have $m_{1,c} = \\rho S_c \\delta_c$.",
           "It is now necessary to determine $\\delta_c$. One can use",
           "* the hydrostatic law : $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$",
           "* the conservation of the total volume/mass of mercury : $S_b \\delta_b = -[S_c - S_t]\\delta_c \\approx -S_c \\delta_c$ (given that $S_t \\ll S_b, S_c$)",
           "Solving the system formed by those equations, one finds",
-          "\\[ \\delta_c = -\\frac{S_b}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} \\approx -\\frac{S_b}{S_b+S_c} \\frac{P_1}{\\rho g} \\]",
+          "$$ \\delta_c = -\\frac{S_b}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} \\approx -\\frac{S_b}{S_b+S_c} \\frac{P_1}{\\rho g} $$",
           "which finally yields",
-          "\\[ \\vec{R_t} = -\\frac{2S_bS_c}{S_b+S_c-S_t}P_1 \\vec{u}_x \\approx -\\frac{2S_bS_c}{S_b+S_c}P_1 \\vec{u}_x \\]",
+          "$$ \\vec{R_t} = -\\frac{2S_bS_c}{S_b+S_c-S_t}P_1 \\vec{u}_x \\approx -\\frac{2S_bS_c}{S_b+S_c}P_1 \\vec{u}_x $$",
           "With the triangular model for $P_1(t)$, the maximum static friction force is obtained when $P_1 = \\pm A$. Therefore, according to the Coulomb's law of friction, the mass M stays at rest if and only if",
-          "\\[ \\frac{2S_bS_c}{S_b+S_c-S_t}A < F_s \\]",
+          "$$ \\frac{2S_bS_c}{S_b+S_c-S_t}A < F_s $$",
           "This inequality can be rewritten as",
-          "\\[ 2 < \\frac{S_b+S_c-S_t}{S_b S_c} \\frac{F_s}{A} = \\xi \\]",
+          "$$ 2 < \\frac{S_b+S_c-S_t}{S_b S_c} \\frac{F_s}{A} = \\xi $$",
           "which allows us to identify",
-          "\\[ \\xi^*=2 \\]"
+          "$$ \\xi^*=2 $$"
         ],
         "subparts": [
           {
@@ -759,18 +759,18 @@
         "solution": [
           "Let us compare the configurations of the system when $x=0$ and when $x=X$.",
           "Assuming that the atmospheric pressure is temporarily fixed at $P_0$, the difference $\\Delta z_e$ of fluid heights between the cistern and the barometric tube is the same in both configurations. It is given by $\\Delta z_e,0 = P_0 / \\rho g$ and leads to",
-          "\\[ \\delta_b = \\delta_c \\]",
+          "$$ \\delta_b = \\delta_c $$",
           "The total volume/mass of mercury is also conserved. This conservation can be expressed by the equation",
-          "\\[ \\underbrace{(S_c-S_t)\\delta_c - (S_c+S_t)X}_{\\text{volume of mercury algebraically won by the cistern}} + \\underbrace{S_b(\\delta_b+X)}_{\\text{volume of mercury algebraically won by the bulb}} = 0 \\]",
+          "$$ \\underbrace{(S_c-S_t)\\delta_c - (S_c+S_t)X}_{\\text{volume of mercury algebraically won by the cistern}} + \\underbrace{S_b(\\delta_b+X)}_{\\text{volume of mercury algebraically won by the bulb}} = 0 $$",
           "which can be reformulated as",
-          "\\[ S_b \\delta_b + (S_c - S_t) \\delta_c = (S_c - S_b + S_t)X \\]",
+          "$$ S_b \\delta_b + (S_c - S_t) \\delta_c = (S_c - S_b + S_t)X $$",
           "One obtains",
-          "\\[ \\delta_b = \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X \\]",
+          "$$ \\delta_b = \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X $$",
           "Thus, the supplementary added mass in the cistern is given by",
-          "\\[ m_{1,c} = \\rho S_c(\\delta_c - X) = -\\rho \\frac{2S_c(S_b-S_t)}{S_c+S_b-S_t}X \\approx -\\rho \\frac{2S_b S_c}{S_b+S_c}X \\]",
+          "$$ m_{1,c} = \\rho S_c(\\delta_c - X) = -\\rho \\frac{2S_c(S_b-S_t)}{S_c+S_b-S_t}X \\approx -\\rho \\frac{2S_b S_c}{S_b+S_c}X $$",
           "and, as explained in C1, we still have $m_{1,tb}=-m_{1,c}$.",
           "Finally, according to the sketch, one obtain the resultant tension force $\\vec{T} = (m_{1,tb}-m_{1,c})g \\vec{u}_x = -2m_{1,c}g \\vec{u}_x$, that is",
-          "\\[ \\vec{T} = \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X \\vec{u}_x = \\frac{4S_b S_c}{S_b+S_c} \\rho g X \\vec{u}_x \\]"
+          "$$ \\vec{T} = \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X \\vec{u}_x = \\frac{4S_b S_c}{S_b+S_c} \\rho g X \\vec{u}_x $$"
         ],
         "subparts": [
           {
@@ -804,13 +804,13 @@
           "* hydrostatic law : $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$",
           "* conservation of the volume/mass : $S_b \\delta_b + (S_c-S_t)\\delta_c = (S_c-S_b+S_t)X$",
           "The resolution of this system gives",
-          "\\[ \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X - \\frac{S_b}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} \\]",
+          "$$ \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X - \\frac{S_b}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} $$",
           "from which we deduce the perturbative added mass",
-          "\\[ m_{1,c} = \\rho S_c(\\delta_c - X) = -\\rho \\left[ \\frac{2S_c(S_b-S_t)}{S_b+S_c-S_t}X + \\frac{S_bS_c}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} \\right] = -m_{1,tb} \\]",
+          "$$ m_{1,c} = \\rho S_c(\\delta_c - X) = -\\rho \\left[ \\frac{2S_c(S_b-S_t)}{S_b+S_c-S_t}X + \\frac{S_bS_c}{S_b+S_c-S_t} \\frac{P_1}{\\rho g} \\right] = -m_{1,tb} $$",
           "Then finally",
-          "\\[ \\vec{T} = -2 m_{1,c} g \\vec{u}_x = \\left[ \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X + \\frac{2S_bS_c}{S_b+S_c-S_t}P_1 \\right] \\vec{u}_x \\]",
+          "$$ \\vec{T} = -2 m_{1,c} g \\vec{u}_x = \\left[ \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X + \\frac{2S_bS_c}{S_b+S_c-S_t}P_1 \\right] \\vec{u}_x $$",
           "According to Coulomb's law of friction, the mass M will stay at rest at the position $x=X$ while $\\vec{T} \\cdot \\vec{u}_x > -F_s$. With the model adopted for $P_1(t)$, this condition is always satisfied if",
-          "\\[ \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X - \\frac{2S_bS_c}{S_b+S_c-S_t}A > -F_s \\]",
+          "$$ \\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t} \\rho g X - \\frac{2S_bS_c}{S_b+S_c-S_t}A > -F_s $$",
           "Hence, using the parameters $\\xi$ and $\\lambda$, one can identify the two possible regimes :",
           "* Regime 1: $\\xi + 2\\lambda > 2$ (once at $x=X$, the mass M stays indefinitely at rest)",
           "* Regime 2: $\\xi + 2\\lambda < 2$ (once at $x=X$, the mass M will periodically sweep between the two stops)"
@@ -872,11 +872,11 @@
         "solution": [
           "During a period, there is one motion to the left and one to the right. The total length of the displacement is 4X. The total work W of the friction force is thus $W=4F_s X$.",
           "We have to optimize this quantity with the constraint $\\xi + 2\\lambda \\le 2$, which can also be written as",
-          "\\[ \\frac{2\\rho g X}{A} + \\frac{F_s}{S_c A} \\le 1 \\]",
+          "$$ \\frac{2\\rho g X}{A} + \\frac{F_s}{S_c A} \\le 1 $$",
           "The optimum is obtained at the limit of the condition, when $F_s = S_c(A-2\\rho g X)$. The work is then $W = 4XS_c(A-2\\rho g X)$. It is maximal for",
-          "\\[ X^* = \\frac{A}{4\\rho g} \\quad \\text{and} \\quad F_s^* = \\frac{A S_c}{2} \\]",
+          "$$ X^* = \\frac{A}{4\\rho g} \\quad \\text{and} \\quad F_s^* = \\frac{A S_c}{2} $$",
           "leading to the following optimal work",
-          "\\[ W^* = \\frac{A^2 S_c}{2\\rho g} = 20 \\text{ mJ} \\]"
+          "$$ W^* = \\frac{A^2 S_c}{2\\rho g} = 20 \\text{ mJ} $$"
         ],
         "subparts": [
           {
@@ -910,19 +910,19 @@
         "description": "Express $W_{pr}^*$, then calculate the ratio $W^*/W_{pr}^*$. It could be useful to represent the evolution of the system in a $(P,V)$ diagram, where $V$ is the system's volume.",
         "solution": [
           "The variations of pressure and of the vessel's position lead to fluid transfer between the cistern and the two-part tube. As a consequence, the total volume $V(t)$ occupied by the system in the atmosphere changes and can be denoted",
-          "\\[ V(t) = V_0 + V_1(t) \\]",
+          "$$ V(t) = V_0 + V_1(t) $$",
           "where $V_0$ is the volume in the initial state (when $x=0$ and $P_a=P_0$) whereas $V_1(t)$ is a perturbation term. Physically, $V_1$ corresponds to the change of the volume of liquid in the cistern, and is thus given by",
-          "\\[ V_1 = \\frac{m_{1,c}}{\\rho} \\]",
+          "$$ V_1 = \\frac{m_{1,c}}{\\rho} $$",
           "where $m_{1,c}$ has already been expressed in C3 (just replace X with $x(t)$). Given that $S_b=S_c$ and $S_t$ is neglected, one obtains in any state",
-          "\\[ V_1(t) = -S_c\\left[x(t)+\\frac{P_1(t)}{2\\rho g}\\right] = -S_c X \\left[\\frac{x(t)}{X} + \\frac{1}{\\lambda}\\frac{P_1(t)}{A}\\right] \\]",
+          "$$ V_1(t) = -S_c\\left[x(t)+\\frac{P_1(t)}{2\\rho g}\\right] = -S_c X \\left[\\frac{x(t)}{X} + \\frac{1}{\\lambda}\\frac{P_1(t)}{A}\\right] $$",
           "Over one period, the work of atmospheric pressure forces received by the system is defined as",
-          "\\[ W_{pr} = - \\oint_{\\tau_1 \\text{ period}} P_a dV = -\\oint_{\\tau_1 \\text{ period}} P_1 dV_1 \\]",
+          "$$ W_{pr} = - \\oint_{\\tau_1 \\text{ period}} P_a dV = -\\oint_{\\tau_1 \\text{ period}} P_1 dV_1 $$",
           "and can thus be identified to the area of the cycle described by the system in a $(P_1, V_1)$ diagram.",
           "Considering the optimal situation determined in the previous question, one observes the following behaviour once in steady state",
           "The work of the pressure force is the surface area inside this parallelogram, that is the product of its base $2S_c X^*$ by its height $2A$. As a consequence",
-          "\\[ W_{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g} \\]",
+          "$$ W_{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g} $$",
           "and",
-          "\\[ \\frac{W^*}{W_{pr}^*} = \\frac{1}{2} \\]"
+          "$$ \\frac{W^*}{W_{pr}^*} = \\frac{1}{2} $$"
         ],
         "subparts": [
           {
@@ -1112,7 +1112,7 @@
         "solution": [
           "A.6.1 The rate of bubbles reaching the free surface by unit time is $N_b f_b$",
           "A.6.2. So the volume of $CO_2$ released per unit time at the free surface is:",
-          "\\[ \\frac{dV}{dt} = \\frac{4}{3} \\pi a_H^3 N_b f_b \\]",
+          "$$ \\frac{dV}{dt} = \\frac{4}{3} \\pi a_H^3 N_b f_b $$",
           "A.6.3. According to A.5, $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g} k_a$ or $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} q_a$",
           "A.6.4. With $k_a = \\frac{da}{dt} = \\frac{RT_0}{P_0} K(c_e-c_0)$ or $q_a = \\frac{da}{dt} = \\frac{RT_0}{P_0} K(c_e-c_0)$ according to A3.",
           "A.6.5. In the bubble, $c_b \\approx c_0$. Using the ideal gas law, the total number n of $CO_2$ moles in $V_e$ verifies: $\\frac{dn}{dt} = \\frac{P_0}{RT_0} \\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g} (c_e-c_0)$ or $\\frac{dn}{dt} = \\frac{P_0}{RT_0} \\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0} (c_e-c_0)$",
@@ -1280,7 +1280,7 @@
           "C.1.1. Conservation of $CO_2$ molecules: $n_T = n_V + n_L = n_V + k_H(T_0)P_i V_L$",
           "C.1.2. Ideal gas law: $n_V = \\frac{P_i V_G}{RT_0}$",
           "C.1.3. For $T_0 = 6^\\circ C$: $P_i = 4.81$ bar",
-          "\\[ P_i = \\frac{n_T}{\\frac{V_G}{RT_0} + V_L k_H(T_0)} = \\frac{n_T RT_0}{V_G} \\frac{1}{1+RT_0 k_H(T_0) \\frac{V_L}{V_G}} \\]",
+          "$$ P_i = \\frac{n_T}{\\frac{V_G}{RT_0} + V_L k_H(T_0)} = \\frac{n_T RT_0}{V_G} \\frac{1}{1+RT_0 k_H(T_0) \\frac{V_L}{V_G}} $$",
           "C.1.4. For $T_0 = 20^\\circ C$: $P_i = 7.76$ bar"
         ],
         "subparts": [
@@ -1307,7 +1307,7 @@
         "description": "Give the numerical value $T_f$ of the $CO_2$ gas at the end of the expansion, after opening a bottle, if $T_0=6^\\circ C$ and if $T_0=20^\\circ C$, if no phase transition occured. Choose which statements are true (several statements possible): 1. At $T_0=6^\\circ C$ a grey-white fog appears while opening the bottle. 2. At $T_0=6^\\circ C$ a blue fog appears while opening the bottle. 3. At $T_0=20^\\circ C$ a grey-white fog appears while opening the bottle. 4. At $T_0=20^\\circ C$ a blue fog appears while opening the bottle.",
         "solution": [
           "C.2.1. The adiabatic reversible expansion goes from $P_i$ to $P_0$.",
-          "\\[ C.2.2. T_f = T_0 (\\frac{P_f}{P_i})^{1-1/\\gamma} \\]",
+          "$$ C.2.2. T_f = T_0 (\\frac{P_f}{P_i})^{1-1/\\gamma} $$",
           "C.2.3. For $T_0=6^\\circ C$: $P_i=4.69$ bar and $T_f=195.3 K = -77.8^\\circ C$.",
           "C.2.4. For $T_0=20^\\circ C$: $P_i=7.45$ bar and $T_f=184.3 K = -88.8^\\circ C$.",
           "C.2.5. First method: comparison $P_{sat}(T_f)$ and $P_f=P_0$. Second method: evaluation of the transition temperature at $P_f$ and comparison with $T_f$.",
@@ -1354,11 +1354,11 @@
           "C.3.2. $\\vec{F} = -(P_i-P_0)\\frac{d}{4l_0} \\pi d^2 (l_0-z) \\vec{u}_z$. The total work is therefore: $W_f = -a \\pi d \\frac{l_0^2}{2} = -\\frac{(P_i-P_0)\\pi d^2}{8} l_0$",
           "C.3.3. and C.3.4. Work of the internal pressure force:",
           "First method: the variation of internal energy of the gas is:",
-          "\\[ \\Delta U_g = \\frac{n_V R}{\\gamma-1}(T_f-T_0) = \\frac{P_i V_G}{\\gamma-1} \\left[ (1+\\frac{\\pi d^2 l_0}{4V_G})^{(1-\\gamma)} - 1 \\right] \\approx \\frac{P_i V_G}{\\gamma-1} \\left[ (1+\\frac{\\pi d^2 l_0}{4V_G})^{(\\gamma-1)} - 1 \\right] \\]",
+          "$$ \\Delta U_g = \\frac{n_V R}{\\gamma-1}(T_f-T_0) = \\frac{P_i V_G}{\\gamma-1} \\left[ (1+\\frac{\\pi d^2 l_0}{4V_G})^{(1-\\gamma)} - 1 \\right] \\approx \\frac{P_i V_G}{\\gamma-1} \\left[ (1+\\frac{\\pi d^2 l_0}{4V_G})^{(\\gamma-1)} - 1 \\right] $$",
           "As its expansion is adiabatic: $\\Delta U_g = W_{cork \\rightarrow CO2} = -W_{CO2 \\rightarrow cork}$ The cork stopper receives therefore a work from this gas equals to $-\\Delta U_g$.",
-          "\\[ W_{CO2 \\rightarrow cork} = \\frac{P_i V_G}{\\gamma-1} \\left[ 1 - \\frac{1}{(1+\\frac{\\pi d^2 l_0}{4V_G})^{(\\gamma-1)}} \\right] \\]",
+          "$$ W_{CO2 \\rightarrow cork} = \\frac{P_i V_G}{\\gamma-1} \\left[ 1 - \\frac{1}{(1+\\frac{\\pi d^2 l_0}{4V_G})^{(\\gamma-1)}} \\right] $$",
           "Second method: let us write P the internal pressure during the expansion. The work received by the cork is:",
-          "\\[ W_{CO2 \\rightarrow cork} = \\int_0^{V_F} P dV, \\text{where } V_F = V_G + \\frac{\\pi d^2 l_0}{4} \\text{ and } P_i V_G^\\gamma = P V_F^\\gamma. \\]",
+          "$$ W_{CO2 \\rightarrow cork} = \\int_0^{V_F} P dV, \\text{where } V_F = V_G + \\frac{\\pi d^2 l_0}{4} \\text{ and } P_i V_G^\\gamma = P V_F^\\gamma. $$",
           "The integration leads to the same result.",
           "C.3.5. The work due to the external pressure $P_0$ is: $W_e = -P_0 \\frac{\\pi d^2}{4} l_0$",
           "C.3.6. Energy balance. The cork stopper has an initial kinetic energy: $E_c = -\\Delta U_g + W_f + W_e$. (The work of the weight is negligible and should not be taken into account).",
