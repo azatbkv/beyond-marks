@@ -1,5 +1,7 @@
 <script lang="ts">
     import problems from "$lib/assets/ipho2025v2.json";
+    import type { Subpart, Part, Problem, Marks } from "../marks.ts";
+    import { getTotalMarks, getMarks } from "../marks.ts";
     import {marked} from "marked";
     import markedKatex from "marked-katex-extension";
 
@@ -9,8 +11,32 @@
     // takes the number i from "problem_i"
     let problem_index = $derived(Number(problem_id[problem_id.length - 1]) - 1);
     let problem = $derived(problems[problem_index]);
-</script>
 
+    let number_of_problems = $derived(problems.length);
+    let marks: Marks = $state({problems: []});
+    for (let problem of problems) {
+        let problem_object: Problem = {id: problem.id, parts: []};
+        for (let part of problem.parts) {
+            let part_object: Part = {id: part.id, subparts: []};
+            for (let subpart of part.subparts) {
+                let subpart_object: Subpart = {marks: subpart.marks, checked: false};
+                part_object.subparts.push(subpart_object);
+            }
+            problem_object.parts.push(part_object);
+        }
+        marks.problems.push(problem_object);
+    }
+
+    function truncateNumber(num: number): string { 
+        const s = String(Math.round(num * 100) / 100);
+        const parts = s.split('.');
+        if (parts.length === 1 || parts[1].length <= 1) {
+          return num.toFixed(1);
+        } else {
+          return num.toFixed(2);
+        }
+    }
+</script>
 <div role="tablist" class="tabs tabs-border">
     {#each problems as p}
         <input
@@ -24,10 +50,14 @@
     {/each}
 </div>
 
-<h1>{problem.name}</h1>
+<div class="flex justify-between">
+    <h1>{problem.name}</h1>
+    {truncateNumber(getMarks(marks.problems[problem_index]))}/{truncateNumber(getTotalMarks(marks.problems[problem_index]))}
+</div>
 {#each problem.parts as part, part_index}
-    <div class="flex justify-between">
+    <div class="flex justify-between mt-4">
         <h2>{@html marked.parse(part.id + ". " + part.description)}</h2>
+        {truncateNumber(getMarks(marks.problems[problem_index].parts[part_index]))}/{truncateNumber(getTotalMarks(marks.problems[problem_index].parts[part_index]))}
     </div>
     {#each part.solution as paragraph}
         <p>{@html marked.parse(paragraph)}</p>
@@ -37,7 +67,10 @@
             <p>{@html marked.parse(part.id + "." + Number(subpart_index + 1) + ". " + subpart.description)}</p>
             <label>
                 {subpart.marks}
-                <input type="checkbox">
+                <input type="checkbox"
+                    bind:checked={marks.problems[problem_index]
+                    .parts[part_index]
+                    .subparts[subpart_index].checked}/>
             </label>
         </div>
     {/each}
