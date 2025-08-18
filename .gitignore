@@ -21,3 +21,6 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Script for LaTeX parsing correction
+/src/lib/assets/latex_parse.sh
