@@ -1,7 +1,7 @@
 <script lang="ts">
     import problems from "$lib/assets/ipho2025v2.json";
-    import type { Subpart, Part, Problem, Marks } from "../marks.ts";
-    import { getTotalMarks, getMarks } from "../marks.ts";
+    import type { Subpart, Part, Problem, Marks } from "./marks.ts";
+    import { getTotalMarks, getMarks } from "./marks.ts";
     import {marked} from "marked";
     import markedKatex from "marked-katex-extension";
 
@@ -34,6 +34,7 @@
         }
     }
 </script>
+
 <div role="tablist" class="tabs tabs-border">
     {#each problems as p, p_index}
         <input

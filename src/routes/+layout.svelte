@@ -9,4 +9,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<nav>
+    <a href="/olympiads">Olympiads</a>
+</nav>
+
 {@render children?.()}
