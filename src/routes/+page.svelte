@@ -7,12 +7,9 @@
 
     marked.use(markedKatex({throwOnError: false}));
 
-    let problem_id = $state("problem_1");
-    // takes the number i from "problem_i"
-    let problem_index = $derived(Number(problem_id[problem_id.length - 1]) - 1);
+    let problem_index = $state(0);
     let problem = $derived(problems[problem_index]);
 
-    let number_of_problems = $derived(problems.length);
     let marks: Marks = $state({problems: []});
     for (let problem of problems) {
         let problem_object: Problem = {id: problem.id, parts: []};
@@ -38,14 +35,14 @@
     }
 </script>
 <div role="tablist" class="tabs tabs-border">
-    {#each problems as p}
+    {#each problems as p, p_index}
         <input
             type="radio"
             class="tab"
             name="problem_tab"
             aria-label={p.id.replaceAll("_", " ").replace("p", "P")}
-            value={p.id}
-            bind:group={problem_id}
+            value={p_index}
+            bind:group={problem_index}
         />
     {/each}
 </div>
