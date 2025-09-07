@@ -10,7 +10,7 @@
 </svelte:head>
 
 <nav>
-    <a href="/olympiads">Olympiads</a>
+	<a href="/olympiads">Olympiads</a>
 </nav>
 
 {@render children?.()}
