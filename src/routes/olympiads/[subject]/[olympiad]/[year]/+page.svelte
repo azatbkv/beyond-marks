@@ -1,11 +1,13 @@
 <script lang="ts">
-    import problems from "$lib/assets/ipho2025v2.json";
     import type { Subpart, Part, Problem, Marks } from "./marks.ts";
     import { getTotalMarks, getMarks } from "./marks.ts";
     import {marked} from "marked";
     import markedKatex from "marked-katex-extension";
 
     marked.use(markedKatex({throwOnError: false}));
+
+    let { data } = $props();
+    const problems = data.problems;
 
     let problem_index = $state(0);
     let problem = $derived(problems[problem_index]);
@@ -34,6 +36,7 @@
         }
     }
 </script>
+
 
 <div role="tablist" class="tabs tabs-border">
     {#each problems as p, p_index}
