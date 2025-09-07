@@ -10,9 +10,9 @@ const config = {
 	kit: {
 		adapter: adapter({
 			platformProxy: {
-				configPath: undefined,
-				environment: undefined,
-				persist: undefined
+				//configPath: undefined,
+				//environment: undefined,
+				//persist: undefined
 			},
 			fallback: 'plaintext',
 			routes: {
