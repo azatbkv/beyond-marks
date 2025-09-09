@@ -5,5 +5,9 @@
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
-	}
+	},
+	"site": {
+    	"bucket": ".svelte-kit/cloudflare/client"
+  	}
+
 }
