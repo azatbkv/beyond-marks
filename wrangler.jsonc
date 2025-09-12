@@ -1,16 +1,18 @@
 {
 	"name": "beyond-marks",
 	"main": ".svelte-kit/cloudflare/_worker.js",
-	"compatibility_date": "2025-01-01",
+	"compatibility_date": "2025-09-12",
+	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
 	"d1_databases": [
-    	{
-    	  "binding": "DB",
-    	  "database_name": "marks-db",
-    	  "database_id": "79dc3e1e-fc2c-43d2-8715-ba3173c9b4c7"
-    	}
-  	]
+		{
+			"binding": "DB",
+			"database_name": "marks-db",
+			"database_id": "a5cb57b0-7947-4f7e-9f81-135267a5c518",
+			"migrations_dir": "./src/lib/server/db/migrations"
+		}
+	]
 }

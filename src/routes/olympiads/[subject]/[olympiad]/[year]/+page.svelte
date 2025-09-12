@@ -37,11 +37,10 @@
 	}
 </script>
 
-<div role="tablist" class="tabs-border tabs">
+<div>
 	{#each problems as p, p_index}
 		<input
 			type="radio"
-			class="tab"
 			name="problem_tab"
 			aria-label={p.id.replaceAll('_', ' ').replace('p', 'P')}
 			value={p_index}
