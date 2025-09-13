@@ -1,4 +1,3 @@
-/// <reference types="./worker-configuration" />
 import type { DrizzleClient } from '$lib/server/db';
 
 declare global {

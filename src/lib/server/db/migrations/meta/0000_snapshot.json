@@ -1,7 +1,7 @@
 {
 	"version": "6",
 	"dialect": "sqlite",
-	"id": "ae92fa3d-7436-4d73-be38-75ac40ab87ad",
+	"id": "a54dded5-2d0e-4b45-be77-b2ef0057048b",
 	"prevId": "00000000-0000-0000-0000-000000000000",
 	"tables": {
 		"olympiads": {
