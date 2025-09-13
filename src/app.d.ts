@@ -4,12 +4,12 @@ import type { DrizzleClient } from '$lib/server/db';
 declare global {
 	namespace App {
 		interface Platform {
-			env: Env
-            cf: CfProperties
-            ctx: ExecutionContext
+			env: Env;
+			cf: CfProperties;
+			ctx: ExecutionContext;
 		}
 		interface Locals {
-			db: DrizzleClient
+			db: DrizzleClient;
 		}
 		// interface Error {}
 		// interface Locals {}
