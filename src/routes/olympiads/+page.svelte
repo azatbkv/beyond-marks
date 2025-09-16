@@ -6,6 +6,6 @@
 
 <ul>
 	{#each data.subjectNames as subjectName}
-		<li><a href="/olympiads/{subjectName}">{subjectName}</a></li>
+		<li><a href="/olympiads/{subjectName.toLowerCase()}">{subjectName}</a></li>
 	{/each}
 </ul>
