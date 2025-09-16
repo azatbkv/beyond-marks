@@ -15,7 +15,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		.from(years)
 		.where(eq(years.olympiadId, olympiadId));
 	if (!yearList) error(404);
-	console.log(yearList)
+	console.log(yearList);
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,

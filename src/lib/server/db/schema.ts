@@ -30,34 +30,46 @@ export const years = sqliteTable(
 	(table) => [unique().on(table.date, table.olympiadId)]
 );
 
-export const problems = sqliteTable('problems', {
-	id: integer().primaryKey(),
-	number: integer().notNull(),
-	name: text().notNull(),
-	maxPoints: real('max_points').notNull(),
-	weightedMaxPoints: real('weighted_max_points').notNull(),
-	yearId: integer('year_id').notNull().references(() => years.id)
-}, (table) => [
-	unique().on(table.number, table.yearId)
-]);
+export const problems = sqliteTable(
+	'problems',
+	{
+		id: integer().primaryKey(),
+		number: integer().notNull(),
+		name: text().notNull(),
+		maxPoints: real('max_points').notNull(),
+		weightedMaxPoints: real('weighted_max_points').notNull(),
+		yearId: integer('year_id')
+			.notNull()
+			.references(() => years.id)
+	},
+	(table) => [unique().on(table.number, table.yearId)]
+);
 
-export const parts = sqliteTable('parts', {
-	id: integer().primaryKey(),
-	number: text().notNull(),
-	description: text().notNull(),
-	maxPoints: real('max_points').notNull(),
-	problemId: integer('problem_id').notNull().references(() => problems.id)
-}, (table) => [
-	unique().on(table.number, table.problemId)
-]);
+export const parts = sqliteTable(
+	'parts',
+	{
+		id: integer().primaryKey(),
+		number: text().notNull(),
+		description: text().notNull(),
+		maxPoints: real('max_points').notNull(),
+		problemId: integer('problem_id')
+			.notNull()
+			.references(() => problems.id)
+	},
+	(table) => [unique().on(table.number, table.problemId)]
+);
 
 export const subparts = sqliteTable('subparts', {
 	id: integer().primaryKey(),
 	description: text().notNull(),
 	parentSubpartId: integer('parent_subpart_id'),
-	type: text('type', { enum: ['closed', 'open']}).notNull().default('closed'),
+	type: text('type', { enum: ['closed', 'open'] })
+		.notNull()
+		.default('closed'),
 	maxPoints: real('max_points').notNull(),
-	partId: integer('part_id').notNull().references(() => parts.id)
+	partId: integer('part_id')
+		.notNull()
+		.references(() => parts.id)
 });
 
 export const subpartsRelations = relations(subparts, ({ one, many }) => ({
