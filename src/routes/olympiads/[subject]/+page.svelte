@@ -3,11 +3,9 @@
 </script>
 
 <ul>
-	{#each data.olympiad_names as olympiad_name}
+	{#each data.olympiadNames as olympiadName}
 		<li>
-			<a href="/olympiads/{data.subject_name.toLowerCase()}/{olympiad_name.toLowerCase()}"
-				>{olympiad_name}</a
-			>
+			<a href="/olympiads/{data.subjectName}/{olympiadName.toLowerCase()}">{olympiadName}</a>
 		</li>
 	{/each}
 </ul>

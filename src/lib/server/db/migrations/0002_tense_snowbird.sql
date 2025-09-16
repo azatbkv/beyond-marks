@@ -1,0 +1,2 @@
+CREATE UNIQUE INDEX `olympiads_name_subject_id_unique` ON `olympiads` (`name`,`subject_id`);--> statement-breakpoint
+CREATE UNIQUE INDEX `years_date_olympiad_id_unique` ON `years` (`date`,`olympiad_id`);

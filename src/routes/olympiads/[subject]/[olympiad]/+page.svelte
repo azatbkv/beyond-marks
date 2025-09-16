@@ -3,12 +3,9 @@
 </script>
 
 <ul>
-	{#each data.year_names as year_name}
+	{#each data.yearDates as yearDate}
 		<li>
-			<a
-				href="/olympiads/{data.subject_name.toLowerCase()}/{data.olympiad_name.toLowerCase()}/{year_name}"
-				>{year_name}</a
-			>
+			<a href="/olympiads/{data.subjectName}/{data.olympiadName}/{yearDate}">{yearDate}</a>
 		</li>
 	{/each}
 </ul>

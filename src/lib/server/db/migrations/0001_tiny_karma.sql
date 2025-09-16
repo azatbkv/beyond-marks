@@ -1,0 +1,1 @@
+ALTER TABLE `years` RENAME COLUMN "year" TO "date";
