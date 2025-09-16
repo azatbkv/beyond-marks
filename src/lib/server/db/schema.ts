@@ -1,5 +1,11 @@
-import { relations } from 'drizzle-orm';
-import { sqliteTable, text, integer, unique, real } from 'drizzle-orm/sqlite-core';
+import {
+	sqliteTable,
+	text,
+	integer,
+	unique,
+	real,
+	type AnySQLiteColumn
+} from 'drizzle-orm/sqlite-core';
 
 export const subjects = sqliteTable('subjects', {
 	id: integer().primaryKey(),
@@ -51,6 +57,7 @@ export const parts = sqliteTable(
 		id: integer().primaryKey(),
 		number: text().notNull(),
 		description: text().notNull(),
+		solution: text().notNull(),
 		maxPoints: real('max_points').notNull(),
 		problemId: integer('problem_id')
 			.notNull()
@@ -59,23 +66,20 @@ export const parts = sqliteTable(
 	(table) => [unique().on(table.number, table.problemId)]
 );
 
-export const subparts = sqliteTable('subparts', {
-	id: integer().primaryKey(),
-	description: text().notNull(),
-	parentSubpartId: integer('parent_subpart_id'),
-	type: text('type', { enum: ['closed', 'open'] })
-		.notNull()
-		.default('closed'),
-	maxPoints: real('max_points').notNull(),
-	partId: integer('part_id')
-		.notNull()
-		.references(() => parts.id)
-});
-
-export const subpartsRelations = relations(subparts, ({ one, many }) => ({
-	parent: one(subparts, {
-		fields: [subparts.parentSubpartId],
-		references: [subparts.id]
-	}),
-	children: many(subparts)
-}));
+export const subparts = sqliteTable(
+	'subparts',
+	{
+		id: integer().primaryKey(),
+		index: integer().notNull(),
+		description: text().notNull(),
+		parentSubpartId: integer('parent_subpart_id').references((): AnySQLiteColumn => subparts.id),
+		type: text('type', { enum: ['closed', 'open'] })
+			.notNull()
+			.default('closed'),
+		points: real().notNull(),
+		partId: integer('part_id')
+			.notNull()
+			.references(() => parts.id)
+	},
+	(table) => [unique().on(table.index, table.partId)]
+);

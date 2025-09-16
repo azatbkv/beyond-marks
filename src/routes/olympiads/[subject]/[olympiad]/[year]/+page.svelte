@@ -1,24 +1,23 @@
 <script lang="ts">
-	import type { Subpart, Part, Problem, Marks } from './marks.ts';
-	import { getTotalMarks, getMarks } from './marks.ts';
+	import type { Subpart, Part, Problem, Marks } from './marks';
+	import { getTotalMarks, getMarks } from './marks';
 	import { marked } from 'marked';
 	import markedKatex from 'marked-katex-extension';
 
 	marked.use(markedKatex({ throwOnError: false }));
 
-	let { data } = $props();
-	const problems = data.problems;
+	import problems from '$lib/2025.json';
 
 	let problem_index = $state(0);
 	let problem = $derived(problems[problem_index]);
 
 	let marks: Marks = $state({ problems: [] });
 	for (let problem of problems) {
-		let problem_object: Problem = { id: problem.id, parts: [] };
+		let problem_object: Problem = { id: String(problem.number), parts: [] };
 		for (let part of problem.parts) {
-			let part_object: Part = { id: part.id, subparts: [] };
+			let part_object: Part = { id: part.number, subparts: [] };
 			for (let subpart of part.subparts) {
-				let subpart_object: Subpart = { marks: subpart.marks, checked: false };
+				let subpart_object: Subpart = { marks: subpart.points, checked: false };
 				part_object.subparts.push(subpart_object);
 			}
 			problem_object.parts.push(part_object);
@@ -42,7 +41,7 @@
 		<input
 			type="radio"
 			name="problem_tab"
-			aria-label={p.id.replaceAll('_', ' ').replace('p', 'P')}
+			aria-label={"Problem " + p.number}
 			value={p_index}
 			bind:group={problem_index}
 		/>
@@ -57,21 +56,19 @@
 </div>
 {#each problem.parts as part, part_index}
 	<div class="mt-4 flex justify-between">
-		<h2>{@html marked.parse(part.id + '. ' + part.description)}</h2>
+		<h2>{@html marked.parse(part.number + '. ' + part.description)}</h2>
 		{truncateNumber(getMarks(marks.problems[problem_index].parts[part_index]))}/{truncateNumber(
 			getTotalMarks(marks.problems[problem_index].parts[part_index])
 		)}
 	</div>
-	{#each part.solution as paragraph}
-		<p>{@html marked.parse(paragraph)}</p>
-	{/each}
+	<p>{@html marked.parse(part.solution)}</p>
 	{#each part.subparts as subpart, subpart_index}
 		<div class="flex justify-between">
 			<p>
-				{@html marked.parse(part.id + '.' + Number(subpart_index + 1) + '. ' + subpart.description)}
+				{@html marked.parse(part.number + '.' + Number(subpart_index + 1) + '. ' + subpart.description)}
 			</p>
 			<label>
-				{subpart.marks}
+				{subpart.points}
 				<input
 					type="checkbox"
 					bind:checked={

@@ -1,27 +1,55 @@
 {
-	"version": "7",
-	"dialect": "sqlite",
-	"entries": [
-		{
-			"idx": 0,
-			"version": "6",
-			"when": 1757765406578,
-			"tag": "0000_ambiguous_magus",
-			"breakpoints": true
-		},
-		{
-			"idx": 1,
-			"version": "6",
-			"when": 1757998982201,
-			"tag": "0001_tiny_karma",
-			"breakpoints": true
-		},
-		{
-			"idx": 2,
-			"version": "6",
-			"when": 1758000129413,
-			"tag": "0002_tense_snowbird",
-			"breakpoints": true
-		}
-	]
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1757765406578,
+      "tag": "0000_ambiguous_magus",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1757998982201,
+      "tag": "0001_tiny_karma",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1758000129413,
+      "tag": "0002_tense_snowbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1758018455149,
+      "tag": "0003_bored_nuke",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1758033942461,
+      "tag": "0004_woozy_prowler",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1758034124078,
+      "tag": "0005_dashing_vivisector",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1758035123875,
+      "tag": "0006_abandoned_magneto",
+      "breakpoints": true
+    }
+  ]
 }
