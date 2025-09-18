@@ -5,12 +5,14 @@ import { sql, eq } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
 	const subject = await locals.db
+	// @ts-expect-error drizzle type noise
 		.select({ id: subjects.id })
 		.from(subjects)
 		.where(eq(sql`lower(${subjects.name})`, params.subject));
 	if (!subject) error(404);
 	const subjectId = subject[0].id;
 	const olympiadList = await locals.db
+	// @ts-expect-error drizzle type noise
 		.select({ name: olympiads.name })
 		.from(olympiads)
 		.where(eq(olympiads.subjectId, subjectId));
