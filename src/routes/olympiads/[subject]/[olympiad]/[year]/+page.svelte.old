@@ -41,7 +41,7 @@
 		<input
 			type="radio"
 			name="problem_tab"
-			aria-label={"Problem " + p.number}
+			aria-label={'Problem ' + p.number}
 			value={p_index}
 			bind:group={problem_index}
 		/>
@@ -65,7 +65,9 @@
 	{#each part.subparts as subpart, subpart_index}
 		<div class="flex justify-between">
 			<p>
-				{@html marked.parse(part.number + '.' + Number(subpart_index + 1) + '. ' + subpart.description)}
+				{@html marked.parse(
+					part.number + '.' + Number(subpart_index + 1) + '. ' + subpart.description
+				)}
 			</p>
 			<label>
 				{subpart.points}

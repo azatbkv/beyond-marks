@@ -1,3 +1,4 @@
+import type { InferSelectModel } from 'drizzle-orm';
 import {
 	sqliteTable,
 	text,
@@ -83,3 +84,7 @@ export const subparts = sqliteTable(
 	},
 	(table) => [unique().on(table.index, table.partId)]
 );
+
+export type Problem = InferSelectModel<typeof problems>;
+export type Part = InferSelectModel<typeof parts>;
+export type Subpart = InferSelectModel<typeof subparts>;

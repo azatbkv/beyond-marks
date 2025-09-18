@@ -1,21 +1,20 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { olympiads, years } from '$lib/server/db/schema';
-import { sql, eq } from 'drizzle-orm';
+import { olympiads, subjects, years } from '$lib/server/db/schema';
+import { sql, eq, and } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
-	const olympiad = await locals.db
-	// @ts-expect-error drizzle type defs mismatch
-		.select({ id: olympiads.id })
-		.from(olympiads)
-		.where(eq(sql`lower(${olympiads.name})`, params.olympiad));
-	if (!olympiad) error(404);
-	const olympiadId = olympiad[0].id;
 	const yearList = await locals.db
-	// @ts-expect-error drizzle type noise
 		.select({ date: years.date })
 		.from(years)
-		.where(eq(years.olympiadId, olympiadId));
+		.innerJoin(olympiads, eq(years.olympiadId, olympiads.id))
+		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
+		.where(
+			and(
+				eq(sql`lower(${subjects.name})`, params.subject),
+				eq(sql`lower(${olympiads.name})`, params.olympiad)
+			)
+		);
 	if (!yearList) error(404);
 	return {
 		subjectName: params.subject,
