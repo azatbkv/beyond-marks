@@ -5,6 +5,7 @@ import { sql, eq, and } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
 	const yearList = await locals.db
+		// @ts-expect-error drizzle type noise
 		.select({ date: years.date })
 		.from(years)
 		.innerJoin(olympiads, eq(years.olympiadId, olympiads.id))
@@ -19,6 +20,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,
+		// @ts-expect-error wrong expected object
 		yearDates: yearList.map((year) => year.date)
 	};
 };

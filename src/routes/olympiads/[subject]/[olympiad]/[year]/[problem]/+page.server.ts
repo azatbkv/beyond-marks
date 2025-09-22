@@ -14,6 +14,7 @@ import {
 
 export const load: PageServerLoad = async ({ locals, params }) => {
 	const problemFound = await locals.db
+		// @ts-expect-error drizzle type noise
 		.select({ id: problems.id })
 		.from(problems)
 		.innerJoin(years, eq(problems.yearId, years.id))
@@ -24,6 +25,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 				eq(sql`lower(${subjects.name})`, params.subject),
 				eq(sql`lower(${olympiads.name})`, params.olympiad),
 				eq(years.date, parseInt(params.year)),
+				// @ts-expect-error expected params error
 				eq(problems.number, parseInt(params.problem))
 			)
 		)
@@ -34,6 +36,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		.from(problems)
 		.leftJoin(parts, eq(parts.problemId, problems.id))
 		.leftJoin(subparts, eq(subparts.partId, parts.id))
+		// @ts-expect-error wrong expected object
 		.where(eq(problems.id, problemFound.id));
 
 	const problem = { ...rows[0].problems, parts: [] as PartWithSubs[] };

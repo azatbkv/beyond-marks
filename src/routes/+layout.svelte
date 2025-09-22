@@ -11,6 +11,7 @@
 
 <nav>
 	<a href="/olympiads">Olympiads</a>
+	<a href="/upload">Upload</a>
 </nav>
 
 {@render children?.()}
