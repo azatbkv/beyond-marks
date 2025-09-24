@@ -1,24 +1,28 @@
-import { dev } from '$app/environment';
 import { env } from '$env/dynamic/private';
-import { subjects, olympiads, years, problems, parts, subparts } from '$lib/server/db/schema';
-import type { Actions } from '@sveltejs/kit';
+import { subjects, olympiads, years, problems, type Problem } from '$lib/server/db/schema';
+import { error, redirect, type Actions } from '@sveltejs/kit';
 import { and, eq, type InferInsertModel } from 'drizzle-orm';
+import type { PageServerLoad } from '../$types';
+
+export const load: PageServerLoad = async ({ locals }) => {
+	if (!locals.user) {
+		throw redirect(302, '/login');
+	}
+	if (locals.user.id !== env.ADMIN_USER_ID) {
+		throw error(403, 'not authorized to view this page');
+	}
+};
 
 export const actions: Actions = {
 	default: async ({ request, locals }) => {
-		const formData = await request.formData();
-		const password = formData.get('password');
-		if (typeof password !== 'string') return { error: 'bad password' };
-
-		let secret;
-		if (dev) {
-			secret = env.UPLOAD_SECRET_DEV;
-		} else {
-			secret = env.UPLOAD_SECRET;
+		if (!locals.user) {
+			throw redirect(302, '/login');
+		}
+		if (locals.user.id !== env.ADMIN_USER_ID) {
+			throw error(403, 'not authorized to view this page');
 		}
 
-		if (!secret) throw new Error('no upload secret');
-		if (password !== secret) return { error: 'incorrect password' };
+		const formData = await request.formData();
 
 		const subjectName = formData.get('subject');
 		if (typeof subjectName !== 'string' || !subjectName.trim()) return { error: 'bad subject' };
@@ -35,7 +39,7 @@ export const actions: Actions = {
 			return { error: 'bad file' };
 		}
 		const fileText = await file.text();
-		let jsonFile;
+		let jsonFile: Problem[];
 		try {
 			jsonFile = JSON.parse(fileText);
 		} catch {
@@ -52,7 +56,7 @@ export const actions: Actions = {
 			if (!subject)
 				subject = await locals.db
 					.insert(subjects)
-					.values({ name: subjectName })
+					.values({ name: subjectName, nameLower: subjectName.toLowerCase() })
 					.onConflictDoNothing()
 					// @ts-expect-error drizzle type noise
 					.returning({ id: subjects.id })
@@ -66,7 +70,11 @@ export const actions: Actions = {
 			if (!olympiad)
 				olympiad = await locals.db
 					.insert(olympiads)
-					.values({ name: olympiadName as string, subjectId: subject.id })
+					.values({
+						name: olympiadName,
+						subjectId: subject.id,
+						nameLower: olympiadName.toLowerCase()
+					})
 					.onConflictDoNothing()
 					// @ts-expect-error drizzle type noise
 					.returning({ id: olympiads.id })
@@ -92,11 +100,11 @@ export const actions: Actions = {
 					name: problemFile.name,
 					maxPoints: problemFile.maxPoints,
 					weightedMaxPoints: problemFile.weightedMaxPoints,
+					parts: problemFile.parts,
 					yearId: year.id
 				};
-				const problemInserted = await locals.db
-					.insert(problems)
-					.values(problem)
+				await locals.db.insert(problems).values(problem);
+				/**
 					// @ts-expect-error drizzle type noise
 					.returning({ id: problems.id })
 					.get();
@@ -129,9 +137,10 @@ export const actions: Actions = {
 						await locals.db.insert(subparts).values(subpart);
 					}
 				}
+				**/
 			}
 		} catch {
-			return { error: 'fail in database' };
+			return { error: 'error in database' };
 		}
 		return { success: true };
 	}

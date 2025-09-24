@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `user_scores_problem_id_user_id_unique` ON `user_scores` (`problem_id`,`user_id`);

@@ -1,16 +1,9 @@
-import type { InferSelectModel } from 'drizzle-orm';
-import {
-	sqliteTable,
-	text,
-	integer,
-	unique,
-	real,
-	type AnySQLiteColumn
-} from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, unique, real } from 'drizzle-orm/sqlite-core';
 
 export const subjects = sqliteTable('subjects', {
 	id: integer().primaryKey(),
-	name: text().notNull().unique()
+	name: text().notNull().unique(),
+	nameLower: text('name_lower').notNull().unique()
 });
 
 export const olympiads = sqliteTable(
@@ -18,6 +11,7 @@ export const olympiads = sqliteTable(
 	{
 		id: integer().primaryKey(),
 		name: text().notNull(),
+		nameLower: text('name_lower').notNull(),
 		subjectId: integer('subject_id')
 			.notNull()
 			.references(() => subjects.id)
@@ -45,6 +39,7 @@ export const problems = sqliteTable(
 		name: text().notNull(),
 		maxPoints: real('max_points').notNull(),
 		weightedMaxPoints: real('weighted_max_points').notNull(),
+		parts: text('parts', { mode: 'json' }).$type<Part[]>().notNull(),
 		yearId: integer('year_id')
 			.notNull()
 			.references(() => years.id)
@@ -52,39 +47,116 @@ export const problems = sqliteTable(
 	(table) => [unique().on(table.number, table.yearId)]
 );
 
-export const parts = sqliteTable(
-	'parts',
+export type Subpart = {
+	description: string;
+	points: number;
+	type: 'closed' | 'open';
+	childSubparts: Subpart[];
+};
+
+export type Part = {
+	number: string;
+	description: string;
+	solution: string;
+	maxPoints: number;
+	subparts: Subpart[];
+};
+
+export type Problem = {
+	number: number;
+	name: string;
+	maxPoints: number;
+	weightedMaxPoints: number;
+	parts: Part[];
+};
+
+export type SubpartPoints = {
+	obtainedPoints: number;
+	childSubparts: SubpartPoints[];
+};
+
+export type PartPoints = {
+	number: string;
+	obtainedPoints: number;
+	subparts: SubpartPoints[];
+};
+
+export const userScores = sqliteTable(
+	'user_scores',
 	{
 		id: integer().primaryKey(),
-		number: text().notNull(),
-		description: text().notNull(),
-		solution: text().notNull(),
-		maxPoints: real('max_points').notNull(),
+		userId: text('user_id')
+			.notNull()
+			.references(() => users.id),
 		problemId: integer('problem_id')
 			.notNull()
-			.references(() => problems.id)
+			.references(() => problems.id),
+		problemPoints: real('problem_points'),
+		scores: text('scores', { mode: 'json' }).$type<PartPoints[]>().notNull()
 	},
-	(table) => [unique().on(table.number, table.problemId)]
+	(table) => [unique().on(table.problemId, table.userId)]
 );
 
-export const subparts = sqliteTable(
-	'subparts',
-	{
-		id: integer().primaryKey(),
-		index: integer().notNull(),
-		description: text().notNull(),
-		parentSubpartId: integer('parent_subpart_id').references((): AnySQLiteColumn => subparts.id),
-		type: text('type', { enum: ['closed', 'open'] })
-			.notNull()
-			.default('closed'),
-		points: real().notNull(),
-		partId: integer('part_id')
-			.notNull()
-			.references(() => parts.id)
-	},
-	(table) => [unique().on(table.index, table.partId)]
-);
+export const users = sqliteTable('users', {
+	id: text('id').primaryKey(),
+	name: text('name').notNull(),
+	email: text('email').notNull().unique(),
+	emailVerified: integer('email_verified', { mode: 'boolean' }).default(false).notNull(),
+	image: text('image'),
+	createdAt: integer('created_at', { mode: 'timestamp' }).defaultNow().notNull(),
+	updatedAt: integer('updated_at', { mode: 'timestamp' })
+		.defaultNow()
+		.$onUpdate(() => /* @__PURE__ */ new Date())
+		.notNull()
+});
 
-export type Problem = InferSelectModel<typeof problems>;
-export type Part = InferSelectModel<typeof parts>;
-export type Subpart = InferSelectModel<typeof subparts>;
+export const sessions = sqliteTable('sessions', {
+	id: text('id').primaryKey(),
+	expiresAt: integer('expires_at', { mode: 'timestamp' }).notNull(),
+	token: text('token').notNull().unique(),
+	createdAt: integer('created_at', { mode: 'timestamp' }).defaultNow().notNull(),
+	updatedAt: integer('updated_at', { mode: 'timestamp' })
+		.$onUpdate(() => /* @__PURE__ */ new Date())
+		.notNull(),
+	ipAddress: text('ip_address'),
+	userAgent: text('user_agent'),
+	userId: text('user_id')
+		.notNull()
+		.references(() => users.id, { onDelete: 'cascade' })
+});
+
+export const accounts = sqliteTable('accounts', {
+	id: text('id').primaryKey(),
+	accountId: text('account_id').notNull(),
+	providerId: text('provider_id').notNull(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => users.id, { onDelete: 'cascade' }),
+	accessToken: text('access_token'),
+	refreshToken: text('refresh_token'),
+	idToken: text('id_token'),
+	accessTokenExpiresAt: integer('access_token_expires_at', {
+		mode: 'timestamp'
+	}),
+	refreshTokenExpiresAt: integer('refresh_token_expires_at', {
+		mode: 'timestamp'
+	}),
+	scope: text('scope'),
+	password: text('password'),
+	createdAt: integer('created_at', { mode: 'timestamp' }).defaultNow().notNull(),
+	updatedAt: integer('updated_at', { mode: 'timestamp' })
+		.$onUpdate(() => /* @__PURE__ */ new Date())
+		.notNull()
+});
+
+export const verifications = sqliteTable('verifications', {
+	id: text('id').primaryKey(),
+	identifier: text('identifier').notNull(),
+	value: text('value').notNull(),
+	expiresAt: integer('expires_at', { mode: 'timestamp' }).notNull(),
+	createdAt: integer('created_at', { mode: 'timestamp' }).defaultNow().notNull(),
+	updatedAt: integer('updated_at', { mode: 'timestamp' })
+		.defaultNow()
+		.$onUpdate(() => /* @__PURE__ */ new Date())
+		.notNull()
+});

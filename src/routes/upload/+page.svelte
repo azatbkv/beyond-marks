@@ -20,10 +20,6 @@
 		<label for="file">JSON file</label>
 		<input id="file" type="file" name="file" required />
 	</div>
-	<div>
-		<label for="password">Password</label>
-		<input id="password" type="password" name="password" required />
-	</div>
 	<button type="submit">Upload</button>
 </form>
 

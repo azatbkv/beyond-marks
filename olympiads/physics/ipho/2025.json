@@ -12,18 +12,16 @@
 				"maxPoints": 0.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Using Newton's second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of the velocity",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -34,32 +32,28 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression of $r_n$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of $r_1$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Numerical value for $r_1$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Expression of $v_1$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -70,25 +64,22 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for $E_n$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $E_1$ with $\\alpha$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Numerical value for $E_1$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -99,32 +90,28 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for the period",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for the current",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "General expression for B",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Inject i into B",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -135,39 +122,34 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for the potential energy",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $\\Delta E_F$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression for $\\Delta E_{HF}$ in term of $\\alpha$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Expression for $\\lambda_{HF}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Numerical value for $\\lambda_{HF}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -178,18 +160,16 @@
 				"maxPoints": 0.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Using Newton's second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for the velocity.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -200,39 +180,34 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $g(r > r_b)$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression for $M_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Taking the right value of $v_c$ in the figure",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Numerical value for $M_b$ with a tolerance of $\\pm 25\\%$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -243,81 +218,70 @@
 				"maxPoints": 1.8,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Exterior mass.",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression for $g(r)$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Using Newton's second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression for $k_1$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Expression for $k_2$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Simplification for $v_c$ in the case $r \\ll r_m$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Simplification for $v_c$ in the case $r \\gg r_m$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 9,
 						"description": "Value of $C_m$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 10,
 						"description": "Expression for $M_m$ in the case $r \\gg r_m$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 11,
 						"description": "Mass in the figure (good if nearest power of ten)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -328,39 +292,34 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Newton's second law, or equivalent method",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Projection on the z axis",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Equation of motion",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Equation near the galactic plane",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression for $\\omega_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -371,39 +330,34 @@
 				"maxPoints": 0.6,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Condition for simplication $r \\gg r_m$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $\\phi(r)$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Identification of $\\phi_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Newton's second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression for $v_c$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -414,46 +368,40 @@
 				"maxPoints": 0.7,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for $\\vec{Ss}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $\\vec{Ee}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "$\\alpha = l$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Expression for $\\cos(\\beta)$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression for $v_{r,E/S}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Expression for R",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -464,32 +412,28 @@
 				"maxPoints": 0.6,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Doppler formula for $v_r$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Getting the 3 numerical values for $\\Delta f_i$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Numerical values of the 3 velocities ( $\\pm 0.01 \\, \\text{km} \\cdot \\text{s}^{-1}$ )",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Numerical values of the 3 distances ( $\\pm 0.01 R_0$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -500,32 +444,28 @@
 				"maxPoints": 0.6,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Getting the right line of sight",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Drawing for the 3 circles",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Drawing for the 3 points",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Deduction",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -536,32 +476,28 @@
 				"maxPoints": 0.4,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Recall for $v_{c,\\infty}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression for $\\eta$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression for $\\gamma$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Numerical value for $\\gamma_{TF}$ (correct if it is between 3.5 and 4)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -572,18 +508,16 @@
 				"maxPoints": 0.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for $a_m$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
-						"description": "Numerical value for $a_m$ (good nearest power of ten)",
+						"description": "Numerical value for $a_m$ (good if nearest power of ten)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -594,60 +528,52 @@
 				"maxPoints": 0.8,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Considering the hypothesis $a \\ll a_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Newton's second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression for $v_{c,\\infty}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Numerical value for $\\gamma_{MOND}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Numerical value for $\\log_{10}(v_{c,\\infty}/1 \\, \\text{km/s})$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Numerical value for $\\log_{10}(M)$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Expression for $a_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Numerical value for $a_0$ (good if nearest power of ten)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -658,67 +584,58 @@
 				"maxPoints": 0.9,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Modified second law",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Gravitational field in the case $r > R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Gravitational field in the case $r < R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Bi-quadratic equation in the case $r > R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression for $v_c$ in the case $r > R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Behaviour in the limit $r \\to \\infty$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Bi-quadractic equation for $r < R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Expression for $v_c$ when $r < R_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 9,
 						"description": "Behaviour when $r \\to 0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			}
@@ -737,18 +654,16 @@
 				"maxPoints": 0.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression of Pw (as a function of Pa or Po)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of F",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -759,53 +674,48 @@
 				"maxPoints": 0.8,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "All behaviours are correct (*all or nothing*): A/A/B",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Experiment 1: Numerical value of F_max in [14.6, 15] (N)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Experiment 2: Numerical value of F_max in [14, 14.5] (N)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Experiment 3: Numerical value of h* in [2, 2.2] (cm)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": [
+							{
+								"description": "0.1 pt if only literal expression is correct",
+								"points": 0.1,
+								"type": "closed",
+								"childSubparts": []
+							}
+						]
 					},
 					{
-						"index": 5,
-						"description": "0.1 pt if only literal expression is correct",
-						"points": 0.1,
-						"type": "closed",
-						"parentSubpartId": 4
-					},
-					{
-						"index": 6,
 						"description": "Experiment 3: Numerical value of F_max in [5, 5.2] (N)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
-					},
-					{
-						"index": 7,
-						"description": "0.1 pt if only literal expression is correct",
-						"points": 0.1,
-						"type": "closed",
-						"parentSubpartId": 6
+						"childSubparts": [
+							{
+								"description": "0.1 pt if only literal expression is correct",
+								"points": 0.1,
+								"type": "closed",
+								"childSubparts": []
+							}
+						]
 					}
 				]
 			},
@@ -816,18 +726,16 @@
 				"maxPoints": 0.3,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Literal expression of $\\epsilon$ (with or without $P_\\text{sat}$ in denominator)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Numerical value of $\\epsilon$ in $[1, 2] \\times 10^{-6}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -838,18 +746,17 @@
 				"maxPoints": 0.3,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Coloring of the correct area",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
-					},
-					{
-						"index": 2,
-						"description": "0.1 pt only if a correct expression of $m_\\text{add}$ is provided but the colored area is incorrect",
-						"points": 0.1,
-						"type": "closed",
-						"parentSubpartId": 1
+						"childSubparts": [
+							{
+								"description": "0.1 pt only if a correct expression of $m_\\text{add}$ is provided but the colored area is incorrect",
+								"points": 0.1,
+								"type": "closed",
+								"childSubparts": []
+							}
+						]
 					}
 				]
 			},
@@ -860,60 +767,53 @@
 				"maxPoints": 1.4,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Qualitative aspect: Graph with 4 straight pieces",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": [
+							{
+								"description": "0.1pt only if there are 3 pieces; 0 else",
+								"points": 0.1,
+								"type": "closed",
+								"childSubparts": []
+							}
+						]
 					},
 					{
-						"index": 2,
-						"description": "0.1pt only if there are 3 pieces; 0 else",
-						"points": 0.1,
-						"type": "closed",
-						"parentSubpartId": 1
-					},
-					{
-						"index": 3,
 						"description": "Qualitative aspect: For the 1st & 2nd pieces, the slopes are positive *and* the slope of 2nd piece is less than that of 1st (*all or nothing*)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Qualitative aspect: The 3rd piece has a negative slope",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Qualitative aspect: The 4th piece has a null slope",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Expressions of the two first slopes (*all or nothing*)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Expression of the negative slope",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "$h_t$ analytical values of the 3 intermediate angular points (0.1pt per value)",
 						"points": 0.3,
 						"type": "open",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -924,18 +824,16 @@
 				"maxPoints": 0.3,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Literal expression of $\\Delta m_\\text{add}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Numerical value *with unit*, in [1 kg, 1.1 kg]",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -946,53 +844,46 @@
 				"maxPoints": 1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of mass or volume variation of fluid in at least one of the vessels, in terms of those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Physical law: Conservation of the total mass/volume",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Physical law: Expression of barometric difference of heights between the two surfaces",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Physical law: Expression of the friction force at equilibrium (with or without using $S_t \\ll S_b, S_c$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Physical law: Use of Coulomb's law in sticky situation",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Conclusion: Obtaining $\\xi^*$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1003,39 +894,34 @@
 				"maxPoints": 1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expressions of mass or volume variations of fluid in one of the vessels in terms of X and those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Physical law: Conservation of the total mass/volume",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Physical law: Expression of barometric difference of heights between the two surfaces",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression of the total tension force $\\vec{T}$ (with or without using $S_t \\ll S_b, S_c$ )",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1046,88 +932,76 @@
 				"maxPoints": 2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression for $\\vec{T}$ in the general case, containing both $P_1$ and X terms.",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "At least one inequality is correct (without considering strict or large)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Both inequalities are correct (without considering strict or large)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Global appearance of *both* graphs: one seems to show an aperiodic behaviour, the other a periodic behaviour (*all or nothing*)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Global appearance: each graph is in accordance with the correct sign of obtained inequality (focus on symbols > / <, without considering if the inequality is strict or large)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Either graph 1 or 2 shows: A first switch from $x=0$ to $x=X$ that begins somewhere in the interval $t \\in [0, \\tau_1/4]$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Either graph 1 or 2 shows: The switch is instantaneous",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Graph in aperiodic regime: $x=X$ for all times after the first switch",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 9,
 						"description": "Graph in periodic regime: the behaviour is periodic with period $\\tau_1$ (except for the first switch)",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 10,
 						"description": "Graph in periodic regime: the positive and negative parts of the graph are similar",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 11,
 						"description": "Graph in periodic regime: $x(t)/X$ is described by a rectangular function, of magnitude 1 and duty cycle 50% in steady state",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 12,
 						"description": "Graph in periodic regime: the first step at $x=X$ last longer than others",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1138,46 +1012,40 @@
 				"maxPoints": 1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Starting point: $W = 4F_s X$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Optimization: $\\xi + 2\\lambda = 2$ or equivalent $F_s = S_c(A - 2\\rho g X)$",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression of $X^*$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Expression of $F_s^*$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression of $W^*$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Numerical value for $W^*$ *with unit*: in [19 mJ, 21 mJ]",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1188,60 +1056,52 @@
 				"maxPoints": 1.7,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Physical analysis: In the optimal case, the mass M switches between the two positions $x = \\pm X$ when $P_1 = \\pm A$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Physical analysis: During a period, the system describes a cycle formed of 2 iso-x and 2 iso-P transformations (sketch of cycle, or a table or any other pertinent description)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Physical analysis: Correct sequence of the successive states and/or direction of the cycle using x and P",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "General expression of the volume of the system in an (P,x) state: $V = -S_c x + \\frac{P_1}{2\\rho g} + Cste$",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expressions of the volume in the 4 states of the cycle: $-3S_c X^* \\to S_c X^* \\to 3S_c X^* \\to -S_c X^*$ (*all or nothing*)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Method used to calculate the work of atmospheric pressure forces: $W_\\text{pr} = -\\oint_\\text{period} P_a dV$ (explicit integral or area of the cycle in $(P,V)$ diagram or other pertinent method)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Obtaining $W_\\text{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Final result: $\\frac{W^*}{W_\\text{pr}^*} = \\frac{1}{2}$",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			}
@@ -1260,11 +1120,10 @@
 				"maxPoints": 0.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Laplace's law: $P_b = P_0 + \\frac{2\\sigma}{a}$ (all-or-nothing, as for all the answers)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1275,25 +1134,22 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "comparison (equality $c_b = c_e$ or inequality $c_b \\le c_e$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "exact expression $a_c = \\frac{2\\sigma}{P_0(c_e/c_0-1)}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "numerical value $a_c = 0.3 \\, \\mu\\text{m}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1304,60 +1160,52 @@
 				"maxPoints": 1.2,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "$n_e = \\frac{4}{3}\\pi a^3 \\frac{P_0}{R T_0}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "any equation that that can be interpreted as a particule balance",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "equation between $\\dot{a}$ (or $\\dot{n}_e$ ) and j",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Model model 1 a exact with $a_0$ present",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "model 2 a exact with $a_0$ present",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "model 2",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "value of the slope: total mark only if $\\frac{da}{dt}$ is in range $[210-250] \\, \\mu\\text{m} \\cdot \\text{s}^{-1}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "any value of K in range $[0.9-1.1] \\, \\text{m} \\cdot \\text{s}^{-1}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1368,46 +1216,40 @@
 				"maxPoints": 0.8,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Expression of main forces (gravity force present or absent): fullmark",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "expression $v = \\frac{2 \\rho_l g_0}{9\\eta} a^2$ (full mark on this point with or without the gravity force)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "exact value taking account of the time during two positions $\\Delta t = 1/f_b = 5 \\times 10^{-2} \\, \\text{s}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "full mark for one coherent value of the radius measured on Fig.3. last bubble in [0.22-0.28]mm, penultimate bubble: radius in [0.18-0.22]mm, antepenultimate bubble: radius in [0.16-0.20]mm",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "full mark for one coherent value of the velocity measured on Fig.3. last bubble $v \\in [4.6, 5.0] \\, \\text{cm} \\cdot \\text{s}^{-1}$, penultimate bubble $v \\in [4.3, 4.6] \\, \\text{cm} \\cdot \\text{s}^{-1}$, antepenultimate bubble $v \\in [3.7 - 4.2] \\, \\text{cm} \\cdot \\text{s}^{-1}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "full mark for any value for $\\eta$ in range $[1.5-3.5] \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1418,18 +1260,16 @@
 				"maxPoints": 0.5,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "$a_{H_e} = (\\frac{27\\eta q_a H_e}{2\\rho_l g_0})^{1/3}$",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "full mark if $a_{H_e} \\in [0.36 - 0.49] \\, \\text{mm}$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1440,46 +1280,40 @@
 				"maxPoints": 1.1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Correct count of bubbles reaching the free surface by unit time: $N_b f_b$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Balance at the free surface: $\\frac{dV}{dt} = \\frac{4}{3}\\pi a_{H_e}^3 N_b f_b$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Exact expression of $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} q_a$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "$q_a = \\frac{da}{dt} = \\frac{K R T_0}{P_0}(c_e-c_0)$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "First order linear differential equation: $\\frac{dc_e}{dt} + \\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0 V_e}(c_e-c_0)=0$. If an homogeneous mistake has been made at a previous task, but the differential equation is first order and coherent, fullmark.",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Exponential decay with characteristic time: $\\tau = \\frac{\\rho_l g_0 V_e}{18\\pi N_b f_b \\eta K H_e}$. full mark if A.6.5 is just and if the numerical coefficient is absent or different of 1/18$\\pi$ (reasonable solution)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1490,46 +1324,47 @@
 				"maxPoints": 1.1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Any expression of kinetic energy",
-						"points": 0.3,
-						"type": "closed",
-						"parentSubpartId": null
-					},
-					{
-						"index": 2,
-						"description": "Variation of surface energy (differential or finite variation accepted)",
-						"points": 0.2,
-						"type": "closed",
-						"parentSubpartId": null
-					},
-					{
-						"index": 3,
-						"description": "full mark for exact Expression of a surface energy or a variation.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
+						"description": "Variation of kinetic energy (differential or finite variation accepted)",
+						"points": 0.2,
+						"type": "closed",
+						"childSubparts": []
+					},
+					{
+						"description": "Expression of a surface energy or a variation.",
+						"points": 0.1,
+						"type": "closed",
+						"childSubparts": []
+					},
+					{
 						"description": "Exact expression of $\\delta E_s$",
-						"points": 0.2,
+						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
-						"description": "Kinetic energy balance (without sign mistake). If the candidate forget the energy loss, it is treated as a small mistake (-0.1pt)",
+						"description": "Kinetic energy balance (without sign mistake). ",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": [
+							{
+								"description": "If the candidate forget the energy loss, it is treated as a small mistake",
+								"points": -0.1,
+								"type": "closed",
+								"childSubparts": []
+							}
+						]
 					},
 					{
-						"index": 6,
 						"description": "exact expression of $v_f$",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1540,110 +1375,96 @@
 				"maxPoints": 1.1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Pressure force with $P_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of volume $V(t)$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Expression of $P(t)$ with adiabatic reversible process for an ideal gas",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Approximate pressure",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Exact linearized pressure force",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Law of motion",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Harmonic oscillator, angular frequency",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Expression of $f_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
 			{
 				"number": "B.3",
 				"description": "Find the radius $a$ and the thickness $h$ of the champagne film separating the bubble from the atmosphere.",
-				"solution": "The maximal value of $f_0$ is $f_0 = 40 \\, \\text{kHz}$ which is obtained for $r=r_c$.<br>With $m_p = 8\\rho_g r^3/3$, $S=\\pi r^2$, $V_0 = 4/3 \\pi a^3$, the expression for $f_0$ becomes $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma (\\pi r^2)^2 P_0}{(8\\rho_g r^3/3)(4/3 \\pi a^3)}} = \\frac{1}{2\\pi} \\sqrt{\\frac{3\\gamma \\pi P_0}{32 \\rho_g a^3}} r^{1/2}$. This does not match the solution. Let's recheck the formula for $f_0$ from solution. $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P_0}{\\rho_g}} \\frac{3\\sqrt{3\\pi}}{16a} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Not clear where this comes from. Let's follow the solution's derivation.<br> $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{3 \\gamma \\pi P_0 r}{8\\rho_g a^3}}$. This doesn't seem to match either. Let's trust the formulas in the solution text. <br> $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{3r_c \\pi^2 P_0 \\gamma}{8 \\rho_g V_0}}$. Using $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$ and $V_0=\\frac{4}{3}\\pi a^3$.<br> $a = \\frac{3\\sqrt{3}}{64\\pi} \\frac{\\gamma P_0}{f_0^2 \\rho_g} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}} = 0.53 \\, \\text{mm}$.<br>Determination of $h$: $r_c = v_f t_b = \\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b$. Also $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. So $\\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Solving for $h$ gives $h = \\frac{3 t_b^2}{2a^4} \\frac{\\sigma^2}{\\rho_l^2 g_0} = 3.7 \\, \\mu\\text{m}$.",
+				"solution": "The maximal value of $f_0$ is $f_0 = 40 \\, \\text{kHz}$ which is obtained for $r=r_c$.<br>With $m_p = 8\\rho_g r^3/3$, $S=\\pi r^2$, $V_0 = 4/3 \\pi a^3$, the expression for $f_0$ becomes $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma (\\pi r^2)^2 P_0}{(8\\rho_g r^3/3)(4/3 \\pi a^3)}} = \\frac{1}{2\\pi} \\sqrt{\\frac{3\\gamma \\pi P_0}{32 \\rho_g a^3}} r^{1/2}$. This does not match the solution. Let's recheck the formula for $f_0$ from solution. $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P_0}{\\rho_g}} \\frac{3\\sqrt{3\\pi}}{16a} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Not clear where this comes from. Let's follow the solution's derivation.<br> $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{3r_c \\pi^2 P_0 \\gamma}{8 \\rho_g V_0}}$. Using $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$ and $V_0=\\frac{4}{3}\\pi a^3$.<br> $a = \\frac{3\\sqrt{3}}{64\\pi} \\frac{\\gamma P_0}{f_0^2 \\rho_g} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}} = 0.53 \\, \\text{mm}$.<br>Determination of $h$: $r_c = v_f t_b = \\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b$. Also $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. So $\\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Solving for $h$ gives $h = \\frac{3 t_b^2}{2a^4} \\frac{\\sigma^2}{\\rho_l^2 g_0} = 3.7 \\, \\mu\\text{m}$.",
 				"maxPoints": 1.1,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Use of max value of $r_c$ for $f_0$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Exact expression of $f_0$ in terms of $a, \\rho_g, \\sigma, g_0, \\rho_l, P_0$ or expression of a",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Exact numerical value between 0.5 mm and 0.6 mm",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Relationship between $t_b, v_f$ and $r_c$ or a",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Expression of h in terms of $\\sigma, \\rho_l$ and $v_f$ (or a and $t_b$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Numerical value h = 3.7 $\\mu$m",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1654,32 +1475,28 @@
 				"maxPoints": 0.4,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Conservation of CO2 molecules",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Literal expression of $P_i$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "For $T_0 = 6^\\circ\\text{C} : P_i = 4.81 \\, \\text{bar}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "For $T_0 = 20^\\circ\\text{C} : P_i = 7.76 \\, \\text{bar}$",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1690,53 +1507,46 @@
 				"maxPoints": 0.7,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Final pressure of the expansion.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Litteral expression of $T_f$.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "For $T_0 = 6^\\circ\\text{C}: P_i=4.69 \\, \\text{bar}$ and $T_f=195.3 \\, \\text{K}$ ;",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "For $T_0 = 20^\\circ\\text{C}: P_i=7.45 \\, \\text{bar}$ and $T_f=184.3 \\, \\text{K}$ ;",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Idea of comparison between $P_\\text{sat}$ and $P_0$ or evaluation of the transition temperature at $P_0$ and idea of comparison with $T_f$.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Numerical comparison.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "True statements (all or nothing).",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			},
@@ -1747,60 +1557,52 @@
 				"maxPoints": 1.3,
 				"subparts": [
 					{
-						"index": 1,
 						"description": "Correct expression of $\\alpha$ (all or nothing). If $\\alpha$ is not correct (contribution of $P_0$ forgotten for example), 0 point but the following items are evaluated with this uncorrect $\\alpha$.",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 2,
 						"description": "Expression of the friction work (all or nothing)",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 3,
 						"description": "Consequences of the adiabatic reversible expansion (1st principle with $Q=0$ or $PV^\\gamma = P_i V_i^\\gamma$ )",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 4,
 						"description": "Exact expression of the work (all or nothing). Partial points: if P is considered constant during the expansion, 0 point for C.3.4. but all points for the following items if coherent with the incorrect work expression.",
 						"points": 0.3,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 5,
 						"description": "Work due to external pressure correct. If this item is forgotten by the candidate, 0 point.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 6,
 						"description": "Correct $E_c$ with the 3 contributions (even if errors in the writing of the contributions). If the candidate has forgotten the contribution of the external pressure, 0 point.",
 						"points": 0.1,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 7,
 						"description": "Correct energy balance during the free flight or use of Newton's second law.",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					},
 					{
-						"index": 8,
 						"description": "Correct numerical value of $H_c$. If the candidate has forgotten the contribution of the external pressure in C.3.5 but $H_c$ is coherent, fullmark.",
 						"points": 0.2,
 						"type": "closed",
-						"parentSubpartId": null
+						"childSubparts": []
 					}
 				]
 			}
