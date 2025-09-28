@@ -14,7 +14,7 @@ export const olympiads = sqliteTable(
 		nameLower: text('name_lower').notNull(),
 		subjectId: integer('subject_id')
 			.notNull()
-			.references(() => subjects.id)
+			.references(() => subjects.id, { onDelete: 'cascade' })
 	},
 	(table) => [unique().on(table.name, table.subjectId)]
 );
@@ -26,7 +26,7 @@ export const years = sqliteTable(
 		date: integer().notNull(),
 		olympiadId: integer('olympiad_id')
 			.notNull()
-			.references(() => olympiads.id)
+			.references(() => olympiads.id, { onDelete: 'cascade' })
 	},
 	(table) => [unique().on(table.date, table.olympiadId)]
 );
@@ -38,7 +38,7 @@ export const grades = sqliteTable(
 		grade: integer().notNull(),
 		yearId: integer('year_id')
 			.notNull()
-			.references(() => years.id)
+			.references(() => years.id, { onDelete: 'cascade' })
 	},
 	(table) => [unique().on(table.grade, table.yearId)]
 );
@@ -52,10 +52,10 @@ export const problems = sqliteTable(
 		maxPoints: real('max_points').notNull(),
 		weightedMaxPoints: real('weighted_max_points').notNull(),
 		parts: text('parts', { mode: 'json' }).$type<Part[]>().notNull(),
-		gradeId: integer('grade_id').references(() => grades.id),
+		gradeId: integer('grade_id').references(() => grades.id, { onDelete: 'cascade' }),
 		yearId: integer('year_id')
 			.notNull()
-			.references(() => years.id)
+			.references(() => years.id, { onDelete: 'cascade' })
 	},
 	(table) => [unique().on(table.number, table.gradeId, table.yearId)]
 );
@@ -100,10 +100,10 @@ export const userScores = sqliteTable(
 		id: integer().primaryKey(),
 		userId: text('user_id')
 			.notNull()
-			.references(() => users.id),
+			.references(() => users.id, { onDelete: 'cascade' }),
 		problemId: integer('problem_id')
 			.notNull()
-			.references(() => problems.id),
+			.references(() => problems.id, { onDelete: 'cascade' }),
 		problemPoints: real('problem_points'),
 		scores: text('scores', { mode: 'json' }).$type<PartPoints[]>().notNull()
 	},

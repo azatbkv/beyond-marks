@@ -1576,7 +1576,7 @@
 					},
 					{
 						"description": "Exact expression of the work (all or nothing). Partial points: if P is considered constant during the expansion, 0 point for C.3.4. but all points for the following items if coherent with the incorrect work expression.",
-						"points": 0.3,
+						"points": 0.2,
 						"type": "closed",
 						"childSubparts": []
 					},
