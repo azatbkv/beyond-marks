@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from '../$types';
-import { and, eq, type InferSelectModel } from 'drizzle-orm';
+import { and, eq, type InferInsertModel, type InferSelectModel } from 'drizzle-orm';
 import {
 	grades,
 	olympiads,
@@ -21,7 +21,6 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 	}
 	let gradeParam = null;
 	let problemParam = null;
-	console.log(params);
 	// @ts-expect-error params type noise
 	const rest = params.rest.split('/');
 	if (rest.length === 1) {
@@ -75,9 +74,9 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 	}
 
 	// @ts-expect-error drizzle type mismatch
-	let scoreFound: { problemPoints: number; scores: PartPoints[] } = await locals.db
+	let scoreFound: InferInsertModel<typeof userScores> = await locals.db
 		// @ts-expect-error drizzle type noise
-		.select({ problemPoints: userScores.problemPoints, scores: userScores.scores })
+		.select({ userId: userScores.userId, problemId: userScores.problemId, problemPoints: userScores.problemPoints, scores: userScores.scores })
 		.from(userScores)
 		.innerJoin(problems, eq(problems.id, userScores.problemId))
 		.innerJoin(users, eq(users.id, userScores.userId))
@@ -100,27 +99,30 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 			scores.push(partPoints);
 		}
 		scoreFound = {
+			userId: locals.user.id,
+			problemId: problemFound.id,
 			problemPoints: 0,
 			scores: scores
 		};
 	}
 
-	const allProblemsConditions = [eq(years.id, problemFound.yearId)];
-
-	if (problemFound.gradeId != null) {
-		allProblemsConditions.push(eq(grades.id, problemFound.gradeId));
-	}
-
-	const allProblems = await locals.db
+	let queryAllProblems = locals.db
 		// @ts-expect-error drizzle type noise
 		.select({
 			number: problems.number,
 			name: problems.name
 		})
 		.from(problems)
-		.innerJoin(grades, eq(problems.gradeId, grades.id))
-		.innerJoin(years, eq(problems.yearId, years.id))
-		.where(and(...allProblemsConditions))
+		.innerJoin(years, eq(problems.yearId, years.id));
+
+	const allProblemsConditions = [eq(years.id, problemFound.yearId)];
+
+	if (problemFound.gradeId != null) {
+		queryAllProblems = queryAllProblems.innerJoin(grades, eq(problems.gradeId, grades.id));
+		allProblemsConditions.push(eq(grades.id, problemFound.gradeId));
+	}
+
+	const allProblems = await queryAllProblems.where(and(...allProblemsConditions))
 		.orderBy(problems.number)
 		.all();
 

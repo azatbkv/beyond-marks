@@ -2,6 +2,7 @@
 	import { marked } from 'marked';
 	import markedKatex from 'marked-katex-extension';
 	import type { PartPoints, Problem } from '$lib/server/db/schema';
+	import { beforeNavigate } from '$app/navigation';
 
 	marked.use(markedKatex({ throwOnError: false }));
 
@@ -10,13 +11,39 @@
 	}: {
 		data: {
 			problem: Problem;
-			userScore: { problemPoints: number; scores: PartPoints[] };
+			userScore: { userId: string, problemId: number, problemPoints: number; scores: PartPoints[] };
 			allProblems: { number: number; name: string }[];
 		};
 	} = $props();
 	let problem: Problem = data.problem;
-	let userScore: { problemPoints: number; scores: PartPoints[] } = $state(data.userScore);
+	let userScore: { userId: string, problemId: number, problemPoints: number; scores: PartPoints[] } = $state(data.userScore);
 	let allProblems: { number: number; name: string }[] = data.allProblems;
+
+	let isSaving = false;
+
+	async function saveScores() {
+		if (isSaving) return;
+		isSaving = true;
+		try { await fetch('/api/save', {
+			method: 'POST',
+			body: JSON.stringify(userScore),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			keepalive: true
+		}) } finally {
+			isSaving = false;
+		}
+	}
+	
+	beforeNavigate(({ willUnload }) => {
+		if (willUnload && !isSaving) {
+			const blob = new Blob([JSON.stringify(userScore)], {type: 'application/json'});
+			navigator.sendBeacon('/api/save', blob);
+		} else if (!isSaving) {
+			saveScores();
+		}
+	});
 
 	function updateClosedSubpart(partIndex: number, subpartIndex: number, maxPoints: number) {
 		const part = userScore.scores[partIndex];
@@ -140,6 +167,7 @@
 <svelte:head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
 </svelte:head>
+<hr />
 {#each allProblems as otherProblem}
 	<ol>
 		{#if otherProblem.number !== problem.number}
@@ -156,10 +184,15 @@
 	</ol>
 {/each}
 
+<hr />
+
 <div class="flex justify-between">
 	<h1>{problem.name}</h1>
 	{truncateNumber(userScore.problemPoints)}/{truncateNumber(problem.maxPoints)}
 </div>
+
+<hr />
+
 {#each problem.parts as part, partIndex}
 	<div class="flex justify-between">
 		<h2>{@html marked.parse(part.number + '. ' + part.description)}</h2>
@@ -260,4 +293,5 @@
 			{/each}
 		</div>
 	{/each}
+	<hr />
 {/each}
