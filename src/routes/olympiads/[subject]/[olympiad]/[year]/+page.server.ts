@@ -3,7 +3,7 @@ import { error, redirect } from '@sveltejs/kit';
 import { grades, olympiads, subjects, years } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 
-export const load: PageServerLoad = async ({ locals, params }) => {
+export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 	if (!locals.user) {
 		throw redirect(302, '/login');
 	}
@@ -27,6 +27,9 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 			)
 		);
 	if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
+	setHeaders({
+    	'Cache-Control': 'public, max-age=3600'
+ 	});
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,

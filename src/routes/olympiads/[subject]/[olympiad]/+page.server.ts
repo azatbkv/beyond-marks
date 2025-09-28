@@ -3,7 +3,7 @@ import { error, redirect } from '@sveltejs/kit';
 import { olympiads, subjects, years } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 
-export const load: PageServerLoad = async ({ locals, params }) => {
+export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 	if (!locals.user) {
 		throw redirect(302, '/login');
 	}
@@ -15,6 +15,9 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
 		.where(and(eq(subjects.nameLower, params.subject), eq(olympiads.nameLower, params.olympiad)));
 	if (!yearList) error(404);
+	setHeaders({
+    	'Cache-Control': 'public, max-age=3600'
+ 	});
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,
