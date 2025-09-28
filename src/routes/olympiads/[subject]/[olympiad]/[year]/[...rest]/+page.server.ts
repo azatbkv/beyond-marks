@@ -2,6 +2,7 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from '../$types';
 import { and, eq, type InferSelectModel } from 'drizzle-orm';
 import {
+	grades,
 	olympiads,
 	problems,
 	subjects,
@@ -18,24 +19,38 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 	if (!locals.user) {
 		throw redirect(302, '/login');
 	}
-	// @ts-expect-error drizzle type mismatch
-	const problemFound: InferSelectModel<typeof problems> = await locals.db
+	let gradeParam = null;
+	let problemParam = null;
+	console.log(params);
+	// @ts-expect-error params type noise
+	const rest = params.rest.split('/');
+	if (rest.length === 1) {
+		problemParam = rest[0];
+	} else if (rest.length === 2) {
+		[gradeParam, problemParam] = rest;
+	} else error(404);
+	let query = locals.db
 		// @ts-expect-error drizzle type noise
 		.select(problems)
 		.from(problems)
 		.innerJoin(years, eq(problems.yearId, years.id))
 		.innerJoin(olympiads, eq(years.olympiadId, olympiads.id))
-		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
-		.where(
-			and(
-				eq(subjects.nameLower, params.subject),
-				eq(olympiads.nameLower, params.olympiad),
-				eq(years.date, parseInt(params.year)),
-				// @ts-expect-error expected params error
-				eq(problems.number, parseInt(params.problem))
-			)
-		)
-		.get();
+		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id));
+		
+	const problemFoundConditions = [
+		eq(subjects.nameLower, params.subject),
+		eq(olympiads.nameLower, params.olympiad),
+		eq(years.date, parseInt(params.year)),
+		eq(problems.number, parseInt(problemParam))
+	];
+	
+	if (gradeParam) {
+		query = query.innerJoin(grades, eq(problems.gradeId, grades.id));
+		problemFoundConditions.push(eq(grades.grade, parseInt(gradeParam)));
+	}
+
+	// @ts-expect-error drizzle type noise
+	const problemFound: InferSelectModel<typeof problems> = await query.where(and(...problemFoundConditions)).get();
 	if (!problemFound) error(404);
 
 	const problem: Problem = {
@@ -90,6 +105,12 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		};
 	}
 
+	const allProblemsConditions = [eq(years.id, problemFound.yearId)];
+
+	if (problemFound.gradeId != null) {
+		allProblemsConditions.push(eq(grades.id, problemFound.gradeId));
+	}
+
 	const allProblems = await locals.db
 		// @ts-expect-error drizzle type noise
 		.select({
@@ -97,8 +118,9 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 			name: problems.name
 		})
 		.from(problems)
+		.innerJoin(grades, eq(problems.gradeId, grades.id))
 		.innerJoin(years, eq(problems.yearId, years.id))
-		.where(eq(years.id, problemFound.yearId))
+		.where(and(...allProblemsConditions))
 		.orderBy(problems.number)
 		.all();
 

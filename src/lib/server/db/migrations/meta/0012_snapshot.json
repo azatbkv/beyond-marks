@@ -1,8 +1,8 @@
 {
 	"version": "6",
 	"dialect": "sqlite",
-	"id": "9b980b47-a7f7-40f3-b191-915d0f44a4e3",
-	"prevId": "16ac023d-0b8e-422f-880a-896a2a0b8776",
+	"id": "d06eebce-b148-4cad-b10b-d7f3290ea277",
+	"prevId": "9b980b47-a7f7-40f3-b191-915d0f44a4e3",
 	"tables": {
 		"accounts": {
 			"name": "accounts",
@@ -116,6 +116,53 @@
 			"uniqueConstraints": {},
 			"checkConstraints": {}
 		},
+		"grades": {
+			"name": "grades",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"grade": {
+					"name": "grade",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"year_id": {
+					"name": "year_id",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				}
+			},
+			"indexes": {
+				"grades_grade_year_id_unique": {
+					"name": "grades_grade_year_id_unique",
+					"columns": ["grade", "year_id"],
+					"isUnique": true
+				}
+			},
+			"foreignKeys": {
+				"grades_year_id_years_id_fk": {
+					"name": "grades_year_id_years_id_fk",
+					"tableFrom": "grades",
+					"tableTo": "years",
+					"columnsFrom": ["year_id"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"checkConstraints": {}
+		},
 		"olympiads": {
 			"name": "olympiads",
 			"columns": {
@@ -215,6 +262,13 @@
 					"notNull": true,
 					"autoincrement": false
 				},
+				"grade_id": {
+					"name": "grade_id",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
 				"year_id": {
 					"name": "year_id",
 					"type": "integer",
@@ -224,13 +278,22 @@
 				}
 			},
 			"indexes": {
-				"problems_number_year_id_unique": {
-					"name": "problems_number_year_id_unique",
-					"columns": ["number", "year_id"],
+				"problems_number_grade_id_year_id_unique": {
+					"name": "problems_number_grade_id_year_id_unique",
+					"columns": ["number", "grade_id", "year_id"],
 					"isUnique": true
 				}
 			},
 			"foreignKeys": {
+				"problems_grade_id_grades_id_fk": {
+					"name": "problems_grade_id_grades_id_fk",
+					"tableFrom": "problems",
+					"tableTo": "grades",
+					"columnsFrom": ["grade_id"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				},
 				"problems_year_id_years_id_fk": {
 					"name": "problems_year_id_years_id_fk",
 					"tableFrom": "problems",

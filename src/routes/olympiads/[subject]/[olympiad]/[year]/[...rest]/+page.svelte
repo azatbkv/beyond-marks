@@ -1,18 +1,22 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import markedKatex from 'marked-katex-extension';
-	import type { PageProps } from '../$types';
 	import type { PartPoints, Problem } from '$lib/server/db/schema';
 
 	marked.use(markedKatex({ throwOnError: false }));
 
-	let { data }: PageProps = $props();
-	// @ts-expect-error props problem child
+	let {
+		data
+	}: {
+		data: {
+			problem: Problem;
+			userScore: { problemPoints: number; scores: PartPoints[] };
+			allProblems: { number: number; name: string }[];
+		};
+	} = $props();
 	let problem: Problem = data.problem;
-	// @ts-expect-error props problem child
 	let userScore: { problemPoints: number; scores: PartPoints[] } = $state(data.userScore);
-	// @ts-expect-error props problem child
-	let allProblems: { number: number, name: string }[] = data.allProblems;
+	let allProblems: { number: number; name: string }[] = data.allProblems;
 
 	function updateClosedSubpart(partIndex: number, subpartIndex: number, maxPoints: number) {
 		const part = userScore.scores[partIndex];
@@ -41,7 +45,7 @@
 		const subpart = part.subparts[subpartIndex];
 		const childSubpart = subpart.childSubparts[childSubpartIndex];
 		const initialPoints = childSubpart.obtainedPoints;
-		if (subpart.obtainedPoints !== 0) return;
+		if (subpart.obtainedPoints !== 0 && maxPoints > 0) return;
 		if (initialPoints === maxPoints) {
 			childSubpart.obtainedPoints = 0;
 		} else {
@@ -91,7 +95,7 @@
 		const childSubpart = subpart.childSubparts[childSubpartIndex];
 		const initialPoints = childSubpart.obtainedPoints;
 		const target = event.target as HTMLInputElement;
-		if (subpart.obtainedPoints !== 0) {
+		if (subpart.obtainedPoints !== 0 && maxPoints > 0) {
 			target.value = initialPoints.toString();
 			return;
 		}
@@ -138,15 +142,17 @@
 </svelte:head>
 {#each allProblems as otherProblem}
 	<ol>
-	{#if otherProblem.number !== problem.number}
-		<li>
-			<a href="./{otherProblem.number}" data-sveltekit-reload>Problem {otherProblem.number}. {otherProblem.name}</a>
-		</li>
-	{:else}
-		<li>
-			<p>Problem {otherProblem.number}. {otherProblem.name}</p>
-		</li>
-	{/if}
+		{#if otherProblem.number !== problem.number}
+			<li>
+				<a href="./{otherProblem.number}" data-sveltekit-reload
+					>Problem {otherProblem.number}. {otherProblem.name}</a
+				>
+			</li>
+		{:else}
+			<li>
+				<p>Problem {otherProblem.number}. {otherProblem.name}</p>
+			</li>
+		{/if}
 	</ol>
 {/each}
 
@@ -215,7 +221,8 @@
 						)}/{truncateNumber(childSubpart.points)}
 						<input
 							type="checkbox"
-							disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 && childSubpart.points > 0}
+							disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 &&
+								childSubpart.points > 0}
 							checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
 								childSubpartIndex
 							].obtainedPoints === childSubpart.points}
@@ -235,7 +242,8 @@
 					)}/{truncateNumber(childSubpart.points)}
 					<input
 						type="number"
-						disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 && childSubpart.points > 0}
+						disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 &&
+							childSubpart.points > 0}
 						value={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
 							childSubpartIndex
 						].obtainedPoints}

@@ -17,6 +17,10 @@
 		<input id="year" type="number" name="year" required />
 	</div>
 	<div>
+		<label for="grade">Grade</label>
+		<input id="grade" type="number" name="grade" />
+	</div>
+	<div>
 		<label for="file">JSON file</label>
 		<input id="file" type="file" name="file" required />
 	</div>

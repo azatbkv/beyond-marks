@@ -31,6 +31,18 @@ export const years = sqliteTable(
 	(table) => [unique().on(table.date, table.olympiadId)]
 );
 
+export const grades = sqliteTable(
+	'grades',
+	{
+		id: integer().primaryKey(),
+		grade: integer().notNull(),
+		yearId: integer('year_id')
+			.notNull()
+			.references(() => years.id)
+	},
+	(table) => [unique().on(table.grade, table.yearId)]
+);
+
 export const problems = sqliteTable(
 	'problems',
 	{
@@ -40,11 +52,12 @@ export const problems = sqliteTable(
 		maxPoints: real('max_points').notNull(),
 		weightedMaxPoints: real('weighted_max_points').notNull(),
 		parts: text('parts', { mode: 'json' }).$type<Part[]>().notNull(),
+		gradeId: integer('grade_id').references(() => grades.id),
 		yearId: integer('year_id')
 			.notNull()
 			.references(() => years.id)
 	},
-	(table) => [unique().on(table.number, table.yearId)]
+	(table) => [unique().on(table.number, table.gradeId, table.yearId)]
 );
 
 export type Subpart = {

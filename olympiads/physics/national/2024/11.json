@@ -1,0 +1,912 @@
+[
+  {
+    "number": 1,
+    "name": "«Солянка»",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "1.1",
+        "description": "Шар первоначально покоится на столе таким образом, что его центральная точка С располагается непосредственно над краем стола. После этого шар начинает падать без начальной скорости, вращаясь вокруг края стола. Требуется определить коэффициент трения μ, если шар начинает скользить после того, как он повернется на угол α, равный 30 градусов. (Момент инерции шара относительно оси, проходящей через его центр, равен $\\frac{2}{5}mR²$ ).",
+        "solution": "Выбираем в качестве оси вращения точку соприкосновения шарика с краем стола, и пишем правило моментов:<br> $$m g \\sin{\\alpha} \\cdot R = I \\cdot \\varepsilon$$ <br>Где момент инерции шарика по теореме Штейнера равно:<br> $$I = \\frac{2}{5}mR^2 + mR^2$$ <br>а угловое ускорение:<br> $$ \\varepsilon = \\frac{a}{R} $$ <br>отсюда следует что ускорение:<br> $$ a = \\frac{5}{7}g\\sin{\\alpha} $$ <br>Запишем второй закон Ньютона для шарика:<br> $$ mg\\sin{\\alpha} - F_{тр} = ma $$ <br>Где сила трения:<br> $$ F_{тр} = \\mu N $$ <br>А сила нормального давления:<br> $$ N = mg\\cos{\\alpha} - m\\frac{v^2}{R} $$ <br>Запишем закон сохранения энергии:<br> $$ mgR(1 - \\cos{\\alpha}) = \\frac{I\\omega^2}{2} = \\frac{I(v/R)^2}{2} $$ <br>Из этого следует что коэффициент трения:<br> $$ \\mu = \\frac{2\\sin{\\alpha}}{17\\cos{\\alpha} - 10} $$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Правило моментов: $m g \\sin{\\alpha} \\cdot R = I \\cdot \\varepsilon$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Момент инерции по теореме Штейнера: $I = \\frac{2}{5}mR^2 + mR^2$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Угловое ускорение: $\\varepsilon = a/R$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Линейное ускорение: $a = \\frac{5}{7}g\\sin{\\alpha}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Второй закон Ньютона: $mg\\sin{\\alpha} - F_{тр} = ma$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Сила трения: $F_{тр} = \\mu N$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Сила нормального давления: $N = mg\\cos{\\alpha} - m\\frac{v^2}{R}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Закон сохранения энергии: $mgR(1 - \\cos{\\alpha}) = \\frac{I\\omega^2}{2} = \\frac{I(v/R)^2}{2}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Коэффициент трения: $\\mu = \\frac{2\\sin{\\alpha}}{17\\cos{\\alpha} - 10}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.2",
+        "description": "В теплоизолированном сосуде находится азот при температуре T = 1200 К. В боковой поверхности сосуда имеется малое отверстие, из которого газ вытекает. Определите скорость вытекания газа из сосуда в вакуум. Скоростью движения газового потока внутри сосуда можно пренебречь. Размеры отверстия достаточно велики по сравнению с длиной свободного пробега молекул азота.",
+        "solution": "Полное изменение энергии газа – это результат работы внешних сил, из закона сохранения энергии следует:<br> $$ \\Delta U + \\Delta E_k = \\Delta A' $$ <br> $$ \\Delta A' = P_1 \\Delta V_1 - P_2 \\Delta V_2 $$ <br> $$ P_1 \\Delta V_1 = \\nu R T_1 $$ <br> $$ P_2 \\Delta V_2 = \\nu R T_2 $$ <br> $$ \\Delta A' = \\nu R (T_1 - T_2) $$ <br>Изменение внутренней энергии<br> $$ \\Delta U = \\nu C_v(T_2 - T_1) $$ <br>Изменение кинетической энергии<br> $$ \\Delta E_k = \\frac{\\nu M(v_2^2 - v_1^2)}{2} $$ <br>Подставляя в уравнение, получим<br> $$ \\nu C_v(T_2 - T_1) + \\frac{\\nu M(v_2^2 - v_1^2)}{2} + \\nu R(T_2 - T_1) = 0 $$ <br>Или<br> $$ (C_v + R)(T_2 - T_1) + \\frac{M(v_2^2 - v_1^2)}{2} = 0 $$ <br>Учитывая<br> $$ C_v + R = C_p $$ <br> $$ C_p T + \\frac{Mv^2}{2} = \\text{const} $$ <br> $$ C_p T_1 + \\frac{Mv_1^2}{2} = C_p T_2 + \\frac{Mv_2^2}{2} $$ <br>Учитывая, что скоростью $v_1^2$ можно пренебречь. А также газ вытекает в вакуум, поэтому $T_2 = 0$.<br> $$ C_p = \\frac{\\gamma R}{\\gamma - 1} $$ <br> $$ v = \\sqrt{\\frac{2\\gamma RT}{M(\\gamma - 1)}} \\approx 1.6 \\, \\text{км}/\\text{с} $$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "Закон сохранения энергии: $\\Delta U + \\Delta E_k = \\Delta A'$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Работа газа: $\\Delta A' = P_1 \\Delta V_1 - P_2 \\Delta V_2$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение состояния для втекающего газа: $P_1 \\Delta V_1 = \\nu R T_1$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение состояния для вытекающего газа: $P_2 \\Delta V_2 = \\nu R T_2$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Итоговая работа газа: $\\Delta A' = \\nu R (T_1 - T_2)$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Изменение внутренней энергии: $\\Delta U = \\nu C_v(T_2 - T_1)$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Изменение кинетической энергии: $\\Delta E_k = \\frac{\\nu M(v_2^2 - v_1^2)}{2}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Полное уравнение сохранения энергии: $(C_v + R)(T_2 - T_1) + \\frac{M(v_2^2 - v_1^2)}{2} = 0$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Соотношение Майера: $C_v + R = C_p$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Закон сохранения энтальпии: $C_p T + \\frac{Mv^2}{2} = \\text{const}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Применение закона сохранения: $C_p T_1 + \\frac{Mv_1^2}{2} = C_p T_2 + \\frac{Mv_2^2}{2}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Теплоемкость для идеального газа: $C_p = \\frac{\\gamma R}{\\gamma - 1}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула для скорости: $v = \\sqrt{\\frac{2\\gamma RT}{M(\\gamma - 1)}}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный результат: $v \\approx 1.6 \\, \\text{км}/\\text{с}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.3",
+        "description": "Общеизвестным резонатором Гельмгольца является обычная пластиковая бутылка, которая в независимости от набегающего потока воздуха испускает волны резонансной частоты. Для описания колебаний воздуха в бутылке можно использовать модель пружины с телом, в которой воздух в объеме бутылки играет роль колеблющейся массы, а разность давлений воздуха в горлышке играет роль пружины. Считайте бутылку шаром радиуса R, а горлышко – цилиндром радиуса r и длины l. Определите частоту ƒ резонансных колебаний воздуха и выразите ее через R,l,r и скорость звука с. Скорость звука в газовой среде может быть рассчитана по формуле $c = \\sqrt{\\frac{dP}{d\\rho}}$. Считайте все процессы адиабатическими.",
+        "solution": "Скажем что начальное давление $P$. Тогда для малых изменений можно записать<br> $$ PV^{\\gamma} = (P + dP)(V - dV)^{\\gamma} $$ <br> $$ \\frac{\\Delta P}{P} = -\\gamma \\frac{\\Delta V}{V} $$ <br>Используя формулу для маленького изменения объема<br> $$ \\Delta V = S \\Delta x $$ <br>Получим уравнение движения для газа внутри горлышка<br> $$ m\\frac{d^2 x}{dt^2} = dP S $$ <br> $$ \\rho l S \\frac{d^2 x}{dt^2} = -\\gamma P \\frac{\\Delta V}{V} S = -\\gamma P \\frac{x S^2}{V} $$ <br> $$ \\rho l \\frac{d^2 x}{dt^2} + \\gamma P \\frac{xS}{V} = 0 $$ <br> $$ \\frac{d^2 x}{dt^2} + \\frac{\\gamma P S}{\\rho l V} x = 0 $$ <br> $$ \\omega = \\sqrt{\\frac{\\gamma P S}{\\rho l V}} $$ <br> $$ f = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P S}{\\rho l V}} $$ <br>Используя выражение для скорости звука получаем<br> $$ c = \\sqrt{\\frac{dP}{d\\rho}} = \\sqrt{\\gamma \\frac{P}{\\rho}} $$ <br> $$ f = \\frac{c}{2\\pi} \\sqrt{\\frac{S}{lV}} $$ <br> $$ f = \\frac{c}{2\\pi} \\sqrt{\\frac{\\pi r^2}{l \\frac{4}{3} \\pi R^3}} = \\frac{c}{2\\pi} \\sqrt{\\frac{3r^2}{4lR^3}} $$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Уравнение адиабаты для малых изменений: $\\frac{\\Delta P}{P} = -\\gamma \\frac{\\Delta V}{V}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Изменение объема: $\\Delta V = S \\Delta x$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Второй закон Ньютона для столба воздуха: $m \\frac{d^2 x}{dt^2} = dP S$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение гармонических колебаний: $\\rho l \\frac{d^2 x}{dt^2} + \\gamma P \\frac{xS}{V} = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для частоты колебаний: $f = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P S}{\\rho l V}}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Скорость звука: $c = \\sqrt{\\gamma \\frac{P}{\\rho}}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула для частоты: $f = \\frac{c}{2\\pi} \\sqrt{\\frac{3r^2}{4lR^3}}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Радиотерапия",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "2.1",
+        "description": "Если угол между осью х и направлением от частицы до электрона равен φ, то чему равна сила F, действующая на электрон?",
+        "solution": "Сила, действующая на электрон, определяется законом Кулона:<br> $$ F = \\frac{q e \\sin^2{\\phi}}{4\\pi \\varepsilon_0 b^2} $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражение для силы $F$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.2",
+        "description": "Найдите приращение импульса dр электрона за время dt.",
+        "solution": "Приращение импульса равно импульсу силы:<br> $$ dp = F dt $$",
+        "maxPoints": 0.25,
+        "subparts": [
+          {
+            "description": "Выражение для приращения импульса $dp$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.3",
+        "description": "Найдите полное приращение импульса Др за всё время движения частицы.",
+        "solution": "Заметьте, что из симметрии, полное приращение импульса электрона будет направлено перпендикулярно оси $x$.<br> $$ \\Delta p = \\Delta p_y = \\int_{-\\infty}^{\\infty} F \\sin{\\phi} dt = \\int_{-\\infty}^{\\infty} F \\sin{\\phi} \\frac{dx}{v} = \\int_0^{\\pi} \\frac{qe \\sin{\\phi}}{4\\pi \\varepsilon_0 b v} d\\phi = \\frac{qe}{2\\pi \\varepsilon_0 b v} $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Полное приращение импульса $\\Delta p$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.4",
+        "description": "Найдите приращение энергии электрона Де.",
+        "solution": "Приращение энергии электрона равно его кинетической энергии:<br> $$ \\Delta e = \\frac{\\Delta p^2}{2m_e} = \\frac{q^2 e^2}{8\\pi^2 \\varepsilon_0^2 b^2 v^2 m_e} $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражение для приращения энергии $\\Delta e$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.5",
+        "description": "С чисто механической точки зрения существует максимально возможное значение переданного электрону импульса Дртах при лобовом столкновении с очень тяжелой частицей. Чему оно равно?",
+        "solution": "Максимально возможный переданный импульс при упругом столкновении:<br> $$ \\Delta p_{max} = 2m_e v $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражение для максимального импульса $\\Delta p_{max}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.6",
+        "description": "Принимая за максимальное возможное значение переданного импульса выражение из пункта 5, найдите соответствующее ему минимальное значение bmin.",
+        "solution": "Из выражения для $\\Delta p$ находим $b_{min}$:<br> $$ \\Delta p_{max} = \\frac{qe}{2\\pi \\varepsilon_0 b_{min} v} \\Rightarrow b_{min} = \\frac{qe}{2\\pi \\varepsilon_0 \\Delta p_{max} v} = \\frac{qe}{4\\pi \\varepsilon_0 m_e v^2} $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражение для минимального прицельного параметра $b_{min}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.7",
+        "description": "Из-за квантовой природы атомов, приращение энергии электрона Де должно быть больше порогового значения І. Найдите максимальное значение bmax.",
+        "solution": "Из выражения для $\\Delta e$ находим $b_{max}$:<br> $$ \\Delta e = \\frac{q^2 e^2}{8\\pi^2 \\varepsilon_0^2 b^2 v^2 m_e} \\ge I \\Rightarrow b_{max} = \\frac{qe}{4\\pi \\varepsilon_0 v \\sqrt{2 m_e I}} $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражение для максимального прицельного параметра $b_{max}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.8",
+        "description": "Если плотность электронов равна п, найдите количество электронов dN в слое (b, b + db) толщиной ∆х и энергию dE, потерянную заряженной частицей из-за электронов в этом слое.",
+        "solution": "Количество электронов $dN$ и потерянная энергия $dE$:<br> $$ dN = n 2\\pi b \\Delta x db, \\quad dE = dN \\Delta e = \\frac{q^2 e^2 n \\Delta x db}{4\\pi \\varepsilon_0^2 b v^2 m_e} $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выражения для $dN$ и $dE$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.9",
+        "description": "Найдите полную потерю энергию частицы ДЕ при прохождении слоя вещества толщиной Дх. Выразите ответ через т, q, n, ∆x, I и Е, где Е – энергия частицы.",
+        "solution": "Интегрируем $dE$ от $b_{min}$ до $b_{max}$:<br> $$ \\Delta E = \\int_{b_{min}}^{b_{max}} \\frac{q^2 e^2 n \\Delta x}{4\\pi \\varepsilon_0^2 b v^2 m_e} db = \\frac{q^2 e^2 n \\Delta x}{4\\pi \\varepsilon_0^2 v^2 m_e} \\ln{\\frac{b_{max}}{b_{min}}} = \\frac{q^2 e^2 n \\Delta x}{4\\pi \\varepsilon_0^2 v^2 m_e} \\ln{\\frac{2m_e v^2}{I}} = \\frac{q^2 e^2 n \\Delta x}{16\\pi \\varepsilon_0^2 E m_e} \\ln{\\frac{4m_e E}{mI}} $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Выражение для полной потери энергии $\\Delta E$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.10",
+        "description": "В пункте 9 вы должны были получить выражение в виде ДЕ ∝ EP ln g(E). Так как член ln g(E) меняется намного медленнее, чем Ер, мы можем считать его постоянным и равным ln g(E0), где Ео – начальная энергия частицы. Найдите максимальную глубину проникновения частицы R. Выразите ответ через m, q, n, I и Ео.",
+        "solution": "Интегрируем выражение для потери энергии, считая логарифм постоянным:<br> $$ \\Delta x = \\frac{16\\pi \\varepsilon_0^2 m_e}{q^2 e^2 n \\ln{\\frac{4m_e E_0}{mI}}} \\int_{E_0}^0 E dE \\Rightarrow R = \\frac{8\\pi \\varepsilon_0^2 m_e E_0^2}{q^2 e^2 n \\ln{\\frac{4m_e E_0}{mI}}} $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Выражение для максимальной глубины проникновения $R$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.11",
+        "description": "Одним из преимуществ протонной терапии является возможность сконцентрировать энерговыделение на опухоли. Объясните это явление из полученных вами формул.",
+        "solution": "Так как энерговыделение $\\Delta E / \\Delta x$ обратно пропорционально энергии частицы $E$, и при приближении к максимальной глубине проникновения энергия стремится к нулю, то на этой глубине энерговыделение стремится к бесконечности. Это явление называется пиком Брэгга.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Объяснение концентрации энерговыделения (пик Брэгга)",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.12",
+        "description": "Тело человека в основном состоит из воды. Найдите п для воды.",
+        "solution": "Концентрация электронов в воде:<br> $$ n = \\frac{(2Z(H) + Z(O)) \\rho_{H_2O} N_A}{2M(H) + M(O)} = 3.3 \\times 10^{29} \\, \\text{м}^{-3} $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Выражение и численный расчет для концентрации электронов $n$ в воде",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.13",
+        "description": "Значение І для атома можно эмпирически найти как I = 13,5Z эВ, где Z – порядковый номер атома. Найдите среднее значение 1 для электрона молекулы воды.",
+        "solution": "Среднее значение $I$ для молекулы воды:<br> $$ I = \\frac{2I(H)Z(H) + I(O)Z(O)}{2Z(H) + Z(O)} = 89.1 \\, \\text{эВ} $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Выражение и численный расчет для среднего значения $I$ в воде",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.14",
+        "description": "Найдите глубину проникновения Rр протона с энергией 100 МэВ в воду.",
+        "solution": "Подставляя значения в формулу для $R$ из пункта 10, получаем $R_p = 16.2 \\, \\text{см}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Численный расчет глубины проникновения $R_p$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.15",
+        "description": "Пусть опухоль находится на глубине 4 см под кожей. Оцените необходимую энергию протона для эффективного использования в терапии.",
+        "solution": "Так как $R \\propto E_0^2$, то для глубины 4 см необходима энергия $E_0 \\approx 50 \\, \\text{МэВ}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Оценка необходимой энергии протона $E_0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Электронная эмиссия",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "3.1",
+        "description": "Работа выхода электронов из цинкового катода, то есть энергия, необходимая для того, чтобы электроны покинули поверхность металла, равна А = 3.74 эВ. При каких длинах волн излучения фотоэффект невозможен?",
+        "solution": "Каждый квант фотона обладает энергией $\\varepsilon = h\\nu$, где частота электромагнитного излучения определяется формулой $\\nu = c/\\lambda$.<br>Энергия, которую приобрёл электрон при поглощении фотона, должна превысить работу выхода для преодоления потенциального барьера: $\\varepsilon > A$.<br>Собирая вместе, получаем, что длина волны должна не превышать значение<br> $$ \\lambda < \\lambda_0 = \\frac{hc}{A} = 332 \\, \\text{нм} $$ <br>Фотоэффект невозможен при $\\lambda > 332 \\, \\text{нм}$.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Формула энергии фотона: $\\varepsilon = h\\nu$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь частоты и длины волны: $\\nu = c/\\lambda$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие фотоэффекта: $\\varepsilon > A$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для красной границы: $\\lambda_0 = hc/A$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $\\lambda_0 = 332 \\, \\text{нм}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.2",
+        "description": "Рассчитайте мощность W ультрафиолетового излучения в предположении, что все фотоны успешно выбивают фотоэлектроны.",
+        "solution": "При напряжениях $U > U_1 = 2 \\, \\text{В}$ фототок насыщается. Это говорит о том, что абсолютно все вырванные из катода электроны смогут достичь анода. Для соответствующего тока насыщения $I_0 = 4 \\, \\text{мкА}$ получаем, что в единицу времени вырывается<br> $$ \\frac{\\Delta N}{\\Delta t} = \\frac{I_0}{e} $$ <br>электронов. Поскольку каждому вырванному из катода электрону соответствует один выбивающий его фотон, получаем для мощности излучения<br> $$ W = \\frac{\\Delta N}{\\Delta t} \\varepsilon. $$ <br>Объединяя, вычисляем:<br> $$ W = 23 \\, \\text{мкВт}. $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формула для числа электронов в секунду: $\\frac{\\Delta N}{\\Delta t} = \\frac{I_0}{e}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для мощности: $W = \\frac{\\Delta N}{\\Delta t} \\varepsilon$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $W = 23 \\, \\text{мкВт}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.3",
+        "description": "Выясните, чему равно Vo.",
+        "solution": "Пусть кинетическая энергия электрона равна $K$. Согласно уравнению Эйнштейна, $\\varepsilon = A + K$.<br>Электрон прекращает движение к аноду, когда его полная энергия при прохождении через напряжение $V_0$ обнуляется, то есть $K + eV_0 = 0$.<br>Собирая вместе, и подставляя в уравнение Эйнштейна, получаем<br> $$ V_0 = \\frac{hc/\\lambda - A}{-e} = -2 \\, \\text{В}. $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Уравнение Эйнштейна: $\\varepsilon = A + K$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие остановки: $K + eV_0 = 0$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для $V_0$: $V_0 = \\frac{hc/\\lambda - A}{-e}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $V_0 = -2 \\, \\text{В}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.4",
+        "description": "Какую максимальную скорость vmax могут приобрести электроны в данном опыте?",
+        "solution": "Кинетическая энергия электронов определяется классическим выражением $K_{max} = \\frac{mv_{max}^2}{2}$.<br>Собирая с результатами предыдущего пункта, вычисляем<br> $$ v_{max} = \\sqrt{\\frac{2e|V_0|}{m}} = 838.7 \\, \\text{км/с}. $$",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Формула для кинетической энергии: $K_{max} = \\frac{mv_{max}^2}{2}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для $v_{max}$: $v_{max} = \\sqrt{\\frac{2e|V_0|}{m}}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $v_{max} = 838.7 \\, \\text{км/с}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.5",
+        "description": "Рассчитайте относительный размах ΔIR/IR тока на резисторе при данных колебаниях.",
+        "solution": "Рассмотрим установившееся состояние системы. Сразу после смены полярности ЭДС, вакуумный диод изолирует конденсатор с резистором от генератора напряжения, и происходит разрядка на резисторе. Обратим внимание на то, что $RC/T = 100 \\gg 1$. Это говорит о том, что время релаксации конденсатора значительно больше периода колебаний напряжения. Следовательно, периоды разрядки конденсатора на резисторе сопровождаются очень малыми изменения заряда на конденсаторе, а значит $\\Delta I_R \\ll I_R$.<br>Амплитуду $\\Delta I_R$ можно найти из соотношения $\\frac{\\Delta I_R}{I_R} = \\frac{\\Delta U_C}{U_C}$.<br>Напряжение на конденсаторе равно напряжению на резисторе $U_C = I_R R$. Изменение напряжения $\\Delta U_C = \\frac{\\Delta q}{C}$.<br>Учитывая малость изменения заряда, количество утёкшего заряда за время $T$ равно $\\frac{\\Delta q}{T} = I_R$.<br>Подстановка приводит к ответу<br> $$ \\frac{\\Delta I_R}{I_R} = \\frac{T}{CR} = 10^{-2}. $$",
+        "maxPoints": 1.2,
+        "subparts": [
+          {
+            "description": "Обоснование: $\\Delta I_R \\ll I_R$ (например, через $RC/T \\gg 1$ )",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула связи относительных изменений: $\\frac{\\Delta I_R}{I_R} = \\frac{\\Delta U_C}{U_C}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула напряжения на конденсаторе: $U_C = I_R R$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула изменения напряжения: $\\Delta U_C = \\Delta q / C$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула изменения заряда: $\\Delta q / T = I_R$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула: $\\frac{\\Delta I_R}{I_R} = \\frac{T}{CR}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $\\frac{\\Delta I_R}{I_R} = 10^{-2}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.6",
+        "description": "Определите среднюю силу тока IR, идущей через резистор.",
+        "solution": "В течение времени $\\tau$, конденсатор восполняет потерянный заряд $\\Delta q$. Второе правило Кирхгофа для цепи: $U_0 = U(I_D) + I_R R$, где сила тока на диоде $I_D = I_R + I_C$. Ток заряда конденсатора $I_C = \\frac{\\Delta q}{\\tau}$.<br>Используя вольтамперную характеристику вакуумного диода $I=AU^{3/2}$, получаем уравнение относительно $I_R$ в неявном виде:<br> $$ U_0 = \\frac{1}{A^{2/3}}\\left(I_R(1+\\frac{T}{\\tau})\\right)^{2/3} + I_R R. $$ <br>Численное решение дает ответ:<br> $$ I_R = 0.296 \\frac{U_0}{R} = 6.5 \\, \\text{мА}. $$",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Второе правило Кирхгофа: $U_0 = U(I_D) + I_R R$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ток через диод: $I_D = I_R + I_C$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ток заряда конденсатора: $I_C = \\Delta q / \\tau$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Неявное уравнение для $I_R$: $U_0 = \\frac{1}{A^{2/3}}\\left(I_R(1+\\frac{T}{\\tau})\\right)^{2/3} + I_R R$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $I_R = 6.5 \\, \\text{мА}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.7",
+        "description": "Рассмотрим движение электронов под внешним напряжением V. Найдите потенциальную энергию W(z) электрона на расстоянии z > zo от катода как функцию от V, L, и zo.",
+        "solution": "Внешнее электрическое поле $E = V/L$. Сила, действующая на электрон со стороны поля, $F = eE$. Работа, совершаемая этой силой, $W_{field} = Fz = \\frac{eVz}{L}$.<br>На расстоянии $z$ от катода на электрон действует его изображение с силой притяжения $F_{im}(z) = -\\frac{ke^2}{(2z)^2}$ (где $k=1/(4\\pi\\varepsilon_0)$ ).<br>Работа, совершаемая силой изображения от $z_0$ до $z$: $W_{im} = \\int_{z_0}^z F_{im}(z)dz = \\frac{ke^2}{4z} - \\frac{ke^2}{4z_0}$.<br>Работа на участке от $0$ до $z_0$ равна $W_0 = F_0 z_0 = -\\frac{ke^2}{4z_0}$.<br>Просуммировав, получаем полную потенциальную энергию:<br> $$ W(z) = W_{field} + W_0 + W_{im} = \\frac{eVz}{L} - \\frac{ke^2}{4z} - \\frac{ke^2}{2z_0}. $$",
+        "maxPoints": 1.2,
+        "subparts": [
+          {
+            "description": "Поле $E = V/L$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Сила $F = eE$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Работа поля $W = Fz$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Сила изображения $F_{im}(z) = -ke^2/(2z)^2$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Сила двойного слоя: $F_0 = -\\frac{ke^2}{(2z_0)^2}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Работа силы изображения $W_0 = -ke^2/(4z_0)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Интеграл для работы силы изображения $\\int F_{im}(z)dz$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Результат интегрирования $W_{im} = ke^2/(4z) - ke^2/(4z_0)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Полная работа $W(z) = W + W_0 + W_{im}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула для $W(z)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.8",
+        "description": "Найдите и рассчитайте минимальное напряжение Vmin, при котором электроны смогут преодолеть данный потенциальный барьер, вследствие чего по электровакуумному диоду начнёт протекать ток.",
+        "solution": "Найдём максимум потенциальной энергии $W(z)$ через приравнивание нулю его производной: $\\frac{dW(z)}{dz}(z=z_1) = 0$.<br>Отсюда находим $z_1 = \\sqrt{\\frac{keL}{4V}}$.<br>Электроны смогут преодолеть барьер, если $z_1 \\le L$.<br>Откуда можем найти минимально требуемое напряжение: $V_{min} = \\frac{e}{16\\pi\\varepsilon_0 L} = 3.6 \\cdot 10^{-8} \\, \\text{В}$.<br>Это решение аналогично тому, что, учитывая, что должно выполниться условие $|F| \\ge |F_{im}|$.",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Условие экстремума: $\\frac{dW(z)}{dz}(z=z_1) = 0$ или $|F| \\ge |F_{im}|$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Координата барьера: $z_1 = \\sqrt{\\frac{keL}{4V}}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие преодоления барьера: $z_1 \\le L$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для $V_{min}$: $V_{min} = \\frac{e}{16\\pi\\varepsilon_0 L}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $V_{min} = 3.6 \\cdot 10^{-8} \\, \\text{В}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.9",
+        "description": "Рассмотрим малый прирост координаты ∆z в электронном облаке. Укажите, на какую соответствующую величину ДЕ = E(z + ∆z) – E(z) изменится электрическое поле в зависимости от концентрации n(z) электронов.",
+        "solution": "Изменение электрического поля с высотой обусловлено наличием пространственных зарядов; это можно описать теоремой Гаусса. Поток электрического поля для тонкого диска площадью $S$ и толщиной $\\Delta z$ равен $\\Delta \\Phi = E(z + \\Delta z)S - E(z)S$.<br>С другой же стороны, согласно теореме Гаусса, этот поток пропорционален заключённому внутри диска заряду: $\\Delta \\Phi = \\frac{\\Delta q}{\\varepsilon_0}$, который равен $\\Delta q = -neS\\Delta z$.<br>Объединяя, получаем $\\frac{\\Delta E(z)}{\\Delta z} = -\\frac{ne}{\\varepsilon_0}$.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Поток через диск: $\\Delta \\Phi = E(z + \\Delta z)S - E(z)S$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Теорема Гаусса: $\\Delta \\Phi = \\frac{\\Delta q}{\\varepsilon_0}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Заряд в диске: $\\Delta q = -neS\\Delta z$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Потерян минус",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Конечное соотношение: $\\frac{\\Delta E(z)}{\\Delta z} = -\\frac{ne}{\\varepsilon_0}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.10",
+        "description": "Найдите зависимость скорости v(φ) испущенного катодом электрона в зависимости от потенциала φ(z). Начальная скорость электронов у поверхности катода равна нулю.",
+        "solution": "Для данного потенциала $\\phi(z)$ электрону соответствует определённая кинетическая энергия: $\\frac{mv^2(\\phi)}{2} = e\\phi$.<br>Отсюда получаем $v(\\phi) = \\sqrt{\\frac{2e\\phi}{m}}$.",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Закон сохранения энергии: $\\frac{mv^2(\\phi)}{2} = e\\phi$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для скорости: $v(\\phi) = \\sqrt{\\frac{2e\\phi}{m}}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.11",
+        "description": "Найдите распределение концентрации электронов n(φ) в зависимости от плотности тока j и её потенциала φ(z).",
+        "solution": "Плотность тока $j$ равен количеству электронов, которые проходят в единицу площади на высоте $z$: $j = \\frac{\\Delta q}{S \\Delta t}$.<br>Записывая, что $\\Delta t = \\frac{\\Delta z}{v}$ и $\\Delta q = neS\\Delta z$, получаем $j=nev$.<br>И окончательно, с использованием $v(\\phi)$, выводим ответ $n(\\phi) = \\frac{j}{e}\\sqrt{\\frac{m}{2e\\phi}}$.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Определение плотности тока: $j = \\frac{\\Delta q}{S \\Delta t}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Время пролета: $\\Delta t = \\Delta z / v$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула плотности тока: $j=nev$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула для концентрации: $n(\\phi) = \\frac{j}{e}\\sqrt{\\frac{m}{2e\\phi}}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.12",
+        "description": "Известно, что распределение потенциала в пространстве подчиняется степенному закону $\\phi(z) = V \\cdot (\\frac{z}{L})^{\\alpha}$. Используя результаты предыдущих пунктов, найдите значение α.",
+        "solution": "Применяя определение потенциала $E(z) = -\\frac{d\\phi}{dz}$, используя дифференциальное приближение из 3.9 и подставляя его с результатом 3.11 в 3.9, получаем дифференциальное уравнение второго порядка: $\\frac{d^2\\phi}{dz^2} = \\frac{j}{\\varepsilon_0}\\sqrt{\\frac{m}{2e\\phi}}$.<br>При подстановке зависимости $\\phi(z)$ получаем $\\alpha(\\alpha - 1)\\frac{V}{L^{\\alpha}}z^{\\alpha-2} = \\frac{j}{\\varepsilon_0}\\sqrt{\\frac{m}{2eV}}L^{\\alpha/2}z^{-\\alpha/2}$.<br>Данное уравнение должно действовать во всём диапазоне высот $z$, а значит значение коэффициента $\\alpha = 4/3$ позволит избавиться от $z$ в уравнении.",
+        "maxPoints": 1.2,
+        "subparts": [
+          {
+            "description": "Связь поля и потенциала: $E(z) = -d\\phi/dz$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Дифференциальное уравнение: $\\frac{d^2\\phi}{dz^2} = \\frac{j}{\\varepsilon_0}\\sqrt{\\frac{m}{2e\\phi}}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение после подстановки $\\phi(z)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Числовой ответ: $\\alpha=4/3$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.13",
+        "description": "Из 3.12 следует, что вольтамперная характеристика вакуумного диода подчиняется закону $j = CV^{\\beta}$. Определите и численно рассчитайте значения С и β.",
+        "solution": "Преобразуя уравнение из 3.12 относительно $j$, получаем уравнение, известное как закон степени трёх вторых Чайлда–Ленгмюра-Богуславского: $j = \\frac{4\\varepsilon_0}{9L^2}\\sqrt{\\frac{2e}{m}}V^{3/2}$.<br>Итак, получаем:<br> $$ C = \\frac{4\\varepsilon_0}{9L^2}\\sqrt{\\frac{2e}{m}} = 2.33 \\cdot 10^{-2} \\, \\text{А/(В}^{3/2} \\cdot \\text{м}^2\\text{)} $$ <br> $$ \\beta = 3/2 $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Вывод формулы для C: $C = \\frac{4\\varepsilon_0}{9L^2}\\sqrt{\\frac{2e}{m}}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ для C: $C = 2.33 \\cdot 10^{-2} \\, \\text{А/(В}^{3/2} \\cdot \\text{м}^2\\text{)}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Неверно указана размерность",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Численный ответ для $\\beta$: $\\beta=3/2$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]

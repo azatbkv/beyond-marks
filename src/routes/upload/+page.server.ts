@@ -1,5 +1,5 @@
 import { env } from '$env/dynamic/private';
-import { subjects, olympiads, years, problems, type Problem } from '$lib/server/db/schema';
+import { subjects, olympiads, years, problems, type Problem, grades } from '$lib/server/db/schema';
 import { error, redirect, type Actions } from '@sveltejs/kit';
 import { and, eq, type InferInsertModel } from 'drizzle-orm';
 import type { PageServerLoad } from '../$types';
@@ -33,6 +33,13 @@ export const actions: Actions = {
 		const yearRaw = formData.get('year');
 		const yearDate = typeof yearRaw === 'string' ? parseInt(yearRaw, 10) : NaN;
 		if (!Number.isFinite(yearDate)) return { error: 'bad year' };
+
+		const gradeRaw = formData.get('grade');
+		let gradeNumber = null;
+		if (gradeRaw) {
+			gradeNumber = typeof gradeRaw === 'string' ? parseInt(gradeRaw, 10) : NaN;
+			if (!Number.isFinite(gradeNumber)) return { error: 'bad grade' };
+		}
 
 		const file = formData.get('file');
 		if (!(file instanceof File)) {
@@ -93,6 +100,23 @@ export const actions: Actions = {
 					// @ts-expect-error drizzle type noise
 					.returning({ id: years.id })
 					.get();
+			let grade = null;
+			if (gradeNumber) {
+				grade = await locals.db
+					// @ts-expect-error drizzle type noise
+					.select({ id: grades.id })
+					.from(grades)
+					.where(and(eq(grades.grade, gradeNumber), eq(grades.yearId, year.id)))
+					.get();
+				if (!grade)
+					grade = await locals.db
+						.insert(grades)
+						.values({ grade: gradeNumber, yearId: year.id })
+						.onConflictDoNothing()
+						// @ts-expect-error drizzle type noise
+						.returning({ id: grades.id })
+						.get();
+			}
 			for (let i = 0; i < jsonFile.length; i++) {
 				const problemFile = jsonFile[i];
 				const problem: InferInsertModel<typeof problems> = {
@@ -101,7 +125,8 @@ export const actions: Actions = {
 					maxPoints: problemFile.maxPoints,
 					weightedMaxPoints: problemFile.weightedMaxPoints,
 					parts: problemFile.parts,
-					yearId: year.id
+					yearId: year.id,
+					gradeId: grade?.id ?? null
 				};
 				await locals.db.insert(problems).values(problem);
 				/**
