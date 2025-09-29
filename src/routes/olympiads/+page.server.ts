@@ -6,8 +6,8 @@ export const load: PageServerLoad = async ({ setHeaders, locals }) => {
 	if (!locals.user) {
 		throw redirect(302, '/login');
 	}
-	// @ts-expect-error drizzle type noise
 	const subjectList = await locals.db
+	// @ts-expect-error drizzle type noise
 		.select({ name: subjects.name })
 		.from(subjects)
 		.orderBy(subjects.name)
