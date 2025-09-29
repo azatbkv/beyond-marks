@@ -25,7 +25,9 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 				eq(olympiads.nameLower, params.olympiad),
 				eq(years.date, parseInt(params.year))
 			)
-		);
+		)
+		.orderBy(grades.grade)
+		.all();
 	if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
 	setHeaders({
 		'Cache-Control': 'public, max-age=3600'

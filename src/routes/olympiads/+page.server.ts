@@ -7,7 +7,11 @@ export const load: PageServerLoad = async ({ setHeaders, locals }) => {
 		throw redirect(302, '/login');
 	}
 	// @ts-expect-error drizzle type noise
-	const subjectList = await locals.db.select({ name: subjects.name }).from(subjects);
+	const subjectList = await locals.db
+		.select({ name: subjects.name })
+		.from(subjects)
+		.orderBy(subjects.name)
+		.all();
 	if (!subjectList) error(404);
 	setHeaders({
 		'Cache-Control': 'public, max-age=3600'

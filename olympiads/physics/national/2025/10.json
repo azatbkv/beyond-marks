@@ -107,48 +107,41 @@
 				"maxPoints": 3.5,
 				"subparts": [
 					{
-						"description": "Scoring based on Solution 1",
-						"points": 3.5,
+						"description": "Одно из уравнений (1). Найдено изменение угла между двумя последовательными отражениями",
+						"points": 0.25,
+						"type": "closed",
+						"childSubparts": []
+					},
+					{
+						"description": "Найдено максимальное количество отражений (2) N = 14",
+						"points": 1,
 						"type": "closed",
 						"childSubparts": [
 							{
-								"description": "Одно из уравнений (1). Найдено изменение угла между двумя последовательными отражениями",
-								"points": 0.25,
-								"type": "closed",
-								"childSubparts": []
-							},
-							{
-								"description": "Найдено максимальное количество отражений (2) N = 14",
-								"points": 1,
-								"type": "closed",
-								"childSubparts": [
-									{
-										"description": "Ошибся на единицу (N = 13, N = 15)",
-										"points": -0.5,
-										"type": "closed",
-										"childSubparts": []
-									}
-								]
-							},
-							{
-								"description": "Записана теорема синусов хотя бы для одного из треугольников (3)",
-								"points": 0.25,
-								"type": "closed",
-								"childSubparts": []
-							},
-							{
-								"description": "Найден закон (4)",
-								"points": 1.25,
-								"type": "closed",
-								"childSubparts": []
-							},
-							{
-								"description": "Верный ответ (5)",
-								"points": 0.75,
+								"description": "Ошибся на единицу (N = 13, N = 15)",
+								"points": -0.5,
 								"type": "closed",
 								"childSubparts": []
 							}
 						]
+					},
+					{
+						"description": "Записана теорема синусов хотя бы для одного из треугольников (3)",
+						"points": 0.25,
+						"type": "closed",
+						"childSubparts": []
+					},
+					{
+						"description": "Найден закон (4)",
+						"points": 1.25,
+						"type": "closed",
+						"childSubparts": []
+					},
+					{
+						"description": "Верный ответ (5)",
+						"points": 0.75,
+						"type": "closed",
+						"childSubparts": []
 					},
 					{
 						"description": "Alternative scoring based on Solution 2",
@@ -156,40 +149,33 @@
 						"type": "closed",
 						"childSubparts": [
 							{
-								"description": "Scoring based on Solution 2",
-								"points": 3.5,
+								"description": "Явно использована идея отражения системы хотя бы 1 раз",
+								"points": 0.25,
+								"type": "closed",
+								"childSubparts": []
+							},
+							{
+								"description": "Верный рисунок отражённой системы в виде четверти круга и прямая траектория луча (должно быть видно хоть какое-то разделение на сектора, а не просто дуга круга)",
+								"points": 1,
+								"type": "closed",
+								"childSubparts": []
+							},
+							{
+								"description": "Верный ответ (6)",
+								"points": 1.5,
+								"type": "closed",
+								"childSubparts": []
+							},
+							{
+								"description": "Найдено максимальное количество отражений (7) N = 14",
+								"points": 0.75,
 								"type": "closed",
 								"childSubparts": [
 									{
-										"description": "Явно использована идея отражения системы хотя бы 1 раз",
-										"points": 0.25,
+										"description": "Ошибся на единицу (N = 13, N = 15)",
+										"points": -0.4,
 										"type": "closed",
 										"childSubparts": []
-									},
-									{
-										"description": "Верный рисунок отражённой системы в виде четверти круга и прямая траектория луча (должно быть видно хоть какое-то разделение на сектора, а не просто дуга круга)",
-										"points": 1,
-										"type": "closed",
-										"childSubparts": []
-									},
-									{
-										"description": "Верный ответ (6)",
-										"points": 1.5,
-										"type": "closed",
-										"childSubparts": []
-									},
-									{
-										"description": "Найдено максимальное количество отражений (7) N = 14",
-										"points": 0.75,
-										"type": "closed",
-										"childSubparts": [
-											{
-												"description": "Ошибся на единицу (N = 13, N = 15)",
-												"points": -0.4,
-												"type": "closed",
-												"childSubparts": []
-											}
-										]
 									}
 								]
 							}

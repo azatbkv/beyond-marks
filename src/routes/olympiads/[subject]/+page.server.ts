@@ -12,7 +12,9 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		.select({ name: olympiads.name })
 		.from(olympiads)
 		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
-		.where(and(eq(sql`lower(${subjects.name})`, params.subject)));
+		.where(and(eq(sql`lower(${subjects.name})`, params.subject)))
+		.orderBy(olympiads.name)
+		.all();
 	if (!olympiadList) error(404);
 	setHeaders({
 		'Cache-Control': 'public, max-age=3600'
