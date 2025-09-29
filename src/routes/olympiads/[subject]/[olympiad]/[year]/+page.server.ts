@@ -28,8 +28,8 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		);
 	if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
 	setHeaders({
-    	'Cache-Control': 'public, max-age=3600'
- 	});
+		'Cache-Control': 'public, max-age=3600'
+	});
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,

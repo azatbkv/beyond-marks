@@ -35,21 +35,23 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		.innerJoin(years, eq(problems.yearId, years.id))
 		.innerJoin(olympiads, eq(years.olympiadId, olympiads.id))
 		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id));
-		
+
 	const problemFoundConditions = [
 		eq(subjects.nameLower, params.subject),
 		eq(olympiads.nameLower, params.olympiad),
 		eq(years.date, parseInt(params.year)),
 		eq(problems.number, parseInt(problemParam))
 	];
-	
+
 	if (gradeParam) {
 		query = query.innerJoin(grades, eq(problems.gradeId, grades.id));
 		problemFoundConditions.push(eq(grades.grade, parseInt(gradeParam)));
 	}
 
 	// @ts-expect-error drizzle type noise
-	const problemFound: InferSelectModel<typeof problems> = await query.where(and(...problemFoundConditions)).get();
+	const problemFound: InferSelectModel<typeof problems> = await query
+		.where(and(...problemFoundConditions))
+		.get();
 	if (!problemFound) error(404);
 
 	const problem: Problem = {
@@ -76,7 +78,12 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 	// @ts-expect-error drizzle type mismatch
 	let scoreFound: InferInsertModel<typeof userScores> = await locals.db
 		// @ts-expect-error drizzle type noise
-		.select({ userId: userScores.userId, problemId: userScores.problemId, problemPoints: userScores.problemPoints, scores: userScores.scores })
+		.select({
+			userId: userScores.userId,
+			problemId: userScores.problemId,
+			problemPoints: userScores.problemPoints,
+			scores: userScores.scores
+		})
 		.from(userScores)
 		.innerJoin(problems, eq(problems.id, userScores.problemId))
 		.innerJoin(users, eq(users.id, userScores.userId))
@@ -122,7 +129,8 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		allProblemsConditions.push(eq(grades.id, problemFound.gradeId));
 	}
 
-	const allProblems = await queryAllProblems.where(and(...allProblemsConditions))
+	const allProblems = await queryAllProblems
+		.where(and(...allProblemsConditions))
 		.orderBy(problems.number)
 		.all();
 

@@ -5,7 +5,8 @@
 <ul>
 	{#each data.grades as grade}
 		<li>
-			<a href="/olympiads/{data.subjectName}/{data.olympiadName}/{data.yearDate}/{grade}/1">{grade}</a
+			<a href="/olympiads/{data.subjectName}/{data.olympiadName}/{data.yearDate}/{grade}/1"
+				>{grade}</a
 			>
 		</li>
 	{/each}

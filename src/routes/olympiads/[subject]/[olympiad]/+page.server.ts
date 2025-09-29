@@ -16,8 +16,8 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		.where(and(eq(subjects.nameLower, params.subject), eq(olympiads.nameLower, params.olympiad)));
 	if (!yearList) error(404);
 	setHeaders({
-    	'Cache-Control': 'public, max-age=3600'
- 	});
+		'Cache-Control': 'public, max-age=3600'
+	});
 	return {
 		subjectName: params.subject,
 		olympiadName: params.olympiad,

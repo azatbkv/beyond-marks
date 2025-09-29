@@ -10,8 +10,8 @@ export const load: PageServerLoad = async ({ setHeaders, locals }) => {
 	const subjectList = await locals.db.select({ name: subjects.name }).from(subjects);
 	if (!subjectList) error(404);
 	setHeaders({
-    	'Cache-Control': 'public, max-age=3600'
- 	});
+		'Cache-Control': 'public, max-age=3600'
+	});
 	return {
 		subjectNames: subjectList.map((subject) => subject.name)
 	};

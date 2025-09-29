@@ -11,12 +11,17 @@
 	}: {
 		data: {
 			problem: Problem;
-			userScore: { userId: string, problemId: number, problemPoints: number; scores: PartPoints[] };
+			userScore: { userId: string; problemId: number; problemPoints: number; scores: PartPoints[] };
 			allProblems: { number: number; name: string }[];
 		};
 	} = $props();
 	let problem: Problem = data.problem;
-	let userScore: { userId: string, problemId: number, problemPoints: number; scores: PartPoints[] } = $state(data.userScore);
+	let userScore: {
+		userId: string;
+		problemId: number;
+		problemPoints: number;
+		scores: PartPoints[];
+	} = $state(data.userScore);
 	let allProblems: { number: number; name: string }[] = data.allProblems;
 
 	let isSaving = false;
@@ -24,21 +29,23 @@
 	async function saveScores() {
 		if (isSaving) return;
 		isSaving = true;
-		try { await fetch('/api/save', {
-			method: 'POST',
-			body: JSON.stringify(userScore),
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			keepalive: true
-		}) } finally {
+		try {
+			await fetch('/api/save', {
+				method: 'POST',
+				body: JSON.stringify(userScore),
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				keepalive: true
+			});
+		} finally {
 			isSaving = false;
 		}
 	}
-	
+
 	beforeNavigate(({ willUnload }) => {
 		if (willUnload && !isSaving) {
-			const blob = new Blob([JSON.stringify(userScore)], {type: 'application/json'});
+			const blob = new Blob([JSON.stringify(userScore)], { type: 'application/json' });
 			navigator.sendBeacon('/api/save', blob);
 		} else if (!isSaving) {
 			saveScores();
@@ -233,8 +240,8 @@
 				</label>
 			{/if}
 		</div>
-		<div class="flex justify-between">
-			{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+		{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+			<div class="flex justify-between">
 				<p>
 					{@html marked.parse(
 						`${part.number}\\.${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. ${childSubpart.description}`
@@ -284,8 +291,8 @@
 							)}
 					/>
 				{/if}
-			{/each}
-		</div>
+			</div>
+		{/each}
 	{/each}
 	<hr />
 {/each}

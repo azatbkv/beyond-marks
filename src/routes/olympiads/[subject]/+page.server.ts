@@ -15,8 +15,8 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		.where(and(eq(sql`lower(${subjects.name})`, params.subject)));
 	if (!olympiadList) error(404);
 	setHeaders({
-    	'Cache-Control': 'public, max-age=3600'
- 	});
+		'Cache-Control': 'public, max-age=3600'
+	});
 	return {
 		subjectName: params.subject,
 		// @ts-expect-error wrong expected object
