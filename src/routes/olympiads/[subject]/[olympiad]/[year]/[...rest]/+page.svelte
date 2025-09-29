@@ -195,7 +195,7 @@
 
 {#each problem.parts as part, partIndex}
 	<div class="flex justify-between">
-		<h2>{@html marked.parse(part.number + '. ' + part.description)}</h2>
+		<h2>{@html marked.parse(`${part.number}\\. ${part.description}`)}</h2>
 		{truncateNumber(userScore.scores[partIndex].obtainedPoints)}/{truncateNumber(part.maxPoints)}
 	</div>
 	<p>{@html marked.parse(part.solution)}</p>
@@ -203,7 +203,7 @@
 		<div class="flex justify-between">
 			<p>
 				{@html marked.parse(
-					part.number + '.' + Number(subpartIndex + 1) + '. ' + subpart.description
+					`${part.number}\\.${Number(subpartIndex + 1)}\\. ${subpart.description}`
 				)}
 			</p>
 			{#if subpart.type === 'closed'}
@@ -237,13 +237,7 @@
 			{#each subpart.childSubparts as childSubpart, childSubpartIndex}
 				<p>
 					{@html marked.parse(
-						part.number +
-							'.' +
-							Number(subpartIndex + 1) +
-							'.' +
-							Number(childSubpartIndex + 1) +
-							'. ' +
-							childSubpart.description
+						`${part.number}\\.${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. ${childSubpart.description}`
 					)}
 				</p>
 				{#if childSubpart.type === 'closed'}
