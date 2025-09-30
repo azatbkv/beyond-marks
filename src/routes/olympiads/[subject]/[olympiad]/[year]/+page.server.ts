@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
 import { grades, olympiads, subjects, years } from '$lib/server/db/schema';
-import { eq, and } from 'drizzle-orm';
+import { eq, and, desc } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 	if (!locals.user) {
@@ -12,20 +12,26 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 	} catch {
 		error(404);
 	}
+	// @ts-expect-error drizzle type noise
+	const subject: { id: subjects.id, name: subjects.name } = await locals.db
+	// @ts-expect-error drizzle type noise
+	.select({ id: subjects.id, name: subjects.name })
+	.from(subjects).where(eq(subjects.nameLower, params.subject)).get();
+	// @ts-expect-error drizzle type noise
+	const olympiad: { id: olympiads.id, name: olympiad.name } = await locals.db
+	// @ts-expect-error drizzle type noise
+	.select({ id: olympiads.id, name: olympiads.name })
+	.from(olympiads).where(and(eq(olympiads.nameLower, params.olympiad), eq(olympiads.subjectId, subject.id))).get();
+	// @ts-expect-error drizzle type noise
+	const year: { id: years.id } = await locals.db
+	// @ts-expect-error drizzle type noise
+	.select({ id: years.id, date: years.date })
+	.from(years).where(and(eq(years.date, parseInt(params.year)), eq(years.olympiadId, olympiad.id))).get()
 	const gradesList = await locals.db
 		// @ts-expect-error drizzle type noise
 		.select({ grade: grades.grade })
 		.from(grades)
-		.innerJoin(years, eq(grades.yearId, years.id))
-		.innerJoin(olympiads, eq(years.olympiadId, olympiads.id))
-		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
-		.where(
-			and(
-				eq(subjects.nameLower, params.subject),
-				eq(olympiads.nameLower, params.olympiad),
-				eq(years.date, parseInt(params.year))
-			)
-		)
+		.where(eq(grades.yearId, year.id))
 		.orderBy(desc(grades.grade))
 		.all();
 	if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
@@ -33,10 +39,9 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		'Cache-Control': 'public, max-age=3600'
 	});
 	return {
-		subjectName: params.subject,
-		olympiadName: params.olympiad,
+		subjectName: subject.name,
+		olympiadName: olympiad.name,
 		yearDate: params.year,
-		// @ts-expect-error wrong expected object
 		grades: gradesList.map((grade) => grade.grade)
 	};
 };

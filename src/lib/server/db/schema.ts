@@ -16,7 +16,7 @@ export const olympiads = sqliteTable(
 			.notNull()
 			.references(() => subjects.id, { onDelete: 'cascade' })
 	},
-	(table) => [unique().on(table.name, table.subjectId)]
+	(table) => [unique().on(table.nameLower, table.subjectId)]
 );
 
 export const years = sqliteTable(
