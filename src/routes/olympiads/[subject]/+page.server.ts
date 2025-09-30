@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		.from(olympiads)
 		.innerJoin(subjects, eq(olympiads.subjectId, subjects.id))
 		.where(and(eq(sql`lower(${subjects.name})`, params.subject)))
-		.orderBy(olympiads.name)
+		.orderBy(olympiads.id)
 		.all();
 	if (!olympiadList) error(404);
 	setHeaders({
