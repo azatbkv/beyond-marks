@@ -45,6 +45,10 @@ export const createAuth = function (database: DrizzleClient) {
 			google: {
 				clientId: env.GOOGLE_CLIENT_ID as string,
 				clientSecret: env.GOOGLE_CLIENT_SECRET as string
+			},
+			github: {
+   		        clientId: env.GITHUB_CLIENT_ID as string, 
+            	clientSecret: env.GITHUB_CLIENT_SECRET as string, 
 			}
 		},
 		session: {

@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
 import { grades, olympiads, subjects, years } from '$lib/server/db/schema';
-import { eq, and, desc } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 	if (!locals.user) {
@@ -32,7 +32,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
 		.select({ grade: grades.grade })
 		.from(grades)
 		.where(eq(grades.yearId, year.id))
-		.orderBy(desc(grades.grade))
+		.orderBy(grades.grade)
 		.all();
 	if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
 	setHeaders({
