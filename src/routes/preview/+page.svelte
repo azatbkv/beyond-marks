@@ -81,7 +81,11 @@
 	</div>
 	{#each problem.parts as part, part_index}
 		<div class="mt-4 flex justify-between">
-			<h2>{@html marked.parse(`${part.number}\\. ${part.description}`)}</h2>
+			<h2>
+				{@html marked.parse(
+					`${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
+				)}
+			</h2>
 			{truncateNumber(getMarks(marks.problems[problem_index].parts[part_index]))}/{truncateNumber(
 				getTotalMarks(marks.problems[problem_index].parts[part_index])
 			)}
@@ -91,7 +95,7 @@
 			<div class="flex justify-between">
 				<p>
 					{@html marked.parse(
-						part.number + '.' + Number(subpartIndex + 1) + '. ' + subpart.description
+						`${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
 					)}
 				</p>
 				{#if subpart.type === 'closed'}

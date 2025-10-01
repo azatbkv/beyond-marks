@@ -1,36 +1,39 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index';
+	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index';
 
 	let { data } = $props();
 </script>
 
-<a href="./" class="flex items-center px-20 mt-7 absolute text-indigo-500 text-xl hover:underline decoration-1">
-	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
-  		<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-	</svg>
-	<span>Back</span>
-</a>
+<div class="mx-10 md:mx-20">
+	<Breadcrumb.Root>
+		<Breadcrumb.List class="mt-20 mb-8">
+			<Breadcrumb.Item>
+				<Breadcrumb.Link
+					class="text-4xl text-zinc-700 decoration-2 hover:underline"
+					href="/olympiads/{data.subjectName.toLowerCase()}">{data.subjectName}</Breadcrumb.Link
+				>
+			</Breadcrumb.Item>
+			<Breadcrumb.Separator />
 
-<div class="px-20">
-	<h1 class="mt-20 mb-8 text-4xl font-semibold flex items-center">
-		<span>{data.subjectName}</span>
-		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 mx-2">
-  			<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-		</svg>
-		<span>{data.olympiadName}</span>
-	</h1>
+			<Breadcrumb.Item>
+				<Breadcrumb.Page class="text-4xl font-semibold tracking-tight"
+					>{data.olympiadName}</Breadcrumb.Page
+				>
+			</Breadcrumb.Item>
+		</Breadcrumb.List>
+	</Breadcrumb.Root>
 
-	<h3 class="text-2xl mb-4">Years</h3>
+	<h1 class="mb-4 text-2xl tracking-tight">Years</h1>
 	<div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 text-sm">
 		{#each data.yearDates as yearDate}
 			<a href="{data.olympiadName.toLowerCase()}/{yearDate}">
 				<Card.Root class="rounded-xs shadow-none hover:border-zinc-400">
-					<Card.Content class="flex justify-center items-center h-0">
-						<span>{yearDate}</span>
+					<Card.Content class="flex h-0 items-center justify-center">
+						<span class="text-base">{yearDate}</span>
 					</Card.Content>
 				</Card.Root>
 			</a>
 		{/each}
 	</div>
 </div>
-

@@ -1,22 +1,23 @@
 import type { PageServerLoad } from './$types';
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { olympiads, subjects, years } from '$lib/server/db/schema';
 import { and, eq, desc } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
-	if (!locals.user) {
-		throw redirect(302, '/login');
-	}
 	// @ts-expect-error drizzle type noise
-	const subject: { id: subjects.id, name: subjects.name } = await locals.db
+	const subject: { id: subjects.id; name: subjects.name } = await locals.db
+		// @ts-expect-error drizzle type noise
+		.select({ id: subjects.id, name: subjects.name })
+		.from(subjects)
+		.where(eq(subjects.nameLower, params.subject))
+		.get();
 	// @ts-expect-error drizzle type noise
-	.select({ id: subjects.id, name: subjects.name })
-	.from(subjects).where(eq(subjects.nameLower, params.subject)).get();
-	// @ts-expect-error drizzle type noise
-	const olympiad: { id: olympiads.id, name: olympiad.name } = await locals.db
-	// @ts-expect-error drizzle type noise
-	.select({ id: olympiads.id, name: olympiads.name })
-	.from(olympiads).where(and(eq(olympiads.nameLower, params.olympiad), eq(olympiads.subjectId, subject.id))).get();
+	const olympiad: { id: olympiads.id; name: olympiad.name } = await locals.db
+		// @ts-expect-error drizzle type noise
+		.select({ id: olympiads.id, name: olympiads.name })
+		.from(olympiads)
+		.where(and(eq(olympiads.nameLower, params.olympiad), eq(olympiads.subjectId, subject.id)))
+		.get();
 	const yearList = await locals.db
 		// @ts-expect-error drizzle type noise
 		.select({ date: years.date })

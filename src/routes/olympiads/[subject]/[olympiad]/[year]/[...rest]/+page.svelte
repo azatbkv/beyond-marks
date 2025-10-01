@@ -3,6 +3,14 @@
 	import markedKatex from 'marked-katex-extension';
 	import type { PartPoints, Problem } from '$lib/server/db/schema';
 	import { beforeNavigate } from '$app/navigation';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox/index.js';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
+	import { Label } from '$lib/components/ui/label/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { Input } from '$lib/components/ui/input/index.js';
 
 	marked.use(markedKatex({ throwOnError: false }));
 
@@ -100,6 +108,7 @@
 		const subpart = part.subparts[subpartIndex];
 		const initialPoints = subpart.obtainedPoints;
 		const target = event.target as HTMLInputElement;
+		if (target.value === '') return;
 		let newPoints;
 		try {
 			newPoints = parseFloat(target.value);
@@ -129,6 +138,7 @@
 		const childSubpart = subpart.childSubparts[childSubpartIndex];
 		const initialPoints = childSubpart.obtainedPoints;
 		const target = event.target as HTMLInputElement;
+		if (target.value === '') return;
 		if (subpart.obtainedPoints !== 0 && maxPoints > 0) {
 			target.value = initialPoints.toString();
 			return;
@@ -163,136 +173,169 @@
 	function cleanNumber(number: number, digits = 5): number {
 		return parseFloat(number.toFixed(digits));
 	}
-
-	// 0.1 => 0.1, 2 => 2.0, but 0.15 => 0.15
-	function truncateNumber(number: number): string {
-		const result = number.toFixed(2);
-		return result.endsWith('0') ? parseFloat(result).toFixed(1) : result;
-	}
 </script>
 
 <svelte:head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
 </svelte:head>
-<hr />
-{#each allProblems as otherProblem}
-	<ol>
-		{#if otherProblem.number !== problem.number}
-			<li>
-				<a href="./{otherProblem.number}" data-sveltekit-reload
-					>Problem {otherProblem.number}. {otherProblem.name}</a
-				>
-			</li>
-		{:else}
-			<li>
-				<p>Problem {otherProblem.number}. {otherProblem.name}</p>
-			</li>
-		{/if}
-	</ol>
-{/each}
 
-<hr />
-
-<div class="flex justify-between">
-	<h1>{problem.name}</h1>
-	{truncateNumber(userScore.problemPoints)}/{truncateNumber(problem.maxPoints)}
-</div>
-
-<hr />
-
-{#each problem.parts as part, partIndex}
-	<div class="flex justify-between">
-		<h2>{@html marked.parse(`${part.number}\\. ${part.description}`)}</h2>
-		{truncateNumber(userScore.scores[partIndex].obtainedPoints)}/{truncateNumber(part.maxPoints)}
-	</div>
-	<p>{@html marked.parse(part.solution)}</p>
-	{#each part.subparts as subpart, subpartIndex}
-		<div class="flex justify-between">
-			<p>
-				{@html marked.parse(
-					`${part.number}\\.${Number(subpartIndex + 1)}\\. ${subpart.description}`
-				)}
-			</p>
-			{#if subpart.type === 'closed'}
-				<label>
-					{truncateNumber(
-						userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints
-					)}/{truncateNumber(subpart.points)}
-					<input
-						type="checkbox"
-						disabled={childSubpartsUsed(partIndex, subpartIndex)}
-						checked={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints ===
-							subpart.points}
-						onchange={() => updateClosedSubpart(partIndex, subpartIndex, subpart.points)}
-					/>
-				</label>
-			{:else if subpart.type === 'open'}
-				<label>
-					{truncateNumber(
-						userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints
-					)}/{truncateNumber(subpart.points)}
-					<input
-						type="number"
-						disabled={childSubpartsUsed(partIndex, subpartIndex)}
-						value={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints}
-						oninput={(event) => updateOpenSubpart(partIndex, subpartIndex, subpart.points, event)}
-					/>
-				</label>
+<Sidebar.Provider>
+	<Sidebar.Root>
+		<Sidebar.Header />
+		<Sidebar.Content class="mt-12 mx-2">
+			<Sidebar.Group>
+				<Sidebar.GroupContent>
+					<Sidebar.Menu>
+						{#each allProblems as otherProblem}
+							<Sidebar.MenuItem>
+								{#if otherProblem.number !== problem.number}
+									<a
+										class="text-zinc-700 decoration-2 hover:underline"
+										href="./{otherProblem.number}"
+										data-sveltekit-reload>{otherProblem.number}. {otherProblem.name}</a
+									>
+								{:else}
+									<p class="font-semibold tracking-tight">
+										{otherProblem.number}. {otherProblem.name}
+									</p>
+								{/if}
+							</Sidebar.MenuItem>
+						{/each}
+					</Sidebar.Menu>
+				</Sidebar.GroupContent>
+			</Sidebar.Group>
+		</Sidebar.Content>
+		<Sidebar.Footer class="my-4 mx-2">
+			<h2 class="text-xl font-semibold tracking-tight">
+				Points: {userScore.problemPoints}/{problem.maxPoints}
+			</h2>
+			{#if problem.maxPoints !== problem.weightedMaxPoints}
+				<h2 class="text-xl font-semibold tracking-tight">
+					Weighted: {(
+						(userScore.problemPoints * problem.weightedMaxPoints) /
+						problem.maxPoints
+					).toFixed(2)}/{problem.weightedMaxPoints}
+				</h2>
 			{/if}
-		</div>
-		{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+		</Sidebar.Footer>
+	</Sidebar.Root>
+	<main>
+		<div class="mx-5 mt-16">
 			<div class="flex justify-between">
-				<p>
-					{@html marked.parse(
-						`${part.number}\\.${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. ${childSubpart.description}`
-					)}
-				</p>
-				{#if childSubpart.type === 'closed'}
-					<label>
-						{truncateNumber(
-							userScore.scores[partIndex].subparts[subpartIndex].childSubparts[childSubpartIndex]
-								.obtainedPoints
-						)}/{truncateNumber(childSubpart.points)}
-						<input
-							type="checkbox"
-							disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 &&
-								childSubpart.points > 0}
-							checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
-								childSubpartIndex
-							].obtainedPoints === childSubpart.points}
-							onchange={() =>
-								updateClosedChildSubpart(
-									partIndex,
-									subpartIndex,
-									childSubpartIndex,
-									childSubpart.points
-								)}
-						/>
-					</label>
-				{:else}
-					{truncateNumber(
-						userScore.scores[partIndex].subparts[subpartIndex].childSubparts[childSubpartIndex]
-							.obtainedPoints
-					)}/{truncateNumber(childSubpart.points)}
-					<input
-						type="number"
-						disabled={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints > 0 &&
-							childSubpart.points > 0}
-						value={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
-							childSubpartIndex
-						].obtainedPoints}
-						oninput={(event) =>
-							updateOpenChildSubpart(
-								partIndex,
-								subpartIndex,
-								childSubpartIndex,
-								subpart.points,
-								event
-							)}
-					/>
-				{/if}
+				<h1 class="mb-4 text-3xl">Problem {problem.number}. {problem.name}</h1>
 			</div>
-		{/each}
-	{/each}
-	<hr />
-{/each}
+			{#each problem.parts as part, partIndex}
+				<Card.Root class="my-4">
+					<Accordion.Root class="mx-6" type="single" value="item-1">
+						<Accordion.Item value="item-1">
+							<Accordion.Trigger class="cursor-pointer hover:no-underline">
+								<Card.Title class="font-normal">
+									<div class="flex justify-between">
+										<h3 class="text-xl">
+											{@html marked.parse(
+												`${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
+											)}
+										</h3>
+										<Badge class="ml-4 h-6 text-lg"
+											>{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
+										>
+									</div>
+								</Card.Title>
+							</Accordion.Trigger>
+							<AccordionContent>
+								<Card.Description class="mx-4 text-neutral-900">
+									<p class="text-lg">{@html marked.parse(part.solution)}</p>
+								</Card.Description>
+							</AccordionContent>
+						</Accordion.Item>
+					</Accordion.Root>
+					<hr />
+					<Card.Content class="space-y-2">
+						{#each part.subparts as subpart, subpartIndex}
+							<div class="flex justify-between">
+								<p>
+									{@html marked.parse(
+										`${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
+									)}
+								</p>
+								<div class="flex items-center space-x-2">
+									<Label>
+										{subpart.points}
+									</Label>
+									{#if subpart.type === 'closed'}
+										<Checkbox
+											class="ml-2 h-6 w-6"
+											disabled={childSubpartsUsed(partIndex, subpartIndex)}
+											checked={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints ===
+												subpart.points}
+											onCheckedChange={() =>
+												updateClosedSubpart(partIndex, subpartIndex, subpart.points)}
+										/>
+									{:else if subpart.type === 'open'}
+										<Input
+											class="rounded-small ml-2 h-6 w-14 text-center"
+											type="numeric"
+											disabled={childSubpartsUsed(partIndex, subpartIndex)}
+											value={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints}
+											oninput={(event) =>
+												updateOpenSubpart(partIndex, subpartIndex, subpart.points, event)}
+										/>
+									{/if}
+								</div>
+							</div>
+							{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+								<div class="flex justify-between">
+									<p>
+										{@html marked.parse(
+											`${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. ${childSubpart.description}`
+										)}
+									</p>
+									<div class="flex items-center space-x-2">
+										<Label>
+											{childSubpart.points}
+										</Label>
+										{#if childSubpart.type === 'closed'}
+											<Checkbox
+												class="ml-2 h-6 w-6"
+												disabled={userScore.scores[partIndex].subparts[subpartIndex]
+													.obtainedPoints > 0 && childSubpart.points > 0}
+												checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
+													childSubpartIndex
+												].obtainedPoints === childSubpart.points}
+												onCheckedChange={() =>
+													updateClosedChildSubpart(
+														partIndex,
+														subpartIndex,
+														childSubpartIndex,
+														childSubpart.points
+													)}
+											/>
+										{:else}
+											<Input
+												class="rounded-small ml-2 h-6 w-12 text-center"
+												type="numeric"
+												disabled={userScore.scores[partIndex].subparts[subpartIndex]
+													.obtainedPoints > 0 && childSubpart.points > 0}
+												value={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
+													childSubpartIndex
+												].obtainedPoints}
+												oninput={(event) =>
+													updateOpenChildSubpart(
+														partIndex,
+														subpartIndex,
+														childSubpartIndex,
+														subpart.points,
+														event
+													)}
+											/>
+										{/if}
+									</div>
+								</div>
+							{/each}
+						{/each}
+					</Card.Content>
+				</Card.Root>
+			{/each}
+		</div>
+	</main>
+</Sidebar.Provider>

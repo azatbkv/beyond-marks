@@ -1,11 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { subjects } from '$lib/server/db/schema';
 
 export const load: PageServerLoad = async ({ setHeaders, locals }) => {
-	if (!locals.user) {
-		throw redirect(302, '/login');
-	}
 	const subjectList = await locals.db
 		// @ts-expect-error drizzle type noise
 		.select({ name: subjects.name })
