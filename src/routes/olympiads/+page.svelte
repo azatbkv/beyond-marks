@@ -4,8 +4,8 @@
 	let { data } = $props();
 </script>
 
-<div class="mx-10 md:mx-20">
-	<h1 class="mt-20 mb-4 text-4xl font-semibold">Olympiads</h1>
+<div class="mx-10 mt-12 md:mx-20">
+	<h1 class="mb-4 pt-20 text-4xl font-semibold">Olympiads</h1>
 	<h2 class="mb-16 text-xl text-neutral-600">Past olympiads with solutions and mark schemes</h2>
 	<h3 class="mb-4 text-2xl tracking-tight">Subjects</h3>
 	<div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 text-sm">

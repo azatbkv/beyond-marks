@@ -5,9 +5,9 @@
 	let { data } = $props();
 </script>
 
-<div class="mx-10 md:mx-20">
+<div class="mx-10 mt-12 md:mx-20">
 	<Breadcrumb.Root>
-		<Breadcrumb.List class="mt-20 mb-8">
+		<Breadcrumb.List class="mb-8 pt-20">
 			<Breadcrumb.Item>
 				<Breadcrumb.Link
 					class="text-4xl text-zinc-700 decoration-2 hover:underline"

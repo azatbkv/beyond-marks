@@ -7,7 +7,7 @@
 
 <a
 	href="./"
-	class="absolute mx-10 mt-7 flex items-center text-xl text-indigo-500 decoration-1 hover:underline md:mx-20"
+	class="absolute mx-22 mt-7 flex items-center text-xl text-indigo-500 decoration-1 hover:underline md:mx-20"
 >
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,11 @@
 	<span>Back</span>
 </a>
 
-<div class="mx-10 md:mx-20">
+<div class="mx-10 mt-12 md:mx-20">
 	<Breadcrumb.Root>
 		<Breadcrumb.List>
 			<Breadcrumb.Item>
-				<Breadcrumb.Page class="mt-20 mb-8 text-4xl font-semibold tracking-tight"
+				<Breadcrumb.Page class="mb-8 pt-20 text-4xl font-semibold tracking-tight"
 					>{data.subjectName}</Breadcrumb.Page
 				>
 			</Breadcrumb.Item>

@@ -11,6 +11,7 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	marked.use(markedKatex({ throwOnError: false }));
 
@@ -182,40 +183,75 @@
 <Sidebar.Provider>
 	<Sidebar.Root>
 		<Sidebar.Header />
-		<Sidebar.Content class="mt-12 mx-2">
+		<Sidebar.Content class="mx-2 mt-12">
 			<Sidebar.Group>
 				<Sidebar.GroupContent>
 					<Sidebar.Menu>
 						{#each allProblems as otherProblem}
-							<Sidebar.MenuItem>
-								{#if otherProblem.number !== problem.number}
+							{#if otherProblem.number !== problem.number}
+								<Sidebar.MenuItem>
 									<a
 										class="text-zinc-700 decoration-2 hover:underline"
 										href="./{otherProblem.number}"
-										data-sveltekit-reload>{otherProblem.number}. {otherProblem.name}</a
+										data-sveltekit-reload
+										>{otherProblem.number}. {otherProblem.name !== ''
+											? otherProblem.name
+											: `Problem ${otherProblem.number}`}</a
 									>
-								{:else}
+								</Sidebar.MenuItem>
+							{:else if problem.parts[0].number.length !== 0}
+								<Collapsible.Root open class="group/collapsible">
+									<Sidebar.MenuItem>
+										<Collapsible.Trigger>
+											<p class="font-semibold tracking-tight text-left">
+												{otherProblem.number}. {otherProblem.name !== ''
+													? otherProblem.name
+													: `Problem ${otherProblem.number}`}
+											</p>
+										</Collapsible.Trigger>
+										<Collapsible.Content>
+											<Sidebar.MenuSub>
+												{#each problem.parts as part, partIndex}
+													<Sidebar.MenuSubItem class="justify-between flex">
+														<a class="hover:underline decoration-2" href="#part-{part.number}">Part {part.number}.</a>
+														<Badge variant="outline"
+															>{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
+														>
+													</Sidebar.MenuSubItem>
+												{/each}
+											</Sidebar.MenuSub>
+										</Collapsible.Content>
+									</Sidebar.MenuItem>
+								</Collapsible.Root>
+							{:else}
+								<Sidebar.Item>
 									<p class="font-semibold tracking-tight">
-										{otherProblem.number}. {otherProblem.name}
+										{otherProblem.number}. {otherProblem.name !== ''
+											? otherProblem.name
+											: `Problem ${otherProblem.number}`}
 									</p>
-								{/if}
-							</Sidebar.MenuItem>
+								</Sidebar.Item>
+							{/if}
 						{/each}
 					</Sidebar.Menu>
 				</Sidebar.GroupContent>
 			</Sidebar.Group>
 		</Sidebar.Content>
-		<Sidebar.Footer class="my-4 mx-2">
-			<h2 class="text-xl font-semibold tracking-tight">
-				Points: {userScore.problemPoints}/{problem.maxPoints}
-			</h2>
+		  <Sidebar.Separator />
+		<Sidebar.Footer class="mx-2 my-4">
+			<div class="justify-left flex">
+				<Label class="text-xl">Points:</Label>
+				<Badge class="ml-2 text-xl">{userScore.problemPoints}/{problem.maxPoints}</Badge>
+			</div>
 			{#if problem.maxPoints !== problem.weightedMaxPoints}
-				<h2 class="text-xl font-semibold tracking-tight">
-					Weighted: {(
-						(userScore.problemPoints * problem.weightedMaxPoints) /
-						problem.maxPoints
-					).toFixed(2)}/{problem.weightedMaxPoints}
-				</h2>
+				<div class="justify-left flex">
+					<Label class="text-xl">Weighted:</Label>
+					<Badge class="ml-2 text-xl"
+						>{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
+							2
+						)}/{problem.weightedMaxPoints}</Badge
+					>
+				</div>
 			{/if}
 		</Sidebar.Footer>
 	</Sidebar.Root>
@@ -226,25 +262,25 @@
 			</div>
 			{#each problem.parts as part, partIndex}
 				<Card.Root class="my-4">
-					<Accordion.Root class="mx-6" type="single" value="item-1">
+					<Accordion.Root id="part-{part.number}" class="mx-6 scroll-mt-12" type="single" value="1">
 						<Accordion.Item value="item-1">
 							<Accordion.Trigger class="cursor-pointer hover:no-underline">
-								<Card.Title class="font-normal">
-									<div class="flex justify-between">
-										<h3 class="text-xl">
+								<Card.Title class="w-[150%] font-normal">
+									<div class="items-top flex justify-between">
+										<h3 class="text-lg flex-none max-w-[90%]">
 											{@html marked.parse(
 												`${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
 											)}
 										</h3>
-										<Badge class="ml-4 h-6 text-lg"
+										<Badge class="flex-grow mx-4 md:mr-0 h-6 max-w-16 text-center text-md"
 											>{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
 										>
 									</div>
 								</Card.Title>
 							</Accordion.Trigger>
 							<AccordionContent>
-								<Card.Description class="mx-4 text-neutral-900">
-									<p class="text-lg">{@html marked.parse(part.solution)}</p>
+								<Card.Description class="mx-4 text-neutral-900 max-w-[100%]">
+									<p class="text-md">{@html marked.parse(part.solution)}</p>
 								</Card.Description>
 							</AccordionContent>
 						</Accordion.Item>
@@ -264,7 +300,7 @@
 									</Label>
 									{#if subpart.type === 'closed'}
 										<Checkbox
-											class="ml-2 h-6 w-6"
+											class="ml-2 h-6 w-6 cursor-pointer"
 											disabled={childSubpartsUsed(partIndex, subpartIndex)}
 											checked={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints ===
 												subpart.points}
@@ -296,7 +332,7 @@
 										</Label>
 										{#if childSubpart.type === 'closed'}
 											<Checkbox
-												class="ml-2 h-6 w-6"
+												class="ml-2 h-6 w-6 cursor-pointer"
 												disabled={userScore.scores[partIndex].subparts[subpartIndex]
 													.obtainedPoints > 0 && childSubpart.points > 0}
 												checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[

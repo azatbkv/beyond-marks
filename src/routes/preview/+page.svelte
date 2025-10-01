@@ -58,71 +58,45 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
 </svelte:head>
 
-<input type="file" accept="application/json" onchange={handleFile} />
+<div class="mt-12">
+	<input type="file" accept="application/json" onchange={handleFile} />
 
-{#if problems}
-	<div>
-		{#each problems as p, p_index}
-			<input
-				type="radio"
-				name="problem_tab"
-				aria-label={'Problem ' + p.number}
-				value={p_index}
-				bind:group={problem_index}
-			/>
-		{/each}
-	</div>
+	{#if problems}
+		<div>
+			{#each problems as p, p_index}
+				<input
+					type="radio"
+					name="problem_tab"
+					aria-label={'Problem ' + p.number}
+					value={p_index}
+					bind:group={problem_index}
+				/>
+			{/each}
+		</div>
 
-	<div class="flex justify-between">
-		<h1>{problem.name}</h1>
-		{truncateNumber(getMarks(marks.problems[problem_index]))}/{truncateNumber(
-			getTotalMarks(marks.problems[problem_index])
-		)}
-	</div>
-	{#each problem.parts as part, part_index}
-		<div class="mt-4 flex justify-between">
-			<h2>
-				{@html marked.parse(
-					`${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
-				)}
-			</h2>
-			{truncateNumber(getMarks(marks.problems[problem_index].parts[part_index]))}/{truncateNumber(
-				getTotalMarks(marks.problems[problem_index].parts[part_index])
+		<div class="flex justify-between">
+			<h1>{problem.name}</h1>
+			{truncateNumber(getMarks(marks.problems[problem_index]))}/{truncateNumber(
+				getTotalMarks(marks.problems[problem_index])
 			)}
 		</div>
-		<p>{@html marked.parse(part.solution)}</p>
-		{#each part.subparts as subpart, subpartIndex}
-			<div class="flex justify-between">
-				<p>
+		{#each problem.parts as part, part_index}
+			<div class="mt-4 flex justify-between">
+				<h2>
 					{@html marked.parse(
-						`${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
+						`${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
 					)}
-				</p>
-				{#if subpart.type === 'closed'}
-					<label>
-						{subpart.points}
-						<input
-							type="checkbox"
-							bind:checked={
-								marks.problems[problem_index].parts[part_index].subparts[subpartIndex].checked
-							}
-						/>
-					</label>
-				{:else}
-					{subpart.points}
-					<input type="number" />
-				{/if}
-				{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+				</h2>
+				{truncateNumber(getMarks(marks.problems[problem_index].parts[part_index]))}/{truncateNumber(
+					getTotalMarks(marks.problems[problem_index].parts[part_index])
+				)}
+			</div>
+			<p>{@html marked.parse(part.solution)}</p>
+			{#each part.subparts as subpart, subpartIndex}
+				<div class="flex justify-between">
 					<p>
-						child
 						{@html marked.parse(
-							part.number +
-								'.' +
-								Number(subpartIndex + 1) +
-								'.' +
-								Number(childSubpartIndex + 1) +
-								'. ' +
-								childSubpart.description
+							`${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
 						)}
 					</p>
 					{#if subpart.type === 'closed'}
@@ -139,8 +113,36 @@
 						{subpart.points}
 						<input type="number" />
 					{/if}
-				{/each}
-			</div>
+					{#each subpart.childSubparts as childSubpart, childSubpartIndex}
+						<p>
+							child
+							{@html marked.parse(
+								part.number +
+									'.' +
+									Number(subpartIndex + 1) +
+									'.' +
+									Number(childSubpartIndex + 1) +
+									'. ' +
+									childSubpart.description
+							)}
+						</p>
+						{#if subpart.type === 'closed'}
+							<label>
+								{subpart.points}
+								<input
+									type="checkbox"
+									bind:checked={
+										marks.problems[problem_index].parts[part_index].subparts[subpartIndex].checked
+									}
+								/>
+							</label>
+						{:else}
+							{subpart.points}
+							<input type="number" />
+						{/if}
+					{/each}
+				</div>
+			{/each}
 		{/each}
-	{/each}
-{/if}
+	{/if}
+</div>

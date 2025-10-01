@@ -26,7 +26,7 @@
 			{#if $session.data}
 				<NavigationMenu.Item class="pr-4">
 					<DropdownMenu.Root>
-						<DropdownMenu.Trigger>
+						<DropdownMenu.Trigger class="cursor-pointer">
 							<Avatar.Root>
 								<Avatar.Image src={$session.data.user.image} alt="User avatar" />
 								<Avatar.Fallback>{$session.data.user.name.charAt(0)}</Avatar.Fallback>
