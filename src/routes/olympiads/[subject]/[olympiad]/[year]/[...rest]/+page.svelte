@@ -15,26 +15,6 @@
 
   marked.use(markedKatex({ throwOnError: false }));
 
-  let mobileSidebarOpen = $state(false);
-  
-  // Listen for the mobile sidebar toggle event
-  function handleToggleMobileSidebar() {
-    mobileSidebarOpen = !mobileSidebarOpen;
-  }
-  
-  // Set up event listener when component mounts
-  $: $bindable(mobileSidebarOpen);
-  
-  // Add event listener when component is created
-  // Set up and clean up event listener
-  $effect(() => {
-    document.addEventListener('toggleMobileSidebar', handleToggleMobileSidebar);
-    
-    return () => {
-      document.removeEventListener('toggleMobileSidebar', handleToggleMobileSidebar);
-    };
-  });
-
   let {
     data
   }: {
@@ -222,7 +202,7 @@
 </svelte:head>
 
 <Sidebar.Provider>
-  <Sidebar.Root class={mobileSidebarOpen ? "translate-x-0 z-50" : "-translate-x-full md:translate-x-0 z-0"}>
+  <Sidebar.Root>
     <Sidebar.Header />
     <Sidebar.Content class="mx-2 mt-12">
       <Sidebar.Group>
@@ -431,12 +411,4 @@
       {/each}
     </div>
   </main>
-
-  <!-- Mobile Sidebar Overlay -->
-  {#if mobileSidebarOpen}
-    <div 
-      class="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden"
-      on:click={() => mobileSidebarOpen = false}
-    ></div>
-  {/if}
 </Sidebar.Provider>
