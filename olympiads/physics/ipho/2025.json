@@ -1,1611 +1,1611 @@
 [
-	{
-		"number": 1,
-		"name": "Hydrogen and galaxies",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "A.1",
-				"description": "Determine the electron's velocity $v$ in a circular orbit of radius $r$.",
-				"solution": "Newton's second law on the electron in the electrical field of the proton for a circular orbit and projected on $\\vec{u_r}$ : $-m_e \\frac{v^2}{r} = -\\frac{e^2}{4\\pi\\epsilon_0 r^2}$ hence $v = \\sqrt{\\frac{e^2}{4\\pi\\epsilon_0 m_e r}}$",
-				"maxPoints": 0.2,
-				"subparts": [
-					{
-						"description": "Using Newton's second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of the velocity",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.2",
-				"description": "Show that the radius of each orbit is given by $r_n = n^2r_1$, where $r_1$ is called the Bohr radius. Express $r_1$ in terms of $\\alpha$, $m_e$, $c$ and $\\hbar$ and calculate its numerical value with 3 digits. Express $v_1$, the velocity on the orbit of radius $r_1$, in terms of $\\alpha$ and $c$.",
-				"solution": "If the norm $L$ of the angular momentum is quantified, for a circular orbit of radius $r_n$, it is $L = m_e r_n v_n = n\\hbar$. In the previous question, we have already obtained a relation between $r$ and $v$ that can be used for $r_n$ and $v_n$ and gives $v_n = \\sqrt{\\frac{e^2}{4\\pi\\epsilon_0 m_e r_n}} = \\frac{n\\hbar}{m_e r_n}$. Then using the quantified expression we get $r_n = \\frac{4\\pi\\epsilon_0 n^2 \\hbar^2}{m_e e^2}$.<br>thus $r_n = \\frac{\\hbar n^2}{\\alpha m_e c}$ and then $r_1 = \\frac{\\hbar}{\\alpha m_e c}$. For the numerical value we previously compute $\\alpha = 7.27 \\times 10^{-3}$ and then $r_1 = 5.31 \\times 10^{-11} \\, \\text{m}$. For the velocity, we get $m_e v_1^2 = \\frac{e^2}{4\\pi\\epsilon_0 r_1} = \\frac{e^2 m_e \\alpha c}{4\\pi\\epsilon_0 \\hbar}$ and then $v_1 = \\frac{e^2}{4\\pi\\epsilon_0 \\hbar} = \\alpha c$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Expression of $r_n$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $r_1$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $r_1$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $v_1$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.3",
-				"description": "Determine the electron's mechanical energy $E_n$ on an orbit of radius $r_n$ in terms of $e, \\epsilon_0, r_n$ and $n$. Determine $E_1$ in the ground state in terms of $\\alpha, m_e$ and $c$. Compute its numerical value in eV.",
-				"solution": "The mechanical energy is $E_n = \\frac{1}{2}m_e v_n^2 - \\frac{e^2}{4\\pi\\epsilon_0 r_n} = -\\frac{e^2}{8\\pi\\epsilon_0 r_n}$, hence $E_n = \\frac{E_1}{n^2}$ then for the ground state $E_1 = -\\frac{e^2}{8\\pi\\epsilon_0 r_1}$. Using the expression of $\\alpha$, we get the beautiful formula $E_1 = -\\frac{1}{2}\\alpha^2 m_e c^2$. The numerical value is $E_1 = -2.17 \\times 10^{-18} \\, \\text{J}$ which corresponds to $E_1 = -13.6 \\, \\text{eV}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Expression for $E_n$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $E_1$ with $\\alpha$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $E_1$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.4",
-				"description": "Determine the magnitude $B_1$ of $\\vec{B_1}$ at the position of the electron in terms of $\\mu_0, e, \\alpha, c$ and $r_1$.",
-				"solution": "The period of the motion is: $T = \\frac{2\\pi r_1}{v_1}$.<br>The current $i$ corresponding to the orbit of the proton is $i = \\frac{e}{T}$ hence $i = \\frac{e v_1}{2\\pi r_1} = \\frac{e \\alpha c}{2\\pi r_1}$.<br>The magnetic field created by a loop with current $i$ and radius $R$ is: $B = \\frac{\\mu_0 i}{2R}$, which here gives $B_1 = \\frac{\\mu_0 e \\alpha c}{4\\pi r_1^2}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Expression for the period",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for the current",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "General expression for B",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Inject i into B",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.5",
-				"description": "Express $\\Delta E_F$ as a function of $\\alpha$ and $E_1$. Express the wavelength $\\lambda_{HF}$ of a photon emitted during a transition between the two states of the hyperfine structure and give its numerical value with two digits.",
-				"solution": "The potential energy corresponding to the interaction between the spin magnetic moment $\\vec{M_s}$ and the nuclear magnetic field: $E_p = -\\vec{M_s} \\cdot \\vec{B_1}$.<br>The difference $\\Delta E_F$ between the energy of two electrons with a spin parallel and antiparallel to $\\vec{B_1}$ is then $|\\Delta E_F| = 2 M_s B_1$. Using previous expressions one finds: $\\Delta E_F = 2 \\frac{e\\hbar}{m_e} B_1 = 2 \\frac{e\\hbar}{m_e} \\frac{\\mu_0 e \\alpha c}{4\\pi r_1^2}$ which writes $\\Delta E_F = 4\\alpha^2 E_1$.<br>The wavelength of the photon corresponding to this transition is then $\\lambda_{HF} = \\frac{hc}{\\Delta E_{HF}} = \\frac{hc}{-3.72 \\frac{m_e}{m_p} 4\\alpha^2 E_1}$ hence $\\lambda_{HF} = 21 \\, \\text{cm}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Expression for the potential energy",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\Delta E_F$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\Delta E_{HF}$ in term of $\\alpha$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\lambda_{HF}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $\\lambda_{HF}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.1",
-				"description": "In the case of a circular orbit, determine the velocity $v_c$ of an object on a circular orbit passing through $P$ in terms of $r$ and $\\frac{d\\phi}{dr}$.",
-				"solution": "The force created by the potential is $\\vec{F} = -\\nabla(m\\phi(r))) = -m \\frac{d\\phi}{dr} \\vec{u_r}$. Newton's second law for a circular orbit then gives $m \\frac{v_c^2}{r} = m \\frac{d\\phi}{dr}$ hence $v_c = \\sqrt{r \\frac{d\\phi}{dr}}$.",
-				"maxPoints": 0.2,
-				"subparts": [
-					{
-						"description": "Using Newton's second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for the velocity.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.2",
-				"description": "Deduce the mass $M_b$ of the bulge of NGC 6946 from the red rotation curve in Fig. 1(B), in solar mass units.",
-				"solution": "Either by Gauss's theorem $4\\pi r^2 g(r) = -4\\pi G M_\\text{int}(r)$, then one gets $g(r) = G M_\\text{int}(r)/r^2$. or one knows the law $g(r) = G M / r^2$ and intuits that one can use the interior mass $g(r) = G M_\\text{int}(r)/r^2$.<br>If there is almost no more mass after the bulge radius $r_b$, then if $r > r_b$, $M_\\text{int}(r) = M_b$ and $\\vec{g}(r>r_b) = -\\frac{G M_b}{r^2} \\vec{u_r}$. But $\\vec{g} = -\\frac{d\\phi}{dr} \\vec{u_r}$. This gives $v_c(r>r_b) = \\sqrt{\\frac{G M_b}{r}}$.<br>One can then deduce that if the velocity is given only by the bulge, at a given distance $R$ we must have $M_b = v_c^2 R / G$. On the red curve we can read $v_c = 20 \\, \\text{km} \\cdot \\text{s}^{-1}$ at $R = 10 \\, \\text{kpc}$ hence $M_b = \\frac{v_c^2 R}{G} = \\frac{(2 \\cdot 10^4)^2 \\cdot 10 \\cdot 3.09 \\cdot 10^{19}}{6.7 \\cdot 10^{-11}} = 1.8 \\cdot 10^{39} \\, \\text{kg}$ so that $M_b = 9.10^8 M_\\odot$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $g(r > r_b)$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $M_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Taking the right value of $v_c$ in the figure",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $M_b$ with a tolerance of $\\pm 25\\%$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.3",
-				"description": "Show that the velocity profile $v_{c,m}(r)$, corresponding to the mass density in Eq. 1, can be written $v_{c,m}(r) = \\sqrt{k_1 - k_2 \\frac{\\arctan(\\frac{r}{r_m})}{r}}$. Express $k_1$ and $k_2$ in terms of $C_m, r_m$ and $G$.<br>(Hints: $\\int_0^r \\frac{x^2}{a^2+x^2} dx = r - a \\arctan(r/a)$, and: $\\arctan(x) \\approx x - x^3/3$ for $x \\ll 1$. )<br>Simplify $v_{c,m}(r)$ when $r \\ll r_m$ and when $r \\gg r_m$. Show that if $r \\gg r_m$, the mass $M_m(r)$ embedded in a sphere of radius $r$ with the mass density given by Eq. 1 simplifies and depends only on $C_m$ and $r$. Estimate the mass of the galaxy NGC 6946 actually present in the picture in Fig. 1(A).",
-				"solution": "On the one hand, writing Gauss' theorem on a sphere of radius $r$ gives $\\oint \\vec{g}(r) \\cdot d\\vec{S} = 4\\pi r^2 g(r) = -4\\pi G M_\\text{int}$ and thus $g(r) = G M_\\text{int}(r)/r^2$. As long as this final formula is given it doesn't matter the method.<br>But, on the other hand $M_\\text{int} = \\int_0^r 4\\pi x^2 \\rho(x) dx = 4\\pi C_m [r - r_m \\arctan(\\frac{r}{r_m})]$ hence $$ g_m(r) = \\frac{4\\pi C_m G [r - r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$ But as $-m\\frac{v_{c,m}^2}{r} = -mg_m(r)$ we finally get $v_{c,m} = \\sqrt{r g_m(r)}$ which writes $$ v_{c,m} = \\sqrt{\\frac{4\\pi C_m G [r - r_m \\arctan(\\frac{r}{r_m})]}{r}} $$ One can then read $k_1 = 4\\pi C_m G$ and $k_2 = 4\\pi C_m G r_m$.<br>Two regimes could be considered:<br> if $r \\ll r_m$, a third order Taylor expansion of arctan gives $v_{c,m} \\approx \\sqrt{\\frac{4\\pi C_m G r^2}{3 r_m}}$ <br> and if $r \\gg r_m$ then $\\arctan(\\frac{r}{r_m}) \\approx \\pi/2$ and $v_{c,m} \\approx \\sqrt{4\\pi C_m G}$.<br>The function $v_{c,m}(r)$ is vanishing when $r \\to 0$ and is asymptotically constant with value $\\sqrt{4\\pi C_m G}$ when $r \\to +\\infty$: this corresponds to the observational curve for the galaxy considered (black circles on the right part of figure 1(B). A natural interpretation for $r_m$ is the typical radius beyond which the circular velocity is constant. On this picture one can read $v_c = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ for the constant value of $v_{c,m}$ after $r_m$, then one can deduce $C_m = \\frac{v_c^2}{4\\pi G} = \\frac{(1.6 \\cdot 10^5)^2}{4\\pi \\times 6.67 \\cdot 10^{-11}} \\approx 3 \\cdot 10^{19} \\, \\text{kg} \\cdot \\text{m}^{-1}$. The mass embedded in a sphere of radius $r$ is given by $M_\\text{int} = \\int_0^r 4\\pi x^2 \\rho_m(x) dx = 4\\pi C_m [r - r_m \\arctan(\\frac{r}{r_m})]$ which reduces to $M_\\text{int} = 4\\pi C_m r$ if $r \\gg r_m$. In the picture we have a radius $R = 9 \\, \\text{kpc} = 2.77 \\times 10^{20} \\, \\text{m}$ of the galaxy, then a mass $M_\\text{in the figure} \\approx 4\\pi C_m R = 10^{41} \\, \\text{kg} = 10^{11} \\, M_\\odot$. This mass corresponds to more than ten times the value of the mass actually visible in this picture: this is the dark matter concept.",
-				"maxPoints": 1.8,
-				"subparts": [
-					{
-						"description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exterior mass.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $g(r)$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Using Newton's second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $k_1$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $k_2$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Simplification for $v_c$ in the case $r \\ll r_m$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Simplification for $v_c$ in the case $r \\gg r_m$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Value of $C_m$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $M_m$ in the case $r \\gg r_m$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Mass in the figure (good if nearest power of ten)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.1",
-				"description": "Find the equation of motion on z for the vertical motion of a point mass $m$ in such a potential, assuming $r$ is constant. Show that, if $r < r_0$, the galactic plane is a stable equilibrium state by giving the angular frequency $\\omega_0$ of small oscillations around it.",
-				"solution": "The equation of motion is given by Newton's second law $m\\vec{a} = \\vec{F} = -m\\nabla\\psi$, projected on $\\vec{u_z}$, it gives $m\\ddot{z} = -m \\frac{\\partial \\psi_g}{\\partial z}$. Using the given potential we have $\\ddot{z} = \\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0}) \\exp(-\\frac{z^2}{z_0^2}) z$. Near the galactic plane ( $z=0$ ) the exponential is equal to 1 and can be simplified to give $\\ddot{z} = \\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0}) z$. If $r < r_0$ the $\\ln$ is negative and the equation of motion is of the form $\\ddot{z} = -\\omega_0^2 z$ with $\\omega_0 = \\sqrt{-\\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0})}$. This proves that z is oscillating around $z = 0$ and that the motion is stable.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Newton's second law, or equivalent method",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Projection on the z axis",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Equation of motion",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Equation near the galactic plane",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\omega_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.2",
-				"description": "Identify the regime, either $r \\gg r_m$ or $r \\ll r_m$, in which the model of Eq. 1 recovers a potential of the form $\\psi_g(r, 0)$ with a suitable definition of $\\phi_0$. Under this condition $v_c(r)$ no longer depends on $r$. Express it in terms of $\\phi_0$.",
-				"solution": "Using the density given by equation (1) in part B, we have obtained $$ g_m(r) = -\\frac{4\\pi C_m G[r - r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$ Hence, considering $r \\gg r_m$, one can simplify this relation to $g_m(r) = -\\frac{4\\pi C_m G}{r}$. The gravitational potential can be obtained by integration, we then have: $\\phi(r) = +4\\pi C_m G \\ln(r) + \\text{cst}$. The constant can be found by correctly choosing the origin of the potential. This potential corresponds to: $\\psi_G(r, z=0) = \\phi_0 \\ln(\\frac{r}{r_0})$ with $\\phi_0 = +4\\pi C_m G$. In that case, the equation of motion in the galactic plane gives $-m\\frac{v_c^2}{r} = -m g_m(r)$ which writes $v_c = \\sqrt{r g_m(r)} = \\sqrt{4\\pi C_m G}$, so that $v_c = \\sqrt{\\phi_0}$.",
-				"maxPoints": 0.6,
-				"subparts": [
-					{
-						"description": "Condition for simplication $r \\gg r_m$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\phi(r)$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Identification of $\\phi_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Newton's second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $v_c$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.3",
-				"description": "Determine $v_{rE/S}$ in terms of $l, R, R_0$ and $v_c$. Then, express $R$ in terms of $R_0, v_c, l$ and $v_{rE/S}$.",
-				"solution": "We have $Ss = v_c \\sin(\\alpha) \\hat{u_v}$ and $Ee = v_c \\cos(\\beta) \\hat{u_v}$. In the right triangle $Ss S_p$, the sum of angles gives $\\widehat{Ss, S S_p} = \\frac{\\pi}{2} - \\alpha$, but, as $\\vec{v_s}$ is perpendicular to the radius CS, we also have $\\widehat{Ss, S S_p} = \\frac{\\pi}{2} - l$: then $\\alpha = l$. On the other side, we have $CT = R_0 \\sin(l) = R \\sin(\\frac{\\pi}{2} - \\beta)$, which gives $\\cos(\\beta) = \\frac{R_0}{R} \\sin(l)$. Merging all of these results and taking into account that $v_E = v_c$ and that $v_{rE/S} = Ee - Ss$ we have $v_{rE/S} = v_c(\\frac{R_0}{R} - 1) \\sin(l)$ and finally $R = \\frac{R_0}{1 + \\frac{v_{rE/S}}{v_c \\sin(l)}}$.",
-				"maxPoints": 0.7,
-				"subparts": [
-					{
-						"description": "Expression for $\\vec{Ss}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\vec{Ee}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "$\\alpha = l$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\cos(\\beta)$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $v_{r,E/S}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for R",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.4",
-				"description": "In our galaxy, $v_c = 220 \\, \\text{km} \\cdot \\text{s}^{-1}$. Determine the values of the relative radial velocity (with 3 significant digits) and the distance from the galactic center (with 2 significant digits) of the 3 sources observed in Fig. 3. Distances should be expressed as multiples of $R_0$.",
-				"solution": "In Fig. 3 one can measure the 3 frequency shifts ( $f - f_0$ ) corresponding to each peak: $\\Delta f_1 = 0.03 \\, \\text{MHz}$, $\\Delta f_2 = 0.15 \\, \\text{MHz}$ and $f_3 = 0.26 \\, \\text{MHz}$. One can then compute the relative Doppler velocity using $v_{r,i} = c \\Delta f_i / f_0$, with $f_0 = 1420 \\, \\text{MHz}$ one gets<br> $v_{r,1} = 6.33 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br> $v_{r,2} = 31.7 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br> $v_{r,3} = 54.9 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br>As peaks are placed on grid points, the tolerance in the value is due to fact that candidates could use $c = 3.00 \\times 10^8 \\, \\text{m/s}$ in the place of the 9 digits given in the formulary.<br>The corresponding distances from the galactic center are then obtained using the relation $R_i = \\frac{R_0}{1 + \\frac{v_{r,i}}{v_c \\sin l}}$, with $l=30^\\circ$ we obtain:<br> $R_1 = 0.95 R_0$ <br> $R_2 = 0.78 R_0$ <br> $R_3 = 0.67 R_0$",
-				"maxPoints": 0.6,
-				"subparts": [
-					{
-						"description": "Doppler formula for $v_r$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Getting the 3 numerical values for $\\Delta f_i$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical values of the 3 velocities ( $\\pm 0.01 \\, \\text{km} \\cdot \\text{s}^{-1}$ )",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical values of the 3 distances ( $\\pm 0.01 R_0$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.5",
-				"description": "On the top view of our galaxy (in the answer box), indicate the positions of the sources observed in Fig. 3. What could be deduced from repeated measurements changing $l$?",
-				"solution": "As indicated on the figure below, the right line of sight could be obtained geometrically (i.e. without protractor): using the 15° grid graduation one can going back from 30° from the perpendicular line to CS, we then obtain a radius which perpendicular to the line of sight, in other words as $\\sin(30°)=0.5$ the line of sight is passing by S and is tangenting the circle of radius CS/2.<br>Drawing the circles or radius, and, the line of sight with from we get 2 possible intersection for each peak: a near one and a far one. We plot only the nearest for each source on the answer figure.<br>The far intersections for each source is much further away and hence is likely less intense. Astronomers could also use the variation in the radio signal when they slowly vary the longitude to determine the right position of the actual source. A continuous variation of $l$ in the interval $[0, 2\\pi]$ makes hydrogen sources appear in the galaxy, as the galaxy is essentially composed of hydrogen, one can trace its mass distribution: the spiral structure.",
-				"maxPoints": 0.6,
-				"subparts": [
-					{
-						"description": "Getting the right line of sight",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Drawing for the 3 circles",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Drawing for the 3 points",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Deduction",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "D.1",
-				"description": "Assuming that the radius $R$ of a galaxy doesn't depend on its mass, show that the model of Eq. 1 (part B) gives a relation of the form $M_\\text{tot} = \\eta v_{c,\\infty}^\\gamma$ where $\\gamma$ and $\\eta$ should be specified. Compare this expression to the Tully-Fischer relation by computing $\\gamma_{TF}$.",
-				"solution": "We have obtained $v_{c,\\infty}^2 = 4\\pi C_m G$ and for a galaxy of radius $R$, we have $M_\\text{tot} \\approx 4\\pi C_m R$. This gives $C_m = \\frac{M_\\text{tot}}{4\\pi R}$ and $v_{c,\\infty}^2 = 4\\pi \\frac{M_\\text{tot}}{4\\pi R} G$. This relation is of the expected form $M_\\text{tot} = \\eta v_{c,\\infty}^\\gamma$ with $\\gamma=2$ and $\\eta = R/G$. Analysing the data we get the power law exponent of the Tully-Fisher relation as $\\gamma_{TF} = \\frac{12-9}{2.6-1.8} = 3.75$: the dark matter model from part B is not able to reproduce this law.",
-				"maxPoints": 0.4,
-				"subparts": [
-					{
-						"description": "Recall for $v_{c,\\infty}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\eta$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $\\gamma$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $\\gamma_{TF}$ (correct if it is between 3.5 and 4)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "D.2",
-				"description": "Using data for NGC 6946 in Fig. 1, estimate, within Newton's theory, the modulus of the acceleration $a_m$ of a mass in the outer regions of NGC 6946.",
-				"solution": "Considering that outer orbits are circular, the corresponding acceleration for a test mass $m$ is radial and given in newtonian theory by $a_m = v_c^2/R$. In the case of NGC 6946, the value of the velocity is roughly constant and equal to $v_c = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ as far $R > 5 \\, \\text{kpc}$. For this smallest distance from the center, the acceleration is $a_m = \\frac{(1.6 \\cdot 10^5)^2}{5 \\cdot 3.09 \\cdot 10^{19}} = 1.6 \\times 10^{-10} \\, \\text{m} \\cdot \\text{s}^{-2}$, this value is the maximal acceleration to which as star is submitted in the outer regions of this galaxy. It corresponds to the MOND regime.",
-				"maxPoints": 0.2,
-				"subparts": [
-					{
-						"description": "Expression for $a_m$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $a_m$ (good if nearest power of ten)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "D.3",
-				"description": "Let $m$ be a mass on a circular orbit of radius $r$ with velocity $v_{c,\\infty}$ in the gravity field of a fixed mass $M$. Within the MOND theory, with $a \\ll a_0$, determine the Tully-Fischer exponent. Using data for NGC 6946 and/or Tully-Fischer law, calculate $a_0$ to show that MOND operates in the correct regime.",
-				"solution": "If $x = a/a_0 \\ll 1$, then $\\mu(x \\ll 1) \\approx x$ and MOND theory gives $\\vec{F} = m \\frac{a}{a_0} \\vec{a}$. Considering a gravitational interaction between $M$ and $m$ we then have for the radial component of the modified Newton's second Law $G\\frac{M m}{r^2} = m \\frac{a^2}{a_0}$. The radial acceleration on a circular orbit of radius $r$ is always given by $a = v_{c,\\infty}^2 / r$, the modified second law writes now $G\\frac{M}{r^2} \\frac{a}{a_0} = \\frac{v_{c,\\infty}^2}{r}$ which gives $v_{c,\\infty} = (a_0 G M)^{1/4}$, and thus $M = \\frac{1}{a_0 G} v_{c,\\infty}^4$. Considering the notation from D.1, this is a power law relation with $\\gamma_\\text{MOND} = 4$ in accordance with the Tully-Fischer relation.<br>For the NGC 6946 galaxy, we read $v_{c,\\infty} = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ thus $\\log_{10}(\\frac{v_{c,\\infty}}{1 \\, \\text{km} \\cdot \\text{s}^{-1}}) = 2.2$ and one can read the corresponding total mass by the Tully-Fischer relation as $\\log(M_\\text{tot}/M_\\odot) = 10.5$ thus $M_\\text{tot} = 2 \\cdot 10^{40.5} \\, \\text{kg}$. One can obtain similar numbers using experimental data on the curve of Fig. 4. Introducing these values in the relation $a_0 = \\frac{v_{c,\\infty}^4}{G M_\\text{tot}}$ it gives $a_0 = 1.5 \\times 10^{-10} \\, \\text{m} \\cdot \\text{s}^{-2}$ as expected.",
-				"maxPoints": 0.8,
-				"subparts": [
-					{
-						"description": "Considering the hypothesis $a \\ll a_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Newton's second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $v_{c,\\infty}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $\\gamma_{MOND}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $\\log_{10}(v_{c,\\infty}/1 \\, \\text{km/s})$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $\\log_{10}(M)$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $a_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $a_0$ (good if nearest power of ten)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "D.4",
-				"description": "Considering relevant cases, determine $v_c(r)$ for all values of $r$ in the MOND theory in the case of a gravitational field due to a homogeneously distributed mass $M$ with radius $R_b$.",
-				"solution": "Taking the full formula for $\\mu$, the modified second law with circular velocity $v_c$ at radius $r$ writes now $\\mathcal{G}(r)m = -m \\frac{v_c^2/r}{1 + v_c^2/(a_0 r)}$ where $\\mathcal{G}(r)$ is the gravitational field of the homogeneous ball of mass $M$ and with radius $R_b$. This field can be deduced from Gauss' theorem it is $$ \\mathcal{G}(r) = \\begin{cases} -GM/r^2 & \\text{if } r > R_b \\\\ -GMr/R_b^3 & \\text{if } r \\le R_b \\end{cases} $$ Outside the ball: $r > R_b$. After a small reorganisation, $v_c$ appears to be solution of the biquadratic equation $v_c^4 - \\frac{GM}{r} v_c^2 - a_0 GM = 0$. The positive root of this equation is $$ v_c(r) = \\sqrt{\\frac{GM}{2r} \\left( 1 + \\sqrt{1 + \\frac{4a_0 r^2}{GM}} \\right)} \\quad \\text{which is valid only if } r > R_b $$ When $r \\to \\infty$, $v_c$ is asymptotically constant and $M \\to \\frac{v_{c,\\infty}^4}{a_0 G}$ which is the Tully-Fisher relation. Inside the ball: $r \\le R_b$. With a similar reorganisation, $v_c$ appears now to be solution of another biquadratic equation which is $v_c^4 - \\frac{GM}{R_b}(\\frac{r}{R_b})^3 v_c^2 - a_0 GM (\\frac{r}{R_b})^3 = 0$. The positive solution is now $$ v_c(r) = \\sqrt{\\frac{GM}{2r} \\frac{r}{R_b} \\sqrt{1 + \\sqrt{1 + \\frac{4a_0 r^2}{GM} (\\frac{R_b}{r})^3}}} \\quad \\text{which is valid only if } r \\le R_b $$ When $r \\to 0$, we recover $v_c \\to 0$ as in the experimental data.",
-				"maxPoints": 0.9,
-				"subparts": [
-					{
-						"description": "Modified second law",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Gravitational field in the case $r > R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Gravitational field in the case $r < R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Bi-quadratic equation in the case $r > R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $v_c$ in the case $r > R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Behaviour in the limit $r \\to \\infty$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Bi-quadractic equation for $r < R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression for $v_c$ when $r < R_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Behaviour when $r \\to 0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	},
-	{
-		"number": 2,
-		"name": "Cox's Timepiece",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "A.1",
-				"description": "For the configuration shown in Fig. 2 (case b), express the pressure $P_w$ in the water at the top of the tube. Also express the force $\\vec{F}$ necessary to maintain the tube at this position. Expressions must be written in terms of $P_0, \\rho, m, S, h, g$ and $\\vec{u_z}$.",
-				"solution": "According to the hydrostatic law, one has $$ P_w = P_a - \\rho g h = P_0 - \\rho g h $$ In the configuration shown in Fig. 2 (case b), the tube is submitted to three forces: its weight, the resultant of the pressure forces and the force exerted by the operator. Thus, at equilibrium, one has $$ \\vec{0} = m \\vec{g} + (P_w - P_0) S \\vec{u_z} + \\vec{F} $$ which leads to $$ \\vec{F} = - [m + \\rho S h] \\vec{g} = [m + \\rho S h] g \\vec{u_z} $$",
-				"maxPoints": 0.2,
-				"subparts": [
-					{
-						"description": "Expression of Pw (as a function of Pa or Po)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of F",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.2",
-				"description": "For each experiment, complete the table in the answer sheet to indicate the expected behaviour and the numerical values for $F_\\text{max}$ and for $h^*$ (when pertinent), where $F_\\text{max}$ and $h^*$ are defined in the figures illustrating the two behaviours.",
-				"solution": "Physically, the altitude $h^*$ corresponds to the threshold at which saturated vapour appears in the tube. This altitude can be expressed using the hydrostatic law, writing $$ P_w = P_0 - \\rho g h^* = P_\\text{sat}(T_a). $$ One can find $$ h^* = \\frac{P_0 - P_\\text{sat}(T_a)}{\\rho g}, $$ and calculate its numerical value for each experiment. If the value obtained is higher than $H$, behaviour A is observed; otherwise, behaviour B is observed. According to the previous question, the force $F$ is related to $h$ by $$ F = [m + \\rho S h] g $$ which leads to $$ F_\\text{max} = \\begin{cases} [m + \\rho S H] g & \\text{for behaviour A} \\\\ [m + \\rho S h^*] g & \\text{for behaviour B} \\end{cases} $$ One can deduce the following predictions: <br> Experiment 1: Behaviour A, $F_\\text{max} = 14.7 \\, \\text{N}$ <br> Experiment 2: Behaviour A, $F_\\text{max} = 14.4 \\, \\text{N}$ <br> Experiment 3: Behaviour B, $h^* = 2.1 \\, \\text{cm}$, $F_\\text{max} = 5.1 \\, \\text{N}$",
-				"maxPoints": 0.8,
-				"subparts": [
-					{
-						"description": "All behaviours are correct (*all or nothing*): A/A/B",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Experiment 1: Numerical value of F_max in [14.6, 15] (N)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Experiment 2: Numerical value of F_max in [14, 14.5] (N)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Experiment 3: Numerical value of h* in [2, 2.2] (cm)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "0.1 pt if only literal expression is correct",
-								"points": 0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "Experiment 3: Numerical value of F_max in [5, 5.2] (N)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "0.1 pt if only literal expression is correct",
-								"points": 0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					}
-				]
-			},
-			{
-				"number": "A.3",
-				"description": "Express the relative error, denoted $\\epsilon$, committed when we evaluate the maximal force $F_\\text{max}$ neglecting $P_\\text{sat}$ compared to $P_0$. Give the numerical value of $\\epsilon$.",
-				"solution": "For behaviour B, the expression of $F_\\text{max}$ previously obtained can be reformulated as $$ F_\\text{max} = mg + (P_0 - P_\\text{sat})S $$ Neglecting the saturated vapour pressure compared to the atmospheric pressure, one obtains $$ F_\\text{max} \\approx mg + P_0 S $$ Thus, the relative error $\\epsilon$ is given by $$ \\epsilon = \\frac{P_\\text{sat}}{P_0 + mg/S} \\approx 1.6 \\times 10^{-6} $$",
-				"maxPoints": 0.3,
-				"subparts": [
-					{
-						"description": "Literal expression of $\\epsilon$ (with or without $P_\\text{sat}$ in denominator)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value of $\\epsilon$ in $[1, 2] \\times 10^{-6}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.1",
-				"description": "On the answer sheet, color the area corresponding to the volume of liquid mercury that is responsible for the term $m_\\text{add}$ appearing in equation (1).",
-				"solution": "By adapting the reasoning used at part A, one can deduce that the mass $m_\\text{add}$ corresponds to the liquid mass in the two-part tube which is above the outside surface of the liquid bath, as shown below.",
-				"maxPoints": 0.3,
-				"subparts": [
-					{
-						"description": "Coloring of the correct area",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "0.1 pt only if a correct expression of $m_\\text{add}$ is provided but the colored area is incorrect",
-								"points": 0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					}
-				]
-			},
-			{
-				"number": "B.2",
-				"description": "Sketch the evolution of the mass $m_\\text{add}$ as a function of $h_t$ for $h_t \\in [-H_b, H_t]$. On the graph, provide the expression for the slopes of the different segments, as well as the $h_t$ analytical value of any angular points, in terms of $P_0, \\rho, g, S_b, S_t, H_b$ and $H_t$.",
-				"solution": "Using the same reasoning as in question A2, one can determine that saturated vapour appears in the two-part barometric tube when the altitude of the liquid column in the tube reaches the critical value $$ z_e^* = \\frac{P_0 - P_\\text{sat}}{\\rho g} = \\frac{P_0}{\\rho g} = 76 \\, \\text{cm} $$ taking $P_\\text{sat}=0$. Combining this result with that of the previous question, one obtains the following graph: The graph of $m_\\text{add}$ vs $h_t$ consists of four linear segments. From $h_t = -H_b$ to $0$, the slope is $\\rho S_b$. From $h_t=0$ to $z_e^*-H_b (=56 \\text{cm})$, the slope is $\\rho S_t$. From $h_t = z_e^*-H_b$ to $z_e^* (=76 \\text{cm})$, the slope is $-\\rho(S_b - S_t)$. From $h_t = z_e^*$ to $H_t$, the slope is 0.",
-				"maxPoints": 1.4,
-				"subparts": [
-					{
-						"description": "Qualitative aspect: Graph with 4 straight pieces",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "0.1pt only if there are 3 pieces; 0 else",
-								"points": 0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "Qualitative aspect: For the 1st & 2nd pieces, the slopes are positive *and* the slope of 2nd piece is less than that of 1st (*all or nothing*)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Qualitative aspect: The 3rd piece has a negative slope",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Qualitative aspect: The 4th piece has a null slope",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expressions of the two first slopes (*all or nothing*)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of the negative slope",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "$h_t$ analytical values of the 3 intermediate angular points (0.1pt per value)",
-						"points": 0.3,
-						"type": "open",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.3",
-				"description": "Given that $S_t = 5 \\, \\text{cm}^2$ and $S_b = 200 \\, \\text{cm}^2$, express the amplitude $\\Delta m_\\text{add}$ of the variations of the mass $m_\\text{add}$ over time, then give its numerical value. Assume that the liquid surface always stays in the bulb.",
-				"solution": "By neglecting the saturated vapour pressure in the bulb, the altitude $z_e$ of the free surface of the liquid in the tube is given by $$ z_e(t) = \\frac{P_a(t)}{\\rho g} = \\frac{P_0}{\\rho g} + \\frac{P_1(t)}{\\rho g} = \\underbrace{h_t + \\frac{H_b}{2}}_\\text{mean value } z_{e,0} + \\underbrace{\\frac{P_1(t)}{\\rho g}}_\\text{perturbative term} $$ which leads to $$ m_\\text{add}(t) = \\rho[S_t h_t + S_b(z_e(t) - h_t)] = \\rho[S_t h_t + S_b(z_{e,0} - h_t)] + \\frac{S_b P_1(t)}{g} $$ The first term gives the mean value of the mass $m_\\text{add}(t)$, while the last term characterizes its temporal variations. One can deduce the magnitude $$ \\Delta m_\\text{add} = \\frac{S_b A}{g} = 1 \\, \\text{kg} $$",
-				"maxPoints": 0.3,
-				"subparts": [
-					{
-						"description": "Literal expression of $\\Delta m_\\text{add}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value *with unit*, in [1 kg, 1.1 kg]",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.1",
-				"description": "Determine the threshold $\\xi^*$ such that $M$ remains indefinitely at rest when $\\xi > \\xi^*$.",
-				"solution": "Consider the case in which the mass $M$ stays at rest at $x=0$. At the start $t=0$, the tensions exerted by the two cables on either side of the mass $M$ are in balance: the force $\\vec{F_0}$ required to suspend the barometric tube (with the fluid it contains) is equal to that required to suspend the cistern (with the fluid it contains). When the atmospheric pressure increases from $P_a = P_0$, the fluid rises in the barometric tube while it descends in the cistern. As a result, the added mass in the tube increases, while the added mass in the cistern decreases. We denote $m_{1,tb}$ and $m_{1,c}$ the (algebraic) variation of the apparent masses of each container. Thus, the tensions exerted by the two cables can be written:<br> $[F_0 + m_{1,tb} g] \\vec{u_x}$ for the cable on the right, suspending the tube;<br> $-[F_0 + m_{1,c} g] \\vec{u_x}$ for the cable on the left, suspending the cistern.<br>According to the principle of mass conservation, one can immediately state that $m_{1,tb} = -m_{1,c}$. Subsequently, we choose to keep only $m_{1,c}$ in the expressions (but all the calculations can be carried out while keeping $m_{1,tb}$ ).<br>The friction force between the support and the mass $M$ needed to maintain the equilibrium is therefore given by $$ \\vec{R_t} = -[F_0 - m_{1,c} g] \\vec{u_x} + [F_0 + m_{1,c} g] \\vec{u_x} = 2m_{1,c} g \\vec{u_x} $$ In addition, according to the sketch above (where displacements $\\delta_b$ and $\\delta_c$ are algebraic), we have $m_{1,c} = \\rho S_c \\delta_c$.<br>It is now necessary to determine $\\delta_c$. One can use<br> the hydrostatic law: $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$ <br> the conservation of the total volume/mass of mercury: $S_b \\delta_b = -[S_c - S_t]\\delta_c \\approx -S_c \\delta_c$ (given that $S_t \\ll S_b, S_c$ )<br>Solving the system formed by those equations, one finds $$ \\delta_c = -\\frac{S_b}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} \\approx -\\frac{S_b}{S_b + S_c} \\frac{P_1}{\\rho g} $$ which finally yields $$ \\vec{R_t} = -\\frac{2 S_b S_c}{S_b + S_c - S_t} P_1 \\vec{u_x} \\approx -\\frac{2 S_b S_c}{S_b + S_c} P_1 \\vec{u_x} $$ With the triangular model for $P_1(t)$, the maximum static friction force is obtained when $P_1 = \\pm A$. Therefore, according to the Coulomb's law of friction, the mass $M$ stays at rest if and only if $$ \\frac{2 S_b S_c}{S_b + S_c - S_t} A < F_s $$ This inequality can be rewritten as $$ 2 < \\frac{S_b + S_c - S_t}{S_b S_c} \\frac{F_s}{A} = \\xi $$ which allows us to identify $$ \\xi^* = 2 $$",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of mass or volume variation of fluid in at least one of the vessels, in terms of those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Conservation of the total mass/volume",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Expression of barometric difference of heights between the two surfaces",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Expression of the friction force at equilibrium (with or without using $S_t \\ll S_b, S_c$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Use of Coulomb's law in sticky situation",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Conclusion: Obtaining $\\xi^*$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.2",
-				"description": "Give an expression for the total tension force $\\vec{T} = T \\vec{u_x}$ acting on the mass $M$ due to the tension in two cables at this position, when $P_1 = 0$, in terms of $\\rho, g, X$ and pertinent cross-sections.",
-				"solution": "Let us compare the configurations of the system when $x=0$ and when $x=X$.<br>Assuming that the atmospheric pressure is temporarily fixed at $P_0$, the difference $\\Delta z_e$ of fluid heights between the cistern and the barometric tube is the same in both configurations. It is given by $\\Delta z_e,0 = P_0 / \\rho g$ and leads to $$ \\delta_b = \\delta_c $$ The total volume/mass of mercury is also conserved. This conservation can be expressed by the equation $$ \\underbrace{(S_c - S_t) \\delta_c - (S_c + S_t) X}_\\text{volume of mercury algebraically won by the cistern} + \\underbrace{S_b(\\delta_b + X)}_\\text{volume of mercury algebraically won by the bulb} = 0 $$ which can be reformulated as $$ S_b \\delta_b + (S_c - S_t)\\delta_c = (S_c - S_b + S_t)X $$ One obtains $$ \\delta_b = \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X $$ Thus, the supplementary added mass in the cistern is given by $$ m_{1,c} = \\rho S_c (\\delta_c - X) = -\\rho \\frac{2S_c(S_b - S_t)}{S_c + S_b - S_t} X \\approx -\\rho \\frac{2S_b S_c}{S_b + S_c} X $$ and, as explained in C1, we still have $m_{1,tb} = -m_{1,c}$.<br>Finally, according to the sketch, one obtain the resultant tension force $\\vec{T} = (m_{1,tb} - m_{1,c})g \\vec{u_x} = -2m_{1,c} g \\vec{u_x}$, that is $$ \\vec{T} = \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X \\vec{u_x} \\approx \\frac{4S_b S_c}{S_b + S_c} \\rho g X \\vec{u_x} $$",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expressions of mass or volume variations of fluid in one of the vessels in terms of X and those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Conservation of the total mass/volume",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical law: Expression of barometric difference of heights between the two surfaces",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of the total tension force $\\vec{T}$ (with or without using $S_t \\ll S_b, S_c$ )",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.3",
-				"description": "Complete the table in the answer sheet to indicate the condition under which each regime is obtained. Conditions must be expressed as inequalities on $\\xi$ and/or $\\lambda$. In addition, sketch the variations of $x(t)/X$ for $t \\in [0, 3\\tau_1]$ that are consistent with the variations of $P_1(t)/A$ already present. Specification of remarkable points coordinates is not required.",
-				"solution": "When $\\xi < \\xi^*$, there necessarily exists an instant from which the mass $M$ begins to sweep on the right. From there, the mass $M$ is continuously accelerated by the total tension $\\vec{T}$ until it is blocked by the stop at $x=X$. According to Fig. 5, one can assume that $X$ is of the order of a few centimeters, so the time needed to switch between the two positions $x=0$ and $x=X$ can reasonably be neglected in front of the period $\\tau_1$.<br>Once blocked at $x=X$, the resultant tension $\\vec{T}$ can be determined by generalizing the reasoning carried out in the two previous questions. One obtains the following equations:<br> hydrostatic law: $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$ <br> conservation of the volume/mass: $S_b \\delta_b + (S_c - S_t) \\delta_c = (S_c - S_b + S_t) X$ <br>The resolution of this system gives $$ \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X - \\frac{S_b}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} $$ from which we deduce the perturbative added mass $$ m_{1,c} = \\rho S_c (\\delta_c - X) = -\\rho \\left[ \\frac{2S_c(S_b - S_t)}{S_b + S_c - S_t} X + \\frac{S_b S_c}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} \\right] = -m_{1,tb} $$ Then finally $$ \\vec{T} = -2m_{1,c} g \\vec{u_x} = \\left[ \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X + \\frac{2S_b S_c}{S_b + S_c - S_t} P_1 \\right] \\vec{u_x} $$ According to Coulomb's law of friction, the mass $M$ will stay at rest at the position $x=X$ while $\\vec{T} \\cdot \\vec{u_x} > -F_s$. With the model adopted for $P_1(t)$, this condition is always satisfied if $$ \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X - \\frac{2S_b S_c}{S_b + S_c - S_t} A > -F_s $$ Hence, using the parameters $\\xi$ and $\\lambda$, one can identify the two possible regimes:<br> Regime 1: $\\xi + 2\\lambda > 2$ (once at $x=X$, the mass $M$ stays indefinitely at rest)<br> Regime 2: $\\xi + 2\\lambda < 2$ (once at $x=X$, the mass $M$ will periodically sweep between the two stops)",
-				"maxPoints": 2,
-				"subparts": [
-					{
-						"description": "Expression for $\\vec{T}$ in the general case, containing both $P_1$ and X terms.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "At least one inequality is correct (without considering strict or large)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Both inequalities are correct (without considering strict or large)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Global appearance of *both* graphs: one seems to show an aperiodic behaviour, the other a periodic behaviour (*all or nothing*)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Global appearance: each graph is in accordance with the correct sign of obtained inequality (focus on symbols > / <, without considering if the inequality is strict or large)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Either graph 1 or 2 shows: A first switch from $x=0$ to $x=X$ that begins somewhere in the interval $t \\in [0, \\tau_1/4]$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Either graph 1 or 2 shows: The switch is instantaneous",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Graph in aperiodic regime: $x=X$ for all times after the first switch",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Graph in periodic regime: the behaviour is periodic with period $\\tau_1$ (except for the first switch)",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Graph in periodic regime: the positive and negative parts of the graph are similar",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Graph in periodic regime: $x(t)/X$ is described by a rectangular function, of magnitude 1 and duty cycle 50% in steady state",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Graph in periodic regime: the first step at $x=X$ last longer than others",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.4",
-				"description": "Considering $S_b = S_c$ and $S_t \\ll S_b$, determine the expressions for $F_s^*$ and $X^*$ as functions of $\\rho, g, S_c$ and $A$. Express the corresponding maximum energy $W^*$, then calculate its numerical value with $A = 5 \\times 10^2 \\, \\text{Pa}$.",
-				"solution": "During a period, there is one motion to the left and one to the right. The total length of the displacement is $4X$. The total work $W$ of the friction force is thus $W = 4F_s X$.<br>We have to optimize this quantity with the constraint $\\xi + 2\\lambda \\le 2$, which can also be written as $$ \\frac{2\\rho g X}{A} + \\frac{F_s}{S_c A} \\le 1 $$ The optimum is obtained at the limit of the condition, when $F_s = S_c(A-2\\rho g X)$. The work is then $W = 4X S_c(A-2\\rho g X)$. It is maximal for $$ X^* = \\frac{A}{4\\rho g} \\quad \\text{and} \\quad F_s^* = \\frac{A S_c}{2} $$ leading to the following optimal work $$ W^* = \\frac{A^2 S_c}{2\\rho g} = 20 \\, \\text{mJ} $$",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Starting point: $W = 4F_s X$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Optimization: $\\xi + 2\\lambda = 2$ or equivalent $F_s = S_c(A - 2\\rho g X)$",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $X^*$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $F_s^*$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $W^*$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value for $W^*$ *with unit*: in [19 mJ, 21 mJ]",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.5",
-				"description": "Express $W_\\text{pr}^*$, then calculate the ratio $W^*/W_\\text{pr}^*$. It could be useful to represent the evolution of the system in a $(P, V)$ diagram, where $V$ is the system's volume.",
-				"solution": "The variations of pressure and of the vessel's position lead to fluid transfer between the cistern and the two-part tube. As a consequence, the total volume $V(t)$ occupied by the system in the atmosphere changes and can be denoted $$ V(t) = V_0 + V_1(t) $$ where $V_0$ is the volume in the initial state (when $x=0$ and $P_a = P_0$ ) whereas $V_1(t)$ is a perturbation term. Physically, $V_1$ corresponds to the change of the volume of liquid in the cistern, and is thus given by $$ V_1 = \\frac{m_{1,c}}{\\rho} $$ where $m_{1,c}$ has already been expressed in C3 (just replace $X$ with $x(t)$ ). Given that $S_b = S_c$ and $S_t$ is neglected, one obtains in any state $$ V_1(t) = -S_c \\left[ x(t) + \\frac{P_1(t)}{2\\rho g} \\right] = -S_c X^* \\left[ \\frac{x(t)}{X^*} + \\frac{1}{\\lambda} \\frac{P_1(t)}{A} \\right] $$ Over one period, the work of atmospheric pressure forces received by the system is defined as $$ W_\\text{pr} = - \\oint_\\text{1 period} P_a dV = - \\oint_\\text{1 period} P_1 dV_1 $$ and can thus be identified to the area of the cycle described by the system in a $(P_1, V_1)$ diagram.<br>Considering the optimal situation determined in the previous question, one observes the following behaviour once in steady state. The four states are:<br>1: $P_1 = A$, $x = X^*$, $V_1 = -3S_c X^*$ <br>2: $P_1 = -A$, $x = X^*$, $V_1 = S_c X^*$ <br>3: $P_1 = -A$, $x = -X^*$, $V_1 = 3S_c X^*$ <br>4: $P_1 = A$, $x = -X^*$, $V_1 = -S_c X^*$ <br>The work of the pressure force is the surface area inside this parallelogram, that is the product of its base $2S_c X^*$ by its height $2A$. As a consequence $$ W_\\text{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g} $$ and $$ \\frac{W^*}{W_\\text{pr}^*} = \\frac{1}{2} $$",
-				"maxPoints": 1.7,
-				"subparts": [
-					{
-						"description": "Physical analysis: In the optimal case, the mass M switches between the two positions $x = \\pm X$ when $P_1 = \\pm A$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical analysis: During a period, the system describes a cycle formed of 2 iso-x and 2 iso-P transformations (sketch of cycle, or a table or any other pertinent description)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Physical analysis: Correct sequence of the successive states and/or direction of the cycle using x and P",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "General expression of the volume of the system in an (P,x) state: $V = -S_c x + \\frac{P_1}{2\\rho g} + Cste$",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expressions of the volume in the 4 states of the cycle: $-3S_c X^* \\to S_c X^* \\to 3S_c X^* \\to -S_c X^*$ (*all or nothing*)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Method used to calculate the work of atmospheric pressure forces: $W_\\text{pr} = -\\oint_\\text{period} P_a dV$ (explicit integral or area of the cycle in $(P,V)$ diagram or other pertinent method)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Obtaining $W_\\text{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Final result: $\\frac{W^*}{W_\\text{pr}^*} = \\frac{1}{2}$",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	},
-	{
-		"number": 3,
-		"name": "Champagne!",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "A.1",
-				"description": "Express the pressure $P_b$ in terms of $P_0, a$ and $\\sigma$.",
-				"solution": "Laplace's law: $P_b = P_0 + \\frac{2\\sigma}{a}$",
-				"maxPoints": 0.2,
-				"subparts": [
-					{
-						"description": "Laplace's law: $P_b = P_0 + \\frac{2\\sigma}{a}$ (all-or-nothing, as for all the answers)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.2",
-				"description": "Express the critical radius $a_c$ above which a bubble is expected to grow in terms of $P_0, \\sigma, c_e$ and $c_0$ where $c_0=k_H P_0$. Calculate numerically $a_c$ for $c_e=4c_0$.",
-				"solution": "A bubble grows if $c_e > c_b$. The critical radius corresponds to $c_e = c_b$.<br> $c_b = k_H P_b = k_H (P_0 + \\frac{2\\sigma}{a_c})$ and $c_0 = k_H P_0$.<br>So $c_e = k_H (P_0 + \\frac{2\\sigma}{a_c}) = c_0 + k_H \\frac{2\\sigma}{a_c}$.<br>This gives $a_c = \\frac{2\\sigma k_H}{c_e - c_0} = \\frac{2\\sigma c_0/P_0}{c_e - c_0} = \\frac{2\\sigma}{P_0(c_e/c_0 - 1)}$.<br>For $c_e = 4c_0$, $a_c = \\frac{2\\sigma}{P_0(4-1)} = \\frac{2 \\times 47 \\times 10^{-3}}{1.0 \\times 10^5 \\times 3} = 0.3 \\times 10^{-6} \\, \\text{m} = 0.3 \\, \\mu\\text{m}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "comparison (equality $c_b = c_e$ or inequality $c_b \\le c_e$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "exact expression $a_c = \\frac{2\\sigma}{P_0(c_e/c_0-1)}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "numerical value $a_c = 0.3 \\, \\mu\\text{m}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.3",
-				"description": "Express the number of CO2 moles in the bubble $n_e$ in terms of $a, P_0, T_0$ and ideal gas constant $R$. Find $a(t)$ for both models. Indicate which model explains the experimental results in Fig. 2. Depending on your answer, calculate numerically $K$ or $D$.",
-				"solution": "The number of moles of CO2 (ideal gas) inside the bubble is $n_e = \\frac{P_b V}{R T_0} \\approx \\frac{P_0 (\\frac{4}{3}\\pi a^3)}{R T_0}$.<br>Equation for balance of CO2 in the bubble: $\\frac{dn_e}{dt} = j \\cdot 4\\pi a^2$.<br>So $\\frac{d}{dt} (\\frac{4\\pi P_0 a^3}{3 R T_0}) = j \\cdot 4\\pi a^2$, which simplifies to $\\frac{P_0}{R T_0} \\frac{da}{dt} = j$.<br>Model 1: $j = \\frac{D}{a}(c_e - c_b) \\approx \\frac{D}{a}(c_e - c_0)$. Then $\\frac{da}{dt} = \\frac{D R T_0}{a P_0}(c_e - c_0)$. Integrating gives $a^2 = a_0^2 + \\frac{2 D R T_0}{P_0}(c_e - c_0)t$.<br>Model 2: $j = K(c_e - c_b) \\approx K(c_e - c_0)$. Then $\\frac{da}{dt} = \\frac{K R T_0}{P_0}(c_e - c_0)$. Integrating gives $a = a_0 + \\frac{K R T_0}{P_0}(c_e - c_0)t$.<br>Experimental data shows $a(t)$ is linear with time, so it follows model 2. The slope $\\dot{a}$ is constant.<br>From the graph, $\\dot{a} \\approx (200-50) \\times 10^{-6} \\, \\text{m} / 0.62 \\, \\text{s} \\approx 0.24 \\, \\text{mm} \\cdot \\text{s}^{-1}$.<br>The slope is $\\frac{K R T_0}{P_0}(c_e - c_0)$. With $c_e = 4c_0$, this is $\\frac{K R T_0}{P_0}(3c_0) = 3 K R T_0 k_H$.<br> $K = \\frac{\\dot{a}}{3 R T_0 k_H} = \\frac{0.24 \\times 10^{-3}}{3 \\times 8.314 \\times 293 \\times 3.3 \\times 10^{-4}} = 1.0 \\times 10^{-4} \\, \\text{m} \\cdot \\text{s}^{-1}$.",
-				"maxPoints": 1.2,
-				"subparts": [
-					{
-						"description": "$n_e = \\frac{4}{3}\\pi a^3 \\frac{P_0}{R T_0}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "any equation that that can be interpreted as a particule balance",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "equation between $\\dot{a}$ (or $\\dot{n}_e$ ) and j",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Model model 1 a exact with $a_0$ present",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "model 2 a exact with $a_0$ present",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "model 2",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "value of the slope: total mark only if $\\frac{da}{dt}$ is in range $[210-250] \\, \\mu\\text{m} \\cdot \\text{s}^{-1}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "any value of K in range $[0.9-1.1] \\, \\text{m} \\cdot \\text{s}^{-1}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.4",
-				"description": "Give the expression of the main forces exerted on a vertically rising bubble. Obtain the expression of $v(a)$. Give a numerical estimate of $\\eta$ using only $\\rho_l, g_0$ and quantities measured on Fig. 3.",
-				"solution": "Main forces: buoyancy $F_B = \\frac{4}{3}\\pi a^3 \\rho_l g_0$, drag force $F_D = 6\\pi\\eta a v$. Weight is negligible as $\\frac{\\rho_{CO_2}}{\\rho_l} \\approx 10^{-3}$.<br>Simplified equation is a balance between buoyancy and drag force: $\\frac{4}{3}\\pi a^3 \\rho_l g_0 = 6\\pi\\eta a v$, so $v = \\frac{2\\rho_l g_0}{9\\eta} a^2$.<br>Time between two bubbles: $\\Delta t = 1/f_b$.<br>Using $\\eta = \\frac{2\\rho_l g_0}{9} \\frac{a^2}{v}$ for the penultimate bubble ( $n-1$ ) with $a_{n-1} \\approx 0.19 \\, \\text{mm}$ from Fig.3. The velocity is $v(t_{n-1}) = \\frac{z(t_n) - z(t_{n-1})}{2 \\Delta t}$, but we can approximate it as $v(t_{n-1}) = \\frac{z(t_n) - z(t_{n-2})}{2 \\times 1/f_b}$. From the image, the distance between the last and second to last bubble is around $2.25 \\, \\text{mm}$. Time is $1/20 \\, \\text{s}$. So $v \\approx 2.25 \\, \\text{mm} / (1/20 \\text{s}) = 45 \\, \\text{mm/s} = 4.5 \\, \\text{cm/s}$.<br> $\\eta = \\frac{2 \\times 10^3 \\times 9.8 \\times (0.19 \\times 10^{-3})^2}{9 \\times 4.5 \\times 10^{-2}} \\approx 2 \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$.",
-				"maxPoints": 0.8,
-				"subparts": [
-					{
-						"description": "Expression of main forces (gravity force present or absent): fullmark",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "expression $v = \\frac{2 \\rho_l g_0}{9\\eta} a^2$ (full mark on this point with or without the gravity force)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "exact value taking account of the time during two positions $\\Delta t = 1/f_b = 5 \\times 10^{-2} \\, \\text{s}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "full mark for one coherent value of the radius measured on Fig.3. last bubble in [0.22-0.28]mm, penultimate bubble: radius in [0.18-0.22]mm, antepenultimate bubble: radius in [0.16-0.20]mm",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "full mark for one coherent value of the velocity measured on Fig.3. last bubble $v \\in [4.6, 5.0] \\, \\text{cm} \\cdot \\text{s}^{-1}$, penultimate bubble $v \\in [4.3, 4.6] \\, \\text{cm} \\cdot \\text{s}^{-1}$, antepenultimate bubble $v \\in [3.7 - 4.2] \\, \\text{cm} \\cdot \\text{s}^{-1}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "full mark for any value for $\\eta$ in range $[1.5-3.5] \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.5",
-				"description": "Express the radius $a_{H_e}$ of a bubble reaching the free surface in terms of height travelled $H_e$ and growth rate $q_a = da/dt$, and any constants you may need. Assume $a_{H_e} \\gg a_0$. Give and $q_a$ constant, and give the numerical value of $a_{H_e}$ with $H_e = 10 \\, \\text{cm}$ and $q_a$ corresponding to Fig. 2.",
-				"solution": "$v = \\frac{dz}{dt} = \\frac{2\\rho_l g_0}{9\\eta} a^2$ and $\\frac{da}{dt} = q_a$. So $dz = \\frac{2\\rho_l g_0}{9\\eta} a^2 dt = \\frac{2\\rho_l g_0}{9\\eta q_a} a^2 da$.<br>Integrating from $z=0$ to $H_e$ and $a=a_0$ to $a_{H_e}$: $H_e = \\int_0^{H_e} dz = \\int_{a_0}^{a_{H_e}} \\frac{2\\rho_l g_0}{9\\eta q_a} a^2 da = \\frac{2\\rho_l g_0}{27\\eta q_a} (a_{H_e}^3 - a_0^3)$.<br>Neglecting $a_0$, we get $a_{H_e}^3 = \\frac{27\\eta q_a H_e}{2\\rho_l g_0}$, so $a_{H_e} = (\\frac{27\\eta q_a H_e}{2\\rho_l g_0})^{1/3}$.<br>With $q_a = 0.24 \\, \\text{mm/s}$, $H_e = 0.1 \\, \\text{m}$, $\\eta = 2.0 \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$, we get $a_{H_e} = (\\frac{27 \\times 2.0 \\times 10^{-3} \\times 0.24 \\times 10^{-3} \\times 0.1}{2 \\times 10^3 \\times 9.8})^{1/3} = 3.9 \\times 10^{-4} \\, \\text{m}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "$a_{H_e} = (\\frac{27\\eta q_a H_e}{2\\rho_l g_0})^{1/3}$",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "full mark if $a_{H_e} \\in [0.36 - 0.49] \\, \\text{mm}$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "A.6",
-				"description": "Obtain from this equation the characteristic time $\\tau$ for the decay of the concentration of dissolved CO2 in the liquid.",
-				"solution": "The rate of bubbles reaching the free surface by unit time is $N_b f_b$.<br>The volume of CO2 released per unit time at the free surface is: $\\frac{dV}{dt} = N_b f_b \\frac{4}{3}\\pi a_{H_e}^3$.<br>Using A.5, $\\frac{dV}{dt} = N_b f_b \\frac{4}{3}\\pi \\frac{27\\eta q_a H_e}{2\\rho_l g_0} = \\frac{18\\pi N_b f_b \\eta q_a H_e}{\\rho_l g_0}$.<br>With $q_a = \\frac{K R T_0}{P_0}(c_e - c_0)$, we get $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} \\frac{K R T_0}{P_0}(c_e - c_0)$.<br>The total number of moles of CO2 in volume $V_e$ is $n = c_e V_e$. The rate of change of moles is $\\frac{dn}{dt} = -\\frac{P_0}{R T_0} \\frac{dV}{dt}$.<br>So $V_e \\frac{dc_e}{dt} = -\\frac{P_0}{R T_0} \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} \\frac{K R T_0}{P_0}(c_e - c_0) = -\\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0}(c_e - c_0)$.<br>This is a first order linear ODE: $\\frac{d(c_e-c_0)}{dt} = -\\frac{1}{\\tau}(c_e-c_0)$ with characteristic time $\\tau = \\frac{\\rho_l g_0 V_e}{18\\pi N_b f_b \\eta K H_e}$.",
-				"maxPoints": 1.1,
-				"subparts": [
-					{
-						"description": "Correct count of bubbles reaching the free surface by unit time: $N_b f_b$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Balance at the free surface: $\\frac{dV}{dt} = \\frac{4}{3}\\pi a_{H_e}^3 N_b f_b$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact expression of $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} q_a$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "$q_a = \\frac{da}{dt} = \\frac{K R T_0}{P_0}(c_e-c_0)$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "First order linear differential equation: $\\frac{dc_e}{dt} + \\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0 V_e}(c_e-c_0)=0$. If an homogeneous mistake has been made at a previous task, but the differential equation is first order and coherent, fullmark.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exponential decay with characteristic time: $\\tau = \\frac{\\rho_l g_0 V_e}{18\\pi N_b f_b \\eta K H_e}$. full mark if A.6.5 is just and if the numerical coefficient is absent or different of 1/18$\\pi$ (reasonable solution)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.1",
-				"description": "Express $v_f$ in terms of $\\rho_l, \\sigma$ and $h$.",
-				"solution": "Variation of kinetic energy: the liquid in the rim has mass $dm = \\rho_l (2\\pi r dt) h$ and velocity $v_f$. The kinetic energy increase is $dE_k = \\frac{1}{2} (dm) v_f^2 = \\pi \\rho_l h r v_f^3 dt$. The solution text has a different approach. Let's follow it.<br>Variation of kinetic energy: system: the rim and the accumulated liquid. volume $\\delta V = h \\cdot 2\\pi r \\cdot v_f dt$. The kinetic energy is $dE_k = \\frac{1}{2} \\rho_l \\delta V v_f^2 = \\pi \\rho_l h r v_f^3 dt$.<br>Variation of surface tension energy: the surface energy varies only due to the disparition of the film. Two surfaces disappear. $\\delta E_s = -\\sigma (2 \\times 2\\pi r v_f dt) = -4\\pi \\sigma r v_f dt$.<br>Kinetic energy theorem: the lost energy is $\\delta E_s / 2$. So $dE_k = -\\delta E_s / 2$.<br> $\\pi \\rho_l h r v_f^3 dt = -(-\\frac{4\\pi \\sigma r v_f dt}{2})$. This gives $\\rho_l h v_f^2 = 2\\sigma$, so $v_f = \\sqrt{2\\sigma/(\\rho_l h)}$.",
-				"maxPoints": 1.1,
-				"subparts": [
-					{
-						"description": "Any expression of kinetic energy",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Variation of kinetic energy (differential or finite variation accepted)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of a surface energy or a variation.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact expression of $\\delta E_s$",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Kinetic energy balance (without sign mistake). ",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "If the candidate forget the energy loss, it is treated as a small mistake",
-								"points": -0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "exact expression of $v_f$",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.2",
-				"description": "Express the frequency of oscillation $f_0$ of $m_p$. Hint: for $\\epsilon \\ll 1, (1+\\epsilon)^\\alpha \\approx 1+\\alpha\\epsilon$.",
-				"solution": "Pressure forces on $m_p$: $F_z = P(t)S - P_0 S$.<br>Volume $V(t) = V_0 + Sz$.<br>Adiabatic and reversible compression: $P(t)V(t)^\\gamma = P_0 V_0^\\gamma$, so $P(t) = P_0 (\\frac{V_0}{V_0+Sz})^\\gamma = P_0 (1+Sz/V_0)^{-\\gamma}$.<br>Approximation: $P(t) \\approx P_0 (1-\\gamma Sz/V_0)$.<br>Pressure force: $F_z = -\\gamma S^2 P_0 \\frac{z}{V_0}$.<br>Newton's 2nd law: $m_p \\ddot{z} = -\\frac{\\gamma S^2 P_0}{V_0} z$, so $m_p \\ddot{z} + \\frac{\\gamma S^2 P_0}{V_0} z = 0$.<br>Harmonic oscillator of angular frequency $\\omega_0^2 = \\frac{\\gamma S^2 P_0}{m_p V_0}$.<br> $f_0 = \\frac{\\omega_0}{2\\pi} = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma S^2 P_0}{m_p V_0}}$.",
-				"maxPoints": 1.1,
-				"subparts": [
-					{
-						"description": "Pressure force with $P_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of volume $V(t)$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $P(t)$ with adiabatic reversible process for an ideal gas",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Approximate pressure",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact linearized pressure force",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Law of motion",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Harmonic oscillator, angular frequency",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of $f_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "B.3",
-				"description": "Find the radius $a$ and the thickness $h$ of the champagne film separating the bubble from the atmosphere.",
-				"solution": "The maximal value of $f_0$ is $f_0 = 40 \\, \\text{kHz}$ which is obtained for $r=r_c$.<br>With $m_p = 8\\rho_g r^3/3$, $S=\\pi r^2$, $V_0 = 4/3 \\pi a^3$, the expression for $f_0$ becomes $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma (\\pi r^2)^2 P_0}{(8\\rho_g r^3/3)(4/3 \\pi a^3)}} = \\frac{1}{2\\pi} \\sqrt{\\frac{3\\gamma \\pi P_0}{32 \\rho_g a^3}} r^{1/2}$. This does not match the solution. Let's recheck the formula for $f_0$ from solution. $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P_0}{\\rho_g}} \\frac{3\\sqrt{3\\pi}}{16a} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Not clear where this comes from. Let's follow the solution's derivation.<br> $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{3r_c \\pi^2 P_0 \\gamma}{8 \\rho_g V_0}}$. Using $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$ and $V_0=\\frac{4}{3}\\pi a^3$.<br> $a = \\frac{3\\sqrt{3}}{64\\pi} \\frac{\\gamma P_0}{f_0^2 \\rho_g} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}} = 0.53 \\, \\text{mm}$.<br>Determination of $h$: $r_c = v_f t_b = \\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b$. Also $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. So $\\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Solving for $h$ gives $h = \\frac{3 t_b^2}{2a^4} \\frac{\\sigma^2}{\\rho_l^2 g_0} = 3.7 \\, \\mu\\text{m}$.",
-				"maxPoints": 1.1,
-				"subparts": [
-					{
-						"description": "Use of max value of $r_c$ for $f_0$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact expression of $f_0$ in terms of $a, \\rho_g, \\sigma, g_0, \\rho_l, P_0$ or expression of a",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact numerical value between 0.5 mm and 0.6 mm",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Relationship between $t_b, v_f$ and $r_c$ or a",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of h in terms of $\\sigma, \\rho_l$ and $v_f$ (or a and $t_b$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical value h = 3.7 $\\mu$m",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.1",
-				"description": "Give the numerical value of the pressure $P_i$ of gaseous CO2 in the bottle for $T_0=6^\\circ\\text{C}$ and $T_0=20^\\circ\\text{C}$.",
-				"solution": "Conservation of CO2 molecules: $n_T = n_V + n_L = n_V + k_H(T_0) P_i V_L$.<br>Ideal gas law: $n_V = \\frac{P_i V_G}{R T_0}$.<br>So $n_T = \\frac{P_i V_G}{R T_0} + k_H(T_0) P_i V_L$.<br> $P_i = \\frac{n_T}{\\frac{V_G}{R T_0} + k_H(T_0) V_L} = \\frac{n_T R T_0}{V_G + R T_0 k_H(T_0) V_L}$.<br>For $T_0 = 6^\\circ\\text{C}$: $P_i=4.81 \\, \\text{bar}$.<br>For $T_0 = 20^\\circ\\text{C}$: $P_i=7.76 \\, \\text{bar}$.",
-				"maxPoints": 0.4,
-				"subparts": [
-					{
-						"description": "Conservation of CO2 molecules",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Literal expression of $P_i$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "For $T_0 = 6^\\circ\\text{C} : P_i = 4.81 \\, \\text{bar}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "For $T_0 = 20^\\circ\\text{C} : P_i = 7.76 \\, \\text{bar}$",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.2",
-				"description": "Give the numerical value $T_f$ of the CO2 gas at the end of the expansion, after opening a bottle, if $T_0=6^\\circ\\text{C}$ and if $T_0=20^\\circ\\text{C}$, if no phase transition occurred. Choose which statements are true (several statements possible):<br>1. At $T_0=6^\\circ\\text{C}$ a grey-white fog appears while opening the bottle.<br>2. At $T_0=6^\\circ\\text{C}$ a blue fog appears while opening the bottle.<br>3. At $T_0=20^\\circ\\text{C}$ a grey-white fog appears while opening the bottle.<br>4. At $T_0=20^\\circ\\text{C}$ a blue fog appears while opening the bottle.",
-				"solution": "The adiabatic reversible expansion goes from $P_i$ to $P_0$. The final temperature $T_f$ is given by $T_f P_f^{(\\frac{1-\\gamma}{\\gamma})} = T_i P_i^{(\\frac{1-\\gamma}{\\gamma})}$, so $T_f = T_i (P_i/P_f)^{(\\frac{1-\\gamma}{\\gamma})} = T_0 (P_i/P_0)^{(\\frac{1-\\gamma}{\\gamma})} = T_0 (P_0/P_i)^{(1-1/\\gamma)}$.<br>For $T_0=6^\\circ\\text{C} = 279.15 \\, \\text{K}$, $P_i=4.69 \\, \\text{bar}$. $T_f = 279.15 (4.69)^{(1-1.3)/1.3} = 195.3 \\, \\text{K} = -77.8^\\circ\\text{C}$.<br>For $T_0=20^\\circ\\text{C} = 293.15 \\, \\text{K}$, $P_i=7.45 \\, \\text{bar}$. $T_f = 293.15 (7.45)^{(1-1.3)/1.3} = 184.3 \\, \\text{K} = -88.8^\\circ\\text{C}$.<br>The transition temperature $T_\\text{trans}$ at $P_0=1 \\, \\text{bar}$ is given by $\\log_{10}(P_\\text{sat}^{CO_2}/P_0) = A - B/(T+C)$, so $1 = 10^{6.81-1300/(T_\\text{trans}-3.49)}$. This gives $T_\\text{trans} = 194.4 \\, \\text{K} = -78.8^\\circ\\text{C}$.<br>For $T_0=6^\\circ\\text{C}$, $T_f=195.3 \\, \\text{K} > T_\\text{trans}$, so no CO2 condensation. A grey-white fog (water) appears. Statement 1 is true.<br>For $T_0=20^\\circ\\text{C}$, $T_f=184.3 \\, \\text{K} < T_\\text{trans}$, so CO2 condensation occurs. A blue fog (solid CO2) appears. Statement 4 is true.<br>The true statements are: 1 and 4.",
-				"maxPoints": 0.7,
-				"subparts": [
-					{
-						"description": "Final pressure of the expansion.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Litteral expression of $T_f$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "For $T_0 = 6^\\circ\\text{C}: P_i=4.69 \\, \\text{bar}$ and $T_f=195.3 \\, \\text{K}$ ;",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "For $T_0 = 20^\\circ\\text{C}: P_i=7.45 \\, \\text{bar}$ and $T_f=184.3 \\, \\text{K}$ ;",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Idea of comparison between $P_\\text{sat}$ and $P_0$ or evaluation of the transition temperature at $P_0$ and idea of comparison with $T_f$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Numerical comparison.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "True statements (all or nothing).",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "C.3",
-				"description": "Give the numerical value of $H_c$ if the external temperature is $T_0 = 6^\\circ\\text{C}$.",
-				"solution": "Work of the friction force: $W_f = -\\int_0^{l_0} \\alpha A dz = -\\int_0^{l_0} \\alpha \\pi d (l_0-z) dz = -\\frac{1}{2} \\alpha \\pi d l_0^2$. Initially, pressure force balances friction: $(P_i-P_0)\\frac{\\pi d^2}{4} = \\alpha (\\pi d l_0)$, so $\\alpha = \\frac{(P_i-P_0)d}{4l_0}$. $W_f = -\\frac{(P_i-P_0)\\pi d^2 l_0}{8} = -1.17 \\, \\text{J}$.<br>Work of internal pressure: The expansion is adiabatic. $\\Delta U_g = W_\\text{cork}\\to\\text{CO2} = -W_\\text{CO2}\\to\\text{cork}$. $\\Delta U_g = \\frac{n_V R}{\\gamma-1}(T_f - T_0) = \\frac{P_i V_G}{\\gamma-1}( (\\frac{V_G}{V_F})^{\\gamma-1} - 1)$. $V_F = V_G + \\frac{\\pi d^2}{4}l_0$. $\\Delta U_g = -2.57 \\, \\text{J}$. So $W_\\text{int} = -\\Delta U_g = 2.57 \\, \\text{J}$.<br>Work of external pressure: $W_e = -P_0 \\Delta V = -P_0 \\frac{\\pi d^2 l_0}{4} = -0.64 \\, \\text{J}$.<br>Energy balance: $E_c = W_\\text{int} + W_f + W_e = 2.57 - 1.17 - 0.64 = 0.76 \\, \\text{J}$.<br>Maximum height: $m g H_c = E_c$, so $H_c = E_c / (mg) = 0.76 / (0.01 \\times 9.8) = 7.7 \\, \\text{m}$.",
-				"maxPoints": 1.3,
-				"subparts": [
-					{
-						"description": "Correct expression of $\\alpha$ (all or nothing). If $\\alpha$ is not correct (contribution of $P_0$ forgotten for example), 0 point but the following items are evaluated with this uncorrect $\\alpha$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Expression of the friction work (all or nothing)",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Consequences of the adiabatic reversible expansion (1st principle with $Q=0$ or $PV^\\gamma = P_i V_i^\\gamma$ )",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Exact expression of the work (all or nothing). Partial points: if P is considered constant during the expansion, 0 point for C.3.4. but all points for the following items if coherent with the incorrect work expression.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Work due to external pressure correct. If this item is forgotten by the candidate, 0 point.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Correct $E_c$ with the 3 contributions (even if errors in the writing of the contributions). If the candidate has forgotten the contribution of the external pressure, 0 point.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Correct energy balance during the free flight or use of Newton's second law.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Correct numerical value of $H_c$. If the candidate has forgotten the contribution of the external pressure in C.3.5 but $H_c$ is coherent, fullmark.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	}
+  {
+    "number": 1,
+    "name": "Hydrogen and galaxies",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "Determine the electron's velocity $v$ in a circular orbit of radius $r$.",
+        "solution": "Newton's second law on the electron in the electrical field of the proton for a circular orbit and projected on $\\vec{u_r}$ : $-m_e \\frac{v^2}{r} = -\\frac{e^2}{4\\pi\\epsilon_0 r^2}$ hence $v = \\sqrt{\\frac{e^2}{4\\pi\\epsilon_0 m_e r}}$",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Using Newton's second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of the velocity",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.2",
+        "description": "Show that the radius of each orbit is given by $r_n = n^2r_1$, where $r_1$ is called the Bohr radius. Express $r_1$ in terms of $\\alpha$, $m_e$, $c$ and $\\hbar$ and calculate its numerical value with 3 digits. Express $v_1$, the velocity on the orbit of radius $r_1$, in terms of $\\alpha$ and $c$.",
+        "solution": "If the norm $L$ of the angular momentum is quantified, for a circular orbit of radius $r_n$, it is $L = m_e r_n v_n = n\\hbar$. In the previous question, we have already obtained a relation between $r$ and $v$ that can be used for $r_n$ and $v_n$ and gives $v_n = \\sqrt{\\frac{e^2}{4\\pi\\epsilon_0 m_e r_n}} = \\frac{n\\hbar}{m_e r_n}$. Then using the quantified expression we get $r_n = \\frac{4\\pi\\epsilon_0 n^2 \\hbar^2}{m_e e^2}$.<br>thus $r_n = \\frac{\\hbar n^2}{\\alpha m_e c}$ and then $r_1 = \\frac{\\hbar}{\\alpha m_e c}$. For the numerical value we previously compute $\\alpha = 7.27 \\times 10^{-3}$ and then $r_1 = 5.31 \\times 10^{-11} \\, \\text{m}$. For the velocity, we get $m_e v_1^2 = \\frac{e^2}{4\\pi\\epsilon_0 r_1} = \\frac{e^2 m_e \\alpha c}{4\\pi\\epsilon_0 \\hbar}$ and then $v_1 = \\frac{e^2}{4\\pi\\epsilon_0 \\hbar} = \\alpha c$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression of $r_n$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $r_1$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $r_1$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $v_1$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.3",
+        "description": "Determine the electron's mechanical energy $E_n$ on an orbit of radius $r_n$ in terms of $e, \\epsilon_0, r_n$ and $n$. Determine $E_1$ in the ground state in terms of $\\alpha, m_e$ and $c$. Compute its numerical value in eV.",
+        "solution": "The mechanical energy is $E_n = \\frac{1}{2}m_e v_n^2 - \\frac{e^2}{4\\pi\\epsilon_0 r_n} = -\\frac{e^2}{8\\pi\\epsilon_0 r_n}$, hence $E_n = \\frac{E_1}{n^2}$ then for the ground state $E_1 = -\\frac{e^2}{8\\pi\\epsilon_0 r_1}$. Using the expression of $\\alpha$, we get the beautiful formula $E_1 = -\\frac{1}{2}\\alpha^2 m_e c^2$. The numerical value is $E_1 = -2.17 \\times 10^{-18} \\, \\text{J}$ which corresponds to $E_1 = -13.6 \\, \\text{eV}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for $E_n$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $E_1$ with $\\alpha$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $E_1$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.4",
+        "description": "Determine the magnitude $B_1$ of $\\vec{B_1}$ at the position of the electron in terms of $\\mu_0, e, \\alpha, c$ and $r_1$.",
+        "solution": "The period of the motion is: $T = \\frac{2\\pi r_1}{v_1}$.<br>The current $i$ corresponding to the orbit of the proton is $i = \\frac{e}{T}$ hence $i = \\frac{e v_1}{2\\pi r_1} = \\frac{e \\alpha c}{2\\pi r_1}$.<br>The magnetic field created by a loop with current $i$ and radius $R$ is: $B = \\frac{\\mu_0 i}{2R}$, which here gives $B_1 = \\frac{\\mu_0 e \\alpha c}{4\\pi r_1^2}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for the period",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for the current",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "General expression for B",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Inject i into B",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.5",
+        "description": "Express $\\Delta E_F$ as a function of $\\alpha$ and $E_1$. Express the wavelength $\\lambda_{HF}$ of a photon emitted during a transition between the two states of the hyperfine structure and give its numerical value with two digits.",
+        "solution": "The potential energy corresponding to the interaction between the spin magnetic moment $\\vec{M_s}$ and the nuclear magnetic field: $E_p = -\\vec{M_s} \\cdot \\vec{B_1}$.<br>The difference $\\Delta E_F$ between the energy of two electrons with a spin parallel and antiparallel to $\\vec{B_1}$ is then $|\\Delta E_F| = 2 M_s B_1$. Using previous expressions one finds: $\\Delta E_F = 2 \\frac{e\\hbar}{m_e} B_1 = 2 \\frac{e\\hbar}{m_e} \\frac{\\mu_0 e \\alpha c}{4\\pi r_1^2}$ which writes $\\Delta E_F = 4\\alpha^2 E_1$.<br>The wavelength of the photon corresponding to this transition is then $\\lambda_{HF} = \\frac{hc}{\\Delta E_{HF}} = \\frac{hc}{-3.72 \\frac{m_e}{m_p} 4\\alpha^2 E_1}$ hence $\\lambda_{HF} = 21 \\, \\text{cm}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for the potential energy",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\Delta E_F$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\Delta E_{HF}$ in term of $\\alpha$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\lambda_{HF}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $\\lambda_{HF}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "In the case of a circular orbit, determine the velocity $v_c$ of an object on a circular orbit passing through $P$ in terms of $r$ and $\\frac{d\\phi}{dr}$.",
+        "solution": "The force created by the potential is $\\vec{F} = -\\nabla(m\\phi(r))) = -m \\frac{d\\phi}{dr} \\vec{u_r}$. Newton's second law for a circular orbit then gives $m \\frac{v_c^2}{r} = m \\frac{d\\phi}{dr}$ hence $v_c = \\sqrt{r \\frac{d\\phi}{dr}}$.",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Using Newton's second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for the velocity.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.2",
+        "description": "Deduce the mass $M_b$ of the bulge of NGC 6946 from the red rotation curve in Fig. 1(B), in solar mass units.",
+        "solution": "Either by Gauss's theorem $4\\pi r^2 g(r) = -4\\pi G M_\\text{int}(r)$, then one gets $g(r) = G M_\\text{int}(r)/r^2$. or one knows the law $g(r) = G M / r^2$ and intuits that one can use the interior mass $g(r) = G M_\\text{int}(r)/r^2$.<br>If there is almost no more mass after the bulge radius $r_b$, then if $r > r_b$, $M_\\text{int}(r) = M_b$ and $\\vec{g}(r>r_b) = -\\frac{G M_b}{r^2} \\vec{u_r}$. But $\\vec{g} = -\\frac{d\\phi}{dr} \\vec{u_r}$. This gives $v_c(r>r_b) = \\sqrt{\\frac{G M_b}{r}}$.<br>One can then deduce that if the velocity is given only by the bulge, at a given distance $R$ we must have $M_b = v_c^2 R / G$. On the red curve we can read $v_c = 20 \\, \\text{km} \\cdot \\text{s}^{-1}$ at $R = 10 \\, \\text{kpc}$ hence $M_b = \\frac{v_c^2 R}{G} = \\frac{(2 \\cdot 10^4)^2 \\cdot 10 \\cdot 3.09 \\cdot 10^{19}}{6.7 \\cdot 10^{-11}} = 1.8 \\cdot 10^{39} \\, \\text{kg}$ so that $M_b = 9.10^8 M_\\odot$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $g(r > r_b)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $M_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Taking the right value of $v_c$ in the figure",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $M_b$ with a tolerance of $\\pm 25\\%$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.3",
+        "description": "Show that the velocity profile $v_{c,m}(r)$, corresponding to the mass density in Eq. 1, can be written $v_{c,m}(r) = \\sqrt{k_1 - k_2 \\frac{\\arctan(\\frac{r}{r_m})}{r}}$. Express $k_1$ and $k_2$ in terms of $C_m, r_m$ and $G$.<br>(Hints: $\\int_0^r \\frac{x^2}{a^2+x^2} dx = r - a \\arctan(r/a)$, and: $\\arctan(x) \\approx x - x^3/3$ for $x \\ll 1$. )<br>Simplify $v_{c,m}(r)$ when $r \\ll r_m$ and when $r \\gg r_m$. Show that if $r \\gg r_m$, the mass $M_m(r)$ embedded in a sphere of radius $r$ with the mass density given by Eq. 1 simplifies and depends only on $C_m$ and $r$. Estimate the mass of the galaxy NGC 6946 actually present in the picture in Fig. 1(A).",
+        "solution": "On the one hand, writing Gauss' theorem on a sphere of radius $r$ gives $\\oint \\vec{g}(r) \\cdot d\\vec{S} = 4\\pi r^2 g(r) = -4\\pi G M_\\text{int}$ and thus $g(r) = G M_\\text{int}(r)/r^2$. As long as this final formula is given it doesn't matter the method.<br>But, on the other hand $M_\\text{int} = \\int_0^r 4\\pi x^2 \\rho(x) dx = 4\\pi C_m [r - r_m \\arctan(\\frac{r}{r_m})]$ hence $$ g_m(r) = \\frac{4\\pi C_m G [r - r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$ But as $-m\\frac{v_{c,m}^2}{r} = -mg_m(r)$ we finally get $v_{c,m} = \\sqrt{r g_m(r)}$ which writes $$ v_{c,m} = \\sqrt{\\frac{4\\pi C_m G [r - r_m \\arctan(\\frac{r}{r_m})]}{r}} $$ One can then read $k_1 = 4\\pi C_m G$ and $k_2 = 4\\pi C_m G r_m$.<br>Two regimes could be considered:<br> if $r \\ll r_m$, a third order Taylor expansion of arctan gives $v_{c,m} \\approx \\sqrt{\\frac{4\\pi C_m G r^2}{3 r_m}}$ <br> and if $r \\gg r_m$ then $\\arctan(\\frac{r}{r_m}) \\approx \\pi/2$ and $v_{c,m} \\approx \\sqrt{4\\pi C_m G}$.<br>The function $v_{c,m}(r)$ is vanishing when $r \\to 0$ and is asymptotically constant with value $\\sqrt{4\\pi C_m G}$ when $r \\to +\\infty$: this corresponds to the observational curve for the galaxy considered (black circles on the right part of figure 1(B). A natural interpretation for $r_m$ is the typical radius beyond which the circular velocity is constant. On this picture one can read $v_c = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ for the constant value of $v_{c,m}$ after $r_m$, then one can deduce $C_m = \\frac{v_c^2}{4\\pi G} = \\frac{(1.6 \\cdot 10^5)^2}{4\\pi \\times 6.67 \\cdot 10^{-11}} \\approx 3 \\cdot 10^{19} \\, \\text{kg} \\cdot \\text{m}^{-1}$. The mass embedded in a sphere of radius $r$ is given by $M_\\text{int} = \\int_0^r 4\\pi x^2 \\rho_m(x) dx = 4\\pi C_m [r - r_m \\arctan(\\frac{r}{r_m})]$ which reduces to $M_\\text{int} = 4\\pi C_m r$ if $r \\gg r_m$. In the picture we have a radius $R = 9 \\, \\text{kpc} = 2.77 \\times 10^{20} \\, \\text{m}$ of the galaxy, then a mass $M_\\text{in the figure} \\approx 4\\pi C_m R = 10^{41} \\, \\text{kg} = 10^{11} \\, M_\\odot$. This mass corresponds to more than ten times the value of the mass actually visible in this picture: this is the dark matter concept.",
+        "maxPoints": 1.8,
+        "subparts": [
+          {
+            "description": "$g(r) = GM_\\text{int}(r)/r^2$ via Gauss' Theorem or another method resulting in an equivalent result.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exterior mass.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $g(r)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Using Newton's second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $k_1$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $k_2$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Simplification for $v_c$ in the case $r \\ll r_m$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Simplification for $v_c$ in the case $r \\gg r_m$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Value of $C_m$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $M_m$ in the case $r \\gg r_m$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Mass in the figure (good if nearest power of ten)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "Find the equation of motion on z for the vertical motion of a point mass $m$ in such a potential, assuming $r$ is constant. Show that, if $r < r_0$, the galactic plane is a stable equilibrium state by giving the angular frequency $\\omega_0$ of small oscillations around it.",
+        "solution": "The equation of motion is given by Newton's second law $m\\vec{a} = \\vec{F} = -m\\nabla\\psi$, projected on $\\vec{u_z}$, it gives $m\\ddot{z} = -m \\frac{\\partial \\psi_g}{\\partial z}$. Using the given potential we have $\\ddot{z} = \\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0}) \\exp(-\\frac{z^2}{z_0^2}) z$. Near the galactic plane ( $z=0$ ) the exponential is equal to 1 and can be simplified to give $\\ddot{z} = \\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0}) z$. If $r < r_0$ the $\\ln$ is negative and the equation of motion is of the form $\\ddot{z} = -\\omega_0^2 z$ with $\\omega_0 = \\sqrt{-\\frac{2\\phi_0}{z_0^2} \\ln(\\frac{r}{r_0})}$. This proves that z is oscillating around $z = 0$ and that the motion is stable.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Newton's second law, or equivalent method",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Projection on the z axis",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation of motion",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation near the galactic plane",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\omega_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "Identify the regime, either $r \\gg r_m$ or $r \\ll r_m$, in which the model of Eq. 1 recovers a potential of the form $\\psi_g(r, 0)$ with a suitable definition of $\\phi_0$. Under this condition $v_c(r)$ no longer depends on $r$. Express it in terms of $\\phi_0$.",
+        "solution": "Using the density given by equation (1) in part B, we have obtained $$ g_m(r) = -\\frac{4\\pi C_m G[r - r_m \\arctan(\\frac{r}{r_m})]}{r^2} $$ Hence, considering $r \\gg r_m$, one can simplify this relation to $g_m(r) = -\\frac{4\\pi C_m G}{r}$. The gravitational potential can be obtained by integration, we then have: $\\phi(r) = +4\\pi C_m G \\ln(r) + \\text{cst}$. The constant can be found by correctly choosing the origin of the potential. This potential corresponds to: $\\psi_G(r, z=0) = \\phi_0 \\ln(\\frac{r}{r_0})$ with $\\phi_0 = +4\\pi C_m G$. In that case, the equation of motion in the galactic plane gives $-m\\frac{v_c^2}{r} = -m g_m(r)$ which writes $v_c = \\sqrt{r g_m(r)} = \\sqrt{4\\pi C_m G}$, so that $v_c = \\sqrt{\\phi_0}$.",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Condition for simplication $r \\gg r_m$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\phi(r)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Identification of $\\phi_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Newton's second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $v_c$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "Determine $v_{rE/S}$ in terms of $l, R, R_0$ and $v_c$. Then, express $R$ in terms of $R_0, v_c, l$ and $v_{rE/S}$.",
+        "solution": "We have $Ss = v_c \\sin(\\alpha) \\hat{u_v}$ and $Ee = v_c \\cos(\\beta) \\hat{u_v}$. In the right triangle $Ss S_p$, the sum of angles gives $\\widehat{Ss, S S_p} = \\frac{\\pi}{2} - \\alpha$, but, as $\\vec{v_s}$ is perpendicular to the radius CS, we also have $\\widehat{Ss, S S_p} = \\frac{\\pi}{2} - l$: then $\\alpha = l$. On the other side, we have $CT = R_0 \\sin(l) = R \\sin(\\frac{\\pi}{2} - \\beta)$, which gives $\\cos(\\beta) = \\frac{R_0}{R} \\sin(l)$. Merging all of these results and taking into account that $v_E = v_c$ and that $v_{rE/S} = Ee - Ss$ we have $v_{rE/S} = v_c(\\frac{R_0}{R} - 1) \\sin(l)$ and finally $R = \\frac{R_0}{1 + \\frac{v_{rE/S}}{v_c \\sin(l)}}$.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Expression for $\\vec{Ss}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\vec{Ee}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\alpha = l$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\cos(\\beta)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $v_{r,E/S}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for R",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.4",
+        "description": "In our galaxy, $v_c = 220 \\, \\text{km} \\cdot \\text{s}^{-1}$. Determine the values of the relative radial velocity (with 3 significant digits) and the distance from the galactic center (with 2 significant digits) of the 3 sources observed in Fig. 3. Distances should be expressed as multiples of $R_0$.",
+        "solution": "In Fig. 3 one can measure the 3 frequency shifts ( $f - f_0$ ) corresponding to each peak: $\\Delta f_1 = 0.03 \\, \\text{MHz}$, $\\Delta f_2 = 0.15 \\, \\text{MHz}$ and $f_3 = 0.26 \\, \\text{MHz}$. One can then compute the relative Doppler velocity using $v_{r,i} = c \\Delta f_i / f_0$, with $f_0 = 1420 \\, \\text{MHz}$ one gets<br> $v_{r,1} = 6.33 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br> $v_{r,2} = 31.7 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br> $v_{r,3} = 54.9 \\, \\text{km} \\cdot \\text{s}^{-1}$ <br>As peaks are placed on grid points, the tolerance in the value is due to fact that candidates could use $c = 3.00 \\times 10^8 \\, \\text{m/s}$ in the place of the 9 digits given in the formulary.<br>The corresponding distances from the galactic center are then obtained using the relation $R_i = \\frac{R_0}{1 + \\frac{v_{r,i}}{v_c \\sin l}}$, with $l=30^\\circ$ we obtain:<br> $R_1 = 0.95 R_0$ <br> $R_2 = 0.78 R_0$ <br> $R_3 = 0.67 R_0$",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Doppler formula for $v_r$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Getting the 3 numerical values for $\\Delta f_i$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical values of the 3 velocities ( $\\pm 0.01 \\, \\text{km} \\cdot \\text{s}^{-1}$ )",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical values of the 3 distances ( $\\pm 0.01 R_0$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.5",
+        "description": "On the top view of our galaxy (in the answer box), indicate the positions of the sources observed in Fig. 3. What could be deduced from repeated measurements changing $l$?",
+        "solution": "As indicated on the figure below, the right line of sight could be obtained geometrically (i.e. without protractor): using the 15° grid graduation one can going back from 30° from the perpendicular line to CS, we then obtain a radius which perpendicular to the line of sight, in other words as $\\sin(30°)=0.5$ the line of sight is passing by S and is tangenting the circle of radius CS/2.<br>Drawing the circles or radius, and, the line of sight with from we get 2 possible intersection for each peak: a near one and a far one. We plot only the nearest for each source on the answer figure.<br>The far intersections for each source is much further away and hence is likely less intense. Astronomers could also use the variation in the radio signal when they slowly vary the longitude to determine the right position of the actual source. A continuous variation of $l$ in the interval $[0, 2\\pi]$ makes hydrogen sources appear in the galaxy, as the galaxy is essentially composed of hydrogen, one can trace its mass distribution: the spiral structure.",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Getting the right line of sight",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Drawing for the 3 circles",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Drawing for the 3 points",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Deduction",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.1",
+        "description": "Assuming that the radius $R$ of a galaxy doesn't depend on its mass, show that the model of Eq. 1 (part B) gives a relation of the form $M_\\text{tot} = \\eta v_{c,\\infty}^\\gamma$ where $\\gamma$ and $\\eta$ should be specified. Compare this expression to the Tully-Fischer relation by computing $\\gamma_{TF}$.",
+        "solution": "We have obtained $v_{c,\\infty}^2 = 4\\pi C_m G$ and for a galaxy of radius $R$, we have $M_\\text{tot} \\approx 4\\pi C_m R$. This gives $C_m = \\frac{M_\\text{tot}}{4\\pi R}$ and $v_{c,\\infty}^2 = 4\\pi \\frac{M_\\text{tot}}{4\\pi R} G$. This relation is of the expected form $M_\\text{tot} = \\eta v_{c,\\infty}^\\gamma$ with $\\gamma=2$ and $\\eta = R/G$. Analysing the data we get the power law exponent of the Tully-Fisher relation as $\\gamma_{TF} = \\frac{12-9}{2.6-1.8} = 3.75$: the dark matter model from part B is not able to reproduce this law.",
+        "maxPoints": 0.4,
+        "subparts": [
+          {
+            "description": "Recall for $v_{c,\\infty}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\eta$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\gamma$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $\\gamma_{TF}$ (correct if it is between 3.5 and 4)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.2",
+        "description": "Using data for NGC 6946 in Fig. 1, estimate, within Newton's theory, the modulus of the acceleration $a_m$ of a mass in the outer regions of NGC 6946.",
+        "solution": "Considering that outer orbits are circular, the corresponding acceleration for a test mass $m$ is radial and given in newtonian theory by $a_m = v_c^2/R$. In the case of NGC 6946, the value of the velocity is roughly constant and equal to $v_c = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ as far $R > 5 \\, \\text{kpc}$. For this smallest distance from the center, the acceleration is $a_m = \\frac{(1.6 \\cdot 10^5)^2}{5 \\cdot 3.09 \\cdot 10^{19}} = 1.6 \\times 10^{-10} \\, \\text{m} \\cdot \\text{s}^{-2}$, this value is the maximal acceleration to which as star is submitted in the outer regions of this galaxy. It corresponds to the MOND regime.",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Expression for $a_m$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $a_m$ (good if nearest power of ten)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.3",
+        "description": "Let $m$ be a mass on a circular orbit of radius $r$ with velocity $v_{c,\\infty}$ in the gravity field of a fixed mass $M$. Within the MOND theory, with $a \\ll a_0$, determine the Tully-Fischer exponent. Using data for NGC 6946 and/or Tully-Fischer law, calculate $a_0$ to show that MOND operates in the correct regime.",
+        "solution": "If $x = a/a_0 \\ll 1$, then $\\mu(x \\ll 1) \\approx x$ and MOND theory gives $\\vec{F} = m \\frac{a}{a_0} \\vec{a}$. Considering a gravitational interaction between $M$ and $m$ we then have for the radial component of the modified Newton's second Law $G\\frac{M m}{r^2} = m \\frac{a^2}{a_0}$. The radial acceleration on a circular orbit of radius $r$ is always given by $a = v_{c,\\infty}^2 / r$, the modified second law writes now $G\\frac{M}{r^2} \\frac{a}{a_0} = \\frac{v_{c,\\infty}^2}{r}$ which gives $v_{c,\\infty} = (a_0 G M)^{1/4}$, and thus $M = \\frac{1}{a_0 G} v_{c,\\infty}^4$. Considering the notation from D.1, this is a power law relation with $\\gamma_\\text{MOND} = 4$ in accordance with the Tully-Fischer relation.<br>For the NGC 6946 galaxy, we read $v_{c,\\infty} = 160 \\, \\text{km} \\cdot \\text{s}^{-1}$ thus $\\log_{10}(\\frac{v_{c,\\infty}}{1 \\, \\text{km} \\cdot \\text{s}^{-1}}) = 2.2$ and one can read the corresponding total mass by the Tully-Fischer relation as $\\log(M_\\text{tot}/M_\\odot) = 10.5$ thus $M_\\text{tot} = 2 \\cdot 10^{40.5} \\, \\text{kg}$. One can obtain similar numbers using experimental data on the curve of Fig. 4. Introducing these values in the relation $a_0 = \\frac{v_{c,\\infty}^4}{G M_\\text{tot}}$ it gives $a_0 = 1.5 \\times 10^{-10} \\, \\text{m} \\cdot \\text{s}^{-2}$ as expected.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Considering the hypothesis $a \\ll a_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Newton's second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $v_{c,\\infty}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $\\gamma_{MOND}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $\\log_{10}(v_{c,\\infty}/1 \\, \\text{km/s})$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $\\log_{10}(M)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $a_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $a_0$ (good if nearest power of ten)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.4",
+        "description": "Considering relevant cases, determine $v_c(r)$ for all values of $r$ in the MOND theory in the case of a gravitational field due to a homogeneously distributed mass $M$ with radius $R_b$.",
+        "solution": "Taking the full formula for $\\mu$, the modified second law with circular velocity $v_c$ at radius $r$ writes now $\\mathcal{G}(r)m = -m \\frac{v_c^2/r}{1 + v_c^2/(a_0 r)}$ where $\\mathcal{G}(r)$ is the gravitational field of the homogeneous ball of mass $M$ and with radius $R_b$. This field can be deduced from Gauss' theorem it is $$ \\mathcal{G}(r) = \\begin{cases} -GM/r^2 & \\text{if } r > R_b \\\\ -GMr/R_b^3 & \\text{if } r \\le R_b \\end{cases} $$ Outside the ball: $r > R_b$. After a small reorganisation, $v_c$ appears to be solution of the biquadratic equation $v_c^4 - \\frac{GM}{r} v_c^2 - a_0 GM = 0$. The positive root of this equation is $$ v_c(r) = \\sqrt{\\frac{GM}{2r} \\left( 1 + \\sqrt{1 + \\frac{4a_0 r^2}{GM}} \\right)} \\quad \\text{which is valid only if } r > R_b $$ When $r \\to \\infty$, $v_c$ is asymptotically constant and $M \\to \\frac{v_{c,\\infty}^4}{a_0 G}$ which is the Tully-Fisher relation. Inside the ball: $r \\le R_b$. With a similar reorganisation, $v_c$ appears now to be solution of another biquadratic equation which is $v_c^4 - \\frac{GM}{R_b}(\\frac{r}{R_b})^3 v_c^2 - a_0 GM (\\frac{r}{R_b})^3 = 0$. The positive solution is now $$ v_c(r) = \\sqrt{\\frac{GM}{2r} \\frac{r}{R_b} \\sqrt{1 + \\sqrt{1 + \\frac{4a_0 r^2}{GM} (\\frac{R_b}{r})^3}}} \\quad \\text{which is valid only if } r \\le R_b $$ When $r \\to 0$, we recover $v_c \\to 0$ as in the experimental data.",
+        "maxPoints": 0.9,
+        "subparts": [
+          {
+            "description": "Modified second law",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Gravitational field in the case $r > R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Gravitational field in the case $r < R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Bi-quadratic equation in the case $r > R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $v_c$ in the case $r > R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Behaviour in the limit $r \\to \\infty$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Bi-quadractic equation for $r < R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $v_c$ when $r < R_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Behaviour when $r \\to 0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Cox's Timepiece",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "For the configuration shown in Fig. 2 (case b), express the pressure $P_w$ in the water at the top of the tube. Also express the force $\\vec{F}$ necessary to maintain the tube at this position. Expressions must be written in terms of $P_0, \\rho, m, S, h, g$ and $\\vec{u_z}$.",
+        "solution": "According to the hydrostatic law, one has $$ P_w = P_a - \\rho g h = P_0 - \\rho g h $$ In the configuration shown in Fig. 2 (case b), the tube is submitted to three forces: its weight, the resultant of the pressure forces and the force exerted by the operator. Thus, at equilibrium, one has $$ \\vec{0} = m \\vec{g} + (P_w - P_0) S \\vec{u_z} + \\vec{F} $$ which leads to $$ \\vec{F} = - [m + \\rho S h] \\vec{g} = [m + \\rho S h] g \\vec{u_z} $$",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Expression of Pw (as a function of Pa or Po)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of F",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.2",
+        "description": "For each experiment, complete the table in the answer sheet to indicate the expected behaviour and the numerical values for $F_\\text{max}$ and for $h^*$ (when pertinent), where $F_\\text{max}$ and $h^*$ are defined in the figures illustrating the two behaviours.",
+        "solution": "Physically, the altitude $h^*$ corresponds to the threshold at which saturated vapour appears in the tube. This altitude can be expressed using the hydrostatic law, writing $$ P_w = P_0 - \\rho g h^* = P_\\text{sat}(T_a). $$ One can find $$ h^* = \\frac{P_0 - P_\\text{sat}(T_a)}{\\rho g}, $$ and calculate its numerical value for each experiment. If the value obtained is higher than $H$, behaviour A is observed; otherwise, behaviour B is observed. According to the previous question, the force $F$ is related to $h$ by $$ F = [m + \\rho S h] g $$ which leads to $$ F_\\text{max} = \\begin{cases} [m + \\rho S H] g & \\text{for behaviour A} \\\\ [m + \\rho S h^*] g & \\text{for behaviour B} \\end{cases} $$ One can deduce the following predictions: <br> Experiment 1: Behaviour A, $F_\\text{max} = 14.7 \\, \\text{N}$ <br> Experiment 2: Behaviour A, $F_\\text{max} = 14.4 \\, \\text{N}$ <br> Experiment 3: Behaviour B, $h^* = 2.1 \\, \\text{cm}$, $F_\\text{max} = 5.1 \\, \\text{N}$",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "All behaviours are correct (*all or nothing*): A/A/B",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Experiment 1: Numerical value of F_max in [14.6, 15] (N)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Experiment 2: Numerical value of F_max in [14, 14.5] (N)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Experiment 3: Numerical value of h* in [2, 2.2] (cm)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "0.1 pt if only literal expression is correct",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Experiment 3: Numerical value of F_max in [5, 5.2] (N)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "0.1 pt if only literal expression is correct",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": "A.3",
+        "description": "Express the relative error, denoted $\\epsilon$, committed when we evaluate the maximal force $F_\\text{max}$ neglecting $P_\\text{sat}$ compared to $P_0$. Give the numerical value of $\\epsilon$.",
+        "solution": "For behaviour B, the expression of $F_\\text{max}$ previously obtained can be reformulated as $$ F_\\text{max} = mg + (P_0 - P_\\text{sat})S $$ Neglecting the saturated vapour pressure compared to the atmospheric pressure, one obtains $$ F_\\text{max} \\approx mg + P_0 S $$ Thus, the relative error $\\epsilon$ is given by $$ \\epsilon = \\frac{P_\\text{sat}}{P_0 + mg/S} \\approx 1.6 \\times 10^{-6} $$",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Literal expression of $\\epsilon$ (with or without $P_\\text{sat}$ in denominator)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\epsilon$ in $[1, 2] \\times 10^{-6}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "On the answer sheet, color the area corresponding to the volume of liquid mercury that is responsible for the term $m_\\text{add}$ appearing in equation (1).",
+        "solution": "By adapting the reasoning used at part A, one can deduce that the mass $m_\\text{add}$ corresponds to the liquid mass in the two-part tube which is above the outside surface of the liquid bath, as shown below.",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Coloring of the correct area",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "0.1 pt only if a correct expression of $m_\\text{add}$ is provided but the colored area is incorrect",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": "B.2",
+        "description": "Sketch the evolution of the mass $m_\\text{add}$ as a function of $h_t$ for $h_t \\in [-H_b, H_t]$. On the graph, provide the expression for the slopes of the different segments, as well as the $h_t$ analytical value of any angular points, in terms of $P_0, \\rho, g, S_b, S_t, H_b$ and $H_t$.",
+        "solution": "Using the same reasoning as in question A2, one can determine that saturated vapour appears in the two-part barometric tube when the altitude of the liquid column in the tube reaches the critical value $$ z_e^* = \\frac{P_0 - P_\\text{sat}}{\\rho g} = \\frac{P_0}{\\rho g} = 76 \\, \\text{cm} $$ taking $P_\\text{sat}=0$. Combining this result with that of the previous question, one obtains the following graph: The graph of $m_\\text{add}$ vs $h_t$ consists of four linear segments. From $h_t = -H_b$ to $0$, the slope is $\\rho S_b$. From $h_t=0$ to $z_e^*-H_b (=56 \\text{cm})$, the slope is $\\rho S_t$. From $h_t = z_e^*-H_b$ to $z_e^* (=76 \\text{cm})$, the slope is $-\\rho(S_b - S_t)$. From $h_t = z_e^*$ to $H_t$, the slope is 0.",
+        "maxPoints": 1.4,
+        "subparts": [
+          {
+            "description": "Qualitative aspect: Graph with 4 straight pieces",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "0.1pt only if there are 3 pieces; 0 else",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Qualitative aspect: For the 1st & 2nd pieces, the slopes are positive *and* the slope of 2nd piece is less than that of 1st (*all or nothing*)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Qualitative aspect: The 3rd piece has a negative slope",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Qualitative aspect: The 4th piece has a null slope",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions of the two first slopes (*all or nothing*)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of the negative slope",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$h_t$ analytical values of the 3 intermediate angular points (0.1pt per value)",
+            "points": 0.3,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.3",
+        "description": "Given that $S_t = 5 \\, \\text{cm}^2$ and $S_b = 200 \\, \\text{cm}^2$, express the amplitude $\\Delta m_\\text{add}$ of the variations of the mass $m_\\text{add}$ over time, then give its numerical value. Assume that the liquid surface always stays in the bulb.",
+        "solution": "By neglecting the saturated vapour pressure in the bulb, the altitude $z_e$ of the free surface of the liquid in the tube is given by $$ z_e(t) = \\frac{P_a(t)}{\\rho g} = \\frac{P_0}{\\rho g} + \\frac{P_1(t)}{\\rho g} = \\underbrace{h_t + \\frac{H_b}{2}}_\\text{mean value } z_{e,0} + \\underbrace{\\frac{P_1(t)}{\\rho g}}_\\text{perturbative term} $$ which leads to $$ m_\\text{add}(t) = \\rho[S_t h_t + S_b(z_e(t) - h_t)] = \\rho[S_t h_t + S_b(z_{e,0} - h_t)] + \\frac{S_b P_1(t)}{g} $$ The first term gives the mean value of the mass $m_\\text{add}(t)$, while the last term characterizes its temporal variations. One can deduce the magnitude $$ \\Delta m_\\text{add} = \\frac{S_b A}{g} = 1 \\, \\text{kg} $$",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Literal expression of $\\Delta m_\\text{add}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value *with unit*, in [1 kg, 1.1 kg]",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "Determine the threshold $\\xi^*$ such that $M$ remains indefinitely at rest when $\\xi > \\xi^*$.",
+        "solution": "Consider the case in which the mass $M$ stays at rest at $x=0$. At the start $t=0$, the tensions exerted by the two cables on either side of the mass $M$ are in balance: the force $\\vec{F_0}$ required to suspend the barometric tube (with the fluid it contains) is equal to that required to suspend the cistern (with the fluid it contains). When the atmospheric pressure increases from $P_a = P_0$, the fluid rises in the barometric tube while it descends in the cistern. As a result, the added mass in the tube increases, while the added mass in the cistern decreases. We denote $m_{1,tb}$ and $m_{1,c}$ the (algebraic) variation of the apparent masses of each container. Thus, the tensions exerted by the two cables can be written:<br> $[F_0 + m_{1,tb} g] \\vec{u_x}$ for the cable on the right, suspending the tube;<br> $-[F_0 + m_{1,c} g] \\vec{u_x}$ for the cable on the left, suspending the cistern.<br>According to the principle of mass conservation, one can immediately state that $m_{1,tb} = -m_{1,c}$. Subsequently, we choose to keep only $m_{1,c}$ in the expressions (but all the calculations can be carried out while keeping $m_{1,tb}$ ).<br>The friction force between the support and the mass $M$ needed to maintain the equilibrium is therefore given by $$ \\vec{R_t} = -[F_0 - m_{1,c} g] \\vec{u_x} + [F_0 + m_{1,c} g] \\vec{u_x} = 2m_{1,c} g \\vec{u_x} $$ In addition, according to the sketch above (where displacements $\\delta_b$ and $\\delta_c$ are algebraic), we have $m_{1,c} = \\rho S_c \\delta_c$.<br>It is now necessary to determine $\\delta_c$. One can use<br> the hydrostatic law: $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$ <br> the conservation of the total volume/mass of mercury: $S_b \\delta_b = -[S_c - S_t]\\delta_c \\approx -S_c \\delta_c$ (given that $S_t \\ll S_b, S_c$ )<br>Solving the system formed by those equations, one finds $$ \\delta_c = -\\frac{S_b}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} \\approx -\\frac{S_b}{S_b + S_c} \\frac{P_1}{\\rho g} $$ which finally yields $$ \\vec{R_t} = -\\frac{2 S_b S_c}{S_b + S_c - S_t} P_1 \\vec{u_x} \\approx -\\frac{2 S_b S_c}{S_b + S_c} P_1 \\vec{u_x} $$ With the triangular model for $P_1(t)$, the maximum static friction force is obtained when $P_1 = \\pm A$. Therefore, according to the Coulomb's law of friction, the mass $M$ stays at rest if and only if $$ \\frac{2 S_b S_c}{S_b + S_c - S_t} A < F_s $$ This inequality can be rewritten as $$ 2 < \\frac{S_b + S_c - S_t}{S_b S_c} \\frac{F_s}{A} = \\xi $$ which allows us to identify $$ \\xi^* = 2 $$",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of mass or volume variation of fluid in at least one of the vessels, in terms of those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Conservation of the total mass/volume",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Expression of barometric difference of heights between the two surfaces",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Expression of the friction force at equilibrium (with or without using $S_t \\ll S_b, S_c$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Use of Coulomb's law in sticky situation",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Conclusion: Obtaining $\\xi^*$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "Give an expression for the total tension force $\\vec{T} = T \\vec{u_x}$ acting on the mass $M$ due to the tension in two cables at this position, when $P_1 = 0$, in terms of $\\rho, g, X$ and pertinent cross-sections.",
+        "solution": "Let us compare the configurations of the system when $x=0$ and when $x=X$.<br>Assuming that the atmospheric pressure is temporarily fixed at $P_0$, the difference $\\Delta z_e$ of fluid heights between the cistern and the barometric tube is the same in both configurations. It is given by $\\Delta z_e,0 = P_0 / \\rho g$ and leads to $$ \\delta_b = \\delta_c $$ The total volume/mass of mercury is also conserved. This conservation can be expressed by the equation $$ \\underbrace{(S_c - S_t) \\delta_c - (S_c + S_t) X}_\\text{volume of mercury algebraically won by the cistern} + \\underbrace{S_b(\\delta_b + X)}_\\text{volume of mercury algebraically won by the bulb} = 0 $$ which can be reformulated as $$ S_b \\delta_b + (S_c - S_t)\\delta_c = (S_c - S_b + S_t)X $$ One obtains $$ \\delta_b = \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X $$ Thus, the supplementary added mass in the cistern is given by $$ m_{1,c} = \\rho S_c (\\delta_c - X) = -\\rho \\frac{2S_c(S_b - S_t)}{S_c + S_b - S_t} X \\approx -\\rho \\frac{2S_b S_c}{S_b + S_c} X $$ and, as explained in C1, we still have $m_{1,tb} = -m_{1,c}$.<br>Finally, according to the sketch, one obtain the resultant tension force $\\vec{T} = (m_{1,tb} - m_{1,c})g \\vec{u_x} = -2m_{1,c} g \\vec{u_x}$, that is $$ \\vec{T} = \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X \\vec{u_x} \\approx \\frac{4S_b S_c}{S_b + S_c} \\rho g X \\vec{u_x} $$",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Introduction of geometric parameters to locate the positions of the fluid surfaces in each vessel",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions of mass or volume variations of fluid in one of the vessels in terms of X and those geometric parameters (with or without using $S_t \\ll S_b, S_c$ )",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Conservation of the total mass/volume",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical law: Expression of barometric difference of heights between the two surfaces",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of the total tension force $\\vec{T}$ (with or without using $S_t \\ll S_b, S_c$ )",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "Complete the table in the answer sheet to indicate the condition under which each regime is obtained. Conditions must be expressed as inequalities on $\\xi$ and/or $\\lambda$. In addition, sketch the variations of $x(t)/X$ for $t \\in [0, 3\\tau_1]$ that are consistent with the variations of $P_1(t)/A$ already present. Specification of remarkable points coordinates is not required.",
+        "solution": "When $\\xi < \\xi^*$, there necessarily exists an instant from which the mass $M$ begins to sweep on the right. From there, the mass $M$ is continuously accelerated by the total tension $\\vec{T}$ until it is blocked by the stop at $x=X$. According to Fig. 5, one can assume that $X$ is of the order of a few centimeters, so the time needed to switch between the two positions $x=0$ and $x=X$ can reasonably be neglected in front of the period $\\tau_1$.<br>Once blocked at $x=X$, the resultant tension $\\vec{T}$ can be determined by generalizing the reasoning carried out in the two previous questions. One obtains the following equations:<br> hydrostatic law: $\\delta_b - \\delta_c = \\frac{P_1}{\\rho g}$ <br> conservation of the volume/mass: $S_b \\delta_b + (S_c - S_t) \\delta_c = (S_c - S_b + S_t) X$ <br>The resolution of this system gives $$ \\delta_c = \\frac{S_c - S_b + S_t}{S_b + S_c - S_t} X - \\frac{S_b}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} $$ from which we deduce the perturbative added mass $$ m_{1,c} = \\rho S_c (\\delta_c - X) = -\\rho \\left[ \\frac{2S_c(S_b - S_t)}{S_b + S_c - S_t} X + \\frac{S_b S_c}{S_b + S_c - S_t} \\frac{P_1}{\\rho g} \\right] = -m_{1,tb} $$ Then finally $$ \\vec{T} = -2m_{1,c} g \\vec{u_x} = \\left[ \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X + \\frac{2S_b S_c}{S_b + S_c - S_t} P_1 \\right] \\vec{u_x} $$ According to Coulomb's law of friction, the mass $M$ will stay at rest at the position $x=X$ while $\\vec{T} \\cdot \\vec{u_x} > -F_s$. With the model adopted for $P_1(t)$, this condition is always satisfied if $$ \\frac{4S_c(S_b - S_t)}{S_b + S_c - S_t} \\rho g X - \\frac{2S_b S_c}{S_b + S_c - S_t} A > -F_s $$ Hence, using the parameters $\\xi$ and $\\lambda$, one can identify the two possible regimes:<br> Regime 1: $\\xi + 2\\lambda > 2$ (once at $x=X$, the mass $M$ stays indefinitely at rest)<br> Regime 2: $\\xi + 2\\lambda < 2$ (once at $x=X$, the mass $M$ will periodically sweep between the two stops)",
+        "maxPoints": 2,
+        "subparts": [
+          {
+            "description": "Expression for $\\vec{T}$ in the general case, containing both $P_1$ and X terms.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "At least one inequality is correct (without considering strict or large)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Both inequalities are correct (without considering strict or large)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Global appearance of *both* graphs: one seems to show an aperiodic behaviour, the other a periodic behaviour (*all or nothing*)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Global appearance: each graph is in accordance with the correct sign of obtained inequality (focus on symbols > / <, without considering if the inequality is strict or large)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Either graph 1 or 2 shows: A first switch from $x=0$ to $x=X$ that begins somewhere in the interval $t \\in [0, \\tau_1/4]$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Either graph 1 or 2 shows: The switch is instantaneous",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Graph in aperiodic regime: $x=X$ for all times after the first switch",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Graph in periodic regime: the behaviour is periodic with period $\\tau_1$ (except for the first switch)",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Graph in periodic regime: the positive and negative parts of the graph are similar",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Graph in periodic regime: $x(t)/X$ is described by a rectangular function, of magnitude 1 and duty cycle 50% in steady state",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Graph in periodic regime: the first step at $x=X$ last longer than others",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.4",
+        "description": "Considering $S_b = S_c$ and $S_t \\ll S_b$, determine the expressions for $F_s^*$ and $X^*$ as functions of $\\rho, g, S_c$ and $A$. Express the corresponding maximum energy $W^*$, then calculate its numerical value with $A = 5 \\times 10^2 \\, \\text{Pa}$.",
+        "solution": "During a period, there is one motion to the left and one to the right. The total length of the displacement is $4X$. The total work $W$ of the friction force is thus $W = 4F_s X$.<br>We have to optimize this quantity with the constraint $\\xi + 2\\lambda \\le 2$, which can also be written as $$ \\frac{2\\rho g X}{A} + \\frac{F_s}{S_c A} \\le 1 $$ The optimum is obtained at the limit of the condition, when $F_s = S_c(A-2\\rho g X)$. The work is then $W = 4X S_c(A-2\\rho g X)$. It is maximal for $$ X^* = \\frac{A}{4\\rho g} \\quad \\text{and} \\quad F_s^* = \\frac{A S_c}{2} $$ leading to the following optimal work $$ W^* = \\frac{A^2 S_c}{2\\rho g} = 20 \\, \\text{mJ} $$",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Starting point: $W = 4F_s X$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Optimization: $\\xi + 2\\lambda = 2$ or equivalent $F_s = S_c(A - 2\\rho g X)$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $X^*$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $F_s^*$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $W^*$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value for $W^*$ *with unit*: in [19 mJ, 21 mJ]",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.5",
+        "description": "Express $W_\\text{pr}^*$, then calculate the ratio $W^*/W_\\text{pr}^*$. It could be useful to represent the evolution of the system in a $(P, V)$ diagram, where $V$ is the system's volume.",
+        "solution": "The variations of pressure and of the vessel's position lead to fluid transfer between the cistern and the two-part tube. As a consequence, the total volume $V(t)$ occupied by the system in the atmosphere changes and can be denoted $$ V(t) = V_0 + V_1(t) $$ where $V_0$ is the volume in the initial state (when $x=0$ and $P_a = P_0$ ) whereas $V_1(t)$ is a perturbation term. Physically, $V_1$ corresponds to the change of the volume of liquid in the cistern, and is thus given by $$ V_1 = \\frac{m_{1,c}}{\\rho} $$ where $m_{1,c}$ has already been expressed in C3 (just replace $X$ with $x(t)$ ). Given that $S_b = S_c$ and $S_t$ is neglected, one obtains in any state $$ V_1(t) = -S_c \\left[ x(t) + \\frac{P_1(t)}{2\\rho g} \\right] = -S_c X^* \\left[ \\frac{x(t)}{X^*} + \\frac{1}{\\lambda} \\frac{P_1(t)}{A} \\right] $$ Over one period, the work of atmospheric pressure forces received by the system is defined as $$ W_\\text{pr} = - \\oint_\\text{1 period} P_a dV = - \\oint_\\text{1 period} P_1 dV_1 $$ and can thus be identified to the area of the cycle described by the system in a $(P_1, V_1)$ diagram.<br>Considering the optimal situation determined in the previous question, one observes the following behaviour once in steady state. The four states are:<br>1: $P_1 = A$, $x = X^*$, $V_1 = -3S_c X^*$ <br>2: $P_1 = -A$, $x = X^*$, $V_1 = S_c X^*$ <br>3: $P_1 = -A$, $x = -X^*$, $V_1 = 3S_c X^*$ <br>4: $P_1 = A$, $x = -X^*$, $V_1 = -S_c X^*$ <br>The work of the pressure force is the surface area inside this parallelogram, that is the product of its base $2S_c X^*$ by its height $2A$. As a consequence $$ W_\\text{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g} $$ and $$ \\frac{W^*}{W_\\text{pr}^*} = \\frac{1}{2} $$",
+        "maxPoints": 1.7,
+        "subparts": [
+          {
+            "description": "Physical analysis: In the optimal case, the mass M switches between the two positions $x = \\pm X$ when $P_1 = \\pm A$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical analysis: During a period, the system describes a cycle formed of 2 iso-x and 2 iso-P transformations (sketch of cycle, or a table or any other pertinent description)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Physical analysis: Correct sequence of the successive states and/or direction of the cycle using x and P",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "General expression of the volume of the system in an (P,x) state: $V = -S_c x + \\frac{P_1}{2\\rho g} + Cste$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions of the volume in the 4 states of the cycle: $-3S_c X^* \\to S_c X^* \\to 3S_c X^* \\to -S_c X^*$ (*all or nothing*)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Method used to calculate the work of atmospheric pressure forces: $W_\\text{pr} = -\\oint_\\text{period} P_a dV$ (explicit integral or area of the cycle in $(P,V)$ diagram or other pertinent method)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Obtaining $W_\\text{pr}^* = 4S_c X^* A = \\frac{S_c A^2}{\\rho g}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Final result: $\\frac{W^*}{W_\\text{pr}^*} = \\frac{1}{2}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Champagne!",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "Express the pressure $P_b$ in terms of $P_0, a$ and $\\sigma$.",
+        "solution": "Laplace's law: $P_b = P_0 + \\frac{2\\sigma}{a}$",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Laplace's law: $P_b = P_0 + \\frac{2\\sigma}{a}$ (all-or-nothing, as for all the answers)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.2",
+        "description": "Express the critical radius $a_c$ above which a bubble is expected to grow in terms of $P_0, \\sigma, c_e$ and $c_0$ where $c_0=k_H P_0$. Calculate numerically $a_c$ for $c_e=4c_0$.",
+        "solution": "A bubble grows if $c_e > c_b$. The critical radius corresponds to $c_e = c_b$.<br> $c_b = k_H P_b = k_H (P_0 + \\frac{2\\sigma}{a_c})$ and $c_0 = k_H P_0$.<br>So $c_e = k_H (P_0 + \\frac{2\\sigma}{a_c}) = c_0 + k_H \\frac{2\\sigma}{a_c}$.<br>This gives $a_c = \\frac{2\\sigma k_H}{c_e - c_0} = \\frac{2\\sigma c_0/P_0}{c_e - c_0} = \\frac{2\\sigma}{P_0(c_e/c_0 - 1)}$.<br>For $c_e = 4c_0$, $a_c = \\frac{2\\sigma}{P_0(4-1)} = \\frac{2 \\times 47 \\times 10^{-3}}{1.0 \\times 10^5 \\times 3} = 0.3 \\times 10^{-6} \\, \\text{m} = 0.3 \\, \\mu\\text{m}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "comparison (equality $c_b = c_e$ or inequality $c_b \\le c_e$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "exact expression $a_c = \\frac{2\\sigma}{P_0(c_e/c_0-1)}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "numerical value $a_c = 0.3 \\, \\mu\\text{m}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.3",
+        "description": "Express the number of CO2 moles in the bubble $n_e$ in terms of $a, P_0, T_0$ and ideal gas constant $R$. Find $a(t)$ for both models. Indicate which model explains the experimental results in Fig. 2. Depending on your answer, calculate numerically $K$ or $D$.",
+        "solution": "The number of moles of CO2 (ideal gas) inside the bubble is $n_e = \\frac{P_b V}{R T_0} \\approx \\frac{P_0 (\\frac{4}{3}\\pi a^3)}{R T_0}$.<br>Equation for balance of CO2 in the bubble: $\\frac{dn_e}{dt} = j \\cdot 4\\pi a^2$.<br>So $\\frac{d}{dt} (\\frac{4\\pi P_0 a^3}{3 R T_0}) = j \\cdot 4\\pi a^2$, which simplifies to $\\frac{P_0}{R T_0} \\frac{da}{dt} = j$.<br>Model 1: $j = \\frac{D}{a}(c_e - c_b) \\approx \\frac{D}{a}(c_e - c_0)$. Then $\\frac{da}{dt} = \\frac{D R T_0}{a P_0}(c_e - c_0)$. Integrating gives $a^2 = a_0^2 + \\frac{2 D R T_0}{P_0}(c_e - c_0)t$.<br>Model 2: $j = K(c_e - c_b) \\approx K(c_e - c_0)$. Then $\\frac{da}{dt} = \\frac{K R T_0}{P_0}(c_e - c_0)$. Integrating gives $a = a_0 + \\frac{K R T_0}{P_0}(c_e - c_0)t$.<br>Experimental data shows $a(t)$ is linear with time, so it follows model 2. The slope $\\dot{a}$ is constant.<br>From the graph, $\\dot{a} \\approx (200-50) \\times 10^{-6} \\, \\text{m} / 0.62 \\, \\text{s} \\approx 0.24 \\, \\text{mm} \\cdot \\text{s}^{-1}$.<br>The slope is $\\frac{K R T_0}{P_0}(c_e - c_0)$. With $c_e = 4c_0$, this is $\\frac{K R T_0}{P_0}(3c_0) = 3 K R T_0 k_H$.<br> $K = \\frac{\\dot{a}}{3 R T_0 k_H} = \\frac{0.24 \\times 10^{-3}}{3 \\times 8.314 \\times 293 \\times 3.3 \\times 10^{-4}} = 1.0 \\times 10^{-4} \\, \\text{m} \\cdot \\text{s}^{-1}$.",
+        "maxPoints": 1.2,
+        "subparts": [
+          {
+            "description": "$n_e = \\frac{4}{3}\\pi a^3 \\frac{P_0}{R T_0}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "any equation that that can be interpreted as a particule balance",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "equation between $\\dot{a}$ (or $\\dot{n}_e$ ) and j",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Model model 1 a exact with $a_0$ present",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "model 2 a exact with $a_0$ present",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "model 2",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "value of the slope: total mark only if $\\frac{da}{dt}$ is in range $[210-250] \\, \\mu\\text{m} \\cdot \\text{s}^{-1}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "any value of K in range $[0.9-1.1] \\, \\text{m} \\cdot \\text{s}^{-1}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.4",
+        "description": "Give the expression of the main forces exerted on a vertically rising bubble. Obtain the expression of $v(a)$. Give a numerical estimate of $\\eta$ using only $\\rho_l, g_0$ and quantities measured on Fig. 3.",
+        "solution": "Main forces: buoyancy $F_B = \\frac{4}{3}\\pi a^3 \\rho_l g_0$, drag force $F_D = 6\\pi\\eta a v$. Weight is negligible as $\\frac{\\rho_{CO_2}}{\\rho_l} \\approx 10^{-3}$.<br>Simplified equation is a balance between buoyancy and drag force: $\\frac{4}{3}\\pi a^3 \\rho_l g_0 = 6\\pi\\eta a v$, so $v = \\frac{2\\rho_l g_0}{9\\eta} a^2$.<br>Time between two bubbles: $\\Delta t = 1/f_b$.<br>Using $\\eta = \\frac{2\\rho_l g_0}{9} \\frac{a^2}{v}$ for the penultimate bubble ( $n-1$ ) with $a_{n-1} \\approx 0.19 \\, \\text{mm}$ from Fig.3. The velocity is $v(t_{n-1}) = \\frac{z(t_n) - z(t_{n-1})}{2 \\Delta t}$, but we can approximate it as $v(t_{n-1}) = \\frac{z(t_n) - z(t_{n-2})}{2 \\times 1/f_b}$. From the image, the distance between the last and second to last bubble is around $2.25 \\, \\text{mm}$. Time is $1/20 \\, \\text{s}$. So $v \\approx 2.25 \\, \\text{mm} / (1/20 \\text{s}) = 45 \\, \\text{mm/s} = 4.5 \\, \\text{cm/s}$.<br> $\\eta = \\frac{2 \\times 10^3 \\times 9.8 \\times (0.19 \\times 10^{-3})^2}{9 \\times 4.5 \\times 10^{-2}} \\approx 2 \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Expression of main forces (gravity force present or absent): fullmark",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "expression $v = \\frac{2 \\rho_l g_0}{9\\eta} a^2$ (full mark on this point with or without the gravity force)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "exact value taking account of the time during two positions $\\Delta t = 1/f_b = 5 \\times 10^{-2} \\, \\text{s}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "full mark for one coherent value of the radius measured on Fig.3. last bubble in [0.22-0.28]mm, penultimate bubble: radius in [0.18-0.22]mm, antepenultimate bubble: radius in [0.16-0.20]mm",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "full mark for one coherent value of the velocity measured on Fig.3. last bubble $v \\in [4.6, 5.0] \\, \\text{cm} \\cdot \\text{s}^{-1}$, penultimate bubble $v \\in [4.3, 4.6] \\, \\text{cm} \\cdot \\text{s}^{-1}$, antepenultimate bubble $v \\in [3.7 - 4.2] \\, \\text{cm} \\cdot \\text{s}^{-1}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "full mark for any value for $\\eta$ in range $[1.5-3.5] \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.5",
+        "description": "Express the radius $a_{H_e}$ of a bubble reaching the free surface in terms of height travelled $H_e$ and growth rate $q_a = da/dt$, and any constants you may need. Assume $a_{H_e} \\gg a_0$. Give and $q_a$ constant, and give the numerical value of $a_{H_e}$ with $H_e = 10 \\, \\text{cm}$ and $q_a$ corresponding to Fig. 2.",
+        "solution": "$v = \\frac{dz}{dt} = \\frac{2\\rho_l g_0}{9\\eta} a^2$ and $\\frac{da}{dt} = q_a$. So $dz = \\frac{2\\rho_l g_0}{9\\eta} a^2 dt = \\frac{2\\rho_l g_0}{9\\eta q_a} a^2 da$.<br>Integrating from $z=0$ to $H_e$ and $a=a_0$ to $a_{H_e}$: $H_e = \\int_0^{H_e} dz = \\int_{a_0}^{a_{H_e}} \\frac{2\\rho_l g_0}{9\\eta q_a} a^2 da = \\frac{2\\rho_l g_0}{27\\eta q_a} (a_{H_e}^3 - a_0^3)$.<br>Neglecting $a_0$, we get $a_{H_e}^3 = \\frac{27\\eta q_a H_e}{2\\rho_l g_0}$, so $a_{H_e} = (\\frac{27\\eta q_a H_e}{2\\rho_l g_0})^{1/3}$.<br>With $q_a = 0.24 \\, \\text{mm/s}$, $H_e = 0.1 \\, \\text{m}$, $\\eta = 2.0 \\times 10^{-3} \\, \\text{Pa} \\cdot \\text{s}$, we get $a_{H_e} = (\\frac{27 \\times 2.0 \\times 10^{-3} \\times 0.24 \\times 10^{-3} \\times 0.1}{2 \\times 10^3 \\times 9.8})^{1/3} = 3.9 \\times 10^{-4} \\, \\text{m}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "$a_{H_e} = (\\frac{27\\eta q_a H_e}{2\\rho_l g_0})^{1/3}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "full mark if $a_{H_e} \\in [0.36 - 0.49] \\, \\text{mm}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.6",
+        "description": "Obtain from this equation the characteristic time $\\tau$ for the decay of the concentration of dissolved CO2 in the liquid.",
+        "solution": "The rate of bubbles reaching the free surface by unit time is $N_b f_b$.<br>The volume of CO2 released per unit time at the free surface is: $\\frac{dV}{dt} = N_b f_b \\frac{4}{3}\\pi a_{H_e}^3$.<br>Using A.5, $\\frac{dV}{dt} = N_b f_b \\frac{4}{3}\\pi \\frac{27\\eta q_a H_e}{2\\rho_l g_0} = \\frac{18\\pi N_b f_b \\eta q_a H_e}{\\rho_l g_0}$.<br>With $q_a = \\frac{K R T_0}{P_0}(c_e - c_0)$, we get $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} \\frac{K R T_0}{P_0}(c_e - c_0)$.<br>The total number of moles of CO2 in volume $V_e$ is $n = c_e V_e$. The rate of change of moles is $\\frac{dn}{dt} = -\\frac{P_0}{R T_0} \\frac{dV}{dt}$.<br>So $V_e \\frac{dc_e}{dt} = -\\frac{P_0}{R T_0} \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} \\frac{K R T_0}{P_0}(c_e - c_0) = -\\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0}(c_e - c_0)$.<br>This is a first order linear ODE: $\\frac{d(c_e-c_0)}{dt} = -\\frac{1}{\\tau}(c_e-c_0)$ with characteristic time $\\tau = \\frac{\\rho_l g_0 V_e}{18\\pi N_b f_b \\eta K H_e}$.",
+        "maxPoints": 1.1,
+        "subparts": [
+          {
+            "description": "Correct count of bubbles reaching the free surface by unit time: $N_b f_b$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Balance at the free surface: $\\frac{dV}{dt} = \\frac{4}{3}\\pi a_{H_e}^3 N_b f_b$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact expression of $\\frac{dV}{dt} = \\frac{18\\pi N_b f_b \\eta H_e}{\\rho_l g_0} q_a$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$q_a = \\frac{da}{dt} = \\frac{K R T_0}{P_0}(c_e-c_0)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "First order linear differential equation: $\\frac{dc_e}{dt} + \\frac{18\\pi N_b f_b \\eta K H_e}{\\rho_l g_0 V_e}(c_e-c_0)=0$. If an homogeneous mistake has been made at a previous task, but the differential equation is first order and coherent, fullmark.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exponential decay with characteristic time: $\\tau = \\frac{\\rho_l g_0 V_e}{18\\pi N_b f_b \\eta K H_e}$. full mark if A.6.5 is just and if the numerical coefficient is absent or different of 1/18$\\pi$ (reasonable solution)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "Express $v_f$ in terms of $\\rho_l, \\sigma$ and $h$.",
+        "solution": "Variation of kinetic energy: the liquid in the rim has mass $dm = \\rho_l (2\\pi r dt) h$ and velocity $v_f$. The kinetic energy increase is $dE_k = \\frac{1}{2} (dm) v_f^2 = \\pi \\rho_l h r v_f^3 dt$. The solution text has a different approach. Let's follow it.<br>Variation of kinetic energy: system: the rim and the accumulated liquid. volume $\\delta V = h \\cdot 2\\pi r \\cdot v_f dt$. The kinetic energy is $dE_k = \\frac{1}{2} \\rho_l \\delta V v_f^2 = \\pi \\rho_l h r v_f^3 dt$.<br>Variation of surface tension energy: the surface energy varies only due to the disparition of the film. Two surfaces disappear. $\\delta E_s = -\\sigma (2 \\times 2\\pi r v_f dt) = -4\\pi \\sigma r v_f dt$.<br>Kinetic energy theorem: the lost energy is $\\delta E_s / 2$. So $dE_k = -\\delta E_s / 2$.<br> $\\pi \\rho_l h r v_f^3 dt = -(-\\frac{4\\pi \\sigma r v_f dt}{2})$. This gives $\\rho_l h v_f^2 = 2\\sigma$, so $v_f = \\sqrt{2\\sigma/(\\rho_l h)}$.",
+        "maxPoints": 1.1,
+        "subparts": [
+          {
+            "description": "Any expression of kinetic energy",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Variation of kinetic energy (differential or finite variation accepted)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of a surface energy or a variation.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact expression of $\\delta E_s$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Kinetic energy balance (without sign mistake). ",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "If the candidate forget the energy loss, it is treated as a small mistake",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "exact expression of $v_f$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.2",
+        "description": "Express the frequency of oscillation $f_0$ of $m_p$. Hint: for $\\epsilon \\ll 1, (1+\\epsilon)^\\alpha \\approx 1+\\alpha\\epsilon$.",
+        "solution": "Pressure forces on $m_p$: $F_z = P(t)S - P_0 S$.<br>Volume $V(t) = V_0 + Sz$.<br>Adiabatic and reversible compression: $P(t)V(t)^\\gamma = P_0 V_0^\\gamma$, so $P(t) = P_0 (\\frac{V_0}{V_0+Sz})^\\gamma = P_0 (1+Sz/V_0)^{-\\gamma}$.<br>Approximation: $P(t) \\approx P_0 (1-\\gamma Sz/V_0)$.<br>Pressure force: $F_z = -\\gamma S^2 P_0 \\frac{z}{V_0}$.<br>Newton's 2nd law: $m_p \\ddot{z} = -\\frac{\\gamma S^2 P_0}{V_0} z$, so $m_p \\ddot{z} + \\frac{\\gamma S^2 P_0}{V_0} z = 0$.<br>Harmonic oscillator of angular frequency $\\omega_0^2 = \\frac{\\gamma S^2 P_0}{m_p V_0}$.<br> $f_0 = \\frac{\\omega_0}{2\\pi} = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma S^2 P_0}{m_p V_0}}$.",
+        "maxPoints": 1.1,
+        "subparts": [
+          {
+            "description": "Pressure force with $P_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of volume $V(t)$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $P(t)$ with adiabatic reversible process for an ideal gas",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Approximate pressure",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact linearized pressure force",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Law of motion",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Harmonic oscillator, angular frequency",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of $f_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.3",
+        "description": "Find the radius $a$ and the thickness $h$ of the champagne film separating the bubble from the atmosphere.",
+        "solution": "The maximal value of $f_0$ is $f_0 = 40 \\, \\text{kHz}$ which is obtained for $r=r_c$.<br>With $m_p = 8\\rho_g r^3/3$, $S=\\pi r^2$, $V_0 = 4/3 \\pi a^3$, the expression for $f_0$ becomes $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma (\\pi r^2)^2 P_0}{(8\\rho_g r^3/3)(4/3 \\pi a^3)}} = \\frac{1}{2\\pi} \\sqrt{\\frac{3\\gamma \\pi P_0}{32 \\rho_g a^3}} r^{1/2}$. This does not match the solution. Let's recheck the formula for $f_0$ from solution. $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{\\gamma P_0}{\\rho_g}} \\frac{3\\sqrt{3\\pi}}{16a} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Not clear where this comes from. Let's follow the solution's derivation.<br> $f_0 = \\frac{1}{2\\pi} \\sqrt{\\frac{3r_c \\pi^2 P_0 \\gamma}{8 \\rho_g V_0}}$. Using $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$ and $V_0=\\frac{4}{3}\\pi a^3$.<br> $a = \\frac{3\\sqrt{3}}{64\\pi} \\frac{\\gamma P_0}{f_0^2 \\rho_g} \\sqrt{\\frac{\\rho_l g_0}{\\sigma}} = 0.53 \\, \\text{mm}$.<br>Determination of $h$: $r_c = v_f t_b = \\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b$. Also $r_c = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. So $\\sqrt{\\frac{2\\sigma}{\\rho_l h}} t_b = \\frac{2}{\\sqrt{3}}a^2 \\sqrt{\\frac{\\rho_l g_0}{\\sigma}}$. Solving for $h$ gives $h = \\frac{3 t_b^2}{2a^4} \\frac{\\sigma^2}{\\rho_l^2 g_0} = 3.7 \\, \\mu\\text{m}$.",
+        "maxPoints": 1.1,
+        "subparts": [
+          {
+            "description": "Use of max value of $r_c$ for $f_0$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact expression of $f_0$ in terms of $a, \\rho_g, \\sigma, g_0, \\rho_l, P_0$ or expression of a",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact numerical value between 0.5 mm and 0.6 mm",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Relationship between $t_b, v_f$ and $r_c$ or a",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of h in terms of $\\sigma, \\rho_l$ and $v_f$ (or a and $t_b$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value h = 3.7 $\\mu$m",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "Give the numerical value of the pressure $P_i$ of gaseous CO2 in the bottle for $T_0=6^\\circ\\text{C}$ and $T_0=20^\\circ\\text{C}$.",
+        "solution": "Conservation of CO2 molecules: $n_T = n_V + n_L = n_V + k_H(T_0) P_i V_L$.<br>Ideal gas law: $n_V = \\frac{P_i V_G}{R T_0}$.<br>So $n_T = \\frac{P_i V_G}{R T_0} + k_H(T_0) P_i V_L$.<br> $P_i = \\frac{n_T}{\\frac{V_G}{R T_0} + k_H(T_0) V_L} = \\frac{n_T R T_0}{V_G + R T_0 k_H(T_0) V_L}$.<br>For $T_0 = 6^\\circ\\text{C}$: $P_i=4.81 \\, \\text{bar}$.<br>For $T_0 = 20^\\circ\\text{C}$: $P_i=7.76 \\, \\text{bar}$.",
+        "maxPoints": 0.4,
+        "subparts": [
+          {
+            "description": "Conservation of CO2 molecules",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Literal expression of $P_i$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "For $T_0 = 6^\\circ\\text{C} : P_i = 4.81 \\, \\text{bar}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "For $T_0 = 20^\\circ\\text{C} : P_i = 7.76 \\, \\text{bar}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "Give the numerical value $T_f$ of the CO2 gas at the end of the expansion, after opening a bottle, if $T_0=6^\\circ\\text{C}$ and if $T_0=20^\\circ\\text{C}$, if no phase transition occurred. Choose which statements are true (several statements possible):<br>1. At $T_0=6^\\circ\\text{C}$ a grey-white fog appears while opening the bottle.<br>2. At $T_0=6^\\circ\\text{C}$ a blue fog appears while opening the bottle.<br>3. At $T_0=20^\\circ\\text{C}$ a grey-white fog appears while opening the bottle.<br>4. At $T_0=20^\\circ\\text{C}$ a blue fog appears while opening the bottle.",
+        "solution": "The adiabatic reversible expansion goes from $P_i$ to $P_0$. The final temperature $T_f$ is given by $T_f P_f^{(\\frac{1-\\gamma}{\\gamma})} = T_i P_i^{(\\frac{1-\\gamma}{\\gamma})}$, so $T_f = T_i (P_i/P_f)^{(\\frac{1-\\gamma}{\\gamma})} = T_0 (P_i/P_0)^{(\\frac{1-\\gamma}{\\gamma})} = T_0 (P_0/P_i)^{(1-1/\\gamma)}$.<br>For $T_0=6^\\circ\\text{C} = 279.15 \\, \\text{K}$, $P_i=4.69 \\, \\text{bar}$. $T_f = 279.15 (4.69)^{(1-1.3)/1.3} = 195.3 \\, \\text{K} = -77.8^\\circ\\text{C}$.<br>For $T_0=20^\\circ\\text{C} = 293.15 \\, \\text{K}$, $P_i=7.45 \\, \\text{bar}$. $T_f = 293.15 (7.45)^{(1-1.3)/1.3} = 184.3 \\, \\text{K} = -88.8^\\circ\\text{C}$.<br>The transition temperature $T_\\text{trans}$ at $P_0=1 \\, \\text{bar}$ is given by $\\log_{10}(P_\\text{sat}^{CO_2}/P_0) = A - B/(T+C)$, so $1 = 10^{6.81-1300/(T_\\text{trans}-3.49)}$. This gives $T_\\text{trans} = 194.4 \\, \\text{K} = -78.8^\\circ\\text{C}$.<br>For $T_0=6^\\circ\\text{C}$, $T_f=195.3 \\, \\text{K} > T_\\text{trans}$, so no CO2 condensation. A grey-white fog (water) appears. Statement 1 is true.<br>For $T_0=20^\\circ\\text{C}$, $T_f=184.3 \\, \\text{K} < T_\\text{trans}$, so CO2 condensation occurs. A blue fog (solid CO2) appears. Statement 4 is true.<br>The true statements are: 1 and 4.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Final pressure of the expansion.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Litteral expression of $T_f$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "For $T_0 = 6^\\circ\\text{C}: P_i=4.69 \\, \\text{bar}$ and $T_f=195.3 \\, \\text{K}$ ;",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "For $T_0 = 20^\\circ\\text{C}: P_i=7.45 \\, \\text{bar}$ and $T_f=184.3 \\, \\text{K}$ ;",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Idea of comparison between $P_\\text{sat}$ and $P_0$ or evaluation of the transition temperature at $P_0$ and idea of comparison with $T_f$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical comparison.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "True statements (all or nothing).",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "Give the numerical value of $H_c$ if the external temperature is $T_0 = 6^\\circ\\text{C}$.",
+        "solution": "Work of the friction force: $W_f = -\\int_0^{l_0} \\alpha A dz = -\\int_0^{l_0} \\alpha \\pi d (l_0-z) dz = -\\frac{1}{2} \\alpha \\pi d l_0^2$. Initially, pressure force balances friction: $(P_i-P_0)\\frac{\\pi d^2}{4} = \\alpha (\\pi d l_0)$, so $\\alpha = \\frac{(P_i-P_0)d}{4l_0}$. $W_f = -\\frac{(P_i-P_0)\\pi d^2 l_0}{8} = -1.17 \\, \\text{J}$.<br>Work of internal pressure: The expansion is adiabatic. $\\Delta U_g = W_\\text{cork}\\to\\text{CO2} = -W_\\text{CO2}\\to\\text{cork}$. $\\Delta U_g = \\frac{n_V R}{\\gamma-1}(T_f - T_0) = \\frac{P_i V_G}{\\gamma-1}( (\\frac{V_G}{V_F})^{\\gamma-1} - 1)$. $V_F = V_G + \\frac{\\pi d^2}{4}l_0$. $\\Delta U_g = -2.57 \\, \\text{J}$. So $W_\\text{int} = -\\Delta U_g = 2.57 \\, \\text{J}$.<br>Work of external pressure: $W_e = -P_0 \\Delta V = -P_0 \\frac{\\pi d^2 l_0}{4} = -0.64 \\, \\text{J}$.<br>Energy balance: $E_c = W_\\text{int} + W_f + W_e = 2.57 - 1.17 - 0.64 = 0.76 \\, \\text{J}$.<br>Maximum height: $m g H_c = E_c$, so $H_c = E_c / (mg) = 0.76 / (0.01 \\times 9.8) = 7.7 \\, \\text{m}$.",
+        "maxPoints": 1.3,
+        "subparts": [
+          {
+            "description": "Correct expression of $\\alpha$ (all or nothing). If $\\alpha$ is not correct (contribution of $P_0$ forgotten for example), 0 point but the following items are evaluated with this uncorrect $\\alpha$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression of the friction work (all or nothing)",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Consequences of the adiabatic reversible expansion (1st principle with $Q=0$ or $PV^\\gamma = P_i V_i^\\gamma$ )",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Exact expression of the work (all or nothing). Partial points: if P is considered constant during the expansion, 0 point for C.3.4. but all points for the following items if coherent with the incorrect work expression.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Work due to external pressure correct. If this item is forgotten by the candidate, 0 point.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Correct $E_c$ with the 3 contributions (even if errors in the writing of the contributions). If the candidate has forgotten the contribution of the external pressure, 0 point.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Correct energy balance during the free flight or use of Newton's second law.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Correct numerical value of $H_c$. If the candidate has forgotten the contribution of the external pressure in C.3.5 but $H_c$ is coherent, fullmark.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
 ]

@@ -34,31 +34,31 @@ export const auth = betterAuth({
 **/
 
 export const createAuth = function (database: DrizzleClient) {
-	return betterAuth({
-		trustedOrigins: env.TRUSTED_ORIGINS?.split(',') ?? [],
-		database: drizzleAdapter(database, {
-			schema,
-			provider: 'sqlite',
-			usePlural: true
-		}),
-		socialProviders: {
-			google: {
-				clientId: env.GOOGLE_CLIENT_ID as string,
-				clientSecret: env.GOOGLE_CLIENT_SECRET as string
-			},
-			github: {
-				clientId: env.GITHUB_CLIENT_ID as string,
-				clientSecret: env.GITHUB_CLIENT_SECRET as string
-			}
-		},
-		session: {
-			cookieCache: {
-				enabled: true,
-				maxAge: 5 * 60 // Cache duration in seconds
-			}
-		},
-		plugins: [sveltekitCookies(getRequestEvent)]
-	});
+  return betterAuth({
+    trustedOrigins: env.TRUSTED_ORIGINS?.split(',') ?? [],
+    database: drizzleAdapter(database, {
+      schema,
+      provider: 'sqlite',
+      usePlural: true
+    }),
+    socialProviders: {
+      google: {
+        clientId: env.GOOGLE_CLIENT_ID as string,
+        clientSecret: env.GOOGLE_CLIENT_SECRET as string
+      },
+      github: {
+        clientId: env.GITHUB_CLIENT_ID as string,
+        clientSecret: env.GITHUB_CLIENT_SECRET as string
+      }
+    },
+    session: {
+      cookieCache: {
+        enabled: true,
+        maxAge: 5 * 60 // Cache duration in seconds
+      }
+    },
+    plugins: [sveltekitCookies(getRequestEvent)]
+  });
 };
 
 export type BetterAuth = ReturnType<typeof createAuth>;

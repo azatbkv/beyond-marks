@@ -1,936 +1,936 @@
 [
-	{
-		"number": 1,
-		"name": "«Солянка»",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "1.1",
-				"description": "В различные жидкости, налитые в широкие сосуды, попеременно погружают вершиной вниз тело вращения, имеющее форму параболоида (осевое сечение – парабола вида $y = Ax^n$, а $x = 0$ соответствует вершине тела, верхнее сечение перпендикулярно оси). Известно, что тело при этом плавает, погружаясь на некоторую глубину, и для каждой жидкости измерен период малых вертикальных колебаний тела, которое не наклоняется и не переворачивается, так что его ось остается строго вертикальной. В таблице дана зависимость периода колебаний от глубины погружения тела. Определите степенной коэффициент n параболы. Расчёт погрешностей не требуется.",
-				"solution": "Пусть масса тела $m$. Колебания вызовет прибавка к силе Архимеда из-за увеличения погруженного объёма на $Sx$.<br> $$m \\omega^2 x = \\rho g S x$$ <br>Используем связь с объёмом вытесненной воды<br> $$ \\frac{4\\pi^2}{T^2} = \\frac{\\rho_w g S}{m} = \\frac{gS}{V_n} $$ <br>Если $r = (\\frac{h}{A})^{\\frac{1}{n}}$, то $S = \\pi (\\frac{h}{A})^{\\frac{2}{n}}$ и $V_n = \\int S dh = \\frac{\\pi h^{\\frac{2}{n}+1}}{(\\frac{2}{n}+1)A^{\\frac{2}{n}}}$.<br>Тогда $\\frac{S}{V_n} = \\frac{\\frac{2}{n}+1}{h}$.<br>Откуда получаем выражение для $n$:<br> $$ n = (\\frac{2\\pi^2 h}{gT^2} - \\frac{1}{2})^{-1} $$ <br>Подставляя данные из таблицы, получаем значения для $n$: 0.67, 0.68, 0.68, 0.67, 0.67.<br>Среднее значение $n_{cp} \\approx 0.67 \\approx \\frac{2}{3}$.",
-				"maxPoints": 3,
-				"subparts": [
-					{
-						"description": "Условие для малых колебаний: $m\\omega^2x = \\rho g S x$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Связь периода колебаний с параметрами системы: $\\frac{4\\pi^2}{T^2} = \\frac{\\rho_w g S}{m} = \\frac{gS}{V_n}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для радиуса сечения: $r = (\\frac{h}{A})^{\\frac{1}{n}}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для площади сечения: $S = \\pi (\\frac{h}{A})^{\\frac{2}{n}}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Интегрирование для нахождения объёма: $V_n = \\int S dh = \\frac{\\pi h^{\\frac{2}{n}+1}}{(\\frac{2}{n}+1)A^{\\frac{2}{n}}}$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Отношение площади к объёму: $\\frac{S}{V_n} = \\frac{\\frac{2}{n}+1}{h}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Конечное выражение для n: $n = (\\frac{2\\pi^2 h}{gT^2} - \\frac{1}{2})^{-1}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Расчёт численных значений n по данным таблицы.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Усреднённое значение n и/или приведение к дроби $2/3$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "1.2",
-				"description": "Система из конденсаторов, каждый ёмкостью C, и диода D подключена к источнику постоянного напряжения U, значение которого медленно растёт от нулевого значения. Вольтамперная характеристика диода изображена на рисунке, излом графика – так называемый пробой диода, значение напряжения пробоя диода неизвестно. Когда через источник пройдёт известный заряд q₀, перестаёт выполняться прямая пропорциональность между входным напряжением U и протёкшим через источник зарядом q. Постройте график зависимости q(U) в диапазоне изменения заряда через источник от 0 до 2q₀. Какое количество теплоты Q выделится на диоде к моменту, когда через источник пройдет заряд 2q₀?",
-				"solution": "До пробоя диода ( $q \\le q_0$ ) согласно решению $q=\\frac{3}{2}CU$.<br>Пробой диода происходит при $q=q_0$. В этот момент $q_1 = q$ и $q_3 = \\frac{q}{3}$. Напряжение пробоя диода $U_d = U_{C1} + U_{C3} = \\frac{q_1}{C} + \\frac{q_3}{C} = \\frac{q_0}{C} + \\frac{q_0}{3C} = \\frac{4q_0}{3C}$. Напряжение источника в момент пробоя $U(q_0) = \\frac{2q_0}{3C}$.<br>После пробоя ( $q_0 \\le q \\le 2q_0$ ) диод открыт. Зависимость $q(U)$ становится $q = q_2 + q_4 = \\frac{5CU}{3} - \\frac{16}{9}q_0$.<br>При $q=2q_0$, напряжение $U(2q_0) = \\frac{34q_0}{15C}$.<br>Теплота на диоде выделяется после пробоя. Заряд, прошедший через диод: $\\Delta q_d = \\Delta(q_4 - q_3) = \\frac{4}{3}C\\Delta U$. Изменение напряжения на системе $\\Delta U = U(2q_0) - U(q_0) = \\frac{3q_0}{5C}$. Теплота, выделенная на диоде: $Q = U_d \\Delta q_d = \\frac{16q_0^2}{15C}$.",
-				"maxPoints": 3.5,
-				"subparts": [
-					{
-						"description": "Формула для заряда до пробоя диода: $q = \\frac{3}{2}CU$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Заряды на конденсаторах $q_1=q$ и $q_3=q/3$ и Напряжение пробоя диода: $U_d = \\frac{q_1}{C} + \\frac{q_3}{C} = \\frac{4q_0}{3C}$.",
-						"points": 0.4,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Связи между зарядами и напряжениями после пробоя: $q_2+q_3=q_1$, $\\frac{q_3}{C} + \\frac{q_2}{C} = \\frac{q_4}{C}$, $U=U_d+\\frac{q_4}{C}$.",
-						"points": 0.6,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для заряда $q_2$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для заряда $q_4$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Зависимость $q(U)$ на участке $q_0 \\le q \\le 2q_0$: $q=q_2+q_4=\\frac{5CU}{3}-\\frac{16}{9}q_0$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Построение графика: участки сшиваются, участок 1 верный, участок 2 верный.",
-						"points": 0.6,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для заряда через диод $\\Delta q_d$, изменение напряжения $\\Delta U$ и итоговая теплота $Q$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "1.3",
-				"description": "Пучок света круглого сечения радиуса r падает на собирающую несферическую линзу, после прохождения которой он образует конус с углом раствора $2\\alpha_0$. В вершину светового конуса помещают маленький шарик радиуса R, изготовленный из прозрачного материала с показателем преломления n; потерь на отражение и поглощение нет, центр шара совпадает с фокусом пучка. Найдите действующую на шарик возвращающую силу при его малом смещении x вдоль оси конуса светового пучка. Известно, что мощность пучка света P равномерно распределена по его сечению до попадания на линзу. Скорость света в вакууме c. Подсказка: В некоторых расчётах может оказаться полезной замена $u = \\cos \\alpha$.",
-				"solution": "Пусть шарик сдвинулся вдоль оси пучка на $x$. Луч, входивший в центр шара под углом $\\alpha$ к оси пучка, теперь составляет с радиусом и нормалью малый угол $(\\alpha - \\theta)$.<br>Из теоремы синусов $\\frac{x}{\\alpha - \\theta} = \\frac{R}{\\sin(\\pi - \\alpha)} = \\frac{R}{\\sin \\alpha}$, откуда $\\alpha - \\theta = \\frac{x \\sin \\alpha}{R}$.<br>После преломления на входе и выходе луч отклонится от оси на суммарный угол $\\Delta \\alpha = 2(1 - \\frac{1}{n})(\\alpha - \\theta) = \\frac{2(1 - \\frac{1}{n})x \\sin \\alpha}{R}$.<br>Импульс, переносимый фотонами в диапазоне углов $d\\alpha$ вблизи угла $\\alpha$, равен $dp = \\frac{dW}{c}$, где $dW$ - энергия этих фотонов.<br>Изменение импульса вдоль оси составляет $dp_\\parallel = dp\\Delta(\\cos \\alpha) = -dp \\sin(\\alpha) \\Delta\\alpha$.<br>Сила, вызванная этим изменением импульса, $dF = \\frac{dp_\\parallel}{dt} = -\\frac{dp \\sin(\\alpha) \\Delta\\alpha}{dt} = -\\frac{2(1 - \\frac{1}{n})x \\sin^2 \\alpha}{cR} \\frac{dW}{dt}$.<br>Мощность в кольцевом участке луча $dP = \\frac{dW}{dt}$. Мощность $P$ равномерно распределена по сечению $\\pi r^2$. Элементарная мощность $dP$ в кольце с радиусом $\\rho$ и толщиной $d\\rho$ равна $dP = P \\frac{2\\pi\\rho d\\rho}{\\pi r^2}$.<br>Из геометрии конуса $\\rho = r \\frac{\\tan\\alpha}{\\tan\\alpha_0} = r \\cot\\alpha_0 \\tan\\alpha$. Тогда $d\\rho = \\frac{r \\cot\\alpha_0}{\\cos^2\\alpha}d\\alpha$.<br>Подставляя всё, получаем $dF = -\\frac{4P(1 - \\frac{1}{n})x \\cot^2 \\alpha_0 \\sin^3 \\alpha}{cR \\cos^3 \\alpha} d\\alpha$.<br>Интегрируя от 0 до $\\alpha_0$:<br> $$ F = \\int_0^{\\alpha_0} dF = -\\frac{4P(1 - \\frac{1}{n})x \\cot^2 \\alpha_0}{cR} \\int_0^{\\alpha_0} \\frac{\\sin^3 \\alpha}{\\cos^3 \\alpha} d\\alpha $$ <br>Интеграл равен $[\\ln(\\cos \\alpha) + \\frac{1}{2\\cos^2 \\alpha}]_1^{\\cos \\alpha_0} = \\ln(\\cos \\alpha_0) + \\frac{1}{2\\cos^2 \\alpha_0} - \\frac{1}{2}$.<br>Окончательный ответ для силы $F$ пропорционален $x$ и этому выражению.",
-				"maxPoints": 3.5,
-				"subparts": [
-					{
-						"description": "Угол между падающим лучом и нормалью к поверхности шара: $(\\alpha - \\theta)$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Итоговый угол отклонения луча: $\\Delta\\alpha = 2(1-\\frac{1}{n})(\\alpha-\\theta)$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Применение теоремы синусов для нахождения $(\\alpha - \\theta)$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для угла отклонения через смещение $x$: $\\Delta\\alpha = \\frac{2(1-1/n)x\\sin\\alpha}{R}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для импульса фотонов: $dp = dW/c$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Изменение импульса вдоль оси: $dp_\\parallel = -dp \\sin(\\alpha) \\Delta\\alpha$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для элементарной силы: $dF = \\frac{dp_\\parallel}{dt}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Связь между радиусом кольца и углом: $\\rho = r \\cot \\alpha_0 \\tan \\alpha$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для $d\\rho$ через $d\\alpha$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для элементарной мощности $dP$ в зависимости от $\\alpha$ и $d\\alpha$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Полное выражение для $dF$ под интегралом.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Взятие интеграла для нахождения полной силы $F$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Конечная формула для силы $F$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	},
-	{
-		"number": 2,
-		"name": "Проектирование системы кондиционирования воздуха",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "2.1",
-				"description": "Используя диаграмму, определите, какой будет относительная влажность, если просто охладить наружный воздух до $T_{IA}$.",
-				"solution": "Находим на психрометрической диаграмме точку внешнего воздуха ( $T_{OA} = 32^\\circ\\text{C}$, $\\phi_{OA} = 40\\%$ ). Влагосодержание $w$ при этом составляет $12 \\, \\text{г/кг}$. При охлаждении до $T_{IA} = 24^\\circ\\text{C}$ влагосодержание не меняется (пока не достигнем точки росы). Находим на диаграмме точку с $T = 24^\\circ\\text{C}$ и $w=12 \\, \\text{г/кг}$. Эта точка находится примерно посередине между линиями 60% и 70% относительной влажности, но чуть ближе к 60%. Следовательно, относительная влажность будет равна примерно 64%.",
-				"maxPoints": 0.25,
-				"subparts": [
-					{
-						"description": "Определение относительной влажности примерно 64%.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.2",
-				"description": "Используя психрометрическую диаграмму, найдите влагосодержание наружного $w_{OA}$ и внутреннего $w_{IA}$ воздуха.",
-				"solution": "Из психрометрической таблицы находим точку пересечения $T_{OA} = 32^\\circ\\text{C}$ и $\\phi_{OA} = 40\\%$. Проводя горизонтальную линию влево, находим $w_{OA} = 12 \\, \\text{г/кг}$.<br>Аналогично для внутреннего воздуха: находим точку пересечения $T_{IA} = 24^\\circ\\text{C}$ и $\\phi_{IA} = 50\\%$. Проводя горизонтальную линию влево, находим $w_{IA} = 9.5 \\, \\text{г/кг}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Найдено влагосодержание наружного воздуха $w_{OA} = 12 \\, \\text{г/кг}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Найдено влагосодержание внутреннего воздуха $w_{IA} = 9.5 \\, \\text{г/кг}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.3",
-				"description": "Энтальпия обычно используется для определения количества тепла в процессе. Предполагая, что процесс является изобарическим (давление P) и происходит переход из состояния с энтальпией $H_1$ в состояние с энтальпией $H_2$, выведите выражение для количества тепла Q, добавленного в систему.",
-				"solution": "Энтальпия определяется как $H = U + PV$. Изменение энтальпии: $\\Delta H = H_2 - H_1 = (U_2 - U_1) + P(V_2 - V_1) = \\Delta U + P\\Delta V$.<br>Согласно первому закону термодинамики, теплота, добавленная в систему, равна $Q = \\Delta U + A$, где $A$ - работа, совершаемая системой. Для изобарического процесса $A = P\\Delta V$.<br>Таким образом, $Q = \\Delta U + P\\Delta V = H_2 - H_1$.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Вывод выражения для количества тепла: $Q = H_2 - H_1 = \\Delta U + P\\Delta V = \\Delta U + A$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.4",
-				"description": "Используя диаграмму, определите удельную теплоемкость сухого воздуха $c_a$.",
-				"solution": "Рассмотрим на диаграмме линию с нулевым влагосодержанием ( $w=0$ ). Удельная энтальпия $h = c_a T$. При $T=10^\\circ\\text{C}$, $h=10 \\, \\text{кДж/кг}$. При $T=35^\\circ\\text{C}$, $h=35 \\, \\text{кДж/кг}$.<br>Следовательно, удельная теплоемкость $c_a = \\frac{\\Delta h}{\\Delta T} = \\frac{35-10}{35-10} = 1.0 \\, \\text{кДж/(кг} \\cdot ^\\circ\\text{C)}$.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Определение удельной теплоемкости сухого воздуха: $c_a = 1.0 \\, \\text{кДж/кг}$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.5",
-				"description": "Используя диаграмму, определите удельную теплоту испарения воды L.",
-				"solution": "Удельная энтальпия влажного воздуха дается выражением $h = c_a T + w L$. Возьмем две точки на линии постоянной температуры, например $T=20^\\circ\\text{C}$.<br>Точка 1: $w_1 = 2 \\, \\text{г/кг} = 0.002 \\, \\text{кг/кг}$, $h_1 \\approx 25 \\, \\text{кДж/кг}$.<br>Точка 2: $w_2 = 14.5 \\, \\text{г/кг} = 0.0145 \\, \\text{кг/кг}$ (точка росы), $h_2 \\approx 57 \\, \\text{кДж/кг}$.<br> $L = \\frac{h_2-h_1}{w_2-w_1} = \\frac{57-25}{0.0145-0.002} = \\frac{32}{0.0125} = 2560 \\, \\text{кДж/кг}$. В решении дается $L \\approx 2500 \\, \\text{кДж/кг}$.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Определение удельной теплоты испарения воды: $L \\approx 2500 \\, \\text{кДж/кг}$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.6",
-				"description": "Выведите выражение для $T_{MA}$, $w_{MA}$ смешанного воздуха и найдите их значения.",
-				"solution": "Свежий наружный воздух смешивается с возвращаемым из комнаты воздухом в пропорции 1:3. Массовый расход наружного воздуха $\\dot{m}_{OA}$, возвращаемого $\\dot{m}_{IA} = 3\\dot{m}_{OA}$.<br>Баланс энергии: $c_a \\dot{m}_{OA} T_{OA} + c_a \\dot{m}_{IA} T_{IA} = c_a (\\dot{m}_{OA} + \\dot{m}_{IA}) T_{MA}$.<br> $T_{MA} = \\frac{\\dot{m}_{OA} T_{OA} + \\dot{m}_{IA} T_{IA}}{\\dot{m}_{OA} + \\dot{m}_{IA}} = \\frac{1 \\cdot T_{OA} + 3 \\cdot T_{IA}}{4} = \\frac{32 + 3 \\cdot 24}{4} = 26^\\circ\\text{C}$.<br>Баланс массы воды: $\\dot{m}_{OA} w_{OA} + \\dot{m}_{IA} w_{IA} = (\\dot{m}_{OA} + \\dot{m}_{IA}) w_{MA}$.<br> $w_{MA} = \\frac{\\dot{m}_{OA} w_{OA} + \\dot{m}_{IA} w_{IA}}{\\dot{m}_{OA} + \\dot{m}_{IA}} = \\frac{1 \\cdot w_{OA} + 3 \\cdot w_{IA}}{4} = \\frac{12 + 3 \\cdot 9.5}{4} = 10.125 \\approx 10 \\, \\text{г/кг}$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Уравнение теплового баланса для смешения потоков: $c_a \\dot{m}_{IA}(T_{MA}-T_{IA}) = c_a \\dot{m}_{OA}(T_{OA}-T_{MA})$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение температуры смешанного воздуха: $T_{MA} = 26^\\circ\\text{C}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Уравнение баланса масс влаги: $\\dot{m}_{IW} + \\dot{m}_{OW} = \\dot{m}_{MW}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение влагосодержания смешанного воздуха: $w_{MA} = 10 \\, \\text{г/кг}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.7",
-				"description": "Выведите выражение для $T_{SA}$, $w_{SA}$ и найдите их значения.",
-				"solution": "В комнате $n=30$ человек. Каждый выделяет $Q_{SH} = 80 \\, \\text{Вт}$ тепла (явного) и $Q_{LH} = 80 \\, \\text{Вт}$ (скрытого, за счет испарения).<br>Объемный расход свежего воздуха: $\\dot{V}_H = 8 \\, \\text{л/с} = 0.008 \\, \\text{м}^3/\\text{с}$.<br>Полный массовый расход воздуха в системе $\\dot{m} = 4 \\cdot n \\cdot \\rho \\dot{V}_H = 4 \\cdot 30 \\cdot 1.23 \\cdot 0.008 = 1.18 \\, \\text{кг/с}$.<br>Баланс явного тепла в комнате: $n Q_{SH} + \\dot{m} c_a (T_{SA} - T_{IA}) = 0$.<br> $T_{SA} = T_{IA} - \\frac{n Q_{SH}}{\\dot{m} c_a} = 24 - \\frac{30 \\cdot 80}{1.18 \\cdot 1000} \\approx 22^\\circ\\text{C}$.<br>Баланс скрытого тепла (влаги): $n Q_{LH} + \\dot{m} L (w_{SA} - w_{IA}) = 0$.<br> $w_{SA} = w_{IA} - \\frac{n Q_{LH}}{\\dot{m} L} = 9.5 - \\frac{30 \\cdot 80}{1.18 \\cdot 2500000} \\cdot 1000 \\approx 8.7 \\, \\text{г/кг}$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Уравнение баланса явного тепла: $c_a \\dot{m}(T_{IA}-T_{SA}) = \\dot{Q}_S$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение температуры подаваемого воздуха: $T_{SA} = 22^\\circ\\text{C}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Уравнение баланса влаги: $w_{SA} = w_{IA} - \\frac{\\dot{Q}_L}{L_w \\rho_a \\dot{V}}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение влагосодержания подаваемого воздуха: $w_{SA} \\approx 8.7 \\, \\text{г/кг}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.8",
-				"description": "Найдите $T_{CA}$, $\\phi_{CA}$.",
-				"solution": "Воздух после охлаждающего змеевика (coil) и до нагревателя имеет параметры ( $T_{CA}$, $w_{CA}$ ). Поскольку при охлаждении происходит конденсация, воздух на выходе из змеевика насыщен, т.е. $\\phi_{CA} = 100\\%$.<br>Влагосодержание воздуха после змеевика и после нагревателя одинаково: $w_{CA} = w_{SA} = 8.7 \\, \\text{г/кг}$.<br>На психрометрической диаграмме находим точку на линии $\\phi = 100\\%$ с влагосодержанием $w = 8.7 \\, \\text{г/кг}$. Это соответствует температуре точки росы $T_{CA} \\approx 12^\\circ\\text{C}$.",
-				"maxPoints": 1.75,
-				"subparts": [
-					{
-						"description": "Определение температуры воздуха после охладителя: $T_{CA} \\approx 12^\\circ\\text{C}$.",
-						"points": 1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Определение относительной влажности после охладителя: $\\phi_{CA} = 100\\%$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.9",
-				"description": "Найдите скорость конденсации воды $\\dot{m}_w$.",
-				"solution": "Скорость конденсации воды равна разнице в массе воды, содержащейся в воздухе до и после охлаждающего змеевика.<br> $\\dot{m}_w = \\dot{m} (w_{MA} - w_{CA}) = \\dot{m} (w_{MA} - w_{SA})$.<br>Полный массовый расход воздуха $\\dot{m} = 4 \\rho n \\dot{V}_H = 4 \\cdot 1.23 \\, \\text{кг/м}^3 \\cdot 30 \\cdot 0.008 \\, \\text{м}^3/\\text{с} = 1.1808 \\, \\text{кг/с}$.<br> $\\dot{m}_w = 1.1808 \\, \\text{кг/с} \\cdot (10.125 - 8.7) \\, \\text{г/кг} = 1.1808 \\cdot 1.425 \\, \\text{г/с} \\approx 1.7 \\, \\text{г/с}$.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Формула для скорости конденсации: $\\dot{m}_w = 4 \\rho n \\dot{V}_H (w_{MA} - w_{SA})$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение: $\\dot{m}_w \\approx 1.7 \\, \\text{г/с}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.10",
-				"description": "Найдите количество теплоты, отводимой охлаждающим змеевиком $\\dot{Q}_C$.",
-				"solution": "Количество отводимой теплоты равно изменению энтальпии воздуха при прохождении через змеевик.<br> $\\dot{Q}_C = \\dot{m} (h_{MA} - h_{CA})$.<br>Находим на диаграмме энтальпии: $h_{MA}$ для $T=26^\\circ\\text{C}, w=10 \\, \\text{г/кг}$ равно примерно $52 \\, \\text{кДж/кг}$.<br> $h_{CA}$ для $T=12^\\circ\\text{C}, w=8.7 \\, \\text{г/кг}$ ( $\\phi=100\\%$ ) равно примерно $34 \\, \\text{кДж/кг}$.<br> $\\dot{Q}_C = 1.1808 \\, \\text{кг/с} \\cdot (52 - 34) \\, \\text{кДж/кг} = 1.1808 \\cdot 18 \\, \\text{кВт} \\approx 21.25 \\, \\text{кВт}$.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Расчет отводимой теплоты: $\\dot{Q}_C \\approx 21 \\, \\text{кВт}$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.11",
-				"description": "Найдите количество теплоты, подаваемой нагревательным змеевиком $\\dot{Q}_H$.",
-				"solution": "Количество подаваемой теплоты равно изменению энтальпии воздуха при прохождении через нагреватель.<br> $\\dot{Q}_H = \\dot{m} (h_{SA} - h_{CA})$.<br>Находим энтальпию $h_{SA}$ для $T=22^\\circ\\text{C}, w=8.7 \\, \\text{г/кг}$. Это примерно $44 \\, \\text{кДж/кг}$.<br> $h_{CA}$ уже известно: $34 \\, \\text{кДж/кг}$.<br> $\\dot{Q}_H = 1.1808 \\, \\text{кг/с} \\cdot (44 - 34) \\, \\text{кДж/кг} = 1.1808 \\cdot 10 \\, \\text{кВт} \\approx 11.8 \\, \\text{кВт}$. В решении 12 кВт.",
-				"maxPoints": 0.75,
-				"subparts": [
-					{
-						"description": "Расчет подаваемой теплоты: $\\dot{Q}_H \\approx 12 \\, \\text{кВт}$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "2.12",
-				"description": "Если температура охлаждающего змеевика поддерживается на уровне $T_{CA}$ и он работает как холодильник Карно с температурой нагревателя $T_{OA}$, найдите полную потребляемую мощность охлаждающего змеевика.",
-				"solution": "Для холодильника Карно коэффициент производительности (COP) равен $K = \\frac{T_{cold}}{T_{hot} - T_{cold}} = \\frac{\\dot{Q}_C}{P}$.<br>Здесь $T_{cold} = T_{CA} = 12^\\circ\\text{C} = 285.15 \\, \\text{К}$.<br> $T_{hot} = T_{OA} = 32^\\circ\\text{C} = 305.15 \\, \\text{К}$.<br>Потребляемая мощность $P = \\frac{\\dot{Q}_C (T_{hot} - T_{cold})}{T_{cold}} = \\frac{\\dot{Q}_C (T_{OA} - T_{CA})}{T_{CA}}$.<br> $P = \\frac{21 \\, \\text{кВт} \\cdot (305.15 - 285.15) \\, \\text{К}}{285.15 \\, \\text{К}} = \\frac{21 \\cdot 20}{285.15} \\, \\text{кВт} \\approx 1.47 \\, \\text{кВт}$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Формула для мощности холодильника Карно: $\\frac{P}{\\dot{Q}_C} = \\frac{T_{OA}-T_{CA}}{T_{CA}}$.",
-						"points": 0.75,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численное значение: $P \\approx 1.5 \\, \\text{кВт}$.",
-						"points": 0.25,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	},
-	{
-		"number": 3,
-		"name": "Кварцевый резонатор",
-		"maxPoints": 10,
-		"weightedMaxPoints": 10,
-		"parts": [
-			{
-				"number": "3.1",
-				"description": "Пусть $\\vec{l}$ составляет угол $\\alpha$ с осью х. Рассчитайте потенциальную энергию диполя U в поле $E_0$, считая $U=0$ в положении устойчивого равновесия. Выразите ответ через $p$, $E_0$ и $\\alpha$.",
-				"solution": "Положение устойчивого равновесия соответствует $\\alpha=0$. Работа электрического поля при повороте диполя из положения $\\alpha$ в положение 0 равна $A = \\int_{\\alpha}^0 M d\\alpha$, где $M$ - момент сил. Момент сил, действующих на диполь, $M = |\\vec{p} \\times \\vec{E_0}| = pE_0\\sin\\alpha$. Направление момента стремится уменьшить угол $\\alpha$, поэтому $M = -pE_0\\sin\\alpha$.<br> $A = \\int_{\\alpha}^0 (-pE_0\\sin\\alpha) d\\alpha = [pE_0\\cos\\alpha]_{\\alpha}^0 = pE_0(1 - \\cos\\alpha)$.<br>Работа поля равна убыли потенциальной энергии: $A = U(\\alpha) - U(0)$. Поскольку $U(0)=0$, то $U(\\alpha) = A = pE_0(1 - \\cos\\alpha)$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Сила, действующая на заряд: $F_0=qE_0$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Момент сил $M = -pE_0\\sin\\alpha$ или смещение заряда $\\Delta x = \\frac{l}{2}(1-\\cos\\alpha)$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Работа/Энергия: $A = pE_0(1-\\cos\\alpha)$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "Лишний минус.",
-								"points": -0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					}
-				]
-			},
-			{
-				"number": "3.2",
-				"description": "У упругого диполя дипольный момент является наведенным, то есть появляется вследствие действия самого поля, так что $\\vec{p} = \\beta \\vec{E}_{loc}$, где $\\beta$ – так называемая поляризуемость. Рассчитайте изменение потенциальной энергии $\\Delta U$ упругого диполя при $\\alpha=0$, который медленно внесли в поле $E_0$, и выразите его через $\\beta$ и $E_0$.",
-				"solution": "При внесении диполя в поле $E_0$ поле совершает работу по растяжению диполя и работу по его ориентации. Энергия, запасенная в диполе, равна работе по его созданию (растяжению). Сила, растягивающая диполь, $F=qE_0$. Длина диполя $l = p/q$. Работа $A_{stretch} = \\int F dl = \\int qE_0 d(p/q) = \\int E_0 dp$. Так как $p = \\beta E_0$ (где $\\beta$ включает $\\epsilon_0$ из решения), то $dp = \\beta dE_0$. Интегрируем от 0 до $E_0$: $A_{stretch} = \\int_0^{E_0} E_0 \\beta dE_0 = \\frac{1}{2} \\beta E_0^2$.<br>Потенциальная энергия диполя в поле $U = -\\vec{p} \\cdot \\vec{E_0} = -pE_0 = -\\beta E_0^2$.<br>Полное изменение энергии системы (диполь + поле) равно $\\Delta U_{total} = U_{stretch} + U_{field} = \\frac{1}{2}\\beta E_0^2 - \\beta E_0^2 = -\\frac{1}{2}\\beta E_0^2$. Это и есть изменение потенциальной энергии диполя.",
-				"maxPoints": 0.7,
-				"subparts": [
-					{
-						"description": "Выражение для элементарного изменения дипольного момента $dp = 2qdx$ или силы $F_0 = qE_0 = \\frac{q^2}{\\beta \\epsilon_0}x$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Работа по созданию диполя: $A = \\frac{1}{2}\\beta\\epsilon_0E_0^2$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "Лишний минус.",
-								"points": -0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "Изменение потенциальной энергии: $\\Delta U = -A = -\\frac{1}{2}\\beta\\epsilon_0E_0^2$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.3",
-				"description": "Для решения пункта 3.4 вам поможет вспомогательная задача: найдите напряжённость поля E от равномерно заряженной с поверхностной плотностью $\\sigma$ бесконечной плоскости.",
-				"solution": "Используем теорему Гаусса. Выберем в качестве гауссовой поверхности цилиндр с основаниями площади $S$, параллельными плоскости, и осью, перпендикулярной ей. Поток через боковую поверхность равен нулю. Поток через основания равен $2ES$. Заряд внутри цилиндра $Q = \\sigma S$. По теореме Гаусса $\\oint \\vec{E} \\cdot d\\vec{S} = \\frac{Q_{in}}{\\epsilon_0}$, откуда $2ES = \\frac{\\sigma S}{\\epsilon_0}$, и $E = \\frac{\\sigma}{2\\epsilon_0}$.",
-				"maxPoints": 0.7,
-				"subparts": [
-					{
-						"description": "Заряд элементарного кольца $dq=\\sigma \\cdot 2\\pi r dr$ или поток через цилиндр $\\Phi = \\sigma S / \\epsilon_0$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Вклад в поле от элементарного кольца $dE = \\frac{1}{4\\pi\\epsilon_0} \\frac{dq}{r^2+h^2} \\frac{h}{\\sqrt{r^2+h^2}}$ или поток через основания $\\Phi=2ES$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Итоговое поле: $E = \\frac{\\sigma}{2\\epsilon_0}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.4",
-				"description": "Определите $\\vec{P}$ и поверхностные плотности $\\sigma'$ и $\\sigma''$ зарядов на поверхностях пластинки.",
-				"solution": "Внутри диэлектрика поле $E = E_0/\\epsilon$. Это поле является суперпозицией внешнего поля $E_0$ и поля поляризационных зарядов $E'$. Таким образом, $E = E_0 + E'$. Направление $E'$ противоположно $E_0$. $E' = E - E_0 = E_0/\\epsilon - E_0 = -E_0(1-1/\\epsilon)$.<br>Поле $E'$ создается двумя плоскостями с зарядами $\\sigma'$ и $\\sigma''=-\\sigma'$. Поле внутри $E' = \\sigma' / \\epsilon_0$.<br>Таким образом, $\\sigma' / \\epsilon_0 = E_0(1-1/\\epsilon)$, откуда $\\sigma' = \\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$. И $\\sigma'' = -\\sigma'$.<br>Вектор поляризации $P = \\epsilon_0 (\\epsilon-1) E = \\epsilon_0(\\epsilon-1) \\frac{E_0}{\\epsilon}$. Также известно, что $|\\vec{P}| = |\\sigma'|$.",
-				"maxPoints": 0.8,
-				"subparts": [
-					{
-						"description": "Поле внутри диэлектрика: $\\vec{E} = \\vec{E_0}/\\epsilon$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Поле поляризационных зарядов: $\\vec{E}' = \\vec{E} - \\vec{E_0}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Вектор поляризации: $\\vec{P} = -\\epsilon_0 \\vec{E}' = \\epsilon_0 \\vec{E_0} \\frac{\\epsilon-1}{\\epsilon}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Связь полей на границе: $\\frac{\\sigma'}{2\\epsilon_0} + \\frac{\\sigma''}{2\\epsilon_0} = 0$ или $\\sigma' = -\\sigma''$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Поле зарядов: $E' = \\frac{\\sigma'}{2\\epsilon_0} - \\frac{\\sigma''}{2\\epsilon_0} = \\frac{\\sigma'}{\\epsilon_0}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражения для $\\sigma'$ и $\\sigma''$: $\\sigma' = -\\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$, $\\sigma'' = \\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.5",
-				"description": "Найдите связь между $\\beta$ из 3.2 и $\\epsilon$, если концентрация молекул диэлектрика равна $n$.",
-				"solution": "Вектор поляризации $\\vec{P}$ - это суммарный дипольный момент на единицу объема: $\\vec{P} = n\\vec{p}$.<br>Дипольный момент одной молекулы $\\vec{p} = \\beta \\vec{E}_{loc}$. Локальное поле $E_{loc}$ - это поле, действующее на молекулу. В простейшей модели можно считать $E_{loc} = E$, где $E$ - макроскопическое поле внутри диэлектрика. $E = E_0/\\epsilon$.<br>Тогда $\\vec{P} = n\\beta \\vec{E} = n\\beta \\frac{\\vec{E_0}}{\\epsilon}$.<br>С другой стороны, из предыдущего пункта $\\vec{P} = \\epsilon_0(\\epsilon-1)\\vec{E} = \\epsilon_0(\\epsilon-1)\\frac{\\vec{E_0}}{\\epsilon}$.<br>Приравнивая два выражения для $\\vec{P}$, получаем $n\\beta = \\epsilon_0(\\epsilon-1)$. Отсюда $\\epsilon = 1 + \\frac{n\\beta}{\\epsilon_0}$. В решении используется определение $\\beta$ без $\\epsilon_0$, что приводит к $\\epsilon=1+n\\beta$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Связь поляризации с концентрацией: $P=np$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для дипольного момента: $p = \\beta\\epsilon_0 E_0 / \\epsilon$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Конечная связь: $\\epsilon = 1+n\\beta$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.6",
-				"description": "Определите разность потенциалов $\\Delta\\phi$ на таком конденсаторе под действием атмосферного давления $P_0 = 10^5 \\, \\text{Па}$ при отсутствии внешнего напряжения.",
-				"solution": "Под действием давления $P_0$ возникает механическое напряжение $\\tau = P_0$. Это напряжение вызывает поляризацию $P = d \\cdot \\tau = d P_0$.<br>Эта поляризация создает электрическое поле внутри пьезоэлектрика $E = P/\\epsilon_0$.<br>Разность потенциалов $\\Delta\\phi = E \\cdot h = \\frac{P h}{\\epsilon_0} = \\frac{d P_0 h}{\\epsilon_0}$.<br> $\\Delta\\phi = \\frac{2.33 \\cdot 10^{-12} \\, \\text{Кл/Н} \\cdot 10^5 \\, \\text{Па} \\cdot 1.6 \\cdot 10^{-3} \\, \\text{м}}{8.85 \\cdot 10^{-12} \\, \\text{Ф/м}} \\approx 42 \\, \\text{В}$.",
-				"maxPoints": 0.4,
-				"subparts": [
-					{
-						"description": "Разность потенциалов: $\\Delta\\phi = Eh$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Электрическое поле: $E=P/\\epsilon_0$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Формула: $\\Delta\\phi = \\frac{P_0hd}{\\epsilon_0}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численный ответ: $\\Delta\\phi = 42 \\, \\text{В}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.7",
-				"description": "Теперь конденсатор внесли в вакуум, и ему сообщили внешнее напряжение $V=9 \\, \\text{В}$. Определите отношение $W_d/W_e$ запасённой энергии деформации кварца $W_d$ к электрической энергии соответствующего конденсатора $W_e$. Объёмная плотность упругой энергии равна $w_d=\\tau^2/2E$.",
-				"solution": "Электрическая энергия $W_e = \\frac{1}{2} C_0 V^2$, где $C_0 = \\frac{\\epsilon\\epsilon_0 S}{h}$. $W_e = \\frac{\\epsilon\\epsilon_0 S V^2}{2h}$.<br>Обратный пьезоэффект: приложенное поле $E' = V/h$ вызывает механическое напряжение $\\tau$. Связь $P = d \\tau$. Также $P = \\epsilon_0(\\epsilon-1)E'$. Отсюда $\\tau = \\frac{P}{d} = \\frac{\\epsilon_0(\\epsilon-1)E'}{d} = \\frac{\\epsilon_0(\\epsilon-1)V}{dh}$.<br>Энергия деформации $W_d = w_d \\cdot (Sh) = \\frac{\\tau^2}{2E} Sh = \\frac{S h}{2E} (\\frac{\\epsilon_0(\\epsilon-1)V}{dh})^2$.<br>Отношение: $\\frac{W_d}{W_e} = \\frac{\\frac{S h}{2E} (\\frac{\\epsilon_0(\\epsilon-1)V}{dh})^2}{\\frac{\\epsilon\\epsilon_0 S V^2}{2h}} = \\frac{\\epsilon_0(\\epsilon-1)^2}{E d^2 \\epsilon}$.<br> $\\frac{W_d}{W_e} = \\frac{8.85 \\cdot 10^{-12} (4-1)^2}{72 \\cdot 10^9 (2.33 \\cdot 10^{-12})^2 \\cdot 4} \\approx 3.2$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Формулы для емкости $C_0 = \\epsilon\\epsilon_0S/h$ и электрической энергии $W_e = C_0V^2/2$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "Альтернативный подход через объемную плотность энергии $w_e = \\epsilon_0 \\epsilon E'^2/2$.",
-								"points": 0.2,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "Формула для отношения энергий: $\\frac{W_d}{W_e} = \\frac{\\epsilon_0(\\epsilon-1)^2}{Ed^2\\epsilon}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численный ответ: $W_d/W_e = 3.2$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.8",
-				"description": "Если $\\tau(x,t)$ неравномерен в пространстве, то $\\xi(x,t)$ меняется во времени. Запишите второй закон Ньютона для элемента толщины $dx$ в заданной точке $x$ под действием приращения напряжения $d\\tau(x,t)$.",
-				"solution": "Масса элемента $dm = \\rho S dx$. Сила, действующая на элемент, $dF = S(\\tau(x+dx,t) - \\tau(x,t)) = S \\frac{\\partial \\tau}{\\partial x} dx$.<br>Ускорение элемента $a = \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Второй закон Ньютона $dF = dm \\cdot a$: $S \\frac{\\partial \\tau}{\\partial x} dx = (\\rho S dx) \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Сокращая, получаем: $\\frac{\\partial \\tau}{\\partial x} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Масса элемента: $dm = \\rho S dx$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Второй закон Ньютона: $\\frac{\\partial \\tau(x,t)}{\\partial x} = \\rho \\frac{\\partial^2 \\xi(x,t)}{\\partial t^2}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.9",
-				"description": "Выразите изменение возмущения $d\\xi(x,t)$ малого элемента $dx$ цилиндра через напряжение $\\tau(x,t)$ и модуль Юнга $E$ в заданный момент $t$.",
-				"solution": "По закону Гука, $\\tau = E \\cdot \\text{относительное удлинение}$.<br>Относительное удлинение элемента $dx$ равно $\\frac{\\xi(x+dx) - \\xi(x)}{dx} = \\frac{\\partial \\xi}{\\partial x}$.<br>Следовательно, $\\tau(x,t) = E \\frac{\\partial \\xi(x,t)}{\\partial x}$.",
-				"maxPoints": 0.5,
-				"subparts": [
-					{
-						"description": "Закон Гука: $\\tau(x,t) = E \\frac{\\Delta l}{l}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Связь с возмущением: $\\tau(x,t) = E \\frac{\\partial \\xi(x,t)}{\\partial x}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.10",
-				"description": "Используя результаты пунктов 3.8-3.9, определите $c$ через параметры цилиндра.",
-				"solution": "Из 3.9: $\\frac{\\partial \\tau}{\\partial x} = E \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Из 3.8: $\\frac{\\partial \\tau}{\\partial x} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Приравнивая, получаем $E \\frac{\\partial^2 \\xi}{\\partial x^2} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$, или $\\frac{\\partial^2 \\xi}{\\partial t^2} = \\frac{E}{\\rho} \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Это волновое уравнение вида $\\frac{\\partial^2 \\xi}{\\partial t^2} = c^2 \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Следовательно, $c^2 = E/\\rho$, и $c = \\sqrt{E/\\rho}$.",
-				"maxPoints": 0.4,
-				"subparts": [
-					{
-						"description": "Скорость звука в цилиндре: $c = \\sqrt{E/\\rho}$.",
-						"points": 0.4,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.11",
-				"description": "Запишите необходимое условие для $\\tau(\\pm L/2, t)$. Из этого определите возможные значения, которые может принимать $\\omega$.",
-				"solution": "Концы цилиндра свободны, поэтому механическое напряжение на них равно нулю: $\\tau(\\pm L/2, t) = 0$.<br>Так как $\\tau = E \\frac{\\partial \\xi}{\\partial x}$, то $\\frac{\\partial \\xi}{\\partial x}|_{x=\\pm L/2} = 0$.<br> $\\xi(x, t) = A \\cos(\\omega t + \\phi) \\cos(\\frac{\\omega x}{c} + \\theta)$.<br> $\\frac{\\partial \\xi}{\\partial x} = -A \\cos(\\omega t + \\phi) \\sin(\\frac{\\omega x}{c} + \\theta) \\cdot \\frac{\\omega}{c}$.<br>Условие $\\frac{\\partial \\xi}{\\partial x}=0$ при $x=\\pm L/2$ означает, что $\\sin(\\pm\\frac{\\omega L}{2c} + \\theta) = 0$.<br>Это дает $\\frac{\\omega L}{2c} + \\theta = k_1\\pi$ и $-\\frac{\\omega L}{2c} + \\theta = k_2\\pi$.<br>Складывая: $2\\theta = (k_1+k_2)\\pi$. Вычитая: $\\frac{\\omega L}{c} = (k_1-k_2)\\pi = m\\pi$, где $m$ - целое число.<br>Отсюда $\\omega = \\frac{m\\pi c}{L}$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Граничное условие: $\\tau(\\pm L/2, t)=0$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Условие на частоту: $\\omega L / c = m\\pi$.",
-						"points": 0.5,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Выражение для частоты: $\\omega = \\frac{m\\pi}{L}\\sqrt{\\frac{E}{\\rho}}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.12",
-				"description": "Рассчитайте численное значение частоты $f_0$ вибраций кварца толщиной $h = 1.6 \\, \\text{мм}$, связанной с наименьшим (так называемым фундаментальным) значением $\\omega$.",
-				"solution": "Наименьшее ненулевое значение $\\omega$ соответствует $m=1$. Толщина резонатора $h$ играет роль длины $L$.<br> $\\omega_0 = \\frac{\\pi c}{h} = \\frac{\\pi}{h} \\sqrt{\\frac{E}{\\rho}}$.<br>Частота $f_0 = \\frac{\\omega_0}{2\\pi} = \\frac{c}{2h} = \\frac{1}{2h} \\sqrt{\\frac{E}{\\rho}}$.<br> $E = 72 \\, \\text{ГПа} = 72 \\cdot 10^9 \\, \\text{Па}$. $\\rho = 2200 \\, \\text{кг/м}^3$. $h=1.6 \\cdot 10^{-3} \\, \\text{м}$.<br> $f_0 = \\frac{1}{2 \\cdot 1.6 \\cdot 10^{-3}} \\sqrt{\\frac{72 \\cdot 10^9}{2200}} \\approx 1.79 \\cdot 10^6 \\, \\text{Гц} = 1.79 \\, \\text{МГц}$.",
-				"maxPoints": 0.3,
-				"subparts": [
-					{
-						"description": "Формула для частоты: $f_0 = \\frac{1}{2h} \\sqrt{E/\\rho}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численный ответ: $f_0 = 1.79 \\, \\text{МГц}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.13",
-				"description": "Чему равна разность фаз $\\phi$ между колебаниями напряжения на сопротивлении R и конденсаторе $C_0$ в установившемся режиме?",
-				"solution": "В данной схеме RLC-ветвь параллельна конденсатору $C_0$. Напряжение на обеих параллельных ветвях одинаково и равно напряжению генератора $U_0 \\sin(\\omega_0 t)$.<br>Напряжение на конденсаторе $C_0$ это $U_{C0} = U_0 \\sin(\\omega_0 t)$.<br>Напряжение на RLC-ветви также $U_{RLC} = U_0 \\sin(\\omega_0 t)$. Это напряжение является векторной суммой напряжений на R, L и C: $\\vec{U}_{RLC} = \\vec{U}_R + \\vec{U}_L + \\vec{U}_C$.<br>Ток в RLC-ветви $I_{RLC}$ опережает или отстает от $U_{RLC}$ на некоторую фазу. Напряжение на сопротивлении $U_R$ синфазно с током $I_{RLC}$.<br>Разность фаз между $U_R$ и $U_{C0}$ (которое равно $U_{RLC}$ ) - это просто фазовый сдвиг в RLC-цепи. Этот сдвиг равен $\\phi$, где $\\tan \\phi = \\frac{X_L - X_C}{R} = \\frac{\\omega_0 L - 1/(\\omega_0 C)}{R}$.<br>Вопрос про разность фаз между $U_R$ и $U_{C0}$. Это и есть угол $\\phi$. В решении приведена векторная диаграмма, из которой видно, что $\\vec{U}_0 = \\vec{U}_{C0}$ и $\\vec{U}_0 = \\vec{U}_R + \\vec{U}_L + \\vec{U}_C$. Разность фаз $\\phi$ - это угол между $\\vec{U}_R$ и $\\vec{U}_0$.",
-				"maxPoints": 1.2,
-				"subparts": [
-					{
-						"description": "Векторная диаграмма: $\\vec{U}_L$ опережает $\\vec{U}_R$ на $\\pi/2$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Векторная диаграмма: $\\vec{U}_R$ опережает $\\vec{U}_C$ на $\\pi/2$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Векторная диаграмма: показано, что $\\vec{U}_L + \\vec{U}_C + \\vec{U}_R = \\vec{U}_0$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Векторная диаграмма: указано, что $\\vec{U}_{C0} = \\vec{U}_0$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Векторная диаграмма: $\\vec{U}_R$ опережает $\\vec{U}_0$ на угол $\\phi$ против часовой стрелки.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Формула для импеданса катушки: $Z_L = \\omega_0 L$ или $\\hat{Z}_L=i\\omega_0 L$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Формула для импеданса конденсатора: $Z_C = 1/(\\omega_0 C)$ или $\\hat{Z}_C=1/(i\\omega_0 C)$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Тангенс угла сдвига фаз: $\\tan\\phi = (Z_C-Z_L)/R$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": [
-							{
-								"description": "Лишний минус.",
-								"points": -0.1,
-								"type": "closed",
-								"childSubparts": []
-							}
-						]
-					},
-					{
-						"description": "Арктангенс сдвига фаз: $\\phi = \\arctan \\frac{1-\\omega_0^2LC}{\\omega_0 RC}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.14",
-				"description": "Определите значения $\\omega_1$ и $\\omega_2$ через приведённые параметры контура.",
-				"solution": "Резонанс напряжений ( $\\omega_1$ ) в RLC-цепи происходит, когда реактивное сопротивление равно нулю: $X_L - X_C = 0$.<br> $\\omega_1 L = 1/(\\omega_1 C)$, откуда $\\omega_1 = 1/\\sqrt{LC}$.<br>Резонанс токов ( $\\omega_2$ ) происходит, когда общий ток от генератора минимален, т.е. полный импеданс максимален. В решении это интерпретируется как резонанс внутреннего контура, где $C_0$ и $C$ рассматриваются как последовательные, образуя эквивалентную емкость $C' = \\frac{CC_0}{C+C_0}$.<br>Тогда резонансная частота этого контура $\\omega_2 = 1/\\sqrt{LC'} = \\frac{1}{\\sqrt{L \\frac{CC_0}{C+C_0}}} = \\frac{1}{\\sqrt{LC}} \\sqrt{\\frac{C+C_0}{C_0}} = \\omega_1 \\sqrt{1 + \\frac{C}{C_0}}$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Условие резонанса напряжений: $\\phi=0$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Частота резонанса напряжений: $\\omega_1 = 1/\\sqrt{LC}$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Эквивалентная емкость для резонанса токов: $C' = \\frac{CC_0}{C+C_0}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Частота резонанса токов: $\\omega_2 = \\omega_1\\sqrt{1+C/C_0}$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			},
-			{
-				"number": "3.15",
-				"description": "Оцените Q, если $C=0.5 \\cdot 10^{-12} \\, \\text{Ф}$, $C_0=50 \\cdot 10^{-12} \\, \\text{Ф}$, $R \\approx 10 \\, \\text{Ом}$, а $\\omega_0 = \\omega_1 = 2\\pi f_0$, где $f_0$ численно определён в пункте 3.12.",
-				"solution": "Добротность $Q = 2\\pi \\frac{E}{\\Delta E}$.<br> $E$ - максимальная энергия в системе. $\\Delta E$ - потери за период.<br>На резонансной частоте $\\omega_1$ ток в RLC-цепи $I_0 = U_0/R$.<br>Потери мощности $\\langle P \\rangle = \\frac{1}{2}I_0^2 R = \\frac{U_0^2}{2R}$.<br>Потери за период $T_1 = 2\\pi/\\omega_1$: $\\Delta E = \\langle P \\rangle T_1 = \\frac{U_0^2}{2R} \\frac{2\\pi}{\\omega_1} = \\frac{\\pi U_0^2}{R\\omega_1}$.<br>Максимальная энергия в системе $E = E_{RCL} + E_{C0}$.<br> $E_{C0} = \\frac{1}{2}C_0 U_0^2$.<br> $E_{RCL} = \\frac{1}{2} L I_0^2 = \\frac{1}{2} L (\\frac{U_0}{R})^2$.<br>Так как $C \\ll C_0$, то $E_{RCL} \\gg E_{C0}$, и $E \\approx E_{RCL}$.<br> $Q \\approx 2\\pi \\frac{E_{RCL}}{\\Delta E} = 2\\pi \\frac{\\frac{1}{2}L(U_0/R)^2}{\\pi U_0^2 / (R\\omega_1)} = \\frac{\\omega_1 L}{R}$.<br>Так как $\\omega_1 = 1/\\sqrt{LC}$, то $Q = \\frac{1}{\\omega_1 C R}$.<br> $\\omega_1 = 2\\pi f_0 = 2\\pi \\cdot 1.79 \\cdot 10^6 \\, \\text{рад/с}$.<br> $Q \\approx \\frac{1}{2\\pi (1.79\\cdot 10^6)(0.5\\cdot 10^{-12})(10)} \\approx 1.78 \\cdot 10^4$.",
-				"maxPoints": 1,
-				"subparts": [
-					{
-						"description": "Средняя мощность потерь: $\\langle P \\rangle = U_0^2 / (2R)$.",
-						"points": 0.3,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Потери энергии за период: $\\Delta E = \\langle P \\rangle / f_0$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Максимальная энергия в $C_0$: $E_{C0} = C_0 U_0^2 / 2$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Максимальная энергия в RLC-цепи: $E_{RCL} = L U_0^2 / (2R^2)$.",
-						"points": 0.2,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Полная энергия: $E = E_{RCL} + E_{C0}$, или указано $E_{RCL} \\gg E_{C0}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Формула для добротности: $Q \\approx \\frac{1}{2\\pi f_0 RC}$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					},
-					{
-						"description": "Численный ответ: $Q = 1.78 \\cdot 10^4$.",
-						"points": 0.1,
-						"type": "closed",
-						"childSubparts": []
-					}
-				]
-			}
-		]
-	}
+  {
+    "number": 1,
+    "name": "«Солянка»",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "1.1",
+        "description": "В различные жидкости, налитые в широкие сосуды, попеременно погружают вершиной вниз тело вращения, имеющее форму параболоида (осевое сечение – парабола вида $y = Ax^n$, а $x = 0$ соответствует вершине тела, верхнее сечение перпендикулярно оси). Известно, что тело при этом плавает, погружаясь на некоторую глубину, и для каждой жидкости измерен период малых вертикальных колебаний тела, которое не наклоняется и не переворачивается, так что его ось остается строго вертикальной. В таблице дана зависимость периода колебаний от глубины погружения тела. Определите степенной коэффициент n параболы. Расчёт погрешностей не требуется.",
+        "solution": "Пусть масса тела $m$. Колебания вызовет прибавка к силе Архимеда из-за увеличения погруженного объёма на $Sx$.<br> $$m \\omega^2 x = \\rho g S x$$ <br>Используем связь с объёмом вытесненной воды<br> $$ \\frac{4\\pi^2}{T^2} = \\frac{\\rho_w g S}{m} = \\frac{gS}{V_n} $$ <br>Если $r = (\\frac{h}{A})^{\\frac{1}{n}}$, то $S = \\pi (\\frac{h}{A})^{\\frac{2}{n}}$ и $V_n = \\int S dh = \\frac{\\pi h^{\\frac{2}{n}+1}}{(\\frac{2}{n}+1)A^{\\frac{2}{n}}}$.<br>Тогда $\\frac{S}{V_n} = \\frac{\\frac{2}{n}+1}{h}$.<br>Откуда получаем выражение для $n$:<br> $$ n = (\\frac{2\\pi^2 h}{gT^2} - \\frac{1}{2})^{-1} $$ <br>Подставляя данные из таблицы, получаем значения для $n$: 0.67, 0.68, 0.68, 0.67, 0.67.<br>Среднее значение $n_{cp} \\approx 0.67 \\approx \\frac{2}{3}$.",
+        "maxPoints": 3,
+        "subparts": [
+          {
+            "description": "Условие для малых колебаний: $m\\omega^2x = \\rho g S x$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь периода колебаний с параметрами системы: $\\frac{4\\pi^2}{T^2} = \\frac{\\rho_w g S}{m} = \\frac{gS}{V_n}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для радиуса сечения: $r = (\\frac{h}{A})^{\\frac{1}{n}}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для площади сечения: $S = \\pi (\\frac{h}{A})^{\\frac{2}{n}}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Интегрирование для нахождения объёма: $V_n = \\int S dh = \\frac{\\pi h^{\\frac{2}{n}+1}}{(\\frac{2}{n}+1)A^{\\frac{2}{n}}}$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Отношение площади к объёму: $\\frac{S}{V_n} = \\frac{\\frac{2}{n}+1}{h}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечное выражение для n: $n = (\\frac{2\\pi^2 h}{gT^2} - \\frac{1}{2})^{-1}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Расчёт численных значений n по данным таблицы.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Усреднённое значение n и/или приведение к дроби $2/3$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.2",
+        "description": "Система из конденсаторов, каждый ёмкостью C, и диода D подключена к источнику постоянного напряжения U, значение которого медленно растёт от нулевого значения. Вольтамперная характеристика диода изображена на рисунке, излом графика – так называемый пробой диода, значение напряжения пробоя диода неизвестно. Когда через источник пройдёт известный заряд q₀, перестаёт выполняться прямая пропорциональность между входным напряжением U и протёкшим через источник зарядом q. Постройте график зависимости q(U) в диапазоне изменения заряда через источник от 0 до 2q₀. Какое количество теплоты Q выделится на диоде к моменту, когда через источник пройдет заряд 2q₀?",
+        "solution": "До пробоя диода ( $q \\le q_0$ ) согласно решению $q=\\frac{3}{2}CU$.<br>Пробой диода происходит при $q=q_0$. В этот момент $q_1 = q$ и $q_3 = \\frac{q}{3}$. Напряжение пробоя диода $U_d = U_{C1} + U_{C3} = \\frac{q_1}{C} + \\frac{q_3}{C} = \\frac{q_0}{C} + \\frac{q_0}{3C} = \\frac{4q_0}{3C}$. Напряжение источника в момент пробоя $U(q_0) = \\frac{2q_0}{3C}$.<br>После пробоя ( $q_0 \\le q \\le 2q_0$ ) диод открыт. Зависимость $q(U)$ становится $q = q_2 + q_4 = \\frac{5CU}{3} - \\frac{16}{9}q_0$.<br>При $q=2q_0$, напряжение $U(2q_0) = \\frac{34q_0}{15C}$.<br>Теплота на диоде выделяется после пробоя. Заряд, прошедший через диод: $\\Delta q_d = \\Delta(q_4 - q_3) = \\frac{4}{3}C\\Delta U$. Изменение напряжения на системе $\\Delta U = U(2q_0) - U(q_0) = \\frac{3q_0}{5C}$. Теплота, выделенная на диоде: $Q = U_d \\Delta q_d = \\frac{16q_0^2}{15C}$.",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "Формула для заряда до пробоя диода: $q = \\frac{3}{2}CU$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Заряды на конденсаторах $q_1=q$ и $q_3=q/3$ и Напряжение пробоя диода: $U_d = \\frac{q_1}{C} + \\frac{q_3}{C} = \\frac{4q_0}{3C}$.",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связи между зарядами и напряжениями после пробоя: $q_2+q_3=q_1$, $\\frac{q_3}{C} + \\frac{q_2}{C} = \\frac{q_4}{C}$, $U=U_d+\\frac{q_4}{C}$.",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для заряда $q_2$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для заряда $q_4$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Зависимость $q(U)$ на участке $q_0 \\le q \\le 2q_0$: $q=q_2+q_4=\\frac{5CU}{3}-\\frac{16}{9}q_0$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Построение графика: участки сшиваются, участок 1 верный, участок 2 верный.",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для заряда через диод $\\Delta q_d$, изменение напряжения $\\Delta U$ и итоговая теплота $Q$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.3",
+        "description": "Пучок света круглого сечения радиуса r падает на собирающую несферическую линзу, после прохождения которой он образует конус с углом раствора $2\\alpha_0$. В вершину светового конуса помещают маленький шарик радиуса R, изготовленный из прозрачного материала с показателем преломления n; потерь на отражение и поглощение нет, центр шара совпадает с фокусом пучка. Найдите действующую на шарик возвращающую силу при его малом смещении x вдоль оси конуса светового пучка. Известно, что мощность пучка света P равномерно распределена по его сечению до попадания на линзу. Скорость света в вакууме c. Подсказка: В некоторых расчётах может оказаться полезной замена $u = \\cos \\alpha$.",
+        "solution": "Пусть шарик сдвинулся вдоль оси пучка на $x$. Луч, входивший в центр шара под углом $\\alpha$ к оси пучка, теперь составляет с радиусом и нормалью малый угол $(\\alpha - \\theta)$.<br>Из теоремы синусов $\\frac{x}{\\alpha - \\theta} = \\frac{R}{\\sin(\\pi - \\alpha)} = \\frac{R}{\\sin \\alpha}$, откуда $\\alpha - \\theta = \\frac{x \\sin \\alpha}{R}$.<br>После преломления на входе и выходе луч отклонится от оси на суммарный угол $\\Delta \\alpha = 2(1 - \\frac{1}{n})(\\alpha - \\theta) = \\frac{2(1 - \\frac{1}{n})x \\sin \\alpha}{R}$.<br>Импульс, переносимый фотонами в диапазоне углов $d\\alpha$ вблизи угла $\\alpha$, равен $dp = \\frac{dW}{c}$, где $dW$ - энергия этих фотонов.<br>Изменение импульса вдоль оси составляет $dp_\\parallel = dp\\Delta(\\cos \\alpha) = -dp \\sin(\\alpha) \\Delta\\alpha$.<br>Сила, вызванная этим изменением импульса, $dF = \\frac{dp_\\parallel}{dt} = -\\frac{dp \\sin(\\alpha) \\Delta\\alpha}{dt} = -\\frac{2(1 - \\frac{1}{n})x \\sin^2 \\alpha}{cR} \\frac{dW}{dt}$.<br>Мощность в кольцевом участке луча $dP = \\frac{dW}{dt}$. Мощность $P$ равномерно распределена по сечению $\\pi r^2$. Элементарная мощность $dP$ в кольце с радиусом $\\rho$ и толщиной $d\\rho$ равна $dP = P \\frac{2\\pi\\rho d\\rho}{\\pi r^2}$.<br>Из геометрии конуса $\\rho = r \\frac{\\tan\\alpha}{\\tan\\alpha_0} = r \\cot\\alpha_0 \\tan\\alpha$. Тогда $d\\rho = \\frac{r \\cot\\alpha_0}{\\cos^2\\alpha}d\\alpha$.<br>Подставляя всё, получаем $dF = -\\frac{4P(1 - \\frac{1}{n})x \\cot^2 \\alpha_0 \\sin^3 \\alpha}{cR \\cos^3 \\alpha} d\\alpha$.<br>Интегрируя от 0 до $\\alpha_0$:<br> $$ F = \\int_0^{\\alpha_0} dF = -\\frac{4P(1 - \\frac{1}{n})x \\cot^2 \\alpha_0}{cR} \\int_0^{\\alpha_0} \\frac{\\sin^3 \\alpha}{\\cos^3 \\alpha} d\\alpha $$ <br>Интеграл равен $[\\ln(\\cos \\alpha) + \\frac{1}{2\\cos^2 \\alpha}]_1^{\\cos \\alpha_0} = \\ln(\\cos \\alpha_0) + \\frac{1}{2\\cos^2 \\alpha_0} - \\frac{1}{2}$.<br>Окончательный ответ для силы $F$ пропорционален $x$ и этому выражению.",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "Угол между падающим лучом и нормалью к поверхности шара: $(\\alpha - \\theta)$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Итоговый угол отклонения луча: $\\Delta\\alpha = 2(1-\\frac{1}{n})(\\alpha-\\theta)$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Применение теоремы синусов для нахождения $(\\alpha - \\theta)$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для угла отклонения через смещение $x$: $\\Delta\\alpha = \\frac{2(1-1/n)x\\sin\\alpha}{R}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для импульса фотонов: $dp = dW/c$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Изменение импульса вдоль оси: $dp_\\parallel = -dp \\sin(\\alpha) \\Delta\\alpha$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для элементарной силы: $dF = \\frac{dp_\\parallel}{dt}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь между радиусом кольца и углом: $\\rho = r \\cot \\alpha_0 \\tan \\alpha$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $d\\rho$ через $d\\alpha$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для элементарной мощности $dP$ в зависимости от $\\alpha$ и $d\\alpha$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Полное выражение для $dF$ под интегралом.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Взятие интеграла для нахождения полной силы $F$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная формула для силы $F$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Проектирование системы кондиционирования воздуха",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "2.1",
+        "description": "Используя диаграмму, определите, какой будет относительная влажность, если просто охладить наружный воздух до $T_{IA}$.",
+        "solution": "Находим на психрометрической диаграмме точку внешнего воздуха ( $T_{OA} = 32^\\circ\\text{C}$, $\\phi_{OA} = 40\\%$ ). Влагосодержание $w$ при этом составляет $12 \\, \\text{г/кг}$. При охлаждении до $T_{IA} = 24^\\circ\\text{C}$ влагосодержание не меняется (пока не достигнем точки росы). Находим на диаграмме точку с $T = 24^\\circ\\text{C}$ и $w=12 \\, \\text{г/кг}$. Эта точка находится примерно посередине между линиями 60% и 70% относительной влажности, но чуть ближе к 60%. Следовательно, относительная влажность будет равна примерно 64%.",
+        "maxPoints": 0.25,
+        "subparts": [
+          {
+            "description": "Определение относительной влажности примерно 64%.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.2",
+        "description": "Используя психрометрическую диаграмму, найдите влагосодержание наружного $w_{OA}$ и внутреннего $w_{IA}$ воздуха.",
+        "solution": "Из психрометрической таблицы находим точку пересечения $T_{OA} = 32^\\circ\\text{C}$ и $\\phi_{OA} = 40\\%$. Проводя горизонтальную линию влево, находим $w_{OA} = 12 \\, \\text{г/кг}$.<br>Аналогично для внутреннего воздуха: находим точку пересечения $T_{IA} = 24^\\circ\\text{C}$ и $\\phi_{IA} = 50\\%$. Проводя горизонтальную линию влево, находим $w_{IA} = 9.5 \\, \\text{г/кг}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Найдено влагосодержание наружного воздуха $w_{OA} = 12 \\, \\text{г/кг}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Найдено влагосодержание внутреннего воздуха $w_{IA} = 9.5 \\, \\text{г/кг}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.3",
+        "description": "Энтальпия обычно используется для определения количества тепла в процессе. Предполагая, что процесс является изобарическим (давление P) и происходит переход из состояния с энтальпией $H_1$ в состояние с энтальпией $H_2$, выведите выражение для количества тепла Q, добавленного в систему.",
+        "solution": "Энтальпия определяется как $H = U + PV$. Изменение энтальпии: $\\Delta H = H_2 - H_1 = (U_2 - U_1) + P(V_2 - V_1) = \\Delta U + P\\Delta V$.<br>Согласно первому закону термодинамики, теплота, добавленная в систему, равна $Q = \\Delta U + A$, где $A$ - работа, совершаемая системой. Для изобарического процесса $A = P\\Delta V$.<br>Таким образом, $Q = \\Delta U + P\\Delta V = H_2 - H_1$.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Вывод выражения для количества тепла: $Q = H_2 - H_1 = \\Delta U + P\\Delta V = \\Delta U + A$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.4",
+        "description": "Используя диаграмму, определите удельную теплоемкость сухого воздуха $c_a$.",
+        "solution": "Рассмотрим на диаграмме линию с нулевым влагосодержанием ( $w=0$ ). Удельная энтальпия $h = c_a T$. При $T=10^\\circ\\text{C}$, $h=10 \\, \\text{кДж/кг}$. При $T=35^\\circ\\text{C}$, $h=35 \\, \\text{кДж/кг}$.<br>Следовательно, удельная теплоемкость $c_a = \\frac{\\Delta h}{\\Delta T} = \\frac{35-10}{35-10} = 1.0 \\, \\text{кДж/(кг} \\cdot ^\\circ\\text{C)}$.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Определение удельной теплоемкости сухого воздуха: $c_a = 1.0 \\, \\text{кДж/кг}$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.5",
+        "description": "Используя диаграмму, определите удельную теплоту испарения воды L.",
+        "solution": "Удельная энтальпия влажного воздуха дается выражением $h = c_a T + w L$. Возьмем две точки на линии постоянной температуры, например $T=20^\\circ\\text{C}$.<br>Точка 1: $w_1 = 2 \\, \\text{г/кг} = 0.002 \\, \\text{кг/кг}$, $h_1 \\approx 25 \\, \\text{кДж/кг}$.<br>Точка 2: $w_2 = 14.5 \\, \\text{г/кг} = 0.0145 \\, \\text{кг/кг}$ (точка росы), $h_2 \\approx 57 \\, \\text{кДж/кг}$.<br> $L = \\frac{h_2-h_1}{w_2-w_1} = \\frac{57-25}{0.0145-0.002} = \\frac{32}{0.0125} = 2560 \\, \\text{кДж/кг}$. В решении дается $L \\approx 2500 \\, \\text{кДж/кг}$.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Определение удельной теплоты испарения воды: $L \\approx 2500 \\, \\text{кДж/кг}$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.6",
+        "description": "Выведите выражение для $T_{MA}$, $w_{MA}$ смешанного воздуха и найдите их значения.",
+        "solution": "Свежий наружный воздух смешивается с возвращаемым из комнаты воздухом в пропорции 1:3. Массовый расход наружного воздуха $\\dot{m}_{OA}$, возвращаемого $\\dot{m}_{IA} = 3\\dot{m}_{OA}$.<br>Баланс энергии: $c_a \\dot{m}_{OA} T_{OA} + c_a \\dot{m}_{IA} T_{IA} = c_a (\\dot{m}_{OA} + \\dot{m}_{IA}) T_{MA}$.<br> $T_{MA} = \\frac{\\dot{m}_{OA} T_{OA} + \\dot{m}_{IA} T_{IA}}{\\dot{m}_{OA} + \\dot{m}_{IA}} = \\frac{1 \\cdot T_{OA} + 3 \\cdot T_{IA}}{4} = \\frac{32 + 3 \\cdot 24}{4} = 26^\\circ\\text{C}$.<br>Баланс массы воды: $\\dot{m}_{OA} w_{OA} + \\dot{m}_{IA} w_{IA} = (\\dot{m}_{OA} + \\dot{m}_{IA}) w_{MA}$.<br> $w_{MA} = \\frac{\\dot{m}_{OA} w_{OA} + \\dot{m}_{IA} w_{IA}}{\\dot{m}_{OA} + \\dot{m}_{IA}} = \\frac{1 \\cdot w_{OA} + 3 \\cdot w_{IA}}{4} = \\frac{12 + 3 \\cdot 9.5}{4} = 10.125 \\approx 10 \\, \\text{г/кг}$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Уравнение теплового баланса для смешения потоков: $c_a \\dot{m}_{IA}(T_{MA}-T_{IA}) = c_a \\dot{m}_{OA}(T_{OA}-T_{MA})$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение температуры смешанного воздуха: $T_{MA} = 26^\\circ\\text{C}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение баланса масс влаги: $\\dot{m}_{IW} + \\dot{m}_{OW} = \\dot{m}_{MW}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение влагосодержания смешанного воздуха: $w_{MA} = 10 \\, \\text{г/кг}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.7",
+        "description": "Выведите выражение для $T_{SA}$, $w_{SA}$ и найдите их значения.",
+        "solution": "В комнате $n=30$ человек. Каждый выделяет $Q_{SH} = 80 \\, \\text{Вт}$ тепла (явного) и $Q_{LH} = 80 \\, \\text{Вт}$ (скрытого, за счет испарения).<br>Объемный расход свежего воздуха: $\\dot{V}_H = 8 \\, \\text{л/с} = 0.008 \\, \\text{м}^3/\\text{с}$.<br>Полный массовый расход воздуха в системе $\\dot{m} = 4 \\cdot n \\cdot \\rho \\dot{V}_H = 4 \\cdot 30 \\cdot 1.23 \\cdot 0.008 = 1.18 \\, \\text{кг/с}$.<br>Баланс явного тепла в комнате: $n Q_{SH} + \\dot{m} c_a (T_{SA} - T_{IA}) = 0$.<br> $T_{SA} = T_{IA} - \\frac{n Q_{SH}}{\\dot{m} c_a} = 24 - \\frac{30 \\cdot 80}{1.18 \\cdot 1000} \\approx 22^\\circ\\text{C}$.<br>Баланс скрытого тепла (влаги): $n Q_{LH} + \\dot{m} L (w_{SA} - w_{IA}) = 0$.<br> $w_{SA} = w_{IA} - \\frac{n Q_{LH}}{\\dot{m} L} = 9.5 - \\frac{30 \\cdot 80}{1.18 \\cdot 2500000} \\cdot 1000 \\approx 8.7 \\, \\text{г/кг}$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Уравнение баланса явного тепла: $c_a \\dot{m}(T_{IA}-T_{SA}) = \\dot{Q}_S$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение температуры подаваемого воздуха: $T_{SA} = 22^\\circ\\text{C}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение баланса влаги: $w_{SA} = w_{IA} - \\frac{\\dot{Q}_L}{L_w \\rho_a \\dot{V}}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение влагосодержания подаваемого воздуха: $w_{SA} \\approx 8.7 \\, \\text{г/кг}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.8",
+        "description": "Найдите $T_{CA}$, $\\phi_{CA}$.",
+        "solution": "Воздух после охлаждающего змеевика (coil) и до нагревателя имеет параметры ( $T_{CA}$, $w_{CA}$ ). Поскольку при охлаждении происходит конденсация, воздух на выходе из змеевика насыщен, т.е. $\\phi_{CA} = 100\\%$.<br>Влагосодержание воздуха после змеевика и после нагревателя одинаково: $w_{CA} = w_{SA} = 8.7 \\, \\text{г/кг}$.<br>На психрометрической диаграмме находим точку на линии $\\phi = 100\\%$ с влагосодержанием $w = 8.7 \\, \\text{г/кг}$. Это соответствует температуре точки росы $T_{CA} \\approx 12^\\circ\\text{C}$.",
+        "maxPoints": 1.75,
+        "subparts": [
+          {
+            "description": "Определение температуры воздуха после охладителя: $T_{CA} \\approx 12^\\circ\\text{C}$.",
+            "points": 1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Определение относительной влажности после охладителя: $\\phi_{CA} = 100\\%$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.9",
+        "description": "Найдите скорость конденсации воды $\\dot{m}_w$.",
+        "solution": "Скорость конденсации воды равна разнице в массе воды, содержащейся в воздухе до и после охлаждающего змеевика.<br> $\\dot{m}_w = \\dot{m} (w_{MA} - w_{CA}) = \\dot{m} (w_{MA} - w_{SA})$.<br>Полный массовый расход воздуха $\\dot{m} = 4 \\rho n \\dot{V}_H = 4 \\cdot 1.23 \\, \\text{кг/м}^3 \\cdot 30 \\cdot 0.008 \\, \\text{м}^3/\\text{с} = 1.1808 \\, \\text{кг/с}$.<br> $\\dot{m}_w = 1.1808 \\, \\text{кг/с} \\cdot (10.125 - 8.7) \\, \\text{г/кг} = 1.1808 \\cdot 1.425 \\, \\text{г/с} \\approx 1.7 \\, \\text{г/с}$.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Формула для скорости конденсации: $\\dot{m}_w = 4 \\rho n \\dot{V}_H (w_{MA} - w_{SA})$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение: $\\dot{m}_w \\approx 1.7 \\, \\text{г/с}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.10",
+        "description": "Найдите количество теплоты, отводимой охлаждающим змеевиком $\\dot{Q}_C$.",
+        "solution": "Количество отводимой теплоты равно изменению энтальпии воздуха при прохождении через змеевик.<br> $\\dot{Q}_C = \\dot{m} (h_{MA} - h_{CA})$.<br>Находим на диаграмме энтальпии: $h_{MA}$ для $T=26^\\circ\\text{C}, w=10 \\, \\text{г/кг}$ равно примерно $52 \\, \\text{кДж/кг}$.<br> $h_{CA}$ для $T=12^\\circ\\text{C}, w=8.7 \\, \\text{г/кг}$ ( $\\phi=100\\%$ ) равно примерно $34 \\, \\text{кДж/кг}$.<br> $\\dot{Q}_C = 1.1808 \\, \\text{кг/с} \\cdot (52 - 34) \\, \\text{кДж/кг} = 1.1808 \\cdot 18 \\, \\text{кВт} \\approx 21.25 \\, \\text{кВт}$.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Расчет отводимой теплоты: $\\dot{Q}_C \\approx 21 \\, \\text{кВт}$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.11",
+        "description": "Найдите количество теплоты, подаваемой нагревательным змеевиком $\\dot{Q}_H$.",
+        "solution": "Количество подаваемой теплоты равно изменению энтальпии воздуха при прохождении через нагреватель.<br> $\\dot{Q}_H = \\dot{m} (h_{SA} - h_{CA})$.<br>Находим энтальпию $h_{SA}$ для $T=22^\\circ\\text{C}, w=8.7 \\, \\text{г/кг}$. Это примерно $44 \\, \\text{кДж/кг}$.<br> $h_{CA}$ уже известно: $34 \\, \\text{кДж/кг}$.<br> $\\dot{Q}_H = 1.1808 \\, \\text{кг/с} \\cdot (44 - 34) \\, \\text{кДж/кг} = 1.1808 \\cdot 10 \\, \\text{кВт} \\approx 11.8 \\, \\text{кВт}$. В решении 12 кВт.",
+        "maxPoints": 0.75,
+        "subparts": [
+          {
+            "description": "Расчет подаваемой теплоты: $\\dot{Q}_H \\approx 12 \\, \\text{кВт}$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.12",
+        "description": "Если температура охлаждающего змеевика поддерживается на уровне $T_{CA}$ и он работает как холодильник Карно с температурой нагревателя $T_{OA}$, найдите полную потребляемую мощность охлаждающего змеевика.",
+        "solution": "Для холодильника Карно коэффициент производительности (COP) равен $K = \\frac{T_{cold}}{T_{hot} - T_{cold}} = \\frac{\\dot{Q}_C}{P}$.<br>Здесь $T_{cold} = T_{CA} = 12^\\circ\\text{C} = 285.15 \\, \\text{К}$.<br> $T_{hot} = T_{OA} = 32^\\circ\\text{C} = 305.15 \\, \\text{К}$.<br>Потребляемая мощность $P = \\frac{\\dot{Q}_C (T_{hot} - T_{cold})}{T_{cold}} = \\frac{\\dot{Q}_C (T_{OA} - T_{CA})}{T_{CA}}$.<br> $P = \\frac{21 \\, \\text{кВт} \\cdot (305.15 - 285.15) \\, \\text{К}}{285.15 \\, \\text{К}} = \\frac{21 \\cdot 20}{285.15} \\, \\text{кВт} \\approx 1.47 \\, \\text{кВт}$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Формула для мощности холодильника Карно: $\\frac{P}{\\dot{Q}_C} = \\frac{T_{OA}-T_{CA}}{T_{CA}}$.",
+            "points": 0.75,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение: $P \\approx 1.5 \\, \\text{кВт}$.",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Кварцевый резонатор",
+    "maxPoints": 10,
+    "weightedMaxPoints": 10,
+    "parts": [
+      {
+        "number": "3.1",
+        "description": "Пусть $\\vec{l}$ составляет угол $\\alpha$ с осью х. Рассчитайте потенциальную энергию диполя U в поле $E_0$, считая $U=0$ в положении устойчивого равновесия. Выразите ответ через $p$, $E_0$ и $\\alpha$.",
+        "solution": "Положение устойчивого равновесия соответствует $\\alpha=0$. Работа электрического поля при повороте диполя из положения $\\alpha$ в положение 0 равна $A = \\int_{\\alpha}^0 M d\\alpha$, где $M$ - момент сил. Момент сил, действующих на диполь, $M = |\\vec{p} \\times \\vec{E_0}| = pE_0\\sin\\alpha$. Направление момента стремится уменьшить угол $\\alpha$, поэтому $M = -pE_0\\sin\\alpha$.<br> $A = \\int_{\\alpha}^0 (-pE_0\\sin\\alpha) d\\alpha = [pE_0\\cos\\alpha]_{\\alpha}^0 = pE_0(1 - \\cos\\alpha)$.<br>Работа поля равна убыли потенциальной энергии: $A = U(\\alpha) - U(0)$. Поскольку $U(0)=0$, то $U(\\alpha) = A = pE_0(1 - \\cos\\alpha)$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Сила, действующая на заряд: $F_0=qE_0$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Момент сил $M = -pE_0\\sin\\alpha$ или смещение заряда $\\Delta x = \\frac{l}{2}(1-\\cos\\alpha)$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Работа/Энергия: $A = pE_0(1-\\cos\\alpha)$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Лишний минус.",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": "3.2",
+        "description": "У упругого диполя дипольный момент является наведенным, то есть появляется вследствие действия самого поля, так что $\\vec{p} = \\beta \\vec{E}_{loc}$, где $\\beta$ – так называемая поляризуемость. Рассчитайте изменение потенциальной энергии $\\Delta U$ упругого диполя при $\\alpha=0$, который медленно внесли в поле $E_0$, и выразите его через $\\beta$ и $E_0$.",
+        "solution": "При внесении диполя в поле $E_0$ поле совершает работу по растяжению диполя и работу по его ориентации. Энергия, запасенная в диполе, равна работе по его созданию (растяжению). Сила, растягивающая диполь, $F=qE_0$. Длина диполя $l = p/q$. Работа $A_{stretch} = \\int F dl = \\int qE_0 d(p/q) = \\int E_0 dp$. Так как $p = \\beta E_0$ (где $\\beta$ включает $\\epsilon_0$ из решения), то $dp = \\beta dE_0$. Интегрируем от 0 до $E_0$: $A_{stretch} = \\int_0^{E_0} E_0 \\beta dE_0 = \\frac{1}{2} \\beta E_0^2$.<br>Потенциальная энергия диполя в поле $U = -\\vec{p} \\cdot \\vec{E_0} = -pE_0 = -\\beta E_0^2$.<br>Полное изменение энергии системы (диполь + поле) равно $\\Delta U_{total} = U_{stretch} + U_{field} = \\frac{1}{2}\\beta E_0^2 - \\beta E_0^2 = -\\frac{1}{2}\\beta E_0^2$. Это и есть изменение потенциальной энергии диполя.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Выражение для элементарного изменения дипольного момента $dp = 2qdx$ или силы $F_0 = qE_0 = \\frac{q^2}{\\beta \\epsilon_0}x$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Работа по созданию диполя: $A = \\frac{1}{2}\\beta\\epsilon_0E_0^2$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Лишний минус.",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Изменение потенциальной энергии: $\\Delta U = -A = -\\frac{1}{2}\\beta\\epsilon_0E_0^2$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.3",
+        "description": "Для решения пункта 3.4 вам поможет вспомогательная задача: найдите напряжённость поля E от равномерно заряженной с поверхностной плотностью $\\sigma$ бесконечной плоскости.",
+        "solution": "Используем теорему Гаусса. Выберем в качестве гауссовой поверхности цилиндр с основаниями площади $S$, параллельными плоскости, и осью, перпендикулярной ей. Поток через боковую поверхность равен нулю. Поток через основания равен $2ES$. Заряд внутри цилиндра $Q = \\sigma S$. По теореме Гаусса $\\oint \\vec{E} \\cdot d\\vec{S} = \\frac{Q_{in}}{\\epsilon_0}$, откуда $2ES = \\frac{\\sigma S}{\\epsilon_0}$, и $E = \\frac{\\sigma}{2\\epsilon_0}$.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Заряд элементарного кольца $dq=\\sigma \\cdot 2\\pi r dr$ или поток через цилиндр $\\Phi = \\sigma S / \\epsilon_0$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Вклад в поле от элементарного кольца $dE = \\frac{1}{4\\pi\\epsilon_0} \\frac{dq}{r^2+h^2} \\frac{h}{\\sqrt{r^2+h^2}}$ или поток через основания $\\Phi=2ES$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Итоговое поле: $E = \\frac{\\sigma}{2\\epsilon_0}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.4",
+        "description": "Определите $\\vec{P}$ и поверхностные плотности $\\sigma'$ и $\\sigma''$ зарядов на поверхностях пластинки.",
+        "solution": "Внутри диэлектрика поле $E = E_0/\\epsilon$. Это поле является суперпозицией внешнего поля $E_0$ и поля поляризационных зарядов $E'$. Таким образом, $E = E_0 + E'$. Направление $E'$ противоположно $E_0$. $E' = E - E_0 = E_0/\\epsilon - E_0 = -E_0(1-1/\\epsilon)$.<br>Поле $E'$ создается двумя плоскостями с зарядами $\\sigma'$ и $\\sigma''=-\\sigma'$. Поле внутри $E' = \\sigma' / \\epsilon_0$.<br>Таким образом, $\\sigma' / \\epsilon_0 = E_0(1-1/\\epsilon)$, откуда $\\sigma' = \\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$. И $\\sigma'' = -\\sigma'$.<br>Вектор поляризации $P = \\epsilon_0 (\\epsilon-1) E = \\epsilon_0(\\epsilon-1) \\frac{E_0}{\\epsilon}$. Также известно, что $|\\vec{P}| = |\\sigma'|$.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Поле внутри диэлектрика: $\\vec{E} = \\vec{E_0}/\\epsilon$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Поле поляризационных зарядов: $\\vec{E}' = \\vec{E} - \\vec{E_0}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Вектор поляризации: $\\vec{P} = -\\epsilon_0 \\vec{E}' = \\epsilon_0 \\vec{E_0} \\frac{\\epsilon-1}{\\epsilon}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь полей на границе: $\\frac{\\sigma'}{2\\epsilon_0} + \\frac{\\sigma''}{2\\epsilon_0} = 0$ или $\\sigma' = -\\sigma''$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Поле зарядов: $E' = \\frac{\\sigma'}{2\\epsilon_0} - \\frac{\\sigma''}{2\\epsilon_0} = \\frac{\\sigma'}{\\epsilon_0}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражения для $\\sigma'$ и $\\sigma''$: $\\sigma' = -\\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$, $\\sigma'' = \\epsilon_0 E_0 \\frac{\\epsilon-1}{\\epsilon}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.5",
+        "description": "Найдите связь между $\\beta$ из 3.2 и $\\epsilon$, если концентрация молекул диэлектрика равна $n$.",
+        "solution": "Вектор поляризации $\\vec{P}$ - это суммарный дипольный момент на единицу объема: $\\vec{P} = n\\vec{p}$.<br>Дипольный момент одной молекулы $\\vec{p} = \\beta \\vec{E}_{loc}$. Локальное поле $E_{loc}$ - это поле, действующее на молекулу. В простейшей модели можно считать $E_{loc} = E$, где $E$ - макроскопическое поле внутри диэлектрика. $E = E_0/\\epsilon$.<br>Тогда $\\vec{P} = n\\beta \\vec{E} = n\\beta \\frac{\\vec{E_0}}{\\epsilon}$.<br>С другой стороны, из предыдущего пункта $\\vec{P} = \\epsilon_0(\\epsilon-1)\\vec{E} = \\epsilon_0(\\epsilon-1)\\frac{\\vec{E_0}}{\\epsilon}$.<br>Приравнивая два выражения для $\\vec{P}$, получаем $n\\beta = \\epsilon_0(\\epsilon-1)$. Отсюда $\\epsilon = 1 + \\frac{n\\beta}{\\epsilon_0}$. В решении используется определение $\\beta$ без $\\epsilon_0$, что приводит к $\\epsilon=1+n\\beta$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Связь поляризации с концентрацией: $P=np$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для дипольного момента: $p = \\beta\\epsilon_0 E_0 / \\epsilon$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Конечная связь: $\\epsilon = 1+n\\beta$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.6",
+        "description": "Определите разность потенциалов $\\Delta\\phi$ на таком конденсаторе под действием атмосферного давления $P_0 = 10^5 \\, \\text{Па}$ при отсутствии внешнего напряжения.",
+        "solution": "Под действием давления $P_0$ возникает механическое напряжение $\\tau = P_0$. Это напряжение вызывает поляризацию $P = d \\cdot \\tau = d P_0$.<br>Эта поляризация создает электрическое поле внутри пьезоэлектрика $E = P/\\epsilon_0$.<br>Разность потенциалов $\\Delta\\phi = E \\cdot h = \\frac{P h}{\\epsilon_0} = \\frac{d P_0 h}{\\epsilon_0}$.<br> $\\Delta\\phi = \\frac{2.33 \\cdot 10^{-12} \\, \\text{Кл/Н} \\cdot 10^5 \\, \\text{Па} \\cdot 1.6 \\cdot 10^{-3} \\, \\text{м}}{8.85 \\cdot 10^{-12} \\, \\text{Ф/м}} \\approx 42 \\, \\text{В}$.",
+        "maxPoints": 0.4,
+        "subparts": [
+          {
+            "description": "Разность потенциалов: $\\Delta\\phi = Eh$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Электрическое поле: $E=P/\\epsilon_0$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула: $\\Delta\\phi = \\frac{P_0hd}{\\epsilon_0}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $\\Delta\\phi = 42 \\, \\text{В}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.7",
+        "description": "Теперь конденсатор внесли в вакуум, и ему сообщили внешнее напряжение $V=9 \\, \\text{В}$. Определите отношение $W_d/W_e$ запасённой энергии деформации кварца $W_d$ к электрической энергии соответствующего конденсатора $W_e$. Объёмная плотность упругой энергии равна $w_d=\\tau^2/2E$.",
+        "solution": "Электрическая энергия $W_e = \\frac{1}{2} C_0 V^2$, где $C_0 = \\frac{\\epsilon\\epsilon_0 S}{h}$. $W_e = \\frac{\\epsilon\\epsilon_0 S V^2}{2h}$.<br>Обратный пьезоэффект: приложенное поле $E' = V/h$ вызывает механическое напряжение $\\tau$. Связь $P = d \\tau$. Также $P = \\epsilon_0(\\epsilon-1)E'$. Отсюда $\\tau = \\frac{P}{d} = \\frac{\\epsilon_0(\\epsilon-1)E'}{d} = \\frac{\\epsilon_0(\\epsilon-1)V}{dh}$.<br>Энергия деформации $W_d = w_d \\cdot (Sh) = \\frac{\\tau^2}{2E} Sh = \\frac{S h}{2E} (\\frac{\\epsilon_0(\\epsilon-1)V}{dh})^2$.<br>Отношение: $\\frac{W_d}{W_e} = \\frac{\\frac{S h}{2E} (\\frac{\\epsilon_0(\\epsilon-1)V}{dh})^2}{\\frac{\\epsilon\\epsilon_0 S V^2}{2h}} = \\frac{\\epsilon_0(\\epsilon-1)^2}{E d^2 \\epsilon}$.<br> $\\frac{W_d}{W_e} = \\frac{8.85 \\cdot 10^{-12} (4-1)^2}{72 \\cdot 10^9 (2.33 \\cdot 10^{-12})^2 \\cdot 4} \\approx 3.2$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формулы для емкости $C_0 = \\epsilon\\epsilon_0S/h$ и электрической энергии $W_e = C_0V^2/2$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Альтернативный подход через объемную плотность энергии $w_e = \\epsilon_0 \\epsilon E'^2/2$.",
+                "points": 0.2,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Формула для отношения энергий: $\\frac{W_d}{W_e} = \\frac{\\epsilon_0(\\epsilon-1)^2}{Ed^2\\epsilon}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $W_d/W_e = 3.2$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.8",
+        "description": "Если $\\tau(x,t)$ неравномерен в пространстве, то $\\xi(x,t)$ меняется во времени. Запишите второй закон Ньютона для элемента толщины $dx$ в заданной точке $x$ под действием приращения напряжения $d\\tau(x,t)$.",
+        "solution": "Масса элемента $dm = \\rho S dx$. Сила, действующая на элемент, $dF = S(\\tau(x+dx,t) - \\tau(x,t)) = S \\frac{\\partial \\tau}{\\partial x} dx$.<br>Ускорение элемента $a = \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Второй закон Ньютона $dF = dm \\cdot a$: $S \\frac{\\partial \\tau}{\\partial x} dx = (\\rho S dx) \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Сокращая, получаем: $\\frac{\\partial \\tau}{\\partial x} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Масса элемента: $dm = \\rho S dx$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Второй закон Ньютона: $\\frac{\\partial \\tau(x,t)}{\\partial x} = \\rho \\frac{\\partial^2 \\xi(x,t)}{\\partial t^2}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.9",
+        "description": "Выразите изменение возмущения $d\\xi(x,t)$ малого элемента $dx$ цилиндра через напряжение $\\tau(x,t)$ и модуль Юнга $E$ в заданный момент $t$.",
+        "solution": "По закону Гука, $\\tau = E \\cdot \\text{относительное удлинение}$.<br>Относительное удлинение элемента $dx$ равно $\\frac{\\xi(x+dx) - \\xi(x)}{dx} = \\frac{\\partial \\xi}{\\partial x}$.<br>Следовательно, $\\tau(x,t) = E \\frac{\\partial \\xi(x,t)}{\\partial x}$.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Закон Гука: $\\tau(x,t) = E \\frac{\\Delta l}{l}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь с возмущением: $\\tau(x,t) = E \\frac{\\partial \\xi(x,t)}{\\partial x}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.10",
+        "description": "Используя результаты пунктов 3.8-3.9, определите $c$ через параметры цилиндра.",
+        "solution": "Из 3.9: $\\frac{\\partial \\tau}{\\partial x} = E \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Из 3.8: $\\frac{\\partial \\tau}{\\partial x} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$.<br>Приравнивая, получаем $E \\frac{\\partial^2 \\xi}{\\partial x^2} = \\rho \\frac{\\partial^2 \\xi}{\\partial t^2}$, или $\\frac{\\partial^2 \\xi}{\\partial t^2} = \\frac{E}{\\rho} \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Это волновое уравнение вида $\\frac{\\partial^2 \\xi}{\\partial t^2} = c^2 \\frac{\\partial^2 \\xi}{\\partial x^2}$.<br>Следовательно, $c^2 = E/\\rho$, и $c = \\sqrt{E/\\rho}$.",
+        "maxPoints": 0.4,
+        "subparts": [
+          {
+            "description": "Скорость звука в цилиндре: $c = \\sqrt{E/\\rho}$.",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.11",
+        "description": "Запишите необходимое условие для $\\tau(\\pm L/2, t)$. Из этого определите возможные значения, которые может принимать $\\omega$.",
+        "solution": "Концы цилиндра свободны, поэтому механическое напряжение на них равно нулю: $\\tau(\\pm L/2, t) = 0$.<br>Так как $\\tau = E \\frac{\\partial \\xi}{\\partial x}$, то $\\frac{\\partial \\xi}{\\partial x}|_{x=\\pm L/2} = 0$.<br> $\\xi(x, t) = A \\cos(\\omega t + \\phi) \\cos(\\frac{\\omega x}{c} + \\theta)$.<br> $\\frac{\\partial \\xi}{\\partial x} = -A \\cos(\\omega t + \\phi) \\sin(\\frac{\\omega x}{c} + \\theta) \\cdot \\frac{\\omega}{c}$.<br>Условие $\\frac{\\partial \\xi}{\\partial x}=0$ при $x=\\pm L/2$ означает, что $\\sin(\\pm\\frac{\\omega L}{2c} + \\theta) = 0$.<br>Это дает $\\frac{\\omega L}{2c} + \\theta = k_1\\pi$ и $-\\frac{\\omega L}{2c} + \\theta = k_2\\pi$.<br>Складывая: $2\\theta = (k_1+k_2)\\pi$. Вычитая: $\\frac{\\omega L}{c} = (k_1-k_2)\\pi = m\\pi$, где $m$ - целое число.<br>Отсюда $\\omega = \\frac{m\\pi c}{L}$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Граничное условие: $\\tau(\\pm L/2, t)=0$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие на частоту: $\\omega L / c = m\\pi$.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для частоты: $\\omega = \\frac{m\\pi}{L}\\sqrt{\\frac{E}{\\rho}}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.12",
+        "description": "Рассчитайте численное значение частоты $f_0$ вибраций кварца толщиной $h = 1.6 \\, \\text{мм}$, связанной с наименьшим (так называемым фундаментальным) значением $\\omega$.",
+        "solution": "Наименьшее ненулевое значение $\\omega$ соответствует $m=1$. Толщина резонатора $h$ играет роль длины $L$.<br> $\\omega_0 = \\frac{\\pi c}{h} = \\frac{\\pi}{h} \\sqrt{\\frac{E}{\\rho}}$.<br>Частота $f_0 = \\frac{\\omega_0}{2\\pi} = \\frac{c}{2h} = \\frac{1}{2h} \\sqrt{\\frac{E}{\\rho}}$.<br> $E = 72 \\, \\text{ГПа} = 72 \\cdot 10^9 \\, \\text{Па}$. $\\rho = 2200 \\, \\text{кг/м}^3$. $h=1.6 \\cdot 10^{-3} \\, \\text{м}$.<br> $f_0 = \\frac{1}{2 \\cdot 1.6 \\cdot 10^{-3}} \\sqrt{\\frac{72 \\cdot 10^9}{2200}} \\approx 1.79 \\cdot 10^6 \\, \\text{Гц} = 1.79 \\, \\text{МГц}$.",
+        "maxPoints": 0.3,
+        "subparts": [
+          {
+            "description": "Формула для частоты: $f_0 = \\frac{1}{2h} \\sqrt{E/\\rho}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $f_0 = 1.79 \\, \\text{МГц}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.13",
+        "description": "Чему равна разность фаз $\\phi$ между колебаниями напряжения на сопротивлении R и конденсаторе $C_0$ в установившемся режиме?",
+        "solution": "В данной схеме RLC-ветвь параллельна конденсатору $C_0$. Напряжение на обеих параллельных ветвях одинаково и равно напряжению генератора $U_0 \\sin(\\omega_0 t)$.<br>Напряжение на конденсаторе $C_0$ это $U_{C0} = U_0 \\sin(\\omega_0 t)$.<br>Напряжение на RLC-ветви также $U_{RLC} = U_0 \\sin(\\omega_0 t)$. Это напряжение является векторной суммой напряжений на R, L и C: $\\vec{U}_{RLC} = \\vec{U}_R + \\vec{U}_L + \\vec{U}_C$.<br>Ток в RLC-ветви $I_{RLC}$ опережает или отстает от $U_{RLC}$ на некоторую фазу. Напряжение на сопротивлении $U_R$ синфазно с током $I_{RLC}$.<br>Разность фаз между $U_R$ и $U_{C0}$ (которое равно $U_{RLC}$ ) - это просто фазовый сдвиг в RLC-цепи. Этот сдвиг равен $\\phi$, где $\\tan \\phi = \\frac{X_L - X_C}{R} = \\frac{\\omega_0 L - 1/(\\omega_0 C)}{R}$.<br>Вопрос про разность фаз между $U_R$ и $U_{C0}$. Это и есть угол $\\phi$. В решении приведена векторная диаграмма, из которой видно, что $\\vec{U}_0 = \\vec{U}_{C0}$ и $\\vec{U}_0 = \\vec{U}_R + \\vec{U}_L + \\vec{U}_C$. Разность фаз $\\phi$ - это угол между $\\vec{U}_R$ и $\\vec{U}_0$.",
+        "maxPoints": 1.2,
+        "subparts": [
+          {
+            "description": "Векторная диаграмма: $\\vec{U}_L$ опережает $\\vec{U}_R$ на $\\pi/2$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Векторная диаграмма: $\\vec{U}_R$ опережает $\\vec{U}_C$ на $\\pi/2$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Векторная диаграмма: показано, что $\\vec{U}_L + \\vec{U}_C + \\vec{U}_R = \\vec{U}_0$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Векторная диаграмма: указано, что $\\vec{U}_{C0} = \\vec{U}_0$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Векторная диаграмма: $\\vec{U}_R$ опережает $\\vec{U}_0$ на угол $\\phi$ против часовой стрелки.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для импеданса катушки: $Z_L = \\omega_0 L$ или $\\hat{Z}_L=i\\omega_0 L$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для импеданса конденсатора: $Z_C = 1/(\\omega_0 C)$ или $\\hat{Z}_C=1/(i\\omega_0 C)$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Тангенс угла сдвига фаз: $\\tan\\phi = (Z_C-Z_L)/R$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Лишний минус.",
+                "points": -0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Арктангенс сдвига фаз: $\\phi = \\arctan \\frac{1-\\omega_0^2LC}{\\omega_0 RC}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.14",
+        "description": "Определите значения $\\omega_1$ и $\\omega_2$ через приведённые параметры контура.",
+        "solution": "Резонанс напряжений ( $\\omega_1$ ) в RLC-цепи происходит, когда реактивное сопротивление равно нулю: $X_L - X_C = 0$.<br> $\\omega_1 L = 1/(\\omega_1 C)$, откуда $\\omega_1 = 1/\\sqrt{LC}$.<br>Резонанс токов ( $\\omega_2$ ) происходит, когда общий ток от генератора минимален, т.е. полный импеданс максимален. В решении это интерпретируется как резонанс внутреннего контура, где $C_0$ и $C$ рассматриваются как последовательные, образуя эквивалентную емкость $C' = \\frac{CC_0}{C+C_0}$.<br>Тогда резонансная частота этого контура $\\omega_2 = 1/\\sqrt{LC'} = \\frac{1}{\\sqrt{L \\frac{CC_0}{C+C_0}}} = \\frac{1}{\\sqrt{LC}} \\sqrt{\\frac{C+C_0}{C_0}} = \\omega_1 \\sqrt{1 + \\frac{C}{C_0}}$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Условие резонанса напряжений: $\\phi=0$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Частота резонанса напряжений: $\\omega_1 = 1/\\sqrt{LC}$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Эквивалентная емкость для резонанса токов: $C' = \\frac{CC_0}{C+C_0}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Частота резонанса токов: $\\omega_2 = \\omega_1\\sqrt{1+C/C_0}$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.15",
+        "description": "Оцените Q, если $C=0.5 \\cdot 10^{-12} \\, \\text{Ф}$, $C_0=50 \\cdot 10^{-12} \\, \\text{Ф}$, $R \\approx 10 \\, \\text{Ом}$, а $\\omega_0 = \\omega_1 = 2\\pi f_0$, где $f_0$ численно определён в пункте 3.12.",
+        "solution": "Добротность $Q = 2\\pi \\frac{E}{\\Delta E}$.<br> $E$ - максимальная энергия в системе. $\\Delta E$ - потери за период.<br>На резонансной частоте $\\omega_1$ ток в RLC-цепи $I_0 = U_0/R$.<br>Потери мощности $\\langle P \\rangle = \\frac{1}{2}I_0^2 R = \\frac{U_0^2}{2R}$.<br>Потери за период $T_1 = 2\\pi/\\omega_1$: $\\Delta E = \\langle P \\rangle T_1 = \\frac{U_0^2}{2R} \\frac{2\\pi}{\\omega_1} = \\frac{\\pi U_0^2}{R\\omega_1}$.<br>Максимальная энергия в системе $E = E_{RCL} + E_{C0}$.<br> $E_{C0} = \\frac{1}{2}C_0 U_0^2$.<br> $E_{RCL} = \\frac{1}{2} L I_0^2 = \\frac{1}{2} L (\\frac{U_0}{R})^2$.<br>Так как $C \\ll C_0$, то $E_{RCL} \\gg E_{C0}$, и $E \\approx E_{RCL}$.<br> $Q \\approx 2\\pi \\frac{E_{RCL}}{\\Delta E} = 2\\pi \\frac{\\frac{1}{2}L(U_0/R)^2}{\\pi U_0^2 / (R\\omega_1)} = \\frac{\\omega_1 L}{R}$.<br>Так как $\\omega_1 = 1/\\sqrt{LC}$, то $Q = \\frac{1}{\\omega_1 C R}$.<br> $\\omega_1 = 2\\pi f_0 = 2\\pi \\cdot 1.79 \\cdot 10^6 \\, \\text{рад/с}$.<br> $Q \\approx \\frac{1}{2\\pi (1.79\\cdot 10^6)(0.5\\cdot 10^{-12})(10)} \\approx 1.78 \\cdot 10^4$.",
+        "maxPoints": 1,
+        "subparts": [
+          {
+            "description": "Средняя мощность потерь: $\\langle P \\rangle = U_0^2 / (2R)$.",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Потери энергии за период: $\\Delta E = \\langle P \\rangle / f_0$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Максимальная энергия в $C_0$: $E_{C0} = C_0 U_0^2 / 2$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Максимальная энергия в RLC-цепи: $E_{RCL} = L U_0^2 / (2R^2)$.",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Полная энергия: $E = E_{RCL} + E_{C0}$, или указано $E_{RCL} \\gg E_{C0}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула для добротности: $Q \\approx \\frac{1}{2\\pi f_0 RC}$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ: $Q = 1.78 \\cdot 10^4$.",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
 ]
