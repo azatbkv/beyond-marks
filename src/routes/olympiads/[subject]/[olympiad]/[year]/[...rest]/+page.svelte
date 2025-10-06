@@ -13,7 +13,7 @@
   import { Input } from '$lib/components/ui/input/index.js';
   import * as Collapsible from '$lib/components/ui/collapsible/index.js';
   import { Button } from '$lib/components/ui/button';
-	import { HamburgerIcon } from '@lucide/svelte';
+  import { HamburgerIcon } from '@lucide/svelte';
 
   marked.use(markedKatex({ throwOnError: false }));
 
@@ -204,25 +204,25 @@
 </svelte:head>
 
 <Sidebar.Provider class="z-50 md:z-30">
-		<div class="flex fixed top-0 z-40 mx-2 my-2 md:hidden space-x-2">
+  <div class="fixed top-0 z-40 mx-2 my-2 flex space-x-2 md:hidden">
     <Sidebar.Trigger>
       <Button variant="ghost" size="icon" class="h-8 w-8">
         <HamburgerIcon class="h-4 w-4" />
       </Button>
     </Sidebar.Trigger>
-		<div class="justify-left flex">
-        <Badge class="text-md">{userScore.problemPoints}/{problem.maxPoints}</Badge>
+    <div class="justify-left flex">
+      <Badge class="text-md">{userScore.problemPoints}/{problem.maxPoints}</Badge>
+    </div>
+    {#if problem.maxPoints !== problem.weightedMaxPoints}
+      <div class="justify-left flex">
+        <Badge class="text-md"
+          >{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
+            2
+          )}/{problem.weightedMaxPoints}</Badge
+        >
       </div>
-      {#if problem.maxPoints !== problem.weightedMaxPoints}
-        <div class="justify-left flex">
-          <Badge class="text-md"
-            >{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
-              2
-            )}/{problem.weightedMaxPoints}</Badge
-          >
-        </div>
-      {/if}
-			</div>
+    {/if}
+  </div>
   <Sidebar.Root>
     <Sidebar.Header />
     <Sidebar.Content class="mx-2 mt-12">
@@ -344,9 +344,9 @@
               </Accordion.Trigger>
               <AccordionContent class="overflow-hidden">
                 <Card.Description class="mx-2 overflow-hidden break-words text-neutral-900 md:mx-4">
-                    <span class="block break-words text-md overflow-hidden py-2 break-words">
-                      {@html marked.parse(part.solution)}
-                    </span>
+                  <span class="text-md block overflow-hidden py-2 break-words">
+                    {@html marked.parse(part.solution)}
+                  </span>
                 </Card.Description>
               </AccordionContent>
             </Accordion.Item>
