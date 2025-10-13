@@ -1,38 +1,59 @@
-# sv
+## Using the project
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+Clone this repository using `git` and `cd` into the directory:
 
 ```sh
-# create a new project in the current directory
-npx sv create
+git clone https://github.com/azatbkv/beyond-marks
 
-# create a new project in my-app
-npx sv create my-app
+cd beyond-marks
+```
+
+Install all the dependencies using `pnpm`:
+```sh
+pnpm install
+```
+
+Now, you need to create a D1 database using the Wrangler CLI:
+```sh
+pnpm wrangler d1 create <YOUR_DATABASE_NAME>
+```
+
+Replace <YOUR_DATABASE_NAME> with the desired name for your database. After running this command, Cloudflare will output the database_name and database_id.
+
+Next, you need to add the D1 database configuration to your wrangler.jsonc file. This allows your Worker to access the database.
+```jsonc
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "database_id": "<YOUR_DATABASE_ID>",
+      "migrations_dir": "./src/lib/server/db/migrations"
+    }
+  ]
+```
+
+Apply existing migrations to your database using a `pnpm` command:
+```sh
+pnpm migrate:prod
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run the development server, you need to apply migrations to the `local.db` using a `pnpm` command:
+```sh
+pnpm migrate:local
+```
+
+Once you did this, you can start a development server:
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev
 ```
 
 ## Building
 
-To create a production version of your app:
+To deploy a production version of your app to Cloudfare Workers:
 
 ```sh
-npm run build
+pnpm run deploy
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
