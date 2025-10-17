@@ -1,0 +1,310 @@
+[
+  {
+    "number": 1,
+    "name": "",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 8.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Какую работу необходимо совершить, чтобы равномерно переместить тело массой $m$ с поверхности Планеты радиусом $R_1$ на поверхность его спутника, радиус которого $R_2$. Расстояние между Планетой и Спутником намного больше, чем $R_1$ и $R_2$. Плотность Планеты и Спутника одинаковы и равны $\\rho$. Вращательным движением Планеты и ее Спутника пренебречь.",
+        "solution": "По закону изменения энергии $А = А_{\\text{сопр}} + \\Delta W$, учитывая отсутствие сил сопротивления, $A = \\Delta W$. Так как движение тела равномерное, то $\\Delta W_к = 0$ и, значит, $\\Delta W = \\Delta W_п$, а тогда $A = \\Delta W_п$, т. е. перенос требует совершения работы, численно равной изменению потенциальной энергии тела в поле тяжести Планеты и Спутника.<br> $$ A = \\left(-G\\frac{mM_2}{R_2} - G\\frac{mM_1}{l-R_2}\\right) - \\left(-G\\frac{mM_1}{R_1} - G\\frac{mM_2}{l-R_1}\\right) $$ <br>и так как $l \\gg R_1$ и $l \\gg R_2$, то после очевидных преобразований получаем приближенное равенство<br> $$ A \\approx Gm \\left[M_1\\left(\\frac{1}{R_1} - \\frac{1}{l}\\right) - M_2\\left(\\frac{1}{R_2} - \\frac{1}{l}\\right)\\right] $$ <br>Так как $\\frac{1}{R_1} \\gg \\frac{1}{l}$ и $\\frac{1}{R_2} \\gg \\frac{1}{l}$ то с еще более грубым приближением получаем<br> $$ A \\approx Gm \\left(\\frac{M_1}{R_1} - \\frac{M_2}{R_2}\\right) $$ <br>Учитывая, что масса шара $M = \\left(\\frac{4}{3}\\pi\\rho R^3\\right)$, окончательно получим<br> $$ A \\approx \\frac{4}{3}\\pi\\rho mG(R_1^2 - R_2^2) $$",
+        "maxPoints": 8.0,
+        "subparts": [
+          {
+            "description": "Закон изменения энергии: $А = А_{\\text{сопр}} + \\Delta W$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Упрощение при отсутствии сил сопротивления: $A = \\Delta W$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие равномерного движения: $\\Delta W_к = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь изменения полной и потенциальной энергии: $\\Delta W = \\Delta W_п$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для работы через потенциальные энергии: $$ A = \\left(-G\\frac{mM_2}{R_2} - G\\frac{mM_1}{l-R_2}\\right) - \\left(-G\\frac{mM_1}{R_1} - G\\frac{mM_2}{l-R_1}\\right) $$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Приближенное равенство при $l \\gg R_1, R_2$: $$ A \\approx Gm \\left[M_1\\left(\\frac{1}{R_1} - \\frac{1}{l}\\right) - M_2\\left(\\frac{1}{R_2} - \\frac{1}{l}\\right)\\right] $$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Более грубое приближение: $$ A \\approx Gm \\left(\\frac{M_1}{R_1} - \\frac{M_2}{R_2}\\right) $$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула массы шара: $M = \\left(\\frac{4}{3}\\pi\\rho R^3\\right)$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Окончательное выражение для работы: $$ A \\approx \\frac{4}{3}\\pi\\rho mG(R_1^2 - R_2^2) $$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "",
+    "maxPoints": 6.0,
+    "weightedMaxPoints": 6.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Сопротивления $R_1, R_2, R_3$ подобраны так, что ток через гальванометр $G$ равен нулю. Электродвижущие силы $E_1, E_3$ известны. Считая известными сопротивления $R_1, R_2, R_3$ и пренебрегая внутренними сопротивлениями батарей, найти электродвижущую силу $E_2$ и ток $I$, текущий через батарею $E_1$.",
+        "solution": "Воспользуемся законом Ома.<br>Для контура с $E_3$ и $R_3$, где течет ток $i$:<br> $$ E_3 = iR_3 $$ <br>Поскольку ток через гальванометр равен нулю, тот же ток $i$ течет через $R_2$. Для контура с $E_2, R_2, R_3$:<br> $$ E_2 = i(R_2 + R_3) $$ <br>Из этих двух уравнений выражаем $E_2$:<br> $$ E_2 = \\frac{E_3(R_2 + R_3)}{R_3} $$ <br>Для внешнего контура с $E_1, E_2, R_1$:<br> $$ E_1 - E_2 = IR_1 $$ <br>С учетом выше записанных уравнений определим искомую величину $I$:<br> $$ I = \\frac{E_1R_3 - E_3(R_2 + R_3)}{R_1R_3} $$",
+        "maxPoints": 6.0,
+        "subparts": [
+          {
+            "description": "Закон Ома для контура с $E_3$: $E_3 = iR_3$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Закон Ома для контура с $E_2$: $E_2 = i(R_2 + R_3)$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $E_2$: $E_2 = \\frac{E_3(R_2 + R_3)}{R_3}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Закон Ома для внешнего контура: $E_1 - E_2 = IR_1$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Окончательное выражение для тока $I$: $I = \\frac{E_1R_3 - E_3(R_2 + R_3)}{R_1R_3}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "",
+    "maxPoints": 9.0,
+    "weightedMaxPoints": 9.0,
+    "parts": [
+      {
+        "number": "1",
+        "description": "Рассчитайте теплопроводность льда $k_л$.",
+        "solution": "1. Рассмотрим место образования льда:<br>Сверху со стороны льда тепло уходит<br> $$ \\Delta Q_1 = \\frac{k_л S \\Delta t_л}{h_1} \\Delta \\tau \\quad (1) $$ <br>Со стороны воды приходит тепло<br> $$ \\Delta Q_2 = \\frac{k_в S \\Delta t_в}{h_2} \\Delta \\tau \\quad (2) $$ <br>Разница тепловых потоков уходит на замерзание воды в лед.<br> $$ \\Delta Q = \\lambda \\cdot \\Delta m \\quad (3) $$ <br>Масса образовавшегося льда:<br> $$ \\Delta m = \\rho_л S \\Delta h \\quad (4) $$ <br>Также используем условие что:<br> $$ k_в = k_л/4 $$ <br>Решая уравнения получаем:<br> $$ k_л = \\frac{v \\lambda \\rho_л}{\\left(\\frac{\\Delta t_л}{h_1} - \\frac{\\Delta t_в}{4h_2}\\right)} = 0,93 \\, \\text{Вт/(м}^{\\circ}\\text{С)} \\quad (5) $$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "Уравнение теплового потока от льда (Уравнение 1)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение теплового потока от воды (Уравнение 2)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение теплоты кристаллизации (Уравнение 3)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Масса образовавшегося льда (Уравнение 4)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Вывод общего вида уравнения для $k_л$ (Уравнение 5)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ для $k_л$ в диапазоне $0,93\\pm0,01 \\, \\text{Вт/(м}^{\\circ}\\text{С)}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Округление больше 0,01 или отсутствие размерности",
+                "points": -1.0,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": "2",
+        "description": "Рассчитайте толщину льда при установлении теплового равновесия.",
+        "solution": "2. Необходимо учесть, что при замерзании лед расширяется и его толщина $x_1$, оставшаяся толщина воды $x_2$.<br>Толщина замерзшего слоя воды<br> $$ \\Delta h = h_2 - x_2 \\quad (6) $$ <br>Полная толщина льда:<br> $$ x_1 = h_1 + \\frac{\\rho_в}{\\rho_л} \\Delta h \\quad (7) $$ <br>Уравнение теплового равновесия:<br> $$ \\frac{k_л S \\Delta t_л}{x_1} = \\frac{k_в S \\Delta t_в}{x_2} \\quad (8) $$ <br>Выражаем толщину воды через толщину льда:<br> $$ x_2 = \\frac{x_1 \\Delta t_в k_в}{\\Delta t_л k_л} = \\frac{x_1 \\Delta t_в}{4 \\Delta t_л} \\quad (9) $$ <br>Решая систему уравнений (6)-(9) получаем:<br> $$ x_1 = \\frac{h_1 + \\frac{\\rho_в}{\\rho_л}h_2}{\\left(1 + \\frac{\\rho_в \\Delta t_в}{4 \\rho_л \\Delta t_л}\\right)} = 6,11 \\, \\text{м} \\quad (10) $$",
+        "maxPoints": 5.0,
+        "subparts": [
+          {
+            "description": "Уравнение для толщины замерзшего слоя воды (Уравнение 6)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение для полной толщины льда с учетом расширения (Уравнение 7)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение теплового равновесия (Уравнение 8)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Вывод общего вида уравнения для $x_1$ (Уравнение 10)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ для $x_1$ в диапазоне $6,11\\pm0,01 \\, \\text{м}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Округление больше 0,01 или отсутствие размерности",
+                "points": -1.0,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "name": "",
+    "maxPoints": 7.0,
+    "weightedMaxPoints": 7.0,
+    "parts": [
+      {
+        "number": "1",
+        "description": "Выразите угол отклонения луча $\\delta$ через $\\alpha_1, \\alpha_2, \\beta_1$ и $\\beta_2$.",
+        "solution": "После первого преломления луч отклонён на $\\alpha_1 - \\beta_1$.<br>После второго преломления луч отклонился дополнительно на $\\alpha_2 - \\beta_2$. Тогда полный угол отклонения $\\delta$ равен $\\delta = \\alpha_1 - \\beta_1 + \\alpha_2 - \\beta_2$.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Полный угол отклонения $\\delta = \\alpha_1 - \\beta_1 + \\alpha_2 - \\beta_2$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2",
+        "description": "Существует единственный угол $\\alpha_1 = \\alpha_{\\text{min}}$, при котором отклонение луча минимально и равно $\\delta_{\\text{min}}$. Выразите $\\alpha_{\\text{min}}$ и $\\delta_{\\text{min}}$ через $\\omega$ и $n$.",
+        "solution": "Благодаря обратимости световых лучей, одинаковый угол отклонения $\\delta$ может быть достигнут при падении луча на призму как под углом $\\alpha_1$ так и под углом $\\alpha_2$. Так как минимальный угол отклонения может быть достигнут только при одном значении $\\alpha_{\\text{min}}= \\alpha_1= \\alpha_2$, то есть свет движется симметрично. Тогда $\\beta_1= \\beta_2= \\omega/2$, следовательно из закона преломления света $\\sin(\\alpha_{\\text{min}})=n \\sin(\\omega/2)$ и $\\delta_{\\text{min}}=2\\arcsin(n \\sin(\\omega/2)) – \\omega$.",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "За идею о симметрии при минимальном отклонении луча",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "За закон Снелла",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $\\alpha_{\\text{min}}$: $\\sin(\\alpha_{\\text{min}})=n \\sin(\\omega/2)$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $\\delta_{\\text{min}}$: $\\delta_{\\text{min}}=2\\arcsin(n \\sin(\\omega/2)) – \\omega$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3",
+        "description": "Вода в атмосфере образует маленькие кристаллы льда в форме правильной шестиугольной призмы. При прохождении солнечного света через эти кристаллы возникает оптическое явление известное как гало, при котором вокруг Солнца появляются два световых кольца. Коэффициент преломления льда $n_л = 1,31$. Найдите угловые радиусы этих колец.",
+        "solution": "Кольца гало соответствуют минимальным углам отклонения для призм с углом раствора $60^\\circ$ и $90^\\circ$. Тогда мы получаем угловые радиусы для гало равные $21,8^\\circ$ и $45,7^\\circ$.",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "За значение углового радиуса $21,8^\\circ$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "За значение углового радиуса $45,7^\\circ$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "4",
+        "description": "Кольца гало красноватые изнутри и фиолетовые снаружи. Что можно сказать о показателе преломления льда для красных и фиолетовых лучей?",
+        "solution": "Так как внешняя часть кольца гало фиолетового цвета, значит фиолетовые лучи были преломлены сильнее, чем красные. Следовательно показатель преломления для красных лучей меньше показателя преломления фиолетовых лучей.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Показатель преломления для красных лучей меньше показателя преломления фиолетовых лучей",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
