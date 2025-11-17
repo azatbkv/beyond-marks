@@ -1,0 +1,694 @@
+[
+  {
+    "number": 1,
+    "name": "«Солянка»",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "1.1",
+        "description": "Физик Нурдаулет работает в Казкосмос и проводит необходимые расчеты для перелета ракеты “Шу” с околоземной орбиты на круговую орбиту, близкую к орбите Сатурна. По рассчетам Нурдаулета “Шу” совершит этот переход по эллиптической орбите, как показано жирной линией на рисунке справа. Это достигается с помощью начального изменения скорости вблизи орбиты Земли $\\Delta v_1$, а затем второго изменения скорости вблизи орбиты Сатурна $\\Delta v_2$. (По рассчетам эти изменения скоростей вызваны мгновенными импульсами, при которых пренебрегается изменением массы ракеты). Земля и Сатурн движутся по лежащим в одной плоскости круговым орбитам с радиусами $R_з = 150 \\cdot 10^6 \\, \\text{км}$ и $R_c = 1350 \\cdot 10^6 \\, \\text{км}$ соответственно. Помогите Нурдаулету найти:\n1. Скорости движения Земли $v_з$ и Сатурна $v_c$ по их круговым орбитам.\n2. Величину начального изменения скорости $\\Delta v_1$, необходимую для перехода с круговой орбиты Земли на эллиптическую орбиту.\n3. Рассчитайте величину изменения скорости $\\Delta v_2$, необходимую для перехода с эллиптической орбиты на круговую орбиту Сатурна.\n4. Рассчитайте угловое расстояние между Землей и Сатурном, измеренное от Солнца, в момент запуска при условии, что ракета, стартовавшая с Земли, прибывает на Сатурн.\nМасса Солнца – $M_s = 2 \\cdot 10^{30} \\, \\text{кг}$, гравитационная постоянная – $G = 6,67 \\cdot 10^{-11} \\, \\text{м}^3 \\cdot \\text{с}^{-2} \\cdot \\text{кг}^{-1}$.",
+        "solution": "1. Для любого движения по круговой орбите будет справедливо равенство:<br> $$ G \\cdot \\frac{M \\cdot m}{R^2} = m \\frac{v^2}{R} $$ <br> $$ v = \\sqrt{G \\cdot \\frac{M}{R}} $$ <br>Для Земли:<br> $$ v_з = \\sqrt{G \\cdot \\frac{M_s}{R_з}} \\approx 29,8 \\, \\text{км/с} $$ <br>Для Сатурна:<br> $$ v_c = \\sqrt{G \\cdot \\frac{M_s}{R_c}} \\approx 9,94 \\, \\text{км/с.} $$ <br>2. Для любого эллиптического движения справедливы следующие равенства энергии и момента импульса:<br> $$ m \\frac{v_1^2}{2} - G \\cdot \\frac{M \\cdot m}{R_1} = m \\frac{v_2^2}{2} - G \\cdot \\frac{M \\cdot m}{R_2} $$ <br> $$ m v_1 R_1 = m v_2 R_2 $$ <br>Выразим $\\frac{R_1}{R_2} = \\beta$. $R_1$ является малой осью, которая в случае нашей задачи является круговой орбитой земли $R_з$.<br> $$ v_1 = v_з \\cdot \\sqrt{\\frac{2}{1+\\beta}} $$ <br> $v_1$ больше орбитальной скорости Земли $v_з$, поэтому начальное увеличение скорости для ракеты “Шу” является отрицательным и равно:<br> $$ \\Delta v_1 = v_з \\left( \\sqrt{\\frac{2}{1+\\beta}} - 1 \\right) \\approx 10,2 \\, \\text{км/с.} $$ <br>3. Теперь решим уравнения (5) и (6) относительно $v_2$:<br> $$ v_2 = v_c \\cdot \\sqrt{\\frac{2}{1+\\frac{1}{\\beta}}} $$ <br> $v_2$ меньше орбитальной скорости Сатурна $v_c$, поэтому второе уменьшение скорости для ракеты “Шу” является положительным и равно:<br> $$ \\Delta v_2 = v_c \\left( 1 - \\sqrt{\\frac{2}{1+\\frac{1}{\\beta}}} \\right) \\approx 5,5 \\, \\text{км/с} $$ <br>4. По 3 закону Кеплера мы можем найти время орбитального перемещения ракеты “Шу”:<br> $$ \\frac{T}{T_c} = \\frac{1}{2} \\frac{((R_з+R_c)/2)^{1,5}}{R_c^{1,5}} = \\frac{1}{2} \\left( \\frac{\\beta+1}{2} \\right)^{1,5} $$ <br>Угол на который переместился Сатурн за это время:<br> $$ \\gamma = 2\\pi \\cdot \\frac{T}{T_c} = \\pi \\cdot \\left( \\frac{\\beta+1}{2} \\right)^{1,5} $$ <br>Начальное угловое расстояние между Землей и Сатурном:<br> $$ \\alpha = \\pi \\left( 1 - \\left( \\frac{\\beta+1}{2} \\right)^{1,5} \\right) \\approx 0,59\\pi $$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "Формула (3) и численный ответ: $v_з = \\sqrt{G \\cdot \\frac{M_s}{R_з}} \\approx 29,8 \\, \\text{км/с}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (4) и численный ответ: $v_c = \\sqrt{G \\cdot \\frac{M_s}{R_c}} \\approx 9,94 \\, \\text{км/с}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (5): $m \\frac{v_1^2}{2} - G \\cdot \\frac{M \\cdot m}{R_1} = m \\frac{v_2^2}{2} - G \\cdot \\frac{M \\cdot m}{R_2}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (6): $m v_1 R_1 = m v_2 R_2$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (11): $v_1^2 = G \\frac{M}{R_1} \\frac{2}{1+\\beta}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (12): $v_1 = v_з \\sqrt{\\frac{2}{1+\\beta}}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (13): $\\Delta v_1 = v_з(\\sqrt{\\frac{2}{1+\\beta}} - 1)$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ $\\Delta v_1 \\approx 10,2 \\, \\text{км/с}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (15): $v_2^2 = G \\frac{M}{R_2} \\frac{2}{1+\\frac{1}{\\beta}}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (16): $v_2 = v_c \\sqrt{\\frac{2}{1+\\frac{1}{\\beta}}}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (17): $\\Delta v_2 = v_c(1 - \\sqrt{\\frac{2}{1+\\frac{1}{\\beta}}})$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численный ответ $\\Delta v_2 \\approx 5,5 \\, \\text{км/с}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (18): $\\frac{T}{T_c} = \\frac{1}{2} (\\frac{\\beta+1}{2})^{1,5}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (19): $\\gamma = \\pi (\\frac{\\beta+1}{2})^{1,5}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (20): $\\alpha = \\pi(1 - (\\frac{\\beta+1}{2})^{1,5})$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ $\\alpha \\approx 0,59\\pi$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.2",
+        "description": "Два конденсатора соединены параллельно через сопротивление $R$ (см. рисунок). В начальный момент разность потенциалов на обкладках конденсаторов была равна $470 \\, \\text{В}$. Пластины одного из конденсаторов равномерно раздвигают на расстояние $1,8 \\, \\text{мм}$ за время $3 \\, \\text{с}$ и с той же скоростью приводят в прежнее положение. Определите совершенную механическую работу при этом. Конденсаторы считайте плоскими, площадь пластин равна $400 \\, \\text{см}^2$, расстояние между обкладками $0,6 \\, \\text{мм}$, сопротивление резистора $25 \\, \\text{кОм}$. Диэлектрическая постоянная $\\varepsilon_0 = 8,85 \\cdot 10^{-12} \\, \\text{Ф/м}$.",
+        "solution": "В начальный момент времени на каждом из конденсаторов был заряд $Q_0 = C_0 U_0$. При раздвижении пластин одного из конденсаторов его емкость уменьшается в зависимости от времени как $C_1 = C_0 \\frac{d_0}{d_0+vt}$. Следовательно, заряд на нем станет $Q_1 < Q_0$. На втором конденсаторе заряд станет $Q_2 > Q_0$. Так как общий заряд всей системы не изменился, то $2Q_0 = Q_1 + Q_2$.<br>Так как $IR = \\frac{dQ_1}{dt}R \\propto \\frac{Q_0 R}{t} \\ll \\frac{Q_0}{C_0}$, разность потенциалов на конденсаторах можно считать одинаковой и равной $U_1$. При этом, $U_1 = \\frac{Q_1}{C_1}$ и $U_1 = \\frac{Q_2}{C_0}$.<br>Тогда с учетом (1) и (2) $Q_1 = 2Q_0 \\frac{C_1}{C_1+C_0} = 2Q_0 \\frac{d_0}{2d_0+vt}$.<br>Ток, протекший по сопротивлению $R$ при раздвижении $I = \\frac{dQ_1}{dt} = \\frac{2Q_0 v d_0}{(2d_0+vt)^2}$.<br>Изменение энергии $Q = \\int_0^t I^2 R dt = \\frac{(Q_0)^2 v R}{6d_0} \\left[1 - \\frac{1}{(1+vt/2d_0)^3}\\right]$.<br> $\\Delta W = \\frac{(2Q_0 \\frac{d_0}{2d_0+vt})^2}{2C_0 \\frac{d_0}{d_0+vt}} + \\frac{(2Q_0 \\frac{d_0+vt}{2d_0+vt})^2}{2C_0} - \\frac{(Q_0)^2}{C_0} = 0$.<br>После раздвижения и сближения пластин одного из конденсаторов система приходит в первоначальное состояние. Следовательно, механическая работа определяется только потерями на джоулево тепло при прохождении тока по сопротивлению $R$.<br>Получим полную механическую энергию $A = 2Q = \\frac{(Q_0)^2 v R}{3d_0} \\left[1 - \\frac{1}{(1+\\frac{vt}{2d_0})^3}\\right] = 6 \\cdot 10^{-10} \\, \\text{Дж}$.",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Формула (1): $2Q_0 = Q_1 + Q_2$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Приближение: $IR = \\frac{dQ_1}{dt}R \\propto \\frac{Q_0 R}{t} \\ll \\frac{Q_0}{C_0}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (2): $U_1 = Q_1/C_1$ и $U_1 = Q_2/C_0$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (3): $Q_1 = 2Q_0 \\frac{C_1}{C_1+C_0} = 2Q_0 \\frac{d_0}{2d_0+vt}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (4): $I = \\frac{dQ_1}{dt} = \\frac{2Q_0 v d_0}{(2d_0+vt)^2}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (5): $Q = \\int_0^t I^2 R dt = \\frac{(Q_0)^2 v R}{6d_0} \\left[1 - \\frac{1}{(1+vt/2d_0)^3}\\right]$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (6): $\\Delta W = ... = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (7): $A = 2Q = \\frac{(Q_0)^2 v R}{3d_0} \\left[1 - \\frac{1}{(1+\\frac{vt}{2d_0})^3}\\right] = 6 \\cdot 10^{-10} \\, \\text{Дж}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.3",
+        "description": "Для того, чтобы обратить изображение используют призму Дове, которая является усечённой и равнобедренной. Определите длину $l$ основания призмы, если её высота $h = 2,1 \\, \\text{см}$, а показатель преломления стекла равен $n = 1,41$. Призма должна обращать пучок света максимального сечения.",
+        "solution": "Сечение будет максимальным если луч из точки В идёт в точку D, а луч из точки А идёт в точку С. Чтобы свет не выходил из призмы должно выполняться следующее условие:<br> $$ \\sin \\alpha_{кр} = \\frac{1}{n} $$ <br>Из уравнения Снеллиуса<br> $$ \\sin \\alpha_{кр} = n \\sin \\beta $$ <br>Итого, получаем<br> $$ l = h(1 + 1/\\text{tg}(\\alpha - \\beta)) $$ <br>Тогда $l = 10 \\, \\text{см}$.",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "За правильное утверждение о максимальном сечении",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (1): $\\sin \\alpha_{кр} = \\frac{1}{n}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (2): $\\sin \\alpha_{кр} = n \\sin \\beta$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (3): $l = h(1 + 1/\\text{tg}(\\alpha - \\beta))$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Получен правильный численный ответ $l = 10 \\, \\text{см}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Тривиальная задача",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "2.1",
+        "description": "Пусть груз движется по окружности радиуса $r_0$. Определите значение угловой скорости вращения груза $\\omega_0$, при которой шарик находиться в состоянии равновесия.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формула (1): $\\omega_0 = \\sqrt{\\frac{Mg}{mr_0}}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.2",
+        "description": "Если шарику массой $M$ придать небольшой направленный вертикально вверх импульс $\\Delta p$, то шарик начинает колебаться. Определите период малых колебаний $T$ шарика.",
+        "solution": "",
+        "maxPoints": 2.25,
+        "subparts": [
+          {
+            "description": "Формула (5): $\\omega r^2 = \\omega_0 r_0^2$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (6): $\\omega = \\frac{\\omega_0 r_0^2}{r^2}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (8): $\\frac{m(-2\\omega_0^2 r_0^4 r' + 2rr'r'')}{r^3 \\cdot 2} + Mgr' + Mr'r'' = 0$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (9): $\\frac{-m\\omega_0^2 r_0^4}{r^3} + mr'' + Mg + Mr'' = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (11): $3m\\omega_0^2 x + (m+M)x'' = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (12): $\\omega = \\sqrt{\\frac{3m}{m+M}} \\omega_0$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.3",
+        "description": "Нарисуйте качественно траекторию движения каждого из двух объектов.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Качественный рисунок верхнего груза",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Качественный рисунок нижнего груза",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.4",
+        "description": "Определите уравнения движения каждого из объектов в координатах $x(t), y(t)$ как показано на рисунке.",
+        "solution": "",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Формула (13): $y_M = A \\sin(\\omega t + \\phi)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (14): $x_m = (r_0 + A \\sin(\\omega t + \\phi)) \\sin(\\omega_0 t + \\beta)$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (15): $y_m = (r_0 + A \\sin(\\omega t + \\phi)) \\cos(\\omega_0 t + \\beta)$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.5",
+        "description": "Найдите максимальное расстояние $r$ от отверстия, на которое отклонится груз в процессе движения. Считайте, что $r \\gg r_0$.",
+        "solution": "",
+        "maxPoints": 1.75,
+        "subparts": [
+          {
+            "description": "Формула (16): $\\frac{m\\omega_0^2 r_0^2}{2} + \\frac{\\Delta p^2}{2(m+M)} = Mg(r-r_0) + \\frac{m\\omega^2 r^2}{2}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (17): $\\omega_0 r_0^2 = \\omega r^2$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (18): $\\frac{m\\omega_0^2 r_0^2}{2} + \\frac{\\Delta p^2}{2(m+M)} = Mg(r-r_0) + \\frac{m\\omega_0^2 r_0^4}{2r^2}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (19): $\\frac{m\\omega_0^2 r_0^2}{2} + \\frac{\\Delta p^2}{2(m+M)} \\approx Mg(r-r_0)$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (20): $r = \\frac{\\frac{m\\omega_0^2 r_0^2}{2} + \\frac{\\Delta p^2}{2(m+M)} + Mgr_0}{Mg}$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.6",
+        "description": "Докажите, что вне зависимости от величины импульса $\\Delta p$ траектория груза будет замкнутой, считая стол бесконечно большим, а веревку – достаточно длинной.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Сила тяжести не уменьшается с расстоянием",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.7",
+        "description": "Определите длину $l$ веревки, которая находится на плоскости при условии, что она не изменяется со временем.",
+        "solution": "",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Формула (21): $\\frac{\\omega_0^2((L-l)\\sin\\alpha + r)}{g} = \\tan\\alpha$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (24): $T = \\frac{Mg}{\\cos\\alpha} = M\\omega_0^2((L-l) + \\frac{r}{\\sin\\alpha})$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (26): $m(r+l) = M((L-l) + \\frac{r}{\\sin\\alpha})$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (28): $l = \\frac{Mg}{m\\omega_0^2} - r$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.8",
+        "description": "Найдите соотношение между $r$ и $L$, при которых возможно указанное выше условие.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формула (29): $l > 0$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (30): $\\frac{Mg}{m\\omega_0^2} > r$",
+            "points": 0.25,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.9",
+        "description": "Считая длину веревки равной $L$, определите период малых колебаний данной системы. Примечание: $(1+x)^n \\approx 1+nx$, при $x \\ll 1$.",
+        "solution": "",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "Формула (32): $(m+M)x'' + mla'' = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (33): $mla'' = -mga - mx''$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (35): $\\frac{(m+M)g}{Ml}\\alpha + \\alpha'' = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (36): $T = 2\\pi\\sqrt{\\frac{Ml}{(m+M)g}}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Звуковая линза",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "3.1",
+        "description": "Являются ли колебания газа в звуковой волне изобарическим, изохорным, изотермическим, адиабатным или другим (опишите его) процессом?",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Выбран адиабатный процесс",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.2",
+        "description": "Выразите $\\frac{dP}{d\\rho}$ для идеального газа через его температуру, используя ваш результат из пункта 1.",
+        "solution": "",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "Формула (1): $\\Delta(\\rho V) = 0$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (2): $\\Delta V = -\\frac{V}{\\rho}\\Delta\\rho$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (3): $Q = \\Delta U + A = 0$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (4): $\\Delta U = \\frac{i}{2}nR\\Delta T$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (5): $A = P\\Delta V$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (6): $\\frac{\\Delta P}{\\Delta \\rho} = \\gamma \\frac{P}{\\rho}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (7): $\\frac{P}{\\rho} = \\frac{RT}{M}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (8): $\\frac{\\Delta P}{\\Delta \\rho} = \\gamma \\frac{RT}{M}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.3",
+        "description": "Воздух примерно состоит из 78% азота и 22% кислорода по концентрации. Рассчитайте скорость звука в воздухе при нормальных условиях.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формула (9): $M(\\text{air}) = 0.22M(O_2) + 0.78M(N_2)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение в формуле (10): $v_{air} = \\sqrt{\\frac{\\gamma RT}{M}} = 346 \\, \\text{м/с}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.4",
+        "description": "Рассчитайте скорость звука в углекислом газе и гелии при нормальных условиях.",
+        "solution": "",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Численное значение в формуле (11): $v_{CO_2} = 274 \\, \\text{м/с}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение в формуле (12): $v_{He} = 1015 \\, \\text{м/с}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.5",
+        "description": "Используя оптическую аналогию для звуковых волн, найдите относительный коэффициент преломления $n_{CO_2}$ углекислого газа по отношению к воздуху.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Численное значение в формуле (13): $n_{CO_2} = \\frac{v_{air}}{v_{CO_2}} = 1.26$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.6",
+        "description": "Пусть звуковая волна распространяется близко к центру шара. Найдите фокусное расстояние шара с показателем преломления $n_{CO_2}$ и радиусом $R = 0,3 \\, \\text{м}$. Фокусное расстояние – это расстояние от центра шара до точки фокусировки звуковых волн.",
+        "solution": "",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Формула (14): $n_{CO_2} = \\frac{\\sin(\\alpha)}{\\sin(\\beta)} \\approx \\frac{\\alpha}{\\beta}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (15): $F = R \\sin(\\alpha) / \\sin(2\\alpha - 2\\beta) \\approx \\frac{R\\alpha}{2\\alpha-2\\beta} \\approx \\frac{Rn_{CO_2}}{2(n_{CO_2}-1)}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение в формуле (15): $F_{CO_2} = 0.3 \\times \\frac{1.26}{0.52} = 0.73 \\, \\text{м}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.7",
+        "description": "Объясните ослабление звука при использовании шаров, наполненных гелием.",
+        "solution": "",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Дано верное объяснение",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.8",
+        "description": "Во сколько раз гелиевый шарик радиусом $R = 0,3 \\, \\text{м}$ ослабляет звук от далёкого источника звука для слушателя на расстоянии $L = 1 \\, \\text{м}$ от центра шара? Отражением звука и его дифракцией пренебречь.",
+        "solution": "",
+        "maxPoints": 1.9,
+        "subparts": [
+          {
+            "description": "Формула (16): $|F_{He}| = \\frac{Rn_{He}}{2(n_{He}-1)}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (17): $\\frac{I'}{I} = (\\frac{r}{r'})^2 = (\\frac{2(1-n_{He})(F_{He}+L)}{R})^2 = 4.7$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.9",
+        "description": "Вычислите разность интенсивности звука из пункта 8 в децибелах. Изменение интенсивности звука в 10 раз соответствует разнице в 10 децибел.",
+        "solution": "",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Формула (18): $10 \\log(\\frac{I'}{I}) = 7 \\, \\text{дБ}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.10",
+        "description": "Найдите фокусное расстояние шарика, наполненного гексафторидом серы $(SF_6)$.",
+        "solution": "",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Формула (19): $M(SF_6) = M(S) + 6M(F)$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение в формуле (20): $n_{SF_6} = 2.3$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула (21): $F = \\frac{R}{n-1}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Численное значение в формуле (21): $F_{SF_6} = 0.23 \\, \\text{м}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
