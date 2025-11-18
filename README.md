@@ -13,6 +13,14 @@ Install all the dependencies using `pnpm`:
 pnpm install
 ```
 
+You need to add the following environment variables to your .env file:
+```
+GOOGLE_CLIENT_ID="<YOUR_ID>"
+GOOGLE_CLIENT_SECRET="<YOUR_SECRET>"
+GITHUB_CLIENT_ID="<YOUR_ID>"
+GITHUB_CLIENT_SECRET="<YOUR_SECRET>"
+```
+
 Now, you need to create a D1 database using the Wrangler CLI:
 ```sh
 pnpm wrangler d1 create <YOUR_DATABASE_NAME>
