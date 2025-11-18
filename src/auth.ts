@@ -10,6 +10,10 @@ import { getRequestEvent } from '$app/server';
 const db = env.LOCAL_DB ? createLibSqlClient(env.LOCAL_DB) : null;
 
 if (!db) throw new Error("LOCAL_DB is not set");
+if (!env.GOOGLE_CLIENT_ID) throw new Error("GOOGLE_CLIENT_ID is not set");
+if (!env.GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE_CLIENT_SECRET is not set");
+if (!env.GITHUB_CLIENT_ID) throw new Error("GITHUB_CLIENT_ID is not set");
+if (!env.GITHUB_CLIENT_SECRET) throw new Error("GITHUB_CLIENT_SECRET is not set");
  
 export const auth = betterAuth({
     trustedOrigins: env.TRUSTED_ORIGINS?.split(',') ?? [],

@@ -1,6 +1,11 @@
 import { defineConfig } from 'drizzle-kit';
+import dotenv from "dotenv";
 
-if (!process.env.LOCAL_DB) throw new Error('DATABASE_URL is not set');
+dotenv.config({
+  path: ".env.local",
+});
+
+if (!process.env.LOCAL_DB) throw new Error('LOCAL_DB is not set');
 
 export default defineConfig({
   schema: './src/lib/server/db/schema.ts',
