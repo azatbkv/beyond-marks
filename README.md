@@ -8,17 +8,29 @@ git clone https://github.com/azatbkv/beyond-marks
 cd beyond-marks
 ```
 
+To use this project you need to install `pnpm`:
+```sh 
+npm install -g pnpm
+```
+
 Install all the dependencies using `pnpm`:
 ```sh
 pnpm install
 ```
 
-You need to add the following environment variables to your .env file:
+Generate a `BETTER_AUTH_SECRET`:
+```sh 
+openssl rand -base64 32
 ```
-GOOGLE_CLIENT_ID="<YOUR_ID>"
-GOOGLE_CLIENT_SECRET="<YOUR_SECRET>"
-GITHUB_CLIENT_ID="<YOUR_ID>"
-GITHUB_CLIENT_SECRET="<YOUR_SECRET>"
+
+You need to add the following secret keys to Cloudflare Workers Secrets using `pnpm dlx wrangler secret put <KEY_NAME>`:
+```sh
+pnpm dlx wrangler secret put GOOGLE_CLIENT_ID
+pnpm dlx wrangler secret put GOOGLE_CLIENT_SECRET
+pnpm dlx wrangler secret put GITHUB_CLIENT_ID
+pnpm dlx wrangler secret put GITHUB_CLIENT_SECRET
+pnpm dlx wrangler secret put BETTER_AUTH_SECRET
+pnpm dlx wrangler secret put ADMIN_USER_ID # this is done later after logging as the admin
 ```
 
 Now, you need to create a D1 database using the Wrangler CLI:
@@ -45,7 +57,23 @@ Apply existing migrations to your database using a `pnpm` command:
 pnpm migrate:prod
 ```
 
+Finally, deploy a production version of your app to Cloudfare Workers:
+
+```sh
+pnpm run deploy
+```
+
 ## Developing
+To deploy locally, you need to add the following environment variables to your `.env` file:
+```
+GOOGLE_CLIENT_ID="<YOUR_ID>"
+GOOGLE_CLIENT_SECRET="<YOUR_SECRET>"
+GITHUB_CLIENT_ID="<YOUR_ID>"
+GITHUB_CLIENT_SECRET="<YOUR_SECRET>"
+BETTER_AUTH_SECRET="<YOUR_SECRET"
+LOCAL_DB=file:local.db
+ADMIN_USER_ID="<YOUR_ID>"
+```
 
 To run the development server, you need to apply migrations to the `local.db` using a `pnpm` command:
 ```sh
@@ -56,12 +84,4 @@ Once you did this, you can start a development server:
 
 ```sh
 pnpm dev
-```
-
-## Building
-
-To deploy a production version of your app to Cloudfare Workers:
-
-```sh
-pnpm run deploy
 ```
