@@ -45,7 +45,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 
   if (gradeParam) {
     query = query.innerJoin(grades, eq(problems.gradeId, grades.id));
-    problemFoundConditions.push(eq(grades.grade, parseInt(gradeParam)));
+    problemFoundConditions.push(eq(grades.grade, gradeParam));
   }
 
   // @ts-expect-error drizzle type noise

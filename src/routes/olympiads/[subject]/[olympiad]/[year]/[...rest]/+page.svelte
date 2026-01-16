@@ -331,7 +331,7 @@
                     >
                       <span class="block break-words">
                         {@html marked.parse(
-                          `${part.number.length !== 0 ? part.number + '\\. ' : ''}${part.description}`
+                          `${part.number.length !== 0 ? `<span class="font-semibold">${part.number.replaceAll(".", "\\.").replace(/(?<![.,?!])$/, "\\.") + " "}</span>` : ''}${part.description}`
                         )}
                       </span>
                     </h3>
@@ -358,7 +358,7 @@
                 <p class="mb-1 w-full overflow-hidden break-words md:mr-auto md:mb-0">
                   <span class="block break-words">
                     {@html marked.parse(
-                      `${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
+                      `<span class="font-medium">${part.number.length !== 0 ? part.number.replace(/\.\s.*$/, "") + '\\.' : ''}${Number(subpartIndex + 1)}\\. </span>${subpart.description}`
                     )}
                   </span>
                 </p>
@@ -394,7 +394,7 @@
                   <p class="mb-1 w-full overflow-hidden break-words md:mr-auto md:mb-0">
                     <span class="block break-words">
                       {@html marked.parse(
-                        `${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. ${childSubpart.description}`
+                        `<span class="font-medium">${part.number.length !== 0 ? part.number.replace(/\.\s.*$/, "") + '\\.' : ''}${Number(subpartIndex + 1)}\\.${Number(childSubpartIndex + 1)}\\. </span>${childSubpart.description}`
                       )}
                     </span>
                   </p>

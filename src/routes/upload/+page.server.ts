@@ -34,12 +34,13 @@ export const actions: Actions = {
     const yearDate = typeof yearRaw === 'string' ? parseInt(yearRaw, 10) : NaN;
     if (!Number.isFinite(yearDate)) return { error: 'bad year' };
 
-    const gradeRaw = formData.get('grade');
-    let gradeNumber = null;
-    if (gradeRaw) {
-      gradeNumber = typeof gradeRaw === 'string' ? parseInt(gradeRaw, 10) : NaN;
-      if (!Number.isFinite(gradeNumber)) return { error: 'bad grade' };
-    }
+    const gradeNumber = formData.get('grade');
+    if (typeof gradeNumber !== 'string') return { error: 'bad grade' };
+    // let gradeNumber = gradeRaw;
+    // if (gradeRaw) {
+    //   gradeNumber = typeof gradeRaw === 'string' ? parseInt(gradeRaw, 10) : NaN;
+    //   if (!Number.isFinite(gradeNumber)) return { error: 'bad grade' };
+    // }
 
     const file = formData.get('file');
     if (!(file instanceof File)) {

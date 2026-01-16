@@ -19,7 +19,7 @@
     </div>
     <div>
       <label for="grade">Grade</label>
-      <input id="grade" type="number" name="grade" />
+      <input id="grade" type="text" name="grade" />
     </div>
     <div>
       <label for="file">JSON file</label>

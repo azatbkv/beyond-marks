@@ -1,0 +1,336 @@
+[
+  {
+    "number": 1,
+    "name": "",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 8.0,
+    "parts": [
+      {
+        "number": "а",
+        "description": "Определите при какой $h_{\\text{min}}$ минимальной и $h_{\\text{max}}$ максимальной значениях высоты пластилин сможет коснуться бруска.",
+        "solution": "Чтобы найти минимальную высоту $h$ нужно найти момент времени когда край плиты только доедет до точки падения шарика<br> $$ v_0 t - \\frac{\\mu g t^2}{2} = x \\quad (1) $$ <br> $$ t = \\frac{v_0 \\pm \\sqrt{v_0^2 - 2\\mu g x}}{\\mu g} \\quad (2) $$ <br>найдем время за которое брусок остановится<br> $$ v_0 = \\mu g t $$ <br> $$ t = \\frac{v_0}{\\mu g} $$ <br>как мы видим время движения не может быть больше, поэтому мы отбрасываем корень со знаком плюс<br><br> $$ t = \\frac{v_0 - \\sqrt{v_0^2 - 2\\mu g x}}{\\mu g} \\quad (3) $$ <br>Подставляем значение времени в уравнение падения пластилина<br> $$ h = \\frac{g t^2}{2} = \\frac{g}{2} \\left( \\frac{v_0 - \\sqrt{v_0^2 - 2\\mu g x}}{\\mu g} \\right)^2 \\quad (4) $$ <br>Подставляем значения<br> $$ h = 1,25 \\quad (5) $$ <br><br>Теперь чтобы найти максимальную высоту предполагаем что пластилин упадет на левый край бруска. Брусок за это время должен пройти дистанцию $x + L$ <br> $$ v_0 t - \\mu g \\frac{t^2}{2} = x + L \\quad (6) $$ <br> $$ t = \\frac{v_0 \\pm \\sqrt{v_0^2 - 2\\mu g (x+L)}}{\\mu g} $$ <br>Аналогично убираем корень с плюсом<br> $$ h = \\frac{g}{2} \\left( \\frac{v_0 - \\sqrt{v_0^2 - 2\\mu g (x+L)}}{\\mu g} \\right)^2 $$ <br> $$ h = 5 \\text{ м} \\quad (7) $$",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "Уравнение движения края плиты",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для времени",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Корректное обоснование знака",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Подстановка времени в уравнение падения пластилина",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ $h = 1,25$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение движения для левого края бруска (максимальная высота)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ $h = 5$ м",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "б",
+        "description": "Найдите зависимость скорости бруска с прилипшим к нему пластилином сразу после прилипания пластилина от высоты $h$.",
+        "solution": "Перед падением у пластилина будет скорость и соответственно импульс<br> $$ -m v_1 = \\Delta p_{\\text{в}} \\quad (8) $$ <br>Изменение импульса обусловлено моментальным подскоком силы реакции опоры<br> $$ \\Delta p_{\\text{в}} = F_N \\Delta t $$ <br>Резкий скачок силы реакции также подразумевает резкий скачок силы трения который уменьшить импульс по горизонтали<br> $$ \\mu F_N \\Delta t = \\Delta p_{\\text{г}} \\quad (9) $$ <br>Закон сохранения импульса<br> $$ p_1 - \\Delta p_{\\text{г}} = p_2 \\quad (10) $$ <br> $$ p_1 = M v_2 $$ <br> $$ p_2 = (m + M) u $$ <br> $$ M v_2 - \\mu m v_1 = (m + M) u $$ <br>из за силы трения скорость бруска прямо перед падением будет равна<br> $$ v_2 = v_0 - \\mu g t \\quad (11) $$ <br>Время падения $t = \\sqrt{\\frac{2h}{g}}$, скорость пластилина перед падением $v_1 = \\sqrt{2gh}$ <br><br>Подставляем:<br> $$ M \\left( v_0 - \\mu g \\sqrt{\\frac{2h}{g}} \\right) - \\mu m \\sqrt{2gh} = (m + M) u \\quad (12) $$ <br>Уравнение зависимости скорости сразу после прилипания пластилина:<br> $$ u = \\frac{M v_0 - \\mu \\sqrt{2gh} (M+m)}{(m+M)} \\quad (13) $$",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "Импульс пластилина перед падением",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Связь импульса силы трения с изменением вертикального импульса",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Закон сохранения импульса по горизонтали",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Скорость бруска прямо перед падением",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение сохранения импульса с подставленными значениями",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Итоговая зависимость скорости $u$ от $h$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "в",
+        "description": "При какой высоте $h$ шайба сразу остановится после прилипания пластилина?",
+        "solution": "Чтобы найти высоту $h$ при которой брусок сразу остановится после прилипания пластилина числитель в зависимости должен быть равен нулю<br> $$ M v_0 - \\mu \\sqrt{2gh} * (M + m) = 0 \\quad (14) $$ <br> $$ h = \\frac{1}{2g} * \\left( \\frac{M v_0}{\\mu (M+m)} \\right)^2 \\quad (15) $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Условие остановки бруска (числитель равен нулю)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ для высоты $h$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 8.0,
+    "parts": [
+      {
+        "number": "а",
+        "description": "Найдите минимальную начальную температуру воды $T_1$, чтобы при достижении теплового баланса кусок с монетой 100 тенге опустится на дно.",
+        "solution": "Чтобы кусок льда с монетой коснулся дна сила Архимеда должна быть равна силе притяжения :<br> $$ m_1 g + Mg = \\frac{m_1}{\\rho_m} \\rho_{\\text{в}} g + \\frac{M}{\\rho_{\\text{л}}} \\rho_{\\text{в}} g \\quad (1) $$ <br>где $M$ - оставшаяся масса подтаявшего куска льда<br> $$ M \\frac{\\rho_{\\text{в}} - \\rho_{\\text{л}}}{\\rho_{\\text{л}}} = m_1 \\frac{\\rho_m - \\rho_{\\text{в}}}{\\rho_m} \\quad M = \\frac{m_1 \\rho_{\\text{л}} (\\rho_m - \\rho_{\\text{в}})}{\\rho_m (\\rho_{\\text{в}} - \\rho_{\\text{л}})} = 53.12 \\text{ грамм} \\quad (2) $$ <br>(комментарий: 0,5 баллов дается даже если участник не рассчитал массу в числовом выражении)<br><br> $$ \\Delta m_1 = m_2 - M = 120 - 53.12 = 66.88 \\text{ грамм} $$ <br> $$ Q = \\lambda \\Delta m_1 \\quad (3) $$ <br> $$ Q = c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}} T_1 \\quad (4) $$ <br> $$ \\lambda \\Delta m_1 = c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}} T_1 $$ <br> $$ T_1 = \\frac{\\lambda \\Delta m_1}{c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}}} = \\frac{\\lambda (m_2 - \\frac{m_1 \\rho_{\\text{л}} (\\rho_m - \\rho_{\\text{в}})}{\\rho_m (\\rho_{\\text{в}} - \\rho_{\\text{л}})})}{c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}}} = 10.51^\\circ \\text{C} \\quad (5) $$",
+        "maxPoints": 4.5,
+        "subparts": [
+          {
+            "description": "Условие равновесия сил (Архимеда и тяжести)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для массы оставшегося льда $M$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Теплота плавления льда $Q = \\lambda \\Delta m_1$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Теплота отданная водой $Q = c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}} T_1$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Итоговое значение температуры $T_1$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "б",
+        "description": "Найдите начальную температуру $T_2$ второго льда с монетой 50 тенге после достижения теплового баланса треть кусочка льда растает.",
+        "solution": "Уравнение теплового баланса в этом случае будет иметь такой вид:<br> $$ \\lambda \\Delta m_2 + (0 - T_2)(c_m m_3 + c_{\\text{л}} m_2) = (T_1 - 0) c_{\\text{в}} \\rho_{\\text{в}} V_{\\text{в}} $$ <br> $$ \\Delta m_2 = \\frac{m_2}{3} $$ <br> $$ \\lambda \\Delta m_2 - T_2 (c_m m_3 + c_{\\text{л}} m_2) = T_1 c_{\\text{в}} \\rho_{\\text{в}} V_{\\text{в}} $$ <br> $$ T_2 = - \\frac{T_1 c_{\\text{в}} V_{\\text{в}} \\rho_{\\text{в}} - \\lambda \\cdot \\frac{m_2}{3}}{c_m m_3 + c_{\\text{л}} m_2} = -34.95^\\circ \\text{C} $$",
+        "maxPoints": 3.5,
+        "subparts": [
+          {
+            "description": "Уравнение теплового баланса для второго случая и вычисление температуры $T_2$",
+            "points": 3.5,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "",
+    "maxPoints": 7.0,
+    "weightedMaxPoints": 7.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Во сколько раз скорости $v_1$ и $v_2$ спутников были бы больше или меньше скоростей $u'_1$ и $u'_2$, с которыми спутники вращались бы по своим орбитам, если бы не было кабеля?",
+        "solution": "Если бы не было кабеля и спутники вращались по своим орбитам:<br> $$ m \\frac{u'^2}{R} = G \\frac{Mm}{R^2} \\quad (1) $$ <br> $$ u'_1 = \\sqrt{\\frac{GM}{R_1}} \\quad (2) $$ <br> $$ u'_2 = \\sqrt{\\frac{GM}{R_2}} \\quad (3) $$ <br>При наличии кабеля на спутники будет действовать сила натяжения<br> $$ m \\frac{v_1^2}{R_1} = G \\frac{Mm}{R_1^2} - T \\quad (4) $$ <br> $$ m \\frac{v_2^2}{R_2} = G \\frac{Mm}{R_2^2} + T \\quad (5) $$ <br><br>Скорости вращения спутников можно выразить через период вращения который в обоих случаях одинаков<br> $$ v_1 = \\frac{2\\pi R_1}{P}, \\quad v_2 = \\frac{2\\pi R_2}{P} $$ <br> $$ \\frac{4\\pi^2}{P^2} (R_1 + R_2) = GM \\frac{R_2^2 + R_1^2}{R_2^2 R_1^2} \\quad (6) $$ <br>Используя $R_2 = 2R_1$ <br> $$ v_1 = \\frac{2\\pi R_1}{P} = \\sqrt{\\frac{5GM}{12 R_1}} \\quad (7) $$ <br>Используя $R_1 = \\frac{R_2}{2}$ <br> $$ v_2 = \\frac{2\\pi R_2}{P} = \\sqrt{\\frac{10GM}{3 R_2}} \\quad (8) $$ <br><br> $$ \\frac{v_1}{u'_1} = \\sqrt{\\frac{5GM}{12 R_1}} / \\sqrt{\\frac{GM}{R_1}} = \\sqrt{\\frac{5}{12}} \\quad (9) $$ <br> $$ \\frac{v_2}{u'_2} = \\sqrt{\\frac{10GM}{3 R_2}} / \\sqrt{\\frac{GM}{R_2}} = \\sqrt{\\frac{10}{3}} \\quad (10) $$ <br>Из за наличия кабеля скорость вращения внутреннего спутника в $\\sqrt{\\frac{12}{5}}$ раз меньше чем должна быть без кабеля. У внешнего спутника наоборот скорость вращения в $\\sqrt{\\frac{10}{3}}$ больше из за наличия кабеля чем без него",
+        "maxPoints": 7.0,
+        "subparts": [
+          {
+            "description": "Уравнение движения спутника без кабеля",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение скорости $u'_1$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение скорости $u'_2$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение движения 1-го спутника с кабелем",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Уравнение движения 2-го спутника с кабелем",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение связывающее период и радиусы",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $v_1$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Выражение для $v_2$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Отношение $v_1 / u'_1$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Отношение $v_2 / u'_2$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "name": "",
+    "maxPoints": 7.0,
+    "weightedMaxPoints": 7.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Определите $d$ и $f_0$ системы если объект, расположенный очень далеко и имеющий угловое отклонение $\\alpha = 10^{-2}$ радиан, дает реальное изображение размером $h = 5 \\cdot 10^{-2} f$ на расстоянии $3f$ от линзы $L_2$.",
+        "solution": "Изображение объекта располагается на расстоянии<br> $$ d_{i1} = f \\quad (1) $$ <br>Высота изображение объекта после прохождения линзы $L_1$ <br> $$ h_{i1} = \\alpha f \\quad (2) $$ <br>Определяет расстояние от линзы $L_2$ до промежуточного и конечного изображения<br> $$ d_{i1} = d - f \\quad (3) $$ <br> $$ d_{i2} = 3f - d \\quad (4) $$ <br>Записывает увеличение используя высоты объекта и изображения<br> $$ \\Gamma = \\frac{h}{h_{i1}} \\quad (5) $$ <br>Использует расстояния для записи увеличения<br> $$ \\Gamma = - \\frac{d_{i2}}{d_{i1}} = - \\frac{3f - d}{d - f} \\quad (6) $$ <br> $$ \\frac{h}{h_{i1}} = \\frac{h}{\\alpha f} = \\frac{3f - d}{f - d} $$ <br>Получает конечный ответ<br> $$ d = \\frac{f}{2} = 5 \\text{ см} \\quad (7) $$ <br><br>Использует формулу тонкой линзы<br> $$ \\frac{1}{d_o} + \\frac{1}{d_i} = \\frac{1}{f_0} \\quad (8) $$ <br>Записывают формулу под условие задачи<br> $$ \\frac{1}{d_{i1}} + \\frac{1}{d_{i2}} = \\frac{1}{(-f/2)} + \\frac{1}{(5f/2)} = \\frac{1}{f_0} \\quad (9) $$ <br>Получает конечный ответ<br> $$ f_0 = - \\frac{5}{8} f = -6.25 \\text{ см} \\quad (10) $$",
+        "maxPoints": 7.0,
+        "subparts": [
+          {
+            "description": "Изображение объекта располагается на расстоянии",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Высота изображения после первой линзы",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Расстояние от второй линзы до промежуточного изображения",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Расстояние до конечного изображения",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Увеличение используя высоты",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Увеличение через расстояния",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ для расстояния $d$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Формула тонкой линзы",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Подстановка значений в формулу линзы",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Ответ для фокусного расстояния $f_0$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -96,7 +96,7 @@
         <div class="flex justify-between">
           <p>
             {@html marked.parse(
-              `${part.number.length !== 0 ? part.number + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
+              `${part.number.length !== 0 ? part.number.replace(/\.\s.*$/, "") + '\\.' : ''}${Number(subpartIndex + 1)}\\. ${subpart.description}`
             )}
           </p>
           {#if subpart.type === 'closed'}
@@ -117,12 +117,12 @@
             <p>
               child
               {@html marked.parse(
-                part.number +
-                  '.' +
+                part.number.replace(/\.\s.*$/, "") +
+                  '\\.' +
                   Number(subpartIndex + 1) +
-                  '.' +
+                  '\\.' +
                   Number(childSubpartIndex + 1) +
-                  '. ' +
+                  '\\. ' +
                   childSubpart.description
               )}
             </p>

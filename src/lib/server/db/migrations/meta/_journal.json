@@ -106,6 +106,13 @@
       "when": 1759241802777,
       "tag": "0014_tiny_pestilence",
       "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "6",
+      "when": 1768582027658,
+      "tag": "0015_loud_shatterstar",
+      "breakpoints": true
     }
   ]
 }

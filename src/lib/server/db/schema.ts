@@ -35,7 +35,7 @@ export const grades = sqliteTable(
   'grades',
   {
     id: integer().primaryKey(),
-    grade: integer().notNull(),
+    grade: text().notNull(),
     yearId: integer('year_id')
       .notNull()
       .references(() => years.id, { onDelete: 'cascade' })
