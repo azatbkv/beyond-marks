@@ -256,7 +256,7 @@
                         {#each problem.parts as part, partIndex}
                           <Sidebar.MenuSubItem class="flex justify-between">
                             <a class="decoration-2 hover:underline" href="#part-{part.number}"
-                              >Part {part.number}.</a
+                              >{part.number.replace(/^(?!.*\. )(.*)$/, "Part $1")}.</a
                             >
                             <Badge variant="outline"
                               >{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
@@ -306,7 +306,7 @@
       >
         <h1 class="mx-2 mb-4 min-w-0 overflow-hidden text-3xl break-words">
           <span class="block break-words">
-            Problem {problem.number}. {problem.name}
+            {problem.name ? `${problem.number}. ${problem.name}` : `Problem ${problem.number}.`}
           </span>
         </h1>
       </div>

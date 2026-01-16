@@ -38,7 +38,7 @@
       <a href="{data.yearDate}/{grade}/1">
         <Card.Root class="rounded-xs shadow-none hover:border-zinc-400">
           <Card.Content class="flex h-0 items-center justify-center">
-            <span class="text-base">Grade {grade}</span>
+            <span class="text-base">{grade.replace(/^(\d+)$/, "Grade $1")}</span>
           </Card.Content>
         </Card.Root>
       </a>
