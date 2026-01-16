@@ -256,9 +256,9 @@
                         {#each problem.parts as part, partIndex}
                           <Sidebar.MenuSubItem class="flex justify-between">
                             <a class="decoration-2 hover:underline" href="#part-{part.number}"
-                              >{part.number.replace(/^(?!.*\. )(.*)$/, "Part $1")}.</a
+                              >{part.number.replace(/^(?!.*\. )(.*)$/, "Part $1.")}</a
                             >
-                            <Badge variant="outline"
+                            <Badge variant="outline" class="max-h-6"
                               >{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
                             >
                           </Sidebar.MenuSubItem>
