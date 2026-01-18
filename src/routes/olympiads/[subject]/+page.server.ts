@@ -20,7 +20,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
     .all();
   if (!olympiadList) error(404);
   setHeaders({
-    'Cache-Control': 'public, max-age=3600'
+    'Cache-Control': 'public, max-age=36000'
   });
   return {
     subjectName: subject.name,

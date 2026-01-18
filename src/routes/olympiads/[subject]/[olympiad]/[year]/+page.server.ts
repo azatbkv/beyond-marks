@@ -39,7 +39,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
     .all();
   if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
   setHeaders({
-    'Cache-Control': 'public, max-age=3600'
+    'Cache-Control': 'public, max-age=36000'
   });
   return {
     subjectName: subject.name,

@@ -211,11 +211,11 @@
       </Button>
     </Sidebar.Trigger>
     <div class="justify-left flex">
-      <Badge class="text-md">{userScore.problemPoints}/{problem.maxPoints}</Badge>
+      <Badge variant="outline" class="ml-2 font-medium text-lg ml-2 text-lg bg-gray-100 hover:bg-gray-200 border-transparent px-2">{userScore.problemPoints}/{problem.maxPoints}</Badge>
     </div>
     {#if problem.maxPoints !== problem.weightedMaxPoints}
       <div class="justify-left flex">
-        <Badge class="text-md"
+        <Badge variant="outline" class="ml-2 font-medium text-lg ml-2 text-lg bg-gray-100 hover:bg-gray-200 border-transparent px-2"
           >{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
             2
           )}/{problem.weightedMaxPoints}</Badge
@@ -225,10 +225,10 @@
   </div>
   <Sidebar.Root>
     <Sidebar.Header />
-    <Sidebar.Content class="mx-2 mt-12">
+    <Sidebar.Content class="ml-2 mt-12">
       <Sidebar.Group>
         <Sidebar.GroupContent>
-          <Sidebar.Menu>
+          <Sidebar.Menu class="text-base tabular-nums">
             {#each allProblems as otherProblem}
               {#if otherProblem.number !== problem.number}
                 <Sidebar.MenuItem>
@@ -252,13 +252,13 @@
                       </p>
                     </Collapsible.Trigger>
                     <Collapsible.Content>
-                      <Sidebar.MenuSub>
+                      <Sidebar.MenuSub class="ml-1 mr-0 gap-1">
                         {#each problem.parts as part, partIndex}
-                          <Sidebar.MenuSubItem class="flex justify-between">
+                          <Sidebar.MenuSubItem class="flex justify-between gap-2 text-sm">
                             <a class="decoration-2 hover:underline" href="#part-{part.number}"
-                              >{part.number.replace(/^(?!.*\. )(.*)$/, "Part $1.")}</a
+                              >{part.number.replace(/^(?!.*\. )(.*)$/, "Part $1")}</a
                             >
-                            <Badge variant="outline" class="max-h-6"
+                            <Badge variant="secondary" class="tabular-nums font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 border-transparent px-2 h-6"
                               >{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
                             >
                           </Sidebar.MenuSubItem>
@@ -285,13 +285,12 @@
     <Sidebar.Footer class="mx-2 my-4">
       <div class="justify-left flex">
         <Label class="text-lg">Points:</Label>
-        <Badge class="ml-2 text-lg">{userScore.problemPoints}/{problem.maxPoints}</Badge>
+        <Badge variant="outline" class="ml-2 font-medium text-lg ml-2 text-lg bg-gray-100 hover:bg-gray-200 border-transparent px-2">{userScore.problemPoints}/{problem.maxPoints}</Badge>
       </div>
       {#if problem.maxPoints !== problem.weightedMaxPoints}
         <div class="justify-left flex">
           <Label class="text-lg">Weighted:</Label>
-          <Badge class="ml-2 text-lg"
-            >{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
+          <Badge variant="outline" class="ml-2 font-medium text-lg ml-2 text-lg bg-gray-100 hover:bg-gray-200 border-transparent px-2">{((userScore.problemPoints * problem.weightedMaxPoints) / problem.maxPoints).toFixed(
               2
             )}/{problem.weightedMaxPoints}</Badge
           >
@@ -299,14 +298,14 @@
       {/if}
     </Sidebar.Footer>
   </Sidebar.Root>
-  <main>
+  <main class="w-full">
     <div class="mx-2 mt-16 overflow-hidden md:mx-5">
       <div
         class="flex min-w-0 flex-col justify-between gap-2 py-1 break-words md:flex-row md:gap-0"
       >
         <h1 class="mx-2 mb-4 min-w-0 overflow-hidden text-3xl break-words">
           <span class="block break-words">
-            {problem.name ? `${problem.number}. ${problem.name}` : `Problem ${problem.number}.`}
+            {problem.name ? `${problem.number}. ${problem.name}` : `Problem ${problem.number}`}
           </span>
         </h1>
       </div>
@@ -320,31 +319,35 @@
           >
             <Accordion.Item value="item-1">
               <Accordion.Trigger
-                class="w-full cursor-pointer overflow-hidden pl-2 hover:no-underline md:pl-0"
+                class="w-full cursor-pointer overflow-hidden py-0 pl-2 hover:no-underline md:pl-0"
               >
-                <Card.Title class="w-full overflow-hidden font-normal">
+                <Card.Title class="w-full overflow-hidden font-normal text-lg">
+                  {#if part.number.length !== 0}
                   <div
-                    class="items-top flex min-w-0 flex-col gap-2 md:flex-row md:justify-between md:gap-0"
+                    class="items-top flex min-w-0 flex-col gap-2 md:flex-row md:justify-between md:gap-0 mb-2"
                   >
                     <h3
-                      class="min-w-0 flex-none overflow-hidden text-lg break-words md:max-w-[90%]"
+                      class="min-w-0 flex-none overflow-hidden md:max-w-[90%] font-semibold"
                     >
-                      <span class="block break-words">
-                        {@html marked.parse(
-                          `${part.number.length !== 0 ? `<span class="font-semibold">${part.number.replaceAll(".", "\\.").replace(/(?<![.,?!])$/, "\\.") + " "}</span>` : ''}${part.description}`
-                        )}
-                      </span>
+                      {@html marked.parse(
+                          part.number.replaceAll(".", "\\.").replace(/^(?!.*\. )(.*)$/, "Part $1")
+                      )}
                     </h3>
                     <Badge
-                      class="text-md ml-4 h-6 max-w-16 flex-grow self-end text-center md:self-auto"
+                      variant="outline"
+                      class="tabular-nums border-gray-300 text-gray-700 font-medium py-1 text-base ml-4 min-w-16 max-w-20 self-end text-center md:self-auto"
                       >{userScore.scores[partIndex].obtainedPoints}/{part.maxPoints}</Badge
                     >
                   </div>
+                  {/if}
+                  <p>
+                    {@html marked.parse(part.description)}
+                  </p>
                 </Card.Title>
               </Accordion.Trigger>
               <AccordionContent class="overflow-hidden">
-                <Card.Description class="mx-2 overflow-hidden break-words text-neutral-900 md:mx-4">
-                  <span class="text-md block overflow-hidden py-2 break-words">
+                <Card.Description class="mt-6 mx-2 overflow-hidden break-words text-neutral-900 md:mx-6">
+                  <span class="font-normal text-base block overflow-hidden py-2 break-words leading-loose">
                     {@html marked.parse(part.solution)}
                   </span>
                 </Card.Description>
@@ -368,7 +371,7 @@
                   </Label>
                   {#if subpart.type === 'closed'}
                     <Checkbox
-                      class="ml-2 h-6 w-6 cursor-pointer"
+                      class="ml-2 h-6 w-6 rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                       disabled={childSubpartsUsed(partIndex, subpartIndex)}
                       checked={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints ===
                         subpart.points}
@@ -404,7 +407,7 @@
                     </Label>
                     {#if childSubpart.type === 'closed'}
                       <Checkbox
-                        class="ml-2 h-6 w-6 cursor-pointer"
+                      class="ml-2 h-6 w-6 rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                         disabled={userScore.scores[partIndex].subparts[subpartIndex]
                           .obtainedPoints > 0 && childSubpart.points > 0}
                         checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
