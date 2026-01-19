@@ -6,7 +6,7 @@ on:
       - 'olympiads/**' # Only run when data files change
       - 'scripts/generate-seed.ts'
     branches:
-      - main
+      - master
 
 jobs:
   seed:
