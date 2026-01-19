@@ -245,7 +245,7 @@
                 <Collapsible.Root open class="group/collapsible">
                   <Sidebar.MenuItem>
                     <Collapsible.Trigger>
-                      <p class="text-left font-semibold tracking-tight">
+                      <p class="text-left font-medium tracking-tight">
                         {otherProblem.number}. {otherProblem.name !== ''
                           ? otherProblem.name
                           : `Problem ${otherProblem.number}`}
@@ -269,7 +269,7 @@
                 </Collapsible.Root>
               {:else}
                 <Sidebar.MenuItem>
-                  <p class="font-semibold tracking-tight">
+                  <p class="font-medium tracking-tight">
                     {otherProblem.number}. {otherProblem.name !== ''
                       ? otherProblem.name
                       : `Problem ${otherProblem.number}`}
@@ -327,7 +327,7 @@
                     class="items-top flex min-w-0 flex-col gap-2 md:flex-row md:justify-between md:gap-0 mb-2"
                   >
                     <h3
-                      class="min-w-0 flex-none overflow-hidden md:max-w-[90%] font-semibold"
+                      class="min-w-0 flex-none overflow-hidden md:max-w-[90%] font-medium"
                     >
                       {@html marked.parse(
                           part.number.replaceAll(".", "\\.").replace(/^(?!.*\. )(.*)$/, "Part $1")
@@ -347,7 +347,7 @@
               </Accordion.Trigger>
               <AccordionContent class="overflow-hidden">
                 <Card.Description class="mt-6 mx-2 overflow-hidden break-words text-neutral-900 md:mx-6">
-                  <span class="font-normal text-base block overflow-hidden py-2 break-words leading-loose">
+                  <span class="font-normal text-base block overflow-hidden py-2 break-words">
                     {@html marked.parse(part.solution)}
                   </span>
                 </Card.Description>
