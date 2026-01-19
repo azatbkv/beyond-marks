@@ -27,7 +27,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
     .all();
   if (!yearList) error(404);
   setHeaders({
-    'Cache-Control': 'public, max-age=36000'
+    'Cache-Control': 'public, max-age=3600'
   });
   return {
     subjectName: subject.name,

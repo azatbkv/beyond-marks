@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ setHeaders, locals }) => {
     .all();
   if (!subjectList) error(404);
   setHeaders({
-    'Cache-Control': 'public, max-age=36000'
+    'Cache-Control': 'public, max-age=3600'
   });
   return {
     subjectNames: subjectList.map((subject) => subject.name)

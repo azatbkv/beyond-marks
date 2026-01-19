@@ -371,7 +371,7 @@
                   </Label>
                   {#if subpart.type === 'closed'}
                     <Checkbox
-                      class="ml-2 h-6 w-6 rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
+                      class="ml-2 h-6 w-6 cursor-pointer rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                       disabled={childSubpartsUsed(partIndex, subpartIndex)}
                       checked={userScore.scores[partIndex].subparts[subpartIndex].obtainedPoints ===
                         subpart.points}
@@ -407,7 +407,7 @@
                     </Label>
                     {#if childSubpart.type === 'closed'}
                       <Checkbox
-                      class="ml-2 h-6 w-6 rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
+                      class="ml-2 h-6 w-6 cursor-pointer rounded-[4px] border-zinc-300 data-[state=checked]:bg-zinc-900 data-[state=checked]:border-zinc-900 data-[state=checked]:text-white disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                         disabled={userScore.scores[partIndex].subparts[subpartIndex]
                           .obtainedPoints > 0 && childSubpart.points > 0}
                         checked={userScore.scores[partIndex].subparts[subpartIndex].childSubparts[
