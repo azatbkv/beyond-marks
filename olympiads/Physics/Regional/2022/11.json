@@ -1,0 +1,263 @@
+[
+  {
+    "number": 1,
+    "name": "",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 8.0,
+    "parts": [
+      {
+        "number": "a",
+        "description": "Однородный бильярдный шар радиусом $r$ и массой $m$ лежит на бильярдном столе. Бильярдному шару дается горизонтальный импульс $p$ на расстоянии $\\beta r$ от его центра, где $\\beta < 1$ – число. Коэффициент трения между шаром и бильярдным столом равен $\\mu$. Шар и стол абсолютно жесткие тела. Найдите выражение для конечной скорости шара в зависимости от $p$, $m$ и $\\beta$.",
+        "solution": "Записывает момент импульса для шара относительно точки касания со столом:<br> $$ L = \\left( 1 + \\beta \\right) pr $$ <br>Для движения без проскальзывания должно выполняться условие:<br> $$ v = \\omega r $$ <br>Момент инерции шара относительно нижней точки (по теореме Штейнера):<br> $$ I = I_{CM} + mr^2 = \\frac{2}{5} mr^2 + mr^2 = \\frac{7}{5} mr^2 $$ <br>Связь момента импульса с угловой скоростью:<br> $$ L = I \\omega $$ <br>Подставляя выражения (2) и (3) в уравнение (4):<br> $$ \\left( 1 + \\beta \\right) pr = \\frac{7}{5} m \\omega r^2 $$ <br>Откуда получаем выражение для конечной установившейся скорости шара:<br> $$ v = \\frac{5 \\left( 1 + \\beta \\right) p}{7m} $$",
+        "maxPoints": 5.0,
+        "subparts": [
+          {
+            "description": "Записывает момент импульса для шара $L = \\left( 1 + \\beta \\right) pr$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Условие не проскальзывания $v = \\omega r$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Использует момент инерции для нижней точки $I = I_{CM} + mr^2 = \\frac{7}{5} mr^2$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$L = I \\omega$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Подставляя в уравнение (4) $\\left( 1 + \\beta \\right) pr = \\frac{7}{5} m \\omega r^2$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Получает конечное выражение $v = \\frac{5 \\left( 1 + \\beta \\right) p}{7m}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "b",
+        "description": "При каком значении $\\beta$ шар немедленно начинает катиться без проскальзывания, независимо от значения $\\mu$?",
+        "solution": "Выражение для импульса шара:<br> $$ p = mv $$ <br>Чтобы проскальзывание отсутствовало сразу в момент удара, необходимо, чтобы импульс $p$, полученный шаром, был равен импульсу, обеспечивающему скорость $v$, найденную из условия чистого качения (уравнение 6):<br> $$ \\left( 1 + \\beta \\right) p = \\frac{7}{5} p $$ <br>Решая это уравнение относительно $\\beta$:<br> $$ \\beta = \\frac{2}{5} $$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Записывает выражение для импульса $p = mv$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Использует выражение (6) для равенства импульсов $\\left( 1 + \\beta \\right) p = \\frac{7}{5} p$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Получает конечное выражение $\\beta = \\frac{2}{5}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "",
+    "maxPoints": 7.0,
+    "weightedMaxPoints": 7.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "На улице зима и нужно оставаться в тепле. Температура на улице $T_0 = 250 \\, \\text{K}$, а в комнате – $T_1 = 290 \\, \\text{K}$. Вы разожгли огонь, который можно считать нагревателем с температурой $T_2 = 2000 \\, \\text{K}$. Вы хотите передать небольшое количество теплоты $dQ_1$ комнате. Самый простой способ был бы напрямую передать тепло с огня в комнату $ - dQ_2 = dQ_1$. Однако это можно сделать более эффективно. Считайте, что можно передавать энергию между любыми двумя резервуарами. Нельзя использовать внешние силы для совершения работы, однако вся работа, которая получается в результате использования тепловых процессов, может быть использована в дальнейшем без потерь. Найти минимально возможную энергию $ - dQ_{2min}$, которую нужно взять у огня, чтобы передать комнате количество тепла $dQ_1$.",
+        "solution": "Первый способ.<br>Так как любую работу можно превратить в энергию без потери тепла, то по первому закону термодинамики:<br> $$ dQ_0 + dQ_1 + dQ_2 = 0 $$ <br>По второму закону термодинамики, учитываю, что для максимальной эффективности процесс должен быть обратным:<br> $$ \\frac{dQ_0}{T_0} + \\frac{dQ_1}{T_1} + \\frac{dQ_2}{T_2} = 0 $$ <br>Из этих уравнений, избавившись от $dQ_0$:<br> $$ -dQ_{2min} = \\frac{T_2}{T_1} \\cdot \\frac{T_1 - T_0}{T_2 - T_0} dQ_1 \\approx 0,16 dQ_1 $$ <br>Второй способ.<br>К этому же ответу можно прийти, рассмотрев цикл Карно.<br>1. Используя цикл Карно, где нагреватель это огонь, а холодильник это улица, можно получить работу $A = dQ_2 \\frac{T_2 - T_0}{T_2}$, взяв $dQ_2$ теплоты у огня.<br>2. Построим обратный цикл Карно (по принципу холодильника) между улицей и комнатой, и, используя работу $A$, будем нагревать комнату и охлаждать улицу. В данном случае КПД холодильника будет немного отличатся от обычного, так как полезной составляющей является тепло переданное нагревателю (в нашем случае это комната).<br> $$ \\eta = \\frac{Q_1}{A} = \\frac{T_1}{T_1 - T_0} $$ <br>Отсюда получаем $dQ_1$:<br> $$ dQ_1 = \\eta A = dQ_2 \\frac{T_2 - T_0}{T_2} \\cdot \\frac{T_1}{T_1 - T_0} $$ <br>отсюда видно, что<br> $$ -dQ_{2min} = \\frac{T_2}{T_1} \\cdot \\frac{T_1 - T_0}{T_2 - T_0} dQ_1 \\approx 0,16 dQ_1 $$",
+        "maxPoints": 7.0,
+        "subparts": [
+          {
+            "description": "По первому закону термодинамики $dQ_0 + dQ_1 + dQ_2 = 0$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Alternative (Second method): Используя цикл Карно, где нагреватель это огонь, а холодильник это улица, можно получить работу $A = dQ_2 \\frac{T_2 - T_0}{T_2}$",
+                "points": 2.0,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "По второму закону термодинамики, учитываю, что для максимальной эффективности процесс должен быть обратным $\\frac{dQ_0}{T_0} + \\frac{dQ_1}{T_1} + \\frac{dQ_2}{T_2} = 0$",
+            "points": 3.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Alternative (Second method): Построим обратный цикл Карно между улицей и комнатой $\\eta = \\frac{Q_1}{A} = \\frac{T_1}{T_1 - T_0}$",
+                "points": 2.0,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Из этих уравнений, избавившись от $dQ_0$: $ - dQ_{2min} = \\frac{T_2}{T_1} \\cdot \\frac{T_1 - T_0}{T_2 - T_0} dQ_1 \\approx 0,16 dQ_1$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Alternative (Second method): Отсюда получаем $dQ_1 = \\eta A = dQ_2 \\frac{T_2 - T_0}{T_2} \\cdot \\frac{T_1}{T_1 - T_0}$",
+                "points": 1.5,
+                "type": "closed",
+                "childSubparts": []
+              },
+              {
+                "description": "Alternative (Second method): $ - dQ_{2min} = \\frac{T_2}{T_1} \\cdot \\frac{T_1 - T_0}{T_2 - T_0} dQ_1 \\approx 0,16 dQ_1$",
+                "points": 1.5,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "",
+    "maxPoints": 9.0,
+    "weightedMaxPoints": 9.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Точечный заряд $q$ массой $m$ пролетает около незаряженного идеально проводящего шара радиуса $R$ так, что прицельный параметр составляет $b = 2R$. Найдите скорость $v_0$, которой должен обладать заряд, чтобы по инерции пролететь мимо шара, приблизившись к его поверхности на расстояние не ближе, чем на $0,1R$.<br>Подсказка 1: для поля двухточечных разноимённых зарядов одной из эквипотенциальных поверхностей является сфера, причём её потенциал равен нулю.",
+        "solution": "Если бы на шар могло поступать сколько угодно заряда на нём бы установилось распределение заряда имитирующее поле заряда $Q$, такого, чтоб поверхность шара стала эквипотенциальной. Его величину и местоположение при известном расстоянии до внешнего заряда можно найти, зная потенциалы в отдельных точках:<br> $$ \\frac{Q}{4 \\pi \\epsilon_0 \\left( R - x \\right)} + \\frac{q}{4 \\pi \\epsilon_0 \\left( r - R \\right)} = 0 \\quad (1) $$ <br> $$ \\frac{Q}{4 \\pi \\epsilon_0 \\left( R + x \\right)} + \\frac{q}{4 \\pi \\epsilon_0 \\left( r + R \\right)} = 0 \\quad (2) $$ <br>Откуда $Q = -q \\frac{R}{r}, x = \\frac{R^2}{r}$.<br>Такой же заряд (согласно теореме Гаусса) должен быть на поверхности шара. Однако шар изолирован, и нескомпенсированный заряд $(-Q)$ должен быть распределён по поверхности шара, чтобы оставить шар эквипотенциальным. Его поле вне шара эквивалентно поля точечного заряда.<br>Внешний заряд будет притягиваться к шару с силой:<br> $$ F = \\frac{q \\frac{R}{r} q}{4 \\pi \\epsilon_0 \\left( r - \\frac{R^2}{r} \\right)^2} - \\frac{q \\frac{R}{r} q}{4 \\pi \\epsilon_0 r^2} = \\frac{q^2 R}{4 \\pi \\epsilon_0} \\left( \\frac{r}{\\left( r^2 - R^2 \\right)^2} - \\frac{1}{r^3} \\right) \\quad (4) $$ <br>Зная что $F \\Delta r = -\\Delta U$, получим $F = -\\frac{\\Delta U}{\\Delta r}$ или $F = -\\frac{dU}{dr}$ при переходе к бесконечно малым. Можно найти эффективную потенциальную энергию для дайной силы. Она будет равна:<br> $$ U = \\frac{q^2}{8 \\pi \\epsilon_0} \\left( \\frac{1}{r^2} - \\frac{1}{r^2 - R^2} \\right) = \\frac{q^2 R^3}{8 \\pi \\epsilon_0 r^2 \\left( R^2 - r^2 \\right)} \\quad (5) $$ <br>Воспользуемся законами сохранения энергии и момента импульса в отдалении от закрепленного шара и при наибольшем приближении (скорость в этот момент составляет прямой угол с направлением на его центр).<br> $$ m \\frac{v_0^2}{2} = m \\frac{v^2}{2} - 46,68 \\frac{q^2}{8 \\pi \\epsilon_0 R} \\quad (6) $$ <br> $$ 2 m v_0 R = 1.01 m v R \\quad (7) $$ <br>Решение системы относительно $v_0$ даёт:<br> $$ v_0 \\approx \\sqrt{\\frac{16 q^2}{\\pi \\epsilon_0 R m}} \\quad (8) $$",
+        "maxPoints": 9.0,
+        "subparts": [
+          {
+            "description": "$\\frac{Q}{4 \\pi \\epsilon_0 \\left( R - x \\right)} + \\frac{q}{4 \\pi \\epsilon_0 \\left( r - R \\right)} = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\frac{Q}{4 \\pi \\epsilon_0 \\left( R + x \\right)} + \\frac{q}{4 \\pi \\epsilon_0 \\left( r + R \\right)} = 0$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$Q = -q \\frac{R}{r}, x = \\frac{R^2}{r}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$F = \\frac{q \\frac{R}{r} q}{4 \\pi \\epsilon_0 \\left( r - \\frac{R^2}{r} \\right)^2} - \\frac{q \\frac{R}{r} q}{4 \\pi \\epsilon_0 r^2} = \\frac{q^2 R}{4 \\pi \\epsilon_0} \\left( \\frac{r}{\\left( r^2 - R^2 \\right)^2} - \\frac{1}{r^3} \\right)$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$U = \\frac{q^2}{8 \\pi \\epsilon_0} \\left( \\frac{1}{r^2} - \\frac{1}{r^2 - R^2} \\right) = \\frac{q^2 R^3}{8 \\pi \\epsilon_0 r^2 \\left( R^2 - r^2 \\right)}$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$m \\frac{v_0^2}{2} = m \\frac{v^2}{2} - 46,68 \\frac{q^2}{8 \\pi \\epsilon_0 R}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$2 m v_0 R = 1.01 m v R$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$v_0 \\approx \\sqrt{\\frac{16 q^2}{\\pi \\epsilon_0 R m}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "name": "",
+    "maxPoints": 6.0,
+    "weightedMaxPoints": 6.0,
+    "parts": [
+      {
+        "number": "",
+        "description": "Вдоль оси $OY$ вертикально вниз падают параллельные лучи света по всему пространству. Найти форму зеркальной поверхности, которая отразила и собрала бы все эти параллельные лучи в одну точку $F$ с координатой $(0, d)$. Предположите, что зеркальная поверхность описывается уравнением $y = f \\left( x \\right) = ax + bx^2 + cx^3$ и найдите коэффициенты $a$, $b$, и $c$.",
+        "solution": "По рисунку видно, что:<br> $$ tg \\left( \\frac{\\pi}{2} - 2\\alpha \\right) = \\frac{d - y}{x} $$ <br>Используя тригонометрию:<br> $$ tg \\left( \\frac{\\pi}{2} - 2\\alpha \\right) = ctg \\left( 2\\alpha \\right) = \\frac{1 - tg^2 \\alpha}{2 tg \\alpha} $$ <br>Из-за симметрии $a$ и $c$ равны $0$, получаем $f \\left( x \\right) = bx^2$.<br>Тангенс угла касательной равен производной:<br> $$ tg \\alpha = f' \\left( x \\right) = 2bx $$ <br>Подставляя в уравнение:<br> $$ \\frac{d - bx^2}{x} = \\frac{1 - 4b^2 x^2}{4bx} $$ <br>Откуда находим связь:<br> $$ d = \\frac{1}{4b} $$ <br>Ответ получается $b = \\frac{1}{4d}$, $a = 0$, и $c = 0$.",
+        "maxPoints": 6.0,
+        "subparts": [
+          {
+            "description": "Поясняющий рисунок с ходом лучей и углами",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$tg \\left( \\frac{\\pi}{2} - 2\\alpha \\right) = \\frac{d - y}{x}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$tg \\left( \\frac{\\pi}{2} - 2\\alpha \\right) = ctg \\left( 2\\alpha \\right) = \\frac{1 - tg^2 \\alpha}{2 tg \\alpha}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "из-за симметрии $a$ и $c$ равны $0$, получаем $f \\left( x \\right) = bx^2$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$tg \\alpha = f' \\left( x \\right) = 2bx$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\frac{d - bx^2}{x} = \\frac{1 - 4b^2 x^2}{4bx}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$d = \\frac{1}{4b}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
