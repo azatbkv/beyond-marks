@@ -3,10 +3,11 @@ name: Seed Database
 on:
   push:
     paths:
-      - 'olympiads/**' # Only run when data files change
+      - 'olympiads/**'
       - 'scripts/generate-seed.ts'
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   seed:
@@ -15,21 +16,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: 'pnpm'
 
       - name: Install Dependencies
         run: pnpm install
 
       - name: Generate seed.sql
-        run: pnpm dlx tsx scripts/generate-seed.ts
+        run: pnpm exec tsx scripts/generate-seed.ts
 
       - name: Execute on D1
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Replace 'my-db-binding' with the exact database_name from wrangler.toml
           command: d1 execute marks-db --file=seed.sql --remote
