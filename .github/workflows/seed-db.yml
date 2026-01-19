@@ -21,10 +21,10 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Generate seed.sql
-        run: npx tsx scripts/generate-seed.ts
+        run: pnpm dlx tsx scripts/generate-seed.ts
 
       - name: Execute on D1
         uses: cloudflare/wrangler-action@v3
