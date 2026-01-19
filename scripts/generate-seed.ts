@@ -2,64 +2,54 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// 1. Get the directory of the current script (project-root/scripts)
+// 1. Setup Paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 2. Resolve paths relative to this script
-// Go up one level (scripts -> root) then into 'olympiads'
 const BASE_DIR = path.resolve(__dirname, '../olympiads'); 
-
-// Output seed.sql to the project root
 const OUTPUT_FILE = path.resolve(__dirname, '../seed.sql');
-// Helper to escape single quotes for SQL: O'Neil -> O''Neil
+
+// Helper to escape single quotes for SQL
 const esc = (str: string | number | null | undefined) => {
   if (str === null || str === undefined) return 'NULL';
   if (typeof str === 'number') return str;
   return `'${String(str).replace(/'/g, "''")}'`;
 };
 
-// Helper to stringify JSON objects for SQL storage
-const escJson = (obj: any) => {
-  return esc(JSON.stringify(obj));
-};
+// Helper for JSON columns
+const escJson = (obj: any) => esc(JSON.stringify(obj));
 
 async function main() {
   const statements: string[] = [];
+  
+  // Start transaction for speed and safety
+  statements.push('BEGIN TRANSACTION;');
 
-  // 1. Validate Dir
-  try {
-    await fs.access(BASE_DIR);
-  } catch {
-    console.error(`Error: Could not find folder at ${BASE_DIR}`);
-    process.exit(1);
-  }
-
-  // 2. Walk the directory tree
   const subjectDirs = await getDirectories(BASE_DIR);
 
   for (const subjectName of subjectDirs) {
-    // SQL: Upsert Subject
-    statements.push(`
-      INSERT INTO subjects (name, nameLower) 
-      VALUES (${esc(subjectName)}, ${esc(subjectName.toLowerCase())})
-      ON CONFLICT(name) DO NOTHING;
-    `);
+    const sLower = subjectName.toLowerCase();
+    
+    // 1. Upsert Subject
+    statements.push(`INSERT INTO subjects (name, name_lower) VALUES (${esc(subjectName)}, ${esc(sLower)}) ON CONFLICT(name_lower) DO NOTHING;`);
+
+    // Reference for Subject ID lookup
+    const subjectIdSql = `(SELECT id FROM subjects WHERE name_lower = ${esc(sLower)})`;
 
     const subjectPath = path.join(BASE_DIR, subjectName);
     const olympiadDirs = await getDirectories(subjectPath);
 
     for (const olympiadName of olympiadDirs) {
-      // SQL: Upsert Olympiad (Using subquery for subject_id)
+      const oLower = olympiadName.toLowerCase();
+
+      // 2. Upsert Olympiad
       statements.push(`
-        INSERT INTO olympiads (name, nameLower, subjectId) 
-        VALUES (
-          ${esc(olympiadName)}, 
-          ${esc(olympiadName.toLowerCase())},
-          (SELECT id FROM subjects WHERE name = ${esc(subjectName)})
-        )
-        ON CONFLICT(name, subjectId) DO NOTHING;
+        INSERT INTO olympiads (name, name_lower, subject_id) 
+        VALUES (${esc(olympiadName)}, ${esc(oLower)}, ${subjectIdSql})
+        ON CONFLICT(name_lower, subject_id) DO NOTHING;
       `);
+
+      const olympiadIdSql = `(SELECT id FROM olympiads WHERE name_lower = ${esc(oLower)} AND subject_id = ${subjectIdSql})`;
 
       const olympiadPath = path.join(subjectPath, olympiadName);
       const yearDirs = await getDirectories(olympiadPath);
@@ -68,16 +58,14 @@ async function main() {
         const yearInt = parseInt(yearStr, 10);
         if (isNaN(yearInt)) continue;
 
-        // SQL: Upsert Year (Using subquery for olympiad_id)
-        // Note: This assumes olympiad names are unique within a subject.
+        // 3. Upsert Year
         statements.push(`
-          INSERT INTO years (date, olympiadId) 
-          VALUES (
-            ${yearInt}, 
-            (SELECT id FROM olympiads WHERE name = ${esc(olympiadName)} AND subjectId = (SELECT id FROM subjects WHERE name = ${esc(subjectName)}))
-          )
-          ON CONFLICT(date, olympiadId) DO NOTHING;
+          INSERT INTO years (date, olympiad_id) 
+          VALUES (${yearInt}, ${olympiadIdSql})
+          ON CONFLICT(date, olympiad_id) DO NOTHING;
         `);
+
+        const yearIdSql = `(SELECT id FROM years WHERE date = ${yearInt} AND olympiad_id = ${olympiadIdSql})`;
 
         const yearPath = path.join(olympiadPath, yearStr);
         const files = await getFiles(yearPath);
@@ -85,79 +73,72 @@ async function main() {
         for (const file of files) {
           if (!file.endsWith('.json')) continue;
 
-          // Determine Grade
           let gradeVal: string | null = null;
-          let gradeSubQuery = 'NULL';
+          let gradeIdSql = 'NULL';
 
+          // 4. Handle Grades
           if (file !== 'problems.json') {
-            gradeVal = path.parse(file).name; // e.g., "10" from "10.json"
-          }
-
-          // Define reusable SQL snippets for IDs
-          const subjectIdSql = `(SELECT id FROM subjects WHERE name = ${esc(subjectName)})`;
-          const olympiadIdSql = `(SELECT id FROM olympiads WHERE name = ${esc(olympiadName)} AND subjectId = ${subjectIdSql})`;
-          const yearIdSql = `(SELECT id FROM years WHERE date = ${yearInt} AND olympiadId = ${olympiadIdSql})`;
-
-          // SQL: Upsert Grade (if exists)
-          if (gradeVal) {
+            gradeVal = path.parse(file).name;
             statements.push(`
-              INSERT INTO grades (grade, yearId) 
-              VALUES (
-                ${esc(gradeVal)}, 
-                ${yearIdSql}
-              )
-              ON CONFLICT(grade, yearId) DO NOTHING;
+              INSERT INTO grades (grade, year_id) 
+              VALUES (${esc(gradeVal)}, ${yearIdSql})
+              ON CONFLICT(grade, year_id) DO NOTHING;
             `);
-            gradeSubQuery = `(SELECT id FROM grades WHERE grade = ${esc(gradeVal)} AND yearId = ${yearIdSql})`;
+            gradeIdSql = `(SELECT id FROM grades WHERE grade = ${esc(gradeVal)} AND year_id = ${yearIdSql})`;
           }
 
-          // Process Problems
+          // 5. Upsert Problems
           const filePath = path.join(yearPath, file);
           const fileContent = await fs.readFile(filePath, 'utf-8');
           
           try {
-            const problems = JSON.parse(fileContent);
+            const problemsData = JSON.parse(fileContent);
             
-            for (const p of problems) {
-              // We assume you have a unique constraint on problems: (yearId, gradeId, number)
-              // If not, 'ON CONFLICT' won't work and you'll get duplicates.
+            for (const p of problemsData) {
+              // Based on your unique constraint: (number, gradeId, yearId)
               statements.push(`
-                INSERT INTO problems (number, name, maxPoints, weightedMaxPoints, parts, yearId, gradeId)
+                INSERT INTO problems (number, name, max_points, weighted_max_points, parts, grade_id, year_id)
                 VALUES (
                   ${esc(p.number)}, 
                   ${esc(p.name)}, 
                   ${esc(p.maxPoints)}, 
                   ${esc(p.weightedMaxPoints)}, 
                   ${escJson(p.parts)}, 
-                  ${yearIdSql}, 
-                  ${gradeSubQuery}
+                  ${gradeIdSql}, 
+                  ${yearIdSql}
                 )
-                ON CONFLICT(yearId, gradeId, number) DO UPDATE SET
+                ON CONFLICT(number, grade_id, year_id) DO UPDATE SET
                   name = excluded.name,
-                  maxPoints = excluded.maxPoints,
+                  max_points = excluded.max_points,
+                  weighted_max_points = excluded.weighted_max_points,
                   parts = excluded.parts;
               `);
             }
           } catch (e) {
-            console.error(`Failed to parse JSON in ${filePath}`);
+            console.error(`Error parsing ${filePath}:`, e);
           }
         }
       }
     }
   }
 
+  statements.push('COMMIT;');
   await fs.writeFile(OUTPUT_FILE, statements.join('\n'));
-  console.log(`Generated seed.sql with ${statements.length} commands.`);
+  console.log(`SQL generated at ${OUTPUT_FILE}`);
 }
 
 async function getDirectories(source: string) {
-  const dirents = await fs.readdir(source, { withFileTypes: true });
-  return dirents.filter((dirent) => dirent.isDirectory()).map((dirent) => dirent.name);
+  try {
+    const dirents = await fs.readdir(source, { withFileTypes: true });
+    return dirents.filter((dirent) => dirent.isDirectory()).map((dirent) => dirent.name);
+  } catch { return []; }
 }
 
 async function getFiles(source: string) {
-  const dirents = await fs.readdir(source, { withFileTypes: true });
-  return dirents.filter((dirent) => dirent.isFile()).map((dirent) => dirent.name);
+  try {
+    const dirents = await fs.readdir(source, { withFileTypes: true });
+    return dirents.filter((dirent) => dirent.isFile()).map((dirent) => dirent.name);
+  } catch { return []; }
 }
 
 main();
