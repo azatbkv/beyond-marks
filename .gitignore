@@ -31,3 +31,5 @@ vite.config.ts.timestamp-*
 
 *.pdf
 *.old
+process-markschemes.py
+download-pdfs.py
