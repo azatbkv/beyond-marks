@@ -37,15 +37,16 @@ export const load: PageServerLoad = async ({ setHeaders, locals, params }) => {
     .where(eq(grades.yearId, year.id))
     .all();
   if (gradesList.length === 0) redirect(303, './' + params.year + '/1');
-  setHeaders({
-    'Cache-Control': 'public, max-age=3600'
-  });
 
   const rank = { 'Junior': 100, 'Senior': 101 };
   gradesList.sort((a, b) => {
     const rankA = rank[a.grade] ?? parseInt(a.grade);
     const rankB = rank[b.grade] ?? parseInt(b.grade);
     return rankA - rankB;
+  });
+
+  setHeaders({
+    'Cache-Control': 'public, max-age=3600'
   });
 
   return {

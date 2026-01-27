@@ -1,7 +1,7 @@
 #!/bin/bash
 
 filename="$1"
-sed_script='s/(\$/\$(/g; s/\$)/)\$/g; s/\$;/;\$/g; s/•//g; s/\$</\$ </g; s/>\$/> \$/g; s/\$-/\$ - /g'
+sed_script='s/(\$/\$(/g; s/\$)/)\$/g; s/\$;/;\$/g; s/•//g; s/\$</\$ </g; s/>\$/> \$/g; s/\$-/\$ - /g; s/\$–/\$ – /g;'
 if sed -z "$sed_script" "$filename" > "${filename}.tmp"; then
   mv "$filename" "${filename}.old"
   mv "${filename}.tmp" "$filename"
