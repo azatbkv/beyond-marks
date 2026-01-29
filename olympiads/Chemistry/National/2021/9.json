@@ -1,0 +1,717 @@
+[
+  {
+    "number": 1,
+    "name": "АБВ",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 7.0,
+    "parts": [
+      {
+        "number": "1.1",
+        "description": "Найдите газы А, Б, и В.",
+        "solution": "Газ А который используется как топливо, это очевидно – $\\text{H}_2$. Газ Б с запахом тухлых яиц это $\\text{H}_2\\text{S}$. В – $\\text{PH}_3$.",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Газ А который используется как топливо, это очевидно – $\\text{H}_2$. Газ Б с запахом тухлых яиц это $\\text{H}_2\\text{S}$. В – $\\text{PH}_3$ $(0,5$ балла $\\times$ 3)",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.2",
+        "description": "Напишите уравнения всех реакции.",
+        "solution": "$\\text{CaH}_2 + 2\\text{HCl} \\rightarrow \\text{CaCl}_2 + 2\\text{H}_2$ <br> $\\text{Ca}_3\\text{P}_2 + 6\\text{HCl} \\rightarrow 3\\text{CaCl}_2 + 2\\text{PH}_3$ <br> $\\text{CaS} + 2\\text{HCl} \\rightarrow \\text{CaCl}_2 + \\text{H}_2\\text{S}$ <br> $\\text{H}_2\\text{S} + \\text{Ca(OH)}_2 \\rightarrow \\text{CaS} + 2\\text{H}_2\\text{O}$",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$\\text{CaH}_2 + 2\\text{HCl} \\rightarrow \\text{CaCl}_2 + 2\\text{H}_2$ <br> $\\text{Ca}_3\\text{P}_2 + 6\\text{HCl} \\rightarrow 3\\text{CaCl}_2 + 2\\text{PH}_3$ <br> $\\text{CaS} + 2\\text{HCl} \\rightarrow \\text{CaCl}_2 + \\text{H}_2\\text{S}$ <br> $\\text{H}_2\\text{S} + \\text{Ca(OH)}_2 \\rightarrow \\text{CaS} + 2\\text{H}_2\\text{O}$ $(0.5$ балла $\\times$ 4)",
+            "points": 2.0,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "1.3",
+        "description": "Найдите массовые доли компонентов в начальной смеси.",
+        "solution": "Возьмем моль каждого из компонентов как $x, y,$ и $z$. Тогда моль водорода будет $2x$, моль фосфина будет $2y$, а также моль сероводорода $z$. После пропускания газов через раствор гидроксида кальция, остается смесь водорода и фосфина и объем этой смеси равняется $PV/RT=n$. Где $P=740/760=0.973$ атм. , $Т= 298\\text{К}$, $V=2.51$ литров, а $R =0.082$.<br>Составим систему из трех уравнений:<br> $42x + 182y + 72z = 10$ <br> $2x + 2y + z = 0.1514$ <br> $2x + 2y = 0.1$ <br> $x = 0.02$ моль $\\text{CaH}_2$ <br> $y = 0.03$ моль $\\text{Ca}_3\\text{P}_2$ <br> $z = 0.0514$ моль $\\text{CaS}$ <br>Ответ:<br> $w(\\text{CaH}_2) = [(0.02 \\cdot 42)/10] \\cdot 100 = 8.4\\% $ <br> $w(\\text{Ca}_3\\text{P}_2) = [(0.03 \\cdot 182)/10] \\cdot 100 = 54.6\\% $ <br> $w(\\text{CaS}) = [(0.0514 \\cdot 72)/10] \\cdot 100 = 37\\% $",
+        "maxPoints": 4.5,
+        "subparts": [
+          {
+            "description": "$2x + 2y = 0.1$ (за правильную систему уравнений)",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$z = 0.0514$ моль $\\text{CaS}$ (за правильные моли)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{CaH}_2) = [(0.02 \\cdot 42)/10] \\cdot 100 = 8.4\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{Ca}_3\\text{P}_2) = [(0.03 \\cdot 182)/10] \\cdot 100 = 54.6\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{CaS}) = [(0.0514 \\cdot 72)/10] \\cdot 100 = 37\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Каменный мир",
+    "maxPoints": 13.0,
+    "weightedMaxPoints": 9.0,
+    "parts": [
+      {
+        "number": "2.1",
+        "description": "Вычислите молекулярную массу газа В.",
+        "solution": "Молекулярная масса газа $1.6 \\cdot 40 = 64$ г/моль.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Молекулярная масса газа $1.6 \\cdot 40 = 64$ г/моль.",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.2",
+        "description": "Определите вещества А, Б, В.",
+        "solution": "$64$ г/моль это соответствует молекулярной массе оксида серы (IV) - $\\text{SO}_2$, тогда исходное соединение А, которое реагирует с хлором - сера.<br>Всевозможные реакций серы с хлором:<br> $S + Cl_2 \\rightarrow SCl_2$ <br> $2S + Cl_2 \\rightarrow S_2Cl_2$ <br> $S + 2Cl_2 \\rightarrow SCl_4$ <br>А при реакции жидкости Б с водой:<br> $2SCl_2 + H_2O \\rightarrow H_2SO_4 + 4HCl + S$ <br> $2S_2Cl_2 + 3H_2O \\rightarrow H_2SO_4 + 4HCl + 3S$ <br> $SCl_4 + H_2O \\rightarrow H_2SO_3 + 4HCl$ <br>Вещество Б это не $SCl_4$ так как в условии сказано, что образовалась смесь сильных кислот, а $H_2SO_3$ это не сильная кислота.<br>Найдем начальное количество вещества:<br> $n(\\text{S}) = \\frac{11.37}{32} = 0.3553$ моль<br>конечное количество вещества:<br> $n(\\text{S}) = \\frac{8.5275}{32} = 0.266475$ моль<br>Если предположим, что Б у нас это - $SCl_2$, тогда конечное количество серы = $0.3553 / 2 = 0.17765$ моль, что не соответствует нашим данным в условии.<br>А теперь рассмотрим второй вариант что Б – это $S_2Cl_2$, тогда конечное количество серы = $0.3553 \\cdot 0.5 \\cdot 0.5 \\cdot 3 = 0.266475$ моль<br>По массовым/мольным соотношениям, мы находим что вещество Б это - $S_2Cl_2$",
+        "maxPoints": 8.0,
+        "subparts": [
+          {
+            "description": "$64$ г/моль это соответствует молекулярной массе оксида серы (IV) - $\\text{SO}_2$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "тогда исходное соединение А, которое реагирует с хлором - сера.",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "По массовым/мольным соотношениям, мы находим что вещество Б это - $S_2Cl_2$",
+            "points": 4.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "2.3",
+        "description": "Напишите уравнения всех реакции.",
+        "solution": "Находим соответствующие количества кислот:<br> $n(H_2SO_4) = 0.3553/4 = 0.088825$ моль<br> $n(HCl) = 0.3553$ моль<br>При нагревании раствора протекает реакция:<br> $S + 2H_2SO_4 \\rightarrow 3SO_2 + 2H_2O$ <br>После реакции образовалось $(0.088825/2) \\cdot 3 = 0.1332375$ моль $SO_2$, потому что серная кислота находилась в недостатке<br>А теперь найдем массу выделившегося $SO_2$ после реакции с кислотой:<br> $m(SO_2) = 0.1332375 \\cdot 64 = 8.5272$ г<br>При поджигании с кислородом образуется $SO_2$:<br> $S + O_2 \\rightarrow SO_2$ <br>Находим массу $SO_2$:<br> $m(SO_2) = 0.3553 \\cdot 64 = 22.74$ гр<br>Теперь проверяем соотношение выделившегося $SO_2$:<br>соотношение = $(22.74/8.5272) = 2.666667$. Все сходится<br>Уравнения:<br> $2S + Cl_2 \\rightarrow S_2Cl_2$ <br> $2S_2Cl_2 + 3H_2O \\rightarrow H_2SO_4 + 4HCl + 3S$ <br> $S + 2H_2SO_4 \\rightarrow 3SO_2 + 2H_2O$ <br> $S + O_2 \\rightarrow SO_2$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "$2S + Cl_2 \\rightarrow S_2Cl_2$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$2S_2Cl_2 + 3H_2O \\rightarrow H_2SO_4 + 4HCl + 3S$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$S + 2H_2SO_4 \\rightarrow 3SO_2 + 2H_2O$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$S + O_2 \\rightarrow SO_2$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Стандарттау",
+    "maxPoints": 8.0,
+    "weightedMaxPoints": 9.0,
+    "parts": [
+      {
+        "number": "3.1",
+        "description": "Найдите точную формулу кристаллогидрата.",
+        "solution": "$\\text{Na}_2\\text{CO}_3 \\cdot x\\text{H}_2\\text{O} \\rightarrow \\text{Na}_2\\text{CO}_3 + x\\text{H}_2\\text{O}$ <br> $18x/(106+18x) = 0.6215$ <br> $x = 9.67$ <br>Кристаллогидрат: $\\text{Na}_2\\text{CO}_3 \\cdot 9.67\\text{H}_2\\text{O}$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Кристаллогидрат: $\\text{Na}_2\\text{CO}_3 \\cdot 9.67\\text{H}_2\\text{O}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.2",
+        "description": "Найдите точную массу кристаллогидрата, которую он использовал для титрования.",
+        "solution": "$\\text{Na}_2\\text{CO}_3 + 2\\text{HCl} \\rightarrow 2\\text{NaCl} + \\text{CO}_2 + \\text{H}_2\\text{O}$ <br> $n(\\text{HCl}) = 2.481 \\cdot 10^{-3} \\cdot 2.3 = 5.707 \\cdot 10^{-3}$ моль<br> $n(\\text{Na}_2\\text{CO}_3) = 5.707 \\cdot 10^{-3} / 2 = 2.854 \\cdot 10^{-3}$ моль в $10$ мл аликвоты,<br>а в $250$ мл $2.854 \\cdot 10^{-3} \\cdot 25 = 0.07134$ моль $\\text{Na}_2\\text{CO}_3$.<br> $m(\\text{Na}_2\\text{CO}_3 \\cdot 9.67\\text{H}_2\\text{O}) = 280.06 \\cdot 0.07134 = 19.98$ г.",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$n(\\text{Na}_2\\text{CO}_3) = 5.707 \\cdot 10^{-3} / 2 = 2.854 \\cdot 10^{-3}$ моль в $10$ мл аликвоты (за правильное титрование)",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$m(\\text{Na}_2\\text{CO}_3 \\cdot 9.67\\text{H}_2\\text{O}) = 280.06 \\cdot 0.07134 = 19.98$ г.",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.3",
+        "description": "Найдите массовые доли веществ в обеих растворах и также количественно покажите какая чаща весов окажется тяжелее.",
+        "solution": "$m(\\text{CuSO}_4) = 100 \\cdot 0.07 = 7\\text{г}$ <br> $m(\\text{Al}_2(\\text{SO}_4)_3) = 100 \\cdot 0.35 = 35\\text{г}$ <br> $n(\\text{CuSO}_4) = 0.04375$ моль<br> $n(\\text{Al}_2(\\text{SO}_4)_3) = 0.1023$ моль<br> $n(\\text{Na}_2\\text{CO}_3 \\text{ в стакане}) = 0.07134/2 = 0.03567$ моль<br> $m(\\text{раствора Na}_2\\text{CO}_3 \\text{ в стакане}) = 200/2 \\cdot 1.08 = 108$ г.<br>стакан 1:<br> $2\\text{CuSO}_4 + 2\\text{Na}_2\\text{CO}_3 + \\text{H}_2\\text{O} \\rightarrow (\\text{CuOH})_2\\text{CO}_3 + 2\\text{Na}_2\\text{SO}_4 + \\text{CO}_2$ <br> $m((\\text{CuOH})_2\\text{CO}_3) = 222 \\cdot 0.03567/2 = 3.96$ г<br> $m(\\text{CO}_2) = 44 \\cdot 0.03567/2 = 0.785$ г<br> $m_{\\text{к}} = 100 + 108 – 3.96 – 0.785 = 203.255$ г<br> $m(\\text{Na}_2\\text{SO}_4) = 0.03567 \\cdot 142 = 5.065$ г<br> $m(\\text{CuSO}_4 \\text{ (ост.)}) = (0.04375 – 0.03567) \\cdot 160 = 1.2928$ г<br> $w(\\text{Na}_2\\text{SO}_4) = (5.065/203.255) \\cdot 100 = 2.49\\%$ <br> $w(\\text{CuSO}_4) = (1.2928/203.255) \\cdot 100 = 0.636\\%$ <br>стакан 2:<br> $\\text{Al}_2(\\text{SO}_4)_3 + 3\\text{Na}_2\\text{CO}_3 + 3\\text{H}_2\\text{O} \\rightarrow 2\\text{Al(OH)}_3 + 3\\text{Na}_2\\text{SO}_4 + \\text{H}_2\\text{O} + 3\\text{CO}_2$ <br> $m(\\text{Al(OH)}_3) = 78 \\cdot 0.03567 \\cdot 2/3 = 1.855$ г<br> $m(\\text{CO}_2) = 44 \\cdot 0.03567 = 1.569$ г<br> $m_{\\text{к}} = 100 + 108 – 1.855 – 1.569 = 204.576$ г<br> $m(\\text{Na}_2\\text{SO}_4) = 0.03567 \\cdot 142 = 5.065\\text{г}$ <br> $m(\\text{Al}_2(\\text{SO}_4)_3 \\text{ (ост.)}) = (0.1023-0.03567/3) \\cdot 342 = 30.92$ г<br> $w(\\text{Na}_2\\text{SO}_4) = (5.065/204.576) \\cdot 100 = 2.476\\%$ <br> $w(\\text{Al}_2(\\text{SO}_4)_3 \\text{ (ост.)}) = (30.92/204.576) \\cdot 100 = 15.114\\%$ <br>Стакан с сульфатом алюминия оказался тяжелее.",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "$w(\\text{Na}_2\\text{SO}_4) = (5.065/203.255) \\cdot 100 = 2.49\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{CuSO}_4) = (1.2928/203.255) \\cdot 100 = 0.636\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{Na}_2\\text{SO}_4) = (5.065/204.576) \\cdot 100 = 2.476\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{Al}_2(\\text{SO}_4)_3 \\text{ (ост.)}) = (30.92/204.576) \\cdot 100 = 15.114\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Стакан с сульфатом алюминия оказался тяжелее.",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "3.4",
+        "description": "На сколько процентов уменьшится масса твердого остатка в обеих стаканах.",
+        "solution": "$(\\text{CuOH})_2\\text{CO}_3 \\rightarrow 2\\text{CuO} + \\text{CO}_2 + \\text{H}_2\\text{O}$ <br> $2\\text{Al(OH)}_3 \\rightarrow \\text{Al}_2\\text{O}_3 + 3\\text{H}_2\\text{O}$ <br> $w(\\text{изменение массы малахита}) = [(222-160)/222] \\cdot 100 = 27.93\\%$ <br> $w(\\text{изменение массы гидроксида алюминия}) = [(78-0.5 \\cdot 102)/(78)] \\cdot 100 = 34.6\\%$",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$(\\text{CuOH})_2\\text{CO}_3 \\rightarrow 2\\text{CuO} + \\text{CO}_2 + \\text{H}_2\\text{O}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$2\\text{Al(OH)}_3 \\rightarrow \\text{Al}_2\\text{O}_3 + 3\\text{H}_2\\text{O}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{изменение массы малахита}) = [(222-160)/222] \\cdot 100 = 27.93\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$w(\\text{изменение массы гидроксида алюминия}) = [(78-0.5 \\cdot 102)/(78)] \\cdot 100 = 34.6\\%$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "name": "Пропан, бутан, …",
+    "maxPoints": 15.0,
+    "weightedMaxPoints": 11.0,
+    "parts": [
+      {
+        "number": "4.1",
+        "description": "Считая, что привезенная на завод смесь состояла только из пропана и бутана, рассчитайте мольные и массовые доли каждого газа в смеси.",
+        "solution": "$pV = nRT$ <br> $pV = \\frac{m}{M} RT$ <br> $\\rho = \\frac{m}{V} = \\frac{pM}{RT}$ <br> $M_{\\text{ср}} = \\frac{\\rho RT}{p} = \\frac{4.03 \\cdot 8.314 \\cdot (20 + 273)}{2 \\cdot 101.325} = 48.44$ г/моль<br> $M_{\\text{ср}} = M(\\text{C}_3\\text{H}_8) \\cdot x(\\text{C}_3\\text{H}_8) + M(\\text{C}_4\\text{H}_{10}) \\cdot x(\\text{C}_4\\text{H}_{10}) = 44 \\cdot x + 58 \\cdot (1 - x) = 48.44$ <br> $x = x(\\text{C}_3\\text{H}_8) = 0.683 \\rightarrow x(\\text{C}_4\\text{H}_{10}) = 0.317$ <br>Возьмем 1 моль смеси, тогда $n(\\text{C}_3\\text{H}_8) = 0.683$ моль, $n(\\text{C}_4\\text{H}_{10}) = 0.317$ моль<br> $\\omega(\\text{C}_3\\text{H}_8) = \\frac{m(\\text{C}_3\\text{H}_8)}{m(\\text{C}_3\\text{H}_8) + m(\\text{C}_4\\text{H}_{10})} = \\frac{0.683 \\cdot 44}{0.683 \\cdot 44 + 0.317 \\cdot 58} = 62\\%$ <br> $\\omega(\\text{C}_4\\text{H}_{10}) = 38\\%$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "$M_{\\text{ср}} = \\frac{\\rho RT}{p} = 48.44$ г/моль",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\omega(\\text{C}_3\\text{H}_8) = 62\\%$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\omega(\\text{C}_4\\text{H}_{10}) = 38\\%$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "4.2",
+        "description": "Используя данные из таблицы, вычислите изменения энтальпии реакций сжигания пропана и бутана.",
+        "solution": "$\\text{C}_3\\text{H}_8 + 5\\text{O}_2 = 3\\text{CO}_2 + 4\\text{H}_2\\text{O}$ <br> $\\text{C}_4\\text{H}_{10} + \\frac{13}{2} \\text{O}_2 = 4\\text{CO}_2 + 5\\text{H}_2\\text{O}$ <br> $\\Delta_c H^0(\\text{C}_3\\text{H}_8) = 3 \\cdot \\Delta_f H^0(\\text{CO}_2) + 4 \\cdot \\Delta_f H^0(\\text{H}_2\\text{O}) - \\Delta_f H^0(\\text{C}_3\\text{H}_8) = -2043.8 \\frac{\\text{кДж}}{\\text{моль}}$ <br> $\\Delta_c H^0(\\text{C}_4\\text{H}_{10}) = 4 \\cdot \\Delta_f H^0(\\text{CO}_2) + 5 \\cdot \\Delta_f H^0(\\text{H}_2\\text{O}) - \\Delta_f H^0(\\text{C}_4\\text{H}_{10}) = -2656.8 \\frac{\\text{кДж}}{\\text{моль}}$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "$\\text{C}_3\\text{H}_8 + 5\\text{O}_2 = 3\\text{CO}_2 + 4\\text{H}_2\\text{O}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\text{C}_4\\text{H}_{10} + \\frac{13}{2} \\text{O}_2 = 4\\text{CO}_2 + 5\\text{H}_2\\text{O}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\Delta_c H^0(\\text{C}_3\\text{H}_8) = -2043.8 \\frac{\\text{кДж}}{\\text{моль}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\Delta_c H^0(\\text{C}_4\\text{H}_{10}) = -2656.8 \\frac{\\text{кДж}}{\\text{моль}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "4.3",
+        "description": "Рассчитайте удельную теплоту сжигания данной смеси в кДж/кг. Какое количество тепла (МДж) выделится при сжигании всей смеси в цистерне?",
+        "solution": "$m_{\\text{смеси}} = V \\cdot \\rho = 86.7 \\text{ м}^3 \\cdot 547 \\text{ кг/м}^3 = 47424.9 \\text{ кг}$ <br> $m(\\text{C}_3\\text{H}_8) = m_{\\text{смеси}} \\cdot \\omega = 47424.9 \\cdot 0.62 = 29403.44 \\text{ кг}$ <br> $m(\\text{C}_4\\text{H}_{10}) = m_{\\text{смеси}} \\cdot \\omega = 47424.9 \\cdot 0.38 = 18021.46 \\text{ кг}$ <br> $n(\\text{C}_3\\text{H}_8) = \\frac{m}{M} = \\frac{29403.44 \\cdot 1000}{44} = 668260 \\text{ моль}$ <br> $n(\\text{C}_4\\text{H}_{10}) = \\frac{m}{M} = \\frac{18021.46 \\cdot 1000}{58} = 310715 \\text{ моль}$ <br> $Q = -(n(\\text{C}_3\\text{H}_8) \\cdot \\Delta_c H^0(\\text{C}_3\\text{H}_8) + n(\\text{C}_4\\text{H}_{10}) \\cdot \\Delta_c H^0(\\text{C}_4\\text{H}_{10})) = 2191297 \\text{ МДж}$ <br> $Q_m = \\frac{Q}{m} = \\frac{2191297.4 \\cdot 1000}{47424.9} = 46206 \\frac{\\text{кДж}}{\\text{кг}}$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "$Q = 2191297 \\text{ МДж}$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$Q_m = 46206 \\frac{\\text{кДж}}{\\text{кг}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "4.4",
+        "description": "Используя приведенные выше данные, вычислите стандартную энтальпию образования жидкого октана, а также удельную теплоту его сгорания кДж/моль и кДж/кг.",
+        "solution": "$(1) \\text{C}_8\\text{H}_{18(\\text{г})} = \\text{C}_4\\text{H}_{10(\\text{г})} + \\text{C}_4\\text{H}_{8(\\text{г})} \\Delta H_1^0 = 83.5 \\text{ кДж/моль}$ <br> $(2) \\text{C}_4\\text{H}_{10(\\text{г})} = \\text{C}_4\\text{H}_{8(\\text{г})} + \\text{H}_{2(\\text{г})} \\Delta H_2^0 = 127.4 \\text{ кДж/моль}$ <br> $(3) 4\\text{C} + 5\\text{H}_2 = \\text{C}_4\\text{H}_{10(\\text{г})} \\Delta H_3^0 = -126.2 \\text{ кДж/моль}$ <br> $(4) \\text{C}_8\\text{H}_{18(\\text{ж})} = \\text{C}_8\\text{H}_{18(\\text{г})} \\Delta H_4^0 = 41.4 \\frac{\\text{кДж}}{\\text{моль}}$ <br> $(5) 8\\text{C} + 9\\text{H}_2 = \\text{C}_8\\text{H}_{18(\\text{ж})} \\Delta H_5^0 =?$ <br>Согласно закону Гесса: $(5) = -(1) + (2) + 2 \\cdot (3) - (4) \\rightarrow \\Delta H_5^0 = -\\Delta H_1^0 + \\Delta H_2^0 + 2 \\cdot \\Delta H_3^0 - \\Delta H_4^0 = -249.9 \\text{ кДж/моль}$ <br> $\\text{C}_8\\text{H}_{18(\\text{ж})} + \\frac{25}{2} \\text{O}_2 = 8\\text{CO}_2 + 9\\text{H}_2\\text{O}$ <br> $\\Delta_c H^0 (\\text{C}_8\\text{H}_{18(\\text{ж})}) = 8 \\cdot \\Delta_f H^0(\\text{CO}_2) + 9 \\cdot \\Delta_f H^0(\\text{H}_2\\text{O}) - \\Delta_f H^0 (\\text{C}_8\\text{H}_{18(\\text{ж})}) = -5074.3 \\frac{\\text{кДж}}{\\text{моль}}$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "$\\Delta H_5^0 = -249.9 \\text{ кДж/моль}$",
+            "points": 2.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\text{C}_8\\text{H}_{18(\\text{ж})} + \\frac{25}{2} \\text{O}_2 = 8\\text{CO}_2 + 9\\text{H}_2\\text{O}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\Delta_c H^0 = -5074.3 \\frac{\\text{кДж}}{\\text{моль}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "4.5",
+        "description": "Установите, во сколько раз больше энергии выделяется при сжигании описанного в задаче «пропана», чем бензина, купленного за ту же цену, если соотношение цен за килограмм «пропана» к бензину составляет 2:7.",
+        "solution": "Исходя из условия задачи, за цену 1 кг бензина можно купить 3.5 кг «пропана», тогда:<br> $n(\\text{C}_8\\text{H}_{18}) = \\frac{m}{M} = \\frac{1000}{114} = 8.772 \\text{ моль}$ <br> $Q(\\text{бензин}) = -n \\cdot \\Delta_c H^0 (\\text{C}_8\\text{H}_{18(\\text{ж})}) = 44512 \\text{ кДж}$ <br> $Q(\\text{пропана}) = m \\cdot Q_m = 3.5 \\cdot 46206 = 161721 \\text{ кДж}$ <br> $\\frac{Q(\\text{пропана})}{Q(\\text{бензин})} = \\frac{161721}{44512} = 3.633$",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$Q(\\text{бензин}) = 44512 \\text{ кДж}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$Q(\\text{пропана}) = 161721 \\text{ кДж}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$3.633$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "name": "Химия соединений кобальта",
+    "maxPoints": 23.0,
+    "weightedMaxPoints": 12.0,
+    "parts": [
+      {
+        "number": "5.1",
+        "description": "Определите формулу исходного кристаллогидрата сульфата кобальта(II). Ответ подтвердите расчетом.",
+        "solution": "Масса безводной соли: $m(\\text{CoSO}_4) = (100 + 10) \\cdot 0.05 = 5.5 \\text{ г}$ <br> $n(\\text{CoSO}_4) = \\frac{m}{M} = \\frac{5.5}{155.0} = 0.0355 \\text{ моль} = n(\\text{CoSO}_4 \\cdot n\\text{H}_2\\text{O})$ <br> $M(\\text{CoSO}_4 \\cdot n\\text{H}_2\\text{O}) = \\frac{m}{n} = \\frac{10}{0.0355} = 281.8 \\text{ г/моль} = 58.9 + 32 + 64 + 18n$ <br> $n = 7$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Масса безводной соли: $m(\\text{CoSO}_4) = (100 + 10) \\cdot 0.05 = 5.5 \\text{ г}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$M(\\text{CoSO}_4 \\cdot n\\text{H}_2\\text{O}) = \\frac{m}{n} = \\frac{10}{0.0355} = 281.8 \\text{ г/моль} = 58.9 + 32 + 64 + 18n$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$n = 7$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "При ином способе решения и верном ответе выставляется полный балл",
+                "points": 3.0,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": "5.2",
+        "description": "Определите вещества Х, Y, Z. Состав Х подтвердите расчетом.",
+        "solution": "Найдём соотношение элементов Co : S : О в Х.<br> $n(\\text{Co}): n(\\text{S}): n(\\text{O}) = \\frac{w(\\text{Co})}{M(\\text{Co})} : \\frac{w(\\text{S})}{M(\\text{S})} : \\frac{w(\\text{O})}{M(\\text{O})} = \\frac{16.14}{58.93} : \\frac{13.17}{32.07} : \\frac{65.75}{16} = 2:3:30$ <br>Молярная масса Х в таком случае равна $2 \\cdot 58.93 : 0.1614 = 730.2 \\text{ г/моль}$. За вычетом 2 атомов Co, 3 атомов S и 30 атомов O остается 36 г/моль, что может соответствовать только 36 атомам водорода. Тогда брутто-формула Х – $\\text{Co}_2\\text{S}_3\\text{H}_{36}\\text{O}_{30}$. Это гидрат сульфата кобальта(III) – $\\text{Co}_2(\\text{SO}_4)_3 \\cdot 18\\text{H}_2\\text{O}$.<br> $\\text{Со}^{3+}$ в отсутствие сильных комплексообразователей – очень сильный окислитель, поэтому способен окислять воду. Тогда Y – кислород, $\\text{О}_2$.<br>Такой же качественный состав, как и $\\text{О}_2$, имеет только озон. Z – это $\\text{О}_3$.",
+        "maxPoints": 7.0,
+        "subparts": [
+          {
+            "description": "Формула Х – $\\text{Co}_2(\\text{SO}_4)_3 \\cdot 18\\text{H}_2\\text{O}$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Y – кислород, $\\text{О}_2$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Z – это $\\text{О}_3$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "расчет",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "5.3",
+        "description": "Запишите уравнения реакций 1 и 2.",
+        "solution": "Уравнение реакции 1:<br> $2\\text{Co}_2(\\text{SO}_4)_3 + 2\\text{H}_2\\text{O} \\rightarrow 4\\text{CoSO}_4 + 2\\text{H}_2\\text{SO}_4 + \\text{O}_2$ <br>Уравнение реакции 2:<br> $2\\text{CoSO}_4 + \\text{H}_2\\text{SO}_4 + \\text{O}_3 \\rightarrow \\text{Co}_2(\\text{SO}_4)_3 + \\text{H}_2\\text{O} + \\text{О}_2$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "$2\\text{Co}_2(\\text{SO}_4)_3 + 2\\text{H}_2\\text{O} \\rightarrow 4\\text{CoSO}_4 + 2\\text{H}_2\\text{SO}_4 + \\text{O}_2$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$2\\text{CoSO}_4 + \\text{H}_2\\text{SO}_4 + \\text{O}_3 \\rightarrow \\text{Co}_2(\\text{SO}_4)_3 + \\text{H}_2\\text{O} + \\text{О}_2$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "5.4",
+        "description": "Определите металл М и формулу квасцов Q, если дополнительно известно, что квасцы имеют общую формулу $\\text{A}^+\\text{B}^{3+}(\\text{SO}_4)_2 \\cdot 12\\text{H}_2\\text{O}$. Ответ подтвердите расчетом.",
+        "solution": "Q имеет формулу $\\text{MCo}(\\text{SO}_4)_2 \\cdot 12\\text{H}_2\\text{O}$. Поскольку в каждой ячейке по 4 атома М, то и всего формульных единиц в ячейке 4. Тогда:<br> $M(\\text{Q}) = \\frac{1}{4} \\rho N_A a^3 = 0.25 \\cdot 2.146 \\cdot 6.022 \\cdot 10^{23} \\cdot (12.29 \\cdot 10^{-8})^3 = 599.7 \\text{г/моль}$ <br>За вычетом двух сульфат-ионов, 1 иона кобальта и 12 молекул воды остается $132.8 \\text{г/моль}$, то есть М – это Cs, Q – это $\\text{CsCo}(\\text{SO}_4)_2 \\cdot 12\\text{H}_2\\text{O}$.",
+        "maxPoints": 5.0,
+        "subparts": [
+          {
+            "description": "Расчет молярной массы",
+            "points": 3.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "М – это Cs",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Q – это $\\text{CsCo}(\\text{SO}_4)_2 \\cdot 12\\text{H}_2\\text{O}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "5.5",
+        "description": "Какое время необходимо проводить электролиз для получения Х описанным способом, чтобы превратить в Х 90% кобальта? Постоянная Фарадея $F = 96485$ Кл/моль",
+        "solution": "Закон Фарадея запишем в виде<br> $n(\\text{Co}^{3+}) = \\frac{I t \\eta}{z F}$ <br> $z = 1$, так как в полуреакции $\\text{Co}^{2+} - e^- \\rightarrow \\text{Co}^{3+}$ передается 1 электрон.<br> $n(\\text{Co}^{3+}) = 0.9 \\cdot 0.0355 = 0.03195$ моль.<br> $t = \\frac{n(\\text{Co}^{3+})zF}{I \\eta} = \\frac{0.03195 \\cdot 1 \\cdot 96485}{32 \\cdot 0.055 \\cdot 0.93} = 1883 \\text{ с}$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "Учёт $z = 1$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "верный ответ $(1883 \\text{ с})$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "верные единицы измерения ответа",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "name": "Равновесия в растворах",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 11.0,
+    "parts": [
+      {
+        "number": "6.1",
+        "description": "Растворимость углекислого газа при температуре $25 ^\\circ\\text{C}$ и давлении 1 атм равна $0.034\\text{M}$. Учитывайте диссоциацию только по первой ступени. Расчитайте pH этого раствора. Как давление и температура будет влиять на pH?",
+        "solution": "$[\\text{CO}_2(\\text{водн})] = 0.034M$ <br> $[\\text{CO}_2(\\text{водн})] = [H_2CO_3]$ <br> $H_2CO_3 \\leftrightarrow H^+ + HCO_3^-$ <br> $0.034-x \\quad x \\quad x$ <br> $k_1 = \\frac{[H^+][HCO_3^-]}{[H_2CO_3]} = \\frac{x^2}{0.034-x} = 4.46 \\cdot 10^{-7}$ <br> $[H^+] = 1.23 \\cdot 10^{-4}$ <br> $pH = -\\log(1.23 \\cdot 10^{-4}) = 3.91$ <br>При уменьшении температуры и увеличении давления растворимость углекислого газа увеличится, что соответственно приведет к уменьшению pH.",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$k_1 = \\frac{x^2}{0.034-x} = 4.46 \\cdot 10^{-7}$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "При уменьшении температуры и увеличении давления растворимость углекислого газа увеличится, что соответственно приведет к уменьшению pH.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "6.2",
+        "description": "Найдите значение константы равновесия для этой реакции, выразив K через другие константы.",
+        "solution": "$K = \\frac{[Ca^{+2}][HCO_3^-]^2}{[CO_2(\\text{водн})]}$ <br> $K = [Ca^{+2}][CO_3^{-2}] \\cdot \\frac{[H^+][HCO_3^-]}{[CO_2(\\text{водн})]} \\cdot \\frac{[HCO_3^-]}{[H^+][CO_3^{-2}]} = [Ca^{+2}][CO_3^{-2}] \\cdot \\frac{[H^+][HCO_3^-]}{[CO_2(\\text{водн})]} \\cdot \\frac{[HCO_3^-]}{[H^+][CO_3^{-2}]} = K_{sp1} \\cdot K_1 \\cdot \\frac{1}{K_2}$ <br> $K = \\frac{K_{sp1} \\cdot K_1}{K_2} = \\frac{3.31 \\cdot 10^{-9} \\cdot 4.46 \\cdot 10^{-7}}{4.69 \\cdot 10^{-11}} = 3.15 \\cdot 10^{-5}$",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$K = 3.15 \\cdot 10^{-5}$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "6.3",
+        "description": "Концентрация ионов кальция в реке составляет примерно $2.30 \\cdot 10^{-3}M$. Рассчитайте значение для $P_{CO2}$ который находится в равновесии с этим количеством кальция, если известно что $[HCO_3^-]=2[Ca^{+2}]$. (Если не смогли найти значение K в п.2, возьмите $K = 5.00 \\cdot 10^{-5})$",
+        "solution": "$CaCO_3(\\text{тв, кальцит}) + CO_2(\\text{водн}) + H_2O \\leftrightarrow Ca^{+2} + 2HCO_3^- \\quad K = 3.15 \\cdot 10^{-5}$ <br> $[Ca^{+2}] = 2.30 \\cdot 10^{-3}M$ <br> $[HCO_3^-] = 2[Ca^{+2}]$ <br> $[HCO_3^-] = 2 \\cdot 2.30 \\cdot 10^{-3} = 4.60 \\cdot 10^{-3}M$ <br> $K = \\frac{[Ca^{+2}][HCO_3^-]^2}{[CO_2(\\text{водн})]} \\quad (1)$ <br> $K_{CO2} = \\frac{[CO_2(\\text{водн})]}{P_{CO2}} \\quad (2)$ <br>Для нахождения $P_{CO2}$ объеденяем уравнения (1) и (2)<br> $K = \\frac{[Ca^{+2}][HCO_3^-]^2}{K_{CO2} \\cdot P_{CO2}}$ <br> $3.15 \\cdot 10^{-5} = \\frac{(2.30 \\cdot 10^{-3}) \\cdot (4.60 \\cdot 10^{-3})^2}{3.44 \\cdot 10^{-2} \\cdot P_{CO2}}$ <br> $P_{CO2} = 0.045$ атм",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "$K = \\frac{[Ca^{+2}][HCO_3^-]^2}{K_{CO2} \\cdot P_{CO2}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$P_{CO2} = 0.045$ атм",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "6.4",
+        "description": "Растворимость агонита зависит от концентрации $[CO_3^{-2}]$, при уменьшении которого агонит начинает растворятся в воде. Выразите уравнение для нахождения $[CO_3^{-2}]$ через $P_{CO2}$ и $[H^+]$ комбинируя выражения $K_{CO2}, K_1$ и $K_2$. Найдите концентрацию, если известно что парциальное давление углекислого газа в океане равно $6.00 \\times 10^{-4}$ атм, и pH равен 8.0.",
+        "solution": "$[CO_3^{-2}] = \\frac{K_2[HCO_3^-]}{[H^+]} \\quad (3)$ <br> $[HCO_3^-] = \\frac{K_1[CO_2(\\text{водн})]}{[H^+]} \\quad (4)$ <br> $[CO_2(\\text{водн})] = K_{CO2} \\cdot P_{CO2} \\quad (5)$ <br>Объеденив уравнения (3),(4) и (5) получаем выражение для $[CO_3^{-2}]$.<br> $[CO_3^{-2}] = \\frac{K_1 K_2 K_{CO2} P_{CO2}}{[H^+]^2}$ <br> $[CO_3^{-2}] = \\frac{4.46 \\cdot 10^{-7} \\cdot 4.69 \\cdot 10^{-11} \\cdot 3.44 \\cdot 10^{-2} \\cdot 600 \\cdot 10^{-6}}{(10^{-8})^2} = 4.32 \\cdot 10^{-6}M$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "$[CO_3^{-2}] = \\frac{K_1 K_2 K_{CO2} P_{CO2}}{[H^+]^2}$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$[CO_3^{-2}] = 4.32 \\cdot 10^{-6}M$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "6.5",
+        "description": "Будет ли растворятся агонит в этих условиях, если концентрация кальция в океане составляет 0.0103 M? Ответ обоснуйте расчетами.",
+        "solution": "$CaCO_3(\\text{тв, агонит}) \\leftrightarrow Ca^{+2} + CO_3^{-2} \\quad K_{sp2} = 5.87 \\cdot 10^{-8}$ <br> $[Ca^{+2}] = 0.0103 M$ <br> $[Ca^{+2}][CO_3^{-2}] = 0.0103 \\cdot 4.32 \\cdot 10^{-6} = 4.45 \\cdot 10^{-8}$ <br> $4.45 \\cdot 10^{-8} < K_{sp2} = 5.87 \\cdot 10^{-8}$ <br>Значение $4.45 \\cdot 10^{-8}$ меньше чем значение $K_{sp2}$ значит агонит начинает растворятся в этих условиях.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "$[Ca^{+2}][CO_3^{-2}] = 0.0103 \\cdot 4.32 \\cdot 10^{-6} = 4.45 \\cdot 10^{-8}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Значение $4.45 \\cdot 10^{-8}$ меньше чем значение $K_{sp2}$ значит агонит начинает растворятся в этих условиях.",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "name": "Лекарственные препараты",
+    "maxPoints": 17.0,
+    "weightedMaxPoints": 11.0,
+    "parts": [
+      {
+        "number": "7.1",
+        "description": "Нарисуйте структуру искомого препарата J исходя из его номенклатурного названия.",
+        "solution": "J - гидрохлорид 4-амино-3-фенилбутановой кислоты.",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "J - гидрохлорид 4-амино-3-фенилбутановой кислоты",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "7.2",
+        "description": "Нарисуйте структуру каждого из зашифрованных веществ A – I. Стереохимией на оптических центрах можно пренебречь.",
+        "solution": "A: $\\text{HC} \\equiv \\text{CH}$ <br>B: $\\text{H}_2\\text{C} = \\text{CH}_2$ <br>C: $\\text{H}_2\\text{C} - \\text{CH}_2$ (дихлорэтан, точнее 1,2-дихлорэтан, в решении нарисована формула $\\text{Cl}-\\text{CH}_2-\\text{CH}_2-\\text{Cl})$ <br>D: $\\text{NC} - \\text{CH}_2 - \\text{CH}_2 - \\text{CN}$ (сукцинонитрил)<br>E: $\\text{NC} - \\text{CH}(\\text{Cl}) - \\text{CH}_2 - \\text{CN}$ <br>F: Бензол<br>G: $\\text{NC} - \\text{CH}(\\text{Ph}) - \\text{CH}_2 - \\text{CN}$ (где Ph - фенильная группа)<br>H: $\\text{NC} - \\text{CH}(\\text{Ph}) - \\text{CH}_2 - \\text{COOH}$ <br>I: $\\text{NH}_2 - \\text{CH}_2 - \\text{CH}(\\text{Ph}) - \\text{CH}_2 - \\text{COOH}$ (фенибут)",
+        "maxPoints": 9.0,
+        "subparts": [
+          {
+            "description": "Каждое вещество по 1 баллу (1 бал $\\times$ 9)",
+            "points": 9.0,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "7.3",
+        "description": "На самом деле, при действии сильной кислоты на G при высокой температуре наряду с H образуются его изомер Ha и продукт Hb, способный реагировать с двумя эквивалентами гидроксида натрия. Нарисуйте структуры Ha и Hb.",
+        "solution": "Ha: $\\text{COOH} - \\text{CH}(\\text{Ph}) - \\text{CH}_2 - \\text{CN}$ <br>Hb: $\\text{COOH} - \\text{CH}(\\text{Ph}) - \\text{CH}_2 - \\text{COOH}$ (фенилянтарная кислота)",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "Каждое вещество по 1 баллу (1 балл $\\times$ 2)",
+            "points": 2.0,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "7.4",
+        "description": "Нарисуйте структуры зашифрованных веществ K – N. Вещество M представляет из себя транс-изомер.",
+        "solution": "K: Бензальдегид $(\\text{PhCHO})$ <br>L: $\\text{CH}_3\\text{COCH}_2\\text{COOH}$ (ацетоуксусная кислота)<br>M: $\\text{PhCH}=\\text{CHCOOH}$ (коричная кислота)<br>N: $\\text{PhCH}(\\text{Br})\\text{CH}_2\\text{COOH}$",
+        "maxPoints": 4.0,
+        "subparts": [
+          {
+            "description": "Каждое вещество по 1 баллу (1 балл $\\times$ 4)",
+            "points": 4.0,
+            "type": "open",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
