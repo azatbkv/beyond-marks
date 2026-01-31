@@ -17,12 +17,13 @@
 </svelte:head>
 
 <nav class="fixed top-0 z-25 flex h-12 w-full items-center justify-between border-b-1 bg-zinc-50">
-  <a href="/" class="ml-4 flex items-center">
+  <a href="/" class="mx-4 flex items-center">
     <img src={favicon} alt="Home" class="h-8 w-8" />
+    <h1 class="ml-2 text-base tracking-tight"><span class="font-semibold">Beyond</span>Marks</h1>
   </a>
   <NavigationMenu.Root>
     <NavigationMenu.List>
-      <NavigationMenu.Item class="pr-12">
+      <NavigationMenu.Item class="pr-4">
         <NavigationMenu.Link href="/olympiads" class="text-base hover:bg-indigo-50">
           Olympiads
         </NavigationMenu.Link>
