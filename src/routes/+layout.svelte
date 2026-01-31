@@ -1,6 +1,6 @@
 <script lang="ts">
   import '../app.css';
-  import favicon from '$lib/assets/favicon.svg';
+  import favicon from '$lib/assets/favicon.png';
   import * as NavigationMenu from '$lib/components/ui/navigation-menu/index';
   import * as Avatar from '$lib/components/ui/avatar/index';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index';
@@ -16,7 +16,10 @@
   <link rel="icon" href={favicon} />
 </svelte:head>
 
-<nav class="fixed top-0 z-25 flex h-12 w-full items-center justify-end border-b-1 bg-zinc-50">
+<nav class="fixed top-0 z-25 flex h-12 w-full items-center justify-between border-b-1 bg-zinc-50">
+  <a href="/" class="ml-4 flex items-center">
+    <img src={favicon} alt="Home" class="h-8 w-8" />
+  </a>
   <NavigationMenu.Root>
     <NavigationMenu.List>
       <NavigationMenu.Item class="pr-12">
