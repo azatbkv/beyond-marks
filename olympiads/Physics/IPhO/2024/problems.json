@@ -1,0 +1,540 @@
+[
+  {
+    "number": 1,
+    "name": "The Greenhouse Effect",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A",
+        "description": "In this part, consider the Earth’s surface as a blackbody and neglect the Earth's atmosphere.<br><br>A-1 Find the solar constant, $S_0$.<br><br>A-2 Find the Earth’s temperature, $T_E$.<br><br>A-3 Find the function $f(x)$.<br><br>A-4 Calculate the numerical value of $x_m$, and from this value $x_m$, find the value of $b$.<br><br>A-5 Find $\\lambda_{\\max}$ for the Sun and the Earth.<br><br>In figure 1 the functions $\\gamma \\tilde{u}_S(\\lambda)$ and $u(\\lambda, T_E)$ are plotted versus $\\lambda$, where $\\gamma$ is a dimensionless coefficient to rescale $\\tilde{u}_S(\\lambda)$ such that the values of the two peaks coincide.<br><br>A-6 Determine $\\gamma$.",
+        "solution": "A-1. All the energy emitted from the surface of the Sun, will reach a sphere of radius $d$, therefore:<br> $$ \\sigma T_S^4 \\cdot \\left(4\\pi R_S^2\\right) = \\left(4\\pi d^2\\right) \\cdot S_0 $$ <br> $$ S_0 = \\sigma T_S^4 \\cdot \\left(\\frac{R_S}{d}\\right)^2 = 5.67 \\times 10^{-8} \\, \\frac{\\text{W}}{\\text{m}^2\\text{K}^4} \\times \\left(5.77 \\times 10^3 \\, \\text{K}\\right)^4 \\times \\left(\\frac{6.96 \\times 10^8 \\, \\text{m}}{1.5 \\times 10^{11} \\, \\text{m}}\\right)^2 = 1.35 \\times 10^3 \\, \\frac{\\text{W}}{\\text{m}^2} $$ <br><br>A-2. It is assumed that the Earth is in thermal equilibrium. Therefore, the energy it receives per unit time should be equal to the energy it radiates per unit time. The Earth’s cross-section intercepting the solar radiation at this distance has an area of $\\pi R_E^2$, but the Earth radiates heat from all points on its surface with an area of $4\\pi R_E^2$, so:<br> $$ \\pi R_E^2 \\cdot S_0 = 4\\pi R_E^2 \\sigma T_E^4 \\rightarrow T_E = \\left(\\frac{S_0}{4\\sigma}\\right)^{\\frac{1}{4}} = 278 \\, \\text{K} $$ <br><br>A-3. The radiation is maximum at the wavelength for which the derivative of $u$ with respect to $\\lambda$ is zero:<br> $$ \\frac{du}{d\\lambda} = \\frac{2\\pi hc^2}{\\lambda^6} \\cdot \\frac{1}{\\exp\\left(\\frac{hc}{\\lambda k_B T}\\right) - 1} \\cdot \\left[-5 + \\frac{hc}{\\lambda k_B T} \\frac{\\exp\\left(\\frac{hc}{\\lambda k_B T}\\right)}{\\exp\\left(\\frac{hc}{\\lambda k_B T}\\right) - 1}\\right] $$ <br> $$ \\left.\\frac{du}{d\\lambda}\\right|_{\\lambda = \\lambda_m} = 0 \\Rightarrow \\frac{hc}{\\lambda_m k_B T} \\frac{\\exp\\left(\\frac{hc}{\\lambda_m k_B T}\\right)}{\\exp\\left(\\frac{hc}{\\lambda_m k_B T}\\right) - 1} = 5 $$ <br>Defining $x_m \\equiv \\frac{hc}{\\lambda_m k_B T}$ we obtain the following transcendental equation:<br> $$ 5\\left(1 - e^{-x_m}\\right) - x_m = 0 $$ <br> $$ f(x) = 5\\left(1 - e^{-x}\\right) - x $$ <br><br>A-4. The first guess is $x_m^{(1)} = 5$. Substituting repeatedly for $x_m$ we can continue as follows:<br> $$ x_m^{(2)} = 5\\left(1 - e^{-5}\\right) = 4.97 $$ <br> $$ x_m^{(3)} = 5\\left(1 - e^{-4.97}\\right) = 4.97 $$ <br>Further iterations do not change the value of $x_m$ to three significant figures, so:<br> $$ \\lambda_m T = \\frac{hc}{x_m k_B} = b = 1240 \\, \\text{eV} \\cdot \\text{nm} \\times \\frac{1}{4.97 \\times 8.62 \\times 10^{-5} \\, \\text{eVK}^{-1}} = 2.89 \\times 10^6 \\, \\text{nm} \\cdot \\text{K} $$ <br>Numerical value of $b = [2.89, 2.90] \\times 10^6 \\, \\text{nm} \\cdot \\text{K}$.<br><br>A-5. Using Wien’s displacement law and the constant $b$ obtained in the previous part, we can calculate the wavelength at which the radiation from the Sun and the Earth reaches its maximum:<br> $$ \\lambda_{\\max}^{\\text{Sun}} = \\frac{b}{T_S} = \\frac{2.89 \\times 10^6 \\, \\text{nm} \\cdot \\text{K}}{5.77 \\times 10^3 \\, \\text{K}} = [5.01, 5.02] \\times 10^2 \\, \\text{nm} $$ <br> $$ \\lambda_{\\max}^{\\text{Earth}} = \\frac{b}{T_E} = \\frac{2.89 \\times 10^6 \\, \\text{nm} \\cdot \\text{K}}{278 \\, \\text{K}} = 1.04 \\times 10^4 \\, \\text{nm} $$ <br><br>A-6. From the diagram, it can clearly be seen that $\\gamma \\tilde{u}_S(\\lambda_{\\max}^S) = u(\\lambda_{\\max}^{\\text{Earth}}, T_E)$, so we have:<br> $$ \\tilde{u}_S(\\lambda_{\\max}^{\\text{Sun}}) = \\left(\\frac{R_S}{d}\\right)^2 \\frac{2\\pi hc^2}{\\left(\\lambda_{\\max}^{\\text{Sun}}\\right)^5} \\frac{1}{\\exp\\left(\\frac{hc}{\\lambda_{\\max}^{\\text{Sun}} k_B T_S}\\right) - 1} = \\left(\\frac{R_S}{d}\\right)^2 \\frac{2\\pi hc^2}{\\left(\\lambda_{\\max}^{\\text{Sun}}\\right)^5} \\frac{1}{\\exp\\left(\\frac{hc}{k_B b}\\right) - 1} $$ <br> $$ u(\\lambda_{\\max}^{\\text{Earth}}, T_E) = \\frac{2\\pi hc^2}{\\left(\\lambda_{\\max}^{\\text{Earth}}\\right)^5} \\frac{1}{\\exp\\left(\\frac{hc}{\\lambda_{\\max}^{\\text{Earth}} k_B T_E}\\right) - 1} = \\frac{2\\pi hc^2}{\\left(\\lambda_{\\max}^{\\text{Earth}}\\right)^5} \\frac{1}{\\exp\\left(\\frac{hc}{k_B b}\\right) - 1} $$ <br>Dividing these two quantities we'll find:<br> $$ \\gamma = \\left(\\frac{d}{R_S}\\right)^2 \\times \\left(\\frac{T_E}{T_S}\\right)^5 = [1.20, 1.21] \\times 10^{-2} $$",
+        "maxPoints": 3.0,
+        "subparts": [
+          {
+            "description": "Equation for $S_0$: $S_0 = \\sigma T_S^4 \\cdot \\left(\\frac{R_S}{d}\\right)^2$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Realizing energy conservation",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Numerical value of $S_0$: $1.35 \\times 10^3 \\, \\text{W}/\\text{m}^2$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation for $T_E$: $T_E = \\left(\\frac{S_0}{4\\sigma}\\right)^{\\frac{1}{4}}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Realizing energy balance",
+                "points": 0.1,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Numerical value of $T_E$: $278 \\, \\text{K}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Function $f(x)$: $f(x) = 5\\left(1 - e^{-x}\\right) - x$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $x_m$: $\\{4.96, 4.97\\}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $b$: $[2.89, 2.90] \\times 10^6 \\, \\text{nm} \\cdot \\text{K}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\lambda_{\\max}^{\\text{Sun}}$: $[5.01, 5.02] \\times 10^2 \\, \\text{nm}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\lambda_{\\max}^{\\text{Earth}}$: $1.04 \\times 10^4 \\, \\text{nm}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\gamma$: $\\gamma = \\left(\\frac{d}{R_S}\\right)^2 \\times \\left(\\frac{T_E}{T_S}\\right)^5$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "Realizing $\\tilde{u}_S = \\left(\\frac{R_S}{d}\\right)^2 u_S(\\lambda)$",
+                "points": 0.3,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Numerical value of $\\gamma$: $[1.20, 1.21] \\times 10^{-2}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B",
+        "description": "B-1 Assume that $\\epsilon = 1$ and $r_E = 0$, and calculate the Earth’s temperature $T_E$ and the atmosphere’s temperature $T_A$.<br><br>Now assume that $r_E \\neq 0$. In this case, the combined system of “Earth + atmosphere” reflects a different fraction of the solar radiation, called “albedo” and denoted by $\\alpha$.<br><br>B-2 Determine the albedo, $\\alpha$, in terms of $r_E$ and $r_A$. Then calculate its numerical value assuming $r_E = 0.102$ (and $r_A = 0.255)$.<br><br>B-3<br>a) Express the Earth’s temperature in terms of $\\sigma, \\alpha, S_0$, and $\\epsilon$.<br>b) Using the given data and the calculated albedo, find the numerical value of $\\epsilon$ which leads to the current average temperature of $T_E = 288 \\, \\text{K}$ for the Earth.<br><br>B-4 Find $\\frac{dT_E}{d\\epsilon}$ and determine by how much the Earth’s temperature increases if $\\epsilon$ increases by one percent.<br><br>Assume $T_A = 245 \\, \\text{K}$ and $T_E = 288 \\, \\text{K}$. These values come from real data and may differ from the results which you have obtained in the previous tasks. Now suppose that a non-radiative (e. g. convective) thermal flow $J_{\\text{NR}} = k(T_E - T_A)$ is maintained from the Earth to the atmosphere, where $k$ is a constant. The quantity, $J_{\\text{NR}}$, is the transmitted power per unit area.<br><br>B-5 Calculate $\\epsilon$ and $k$ in terms of $T_E, T_A, \\sigma, \\alpha$, and $S_0$.<br><br>B-6<br>a) Differentiating the equations obtained in part B-5 with respect to $\\epsilon$, find the two algebraic equations satisfied by $\\frac{dT_A}{d\\epsilon}$ and $\\frac{dT_E}{d\\epsilon}$.<br>b) Use these equations to find the numerical value of change in the Earth’s temperature as a result of a one percent increase in the value of $\\epsilon$.",
+        "solution": "B-1. Both the Earth and its atmosphere are in thermal equilibrium, so one can write an equation that balances the input and output powers. For the Earth we have:<br> $$ \\left(\\pi R_E^2\\right)(1 - r_A)S_0 + \\left(4\\pi R_E^2\\right)\\sigma T_A^4 = \\left(4\\pi R_E^2\\right)\\sigma T_E^4 $$ <br>and for the atmosphere:<br> $$ \\left(4\\pi R_E^2\\right)\\sigma T_E^4 = 2\\left(4\\pi R_E^2\\right)\\sigma T_A^4 $$ <br>Note that the coefficient 2 on the right-hand side of the equation is due to the atmosphere radiating heat on both sides (above and below). Eliminating $T_E$ from the two relations we obtain:<br> $$ T_A = \\left(\\frac{(1 - r_A)S_0}{4\\sigma}\\right)^{\\frac{1}{4}} = 2.58 \\times 10^2 \\, \\text{K} \\Rightarrow T_E = \\left(2T_A^4\\right)^{\\frac{1}{4}} = 3.07 \\times 10^2 \\, \\text{K} $$ <br><br>B-2. As can be seen in the figure, a fraction $(1 - r_A)$ of the solar radiation reaches the Earth’s surface after traversing the atmosphere. A fraction $r_E$ of this light is reflected back and reaches the atmosphere, where a fraction $r_A$ is reflected and returns to the Earth’s surface. This process repeats ad infinitum and the sum of the powers transmitted at all these instances, determines the albedo. Denoting the power returned to space after $n$ reflections by $\\tilde{S}_n$, we'll have $\\tilde{S}_0 = r_A S_0$ and the remaining power i.e. $(1 - r_A)S_0$, reaches the Earth’s surface. From this power, $(1 - r_A)r_E S_0$ is reflected, and a fraction $1 - r_A$ of it is transmitted through the atmosphere to the space, hence:<br> $$ \\tilde{S}_1 = (1 - r_A)^2 r_E S_0 = \\frac{(1 - r_A)^2}{r_A} r_E \\tilde{S}_0 $$ <br>The power that is reflected back to the Earth by the atmosphere after $(n - 1)$ reflections is $\\tilde{S}_{n-1}\\left(\\frac{r_A}{1-r_A}\\right)$, of which a fraction $r_E$ is again sent back towards the atmosphere on the $n$ - ’th reflection, and the atmosphere allows a fraction $1 - r_A$ of this reflected power to escape into the space, thus:<br> $$ \\tilde{S}_n = \\frac{\\tilde{S}_{n-1}}{1 - r_A} r_A r_E \\times (1 - r_A) = r_A r_E \\tilde{S}_{n-1} = (r_A r_E)^{n-1} \\tilde{S}_1 $$ <br>By adding all these terms, one obtains the power returned per unit area from the Earth-atmosphere system:<br> $$ \\tilde{S} = \\sum_{n=0}^{\\infty} \\tilde{S}_n = \\tilde{S}_0 + \\tilde{S}_1 \\sum_{n=1}^{\\infty} (r_A r_E)^{n-1} = r_A S_0 + (1 - r_A)^2 r_E S_0 \\times \\frac{1}{1 - r_A r_E} $$ <br> $$ = \\left[r_A + \\frac{(1 - r_A)^2 r_E}{1 - r_A r_E}\\right] \\times S_0 $$ <br>Dividing by the solar constant we get the value for albedo:<br> $$ \\alpha = \\frac{\\tilde{S}}{S_0} = r_A + \\frac{(1 - r_A)^2 r_E}{1 - r_A r_E} = 3.13 \\times 10^{-1} $$ <br><br>B-3. Again, thermal equilibrium requires the input and output powers to be equal both for the Earth and for the atmosphere, the only difference being that the Earth absorbs now a fraction $1 - \\alpha$ of the Sun’s radiation. Thus, for Earth we have:<br> $$ \\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_A^4 + \\left(\\pi R_E^2\\right)(1 - \\alpha)S_0 = \\left(4\\pi R_E^2\\right)\\sigma T_E^4 $$ <br>and for the atmosphere:<br> $$ \\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_E^4 = 2\\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_A^4 $$ <br> $$ T_E = \\left[\\frac{(1 - \\alpha)}{2\\sigma(2 - \\epsilon)}S_0\\right]^{\\frac{1}{4}} $$ <br> $$ \\epsilon = \\frac{\\sigma T_E^4 - \\frac{(1 - \\alpha)}{4}S_0}{\\sigma T_A^4} = 2 \\frac{\\sigma T_E^4 - \\frac{(1 - \\alpha)}{4}S_0}{\\sigma T_E^4} = [8.07, 8.11] \\times 10^{-1} $$ <br><br>B-4.<br> $$ \\frac{dT_E}{d\\epsilon} = \\frac{1}{4} \\left[\\frac{(1 - \\alpha)S_0}{2\\sigma(2 - \\epsilon)}\\right]^{\\frac{1}{4}} \\frac{1}{(2 - \\epsilon)} $$ <br> $$ \\delta T_E = \\frac{dT_E}{d\\epsilon} \\epsilon = \\left[\\frac{4\\sigma T_E^4}{(1 - \\alpha)S_0} - 1\\right] \\frac{T_E}{4} \\times 0.01 = [4.87, 4.92] \\times 10^{-1} $$ <br><br>B-5. The equations for thermal equilibrium are similar to those for Part B.3, only a non-radiative thermal current needs to be added. For the Earth:<br> $$ \\left(\\pi R_E^2\\right)(1 - \\alpha)S_0 + \\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_A^4 = \\left(4\\pi R_E^2\\right)\\sigma T_E^4 + \\left(4\\pi R_E^2\\right)k(T_E - T_A) $$ <br>and for the atmosphere:<br> $$ \\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_E^4 + \\left(4\\pi R_E^2\\right)k(T_E - T_A) = 2\\left(4\\pi R_E^2\\right)\\epsilon\\sigma T_A^4 $$ <br>After completing the calculations, we will have:<br> $$ \\epsilon = \\frac{\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}}{\\sigma(T_E^4 - T_A^4)} = [8.47, 8.52] \\times 10^{-1} $$ <br> $$ k = \\frac{\\epsilon\\sigma(2T_A^4 - T_E^4)}{T_E - T_A} = \\frac{(2T_A^4 - T_E^4) \\times \\left[\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}\\right]}{(T_E^4 - T_A^4) \\times (T_E - T_A)} = [3.57, 3.66] \\times 10^{-1} \\, \\text{W}/\\text{m}^2\\text{K} $$ <br><br>B-6. In order to find the change in the temperatures of the Earth and the atmosphere in terms of $\\epsilon$ and $k$, we take the logarithm of both sides of the relations before taking the derivative:<br> $$ \\ln\\epsilon = \\ln\\left[\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}\\right] - \\ln\\sigma - \\ln\\left(T_E^4 - T_A^4\\right) $$ <br> $$ \\ln k = \\ln\\epsilon + \\ln\\sigma + \\ln\\left(2T_A^4 - T_E^4\\right) - \\ln(T_E - T_A) $$ <br> $$ \\frac{1}{\\epsilon} = \\frac{4\\sigma T_E^3 \\frac{dT_E}{d\\epsilon}}{\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}} - \\frac{4T_E^3 \\frac{dT_E}{d\\epsilon} - 4T_A^3 \\frac{dT_A}{d\\epsilon}}{T_E^4 - T_A^4} $$ <br> $$ 0 = \\frac{1}{\\epsilon} + \\frac{8T_A^3 \\frac{dT_A}{d\\epsilon} - 4T_E^3 \\frac{dT_E}{d\\epsilon}}{2T_A^4 - T_E^4} - \\frac{\\frac{dT_E}{d\\epsilon} - \\frac{dT_A}{d\\epsilon}}{T_E - T_A} $$ <br>Solving this set of linear equations and substituting $\\epsilon$ in B-5, we find:<br> $$ \\epsilon \\left[\\frac{1}{T_E - T_A} + \\frac{4T_E^3}{2T_A^4 - T_E^4}\\right] \\frac{dT_E}{d\\epsilon} = 1 + \\epsilon \\left[\\frac{8T_A^3}{2T_A^4 - T_E^4} + \\frac{1}{T_E - T_A}\\right] \\frac{dT_A}{d\\epsilon} $$ <br> $$ 1 + \\epsilon \\left[\\frac{4T_E^3}{T_E^4 - T_A^4} - \\frac{4\\sigma T_E^3}{\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}}\\right] \\frac{dT_E}{d\\epsilon} = \\frac{4T_A^3}{T_E^4 - T_A^4} \\epsilon \\frac{dT_A}{d\\epsilon} $$ <br> $$ \\delta T_E = \\epsilon \\frac{dT_E}{d\\epsilon} \\frac{d\\epsilon}{\\epsilon} = [5.21, 5.28] \\times 10^{-1} \\, \\text{K} $$",
+        "maxPoints": 7.0,
+        "subparts": [
+          {
+            "description": "Two correct expressions for $T_A$ and $T_E$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": [
+              {
+                "description": "One correct expression",
+                "points": 0.6,
+                "type": "closed",
+                "childSubparts": []
+              }
+            ]
+          },
+          {
+            "description": "Numerical value of $T_A$: $2.58 \\times 10^2 \\, \\text{K}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $T_E$: $3.07 \\times 10^2 \\, \\text{K}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\alpha$: $\\alpha = r_A + \\frac{(1-r_A)^2 r_E}{1-r_A r_E}$",
+            "points": 1.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\alpha$: $3.13 \\times 10^{-1}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $T_E$: $T_E = \\left[\\frac{(1 - \\alpha)S_0}{2\\sigma(2 - \\epsilon)}\\right]^{\\frac{1}{4}}$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\epsilon$: $[8.07, 8.11] \\times 10^{-1}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\frac{dT_E}{d\\epsilon}$: $\\frac{dT_E}{d\\epsilon} = \\frac{1}{4} \\left[\\frac{(1 - \\alpha)S_0}{2\\sigma(2 - \\epsilon)}\\right]^{\\frac{1}{4}} \\frac{1}{(2 - \\epsilon)}$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\delta T_E$: $[4.87, 4.92] \\times 10^{-1} \\, \\text{K}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $\\epsilon$: $\\epsilon = \\frac{\\sigma T_E^4 - (1 - \\alpha)\\frac{S_0}{4}}{\\sigma(T_E^4 - T_A^4)}$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $k$: $k = \\frac{\\epsilon\\sigma(2T_A^4 - T_E^4)}{T_E - T_A}$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\epsilon$: $[8.47, 8.52] \\times 10^{-1}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $k$: $[3.57, 3.66] \\times 10^{-1} \\, \\text{W}/\\text{m}^2\\text{K}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Algebraic equation 1 (from differentiation)",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Algebraic equation 2 (from differentiation)",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\delta T_E$: $[5.21, 5.28] \\times 10^{-1} \\, \\text{K}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Trapping Ions and Cooling Atoms",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A",
+        "description": "A-1<br>a) In cartesian coordinates $(x, y, z)$, obtain the electric field due to the charged ring in the vicinity of the ring’s center to the first order in $x/R, y/R$, and $z/R$.<br>b) Find the angular frequency of small oscillations of the charged particle around the center of the ring in the directions for which a stable equilibrium exists.<br><br>In order to trap the charge $Q$ fully, we would like to apply alternating fields to produce a dynamic equilibrium. Assume that the charge density is $\\lambda = \\lambda_0 + u \\cos \\Omega t$ in which $\\lambda_0, u$, and $\\Omega$ are adjustable. We shall ignore radiative effects. Then the equation of motion for small displacements from the center of the ring, along the direction perpendicular to the plane of the ring will turn out to be:<br> $$ \\ddot{z} = (+k^2 + a\\Omega^2 \\cos \\Omega t) z $$ <br>A-2 Write $a$ and $k$ in terms of the known parameters.<br><br>We would like to obtain an approximate solution to Equation (1) by making the following simplifying assumptions: $a \\ll 1, \\Omega \\gg k$, and $a\\Omega^2 \\gg k^2$. With these assumptions, it can be shown that the solution of this equation can be split into two parts: $z(t) = p(t) + q(t)$, where $p(t)$ is a slowly varying component and $q(t)$ is a small-amplitude rapidly-varying component with a mean value of zero. In other words, $p(t)$ may be assumed constant over a few oscillations of $q(t)$ (see Figure 2).<br><br>A-3<br>a) Using the approximations stated above, find the equation of motion for $q(t)$ in terms of $a, \\Omega$, and $p$.<br>b) Find the solution of this equation by considering appropriate initial conditions corresponding to the required properties of this function.<br><br>A-4<br>a) Using the mean effect of the rapidly varying component and obtain an effective equation of motion for $p(t)$.<br>b) Investigate the stability of the equilibrium point and find the condition for a stable equilibrium.<br><br>Assume that $\\lambda_0 = 8 \\times 10^{-9} \\, \\text{C}/\\text{m}$ and $R = 10 \\, \\text{cm}$. We would like to use this device to trap a singly ionized atom 100 times heavier than a hydrogen atom.<br><br>A-5 Calculate $k$. Assume $a = 0.04$ and estimate the smallest frequency required to stabilize the motion of this ion. Use the data given at the end of the question.",
+        "solution": "A-1. Due to the symmetry, on the $z$ - axis the only non-zero component of electric field is in the $z$ - direction. So:<br> $$ \\vec{E}(0,0,z) = E_z(0,0,z) \\hat{z} = \\hat{z} \\int \\frac{dq}{4\\pi\\epsilon_0} \\frac{1}{(R^2 + z^2)} \\times \\frac{z}{(R^2 + z^2)^{\\frac{1}{2}}} $$ <br>The element $dq$ is equal to $\\lambda R d\\phi$ where $\\phi$ is the angle with the $x$ - axis. Thus:<br> $$ E(0,0,z) = \\hat{z} \\int \\frac{\\lambda R d\\phi}{4\\pi\\epsilon_0} \\frac{z}{(z^2 + R^2)^{\\frac{3}{2}}} = \\hat{z} \\frac{\\lambda R}{2\\epsilon_0} \\frac{z}{(z^2 + R^2)^{\\frac{3}{2}}} $$ <br>For $z \\ll R$ this can be written as:<br> $$ E_z(0,0,z) = \\frac{\\lambda R z}{2\\epsilon_0 R^3} = \\frac{\\lambda z}{2\\epsilon_0 R^2} $$ <br>Very close to the $z$ - axis, we can write:<br> $$ E_z(x, y, z) = E_z(0,0,z) + x \\left.\\frac{\\partial E_z}{\\partial x}\\right|_{(0,0,z)} + y \\left.\\frac{\\partial E_z}{\\partial y}\\right|_{(0,0,z)} + O(x^2, y^2, z^2) $$ <br>Since, there is no difference between $x$ and $ - x$ or $y$ and $ - y$, it turns out that $\\frac{\\partial E_z}{\\partial x} = \\frac{\\partial E_z}{\\partial y} = 0$.<br>Thus, to the first order in $x, y$, and $z$ we have:<br> $$ E_z(x, y, z) = \\frac{\\lambda z}{2\\epsilon_0 R^2} $$ <br>Consider a Gaussian surface in the shape of a symmetric cylinder around the $z$ - axis whose bases are parallel with the $xy$ - plane. The cylinder’s radius is $\\rho$ and its height is $2z$ both of which are small quantities. By Gauss’s law we have:<br> $$ 0 = \\frac{Q_{\\text{in}}}{\\epsilon_0} = \\oint \\vec{E} \\cdot d\\vec{S} = \\int_{S_1} \\vec{E} \\cdot d\\vec{S} + \\int_{S_2} \\vec{E} \\cdot d\\vec{S} + \\int_{S_3} \\vec{E} \\cdot d\\vec{S} $$ <br>Integration over $S_1$ and $S_2$ gives:<br> $$ \\int_{S_1} \\vec{E} \\cdot d\\vec{S} = \\int_{S_2} \\vec{E} \\cdot d\\vec{S} = \\pi \\rho^2 \\times \\frac{\\lambda z}{2\\epsilon_0 R^2} $$ <br>Integration over $S_3$ involves the $\\rho$ - component for which we can write the following expansion:<br> $$ E_\\rho(z, \\rho, \\phi) = E_\\rho(0, \\rho, \\phi) + z \\left.\\frac{\\partial E_\\rho}{\\partial z}\\right|_{(0, \\rho, \\phi)} + O(z^2) $$ <br>We have $0 = \\left.\\frac{\\partial E_\\rho}{\\partial z}\\right|_{(0, \\rho, \\phi)}$ due to symmetry between $z$ and $ - z$, hence, $E_\\rho(z, \\rho, \\phi) = E_\\rho(0, \\rho, \\phi)$ up to the first order. Axial symmetry also implies $\\frac{dE_\\rho}{d\\phi} = 0$. Consequently:<br> $$ \\int_{S_3} \\vec{E} \\cdot d\\vec{S} = E_\\rho(0, \\rho, 0) \\times 2z \\times 2\\pi \\rho $$ <br>So, Gauss’s law implies:<br> $$ 0 = E_\\rho \\times 4\\pi z \\rho + 2\\pi \\rho^2 \\frac{\\lambda z}{2\\epsilon_0 R^2} $$ <br>Therefore, $E_\\rho$ will be:<br> $$ E_\\rho = -\\frac{\\lambda \\rho}{4\\epsilon_0 R^2} $$ <br>In the cylindrical coordinate we will have:<br> $$ \\vec{E}(\\rho, \\phi, z) = -\\frac{\\lambda \\rho}{4\\epsilon_0 R^2} \\hat{\\rho} + \\frac{\\lambda z}{2\\epsilon_0 R^2} \\hat{z} $$ <br>In cartesian coordinates we will have:<br> $$ \\vec{E}(x, y, z) = \\frac{\\lambda}{4\\epsilon_0 R^2} (-x, -y, 2z) $$ <br>Since the ring is positively charged, the equilibrium in the $x$ and $y$ directions are stable, while the equilibrium in the $z$ - direction is unstable. The equations of motion in the $x$ and $y$ directions read:<br> $$ m \\ddot{x} = q E_x = -\\frac{q \\lambda}{4\\epsilon_0 R^2} x $$ <br> $$ m \\ddot{y} = q E_y = -\\frac{q \\lambda}{4\\epsilon_0 R^2} y $$ <br>Therefore, the frequencies of small oscillations are:<br> $$ \\omega_x^2 = \\omega_y^2 = \\frac{q \\lambda}{4\\epsilon_0 R^2 m} $$ <br><br>A-2. The force in the $z$ - direction is:<br> $$ F_z = q E_z = \\frac{Q \\lambda z}{2\\epsilon_0 R^2} = \\frac{Q}{2\\epsilon_0 R^2} \\lambda_0 z + \\frac{Q u}{2\\epsilon_0 R^2} \\cos \\Omega t z $$ <br>the equation of motion can thus be written as:<br> $$ \\ddot{z} = \\left(\\frac{Q \\lambda_0}{2\\epsilon_0 R^2 m} + \\frac{Q u}{2\\epsilon_0 R^2 m} \\cos \\Omega t\\right) z $$ <br>Therefore:<br> $$ k = \\sqrt{\\frac{Q \\lambda_0}{2\\epsilon_0 R^2 m}} \\quad , \\quad a = \\frac{Q u}{2\\epsilon_0 R^2 m \\Omega^2} $$ <br><br>A-3.<br> $$ z = p(t) + q(t) \\rightarrow \\ddot{p} + \\ddot{q} = (k^2 + a\\Omega^2 \\cos \\Omega t)(p + q) $$ <br>1. We are assuming that $p$ is almost constant, $\\ddot{p} \\simeq 0$.<br>2. According to the assumptions $k^2 \\ll a\\Omega^2$ and $q \\ll p$ we can ignore $k^2$ in the first term on the right-hand side of the equation and $q$ in the second term.<br>hence, the equation of motion can be simplified as follows:<br> $$ \\ddot{q} = p a \\Omega^2 \\cos \\Omega t $$ <br>As we have assumed that $p$ is a constant, the second derivative of $q$ is just proportional to $\\cos \\Omega t$ which gives:<br> $$ q = -p a \\cos \\Omega t + c_1 t + c_2 $$ <br>Since $q$ is supposed to remain small, $c_1$ must vanish. Also $c_2 = 0$ because the mean value of $q$ is supposed to remain zero. Therefore:<br> $$ q = -p a \\cos \\Omega t $$ <br><br>A-4. Using the final result for $q$ the equation of motion for $p$ reads:<br> $$ \\ddot{p} + p a \\Omega^2 \\cos \\Omega t = (k^2 + a\\Omega^2 \\cos \\Omega t)(p - a p \\cos \\Omega t) $$ <br>Which gives:<br> $$ \\ddot{p} = k^2 p - a k^2 p \\cos \\Omega t - a^2 \\Omega^2 p \\cos^2 \\Omega t $$ <br>Averaging over one period, we’ll have:<br> $$ \\langle \\cos \\Omega t \\rangle = 0 \\quad , \\quad \\langle \\cos^2 \\Omega t \\rangle = \\frac{1}{2} $$ <br>and:<br> $$ \\ddot{p} = \\left(k^2 - \\frac{a^2 \\Omega^2}{2}\\right) p $$ <br>In order for the motion to be stable, the expression inside the parentheses should be negative, i.e.<br> $$ \\frac{a^2 \\Omega^2}{2} > k^2 \\rightarrow \\Omega > \\sqrt{2} \\frac{k}{a} $$ <br><br>A-5. With the given data we have:<br> $$ k = \\sqrt{\\frac{Q \\lambda_0}{2\\epsilon_0 R^2 m}} = 2 \\times 10^5 \\, \\text{rad/s} $$ <br> $$ a = 0.04 \\rightarrow \\Omega_{\\min} = 7 \\times 10^6 \\, \\text{rad/s} $$",
+        "maxPoints": 5.6,
+        "subparts": [
+          {
+            "description": "Electric field expression $\\vec{E}(x,y,z)$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Angular frequencies $\\omega_x = \\omega_y$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $a$: $a = \\frac{Q u}{2\\epsilon_0 R^2 m \\Omega^2}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $k$: $k = \\sqrt{\\frac{Q \\lambda_0}{2\\epsilon_0 R^2 m}}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation of motion for $\\ddot{q}$: $\\ddot{q} = p a \\Omega^2 \\cos \\Omega t$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Solution for $q$: $q(t) = -p a \\cos \\Omega t$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Effective equation of motion for $\\ddot{p}$: $\\ddot{p} = \\left(k^2 - \\frac{a^2 \\Omega^2}{2}\\right) p$",
+            "points": 1.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Stability condition for $\\Omega$: $\\Omega > \\sqrt{2} \\frac{k}{a}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $k$: $2 \\times 10^5 \\, \\text{rad/s}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $\\Omega_{\\min}$: $7 \\times 10^6 \\, \\text{rad/s}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B",
+        "description": "B-1 Use the Heisenberg’s uncertainty principle to find $\\Gamma$.<br><br>B-2<br>a) Assume that the trapped atom is moving with a velocity, $v = v_x$ in the lab frame. In the frame of reference of the atom, calculate the collision rate of the photons, incident from each of the two directions, with the atoms (denoted by $s_+$ and $s_-)$ and the rate of absorption of momentum in each direction (denoted by $\\pi_+$ and $\\pi_-)$.<br>b) Determine the effective force on the atom as a function of $v, k_L = \\omega_L/c, \\hbar$, and $\\alpha$, in the reference frame of the laboratory. Assume $s_L \\ll \\alpha\\omega_L$.<br><br>We would like to find the lowest temperature that can be achieved using this technique. Assume that the velocity of a particular atom has been reduced to zero exactly, and at this very moment it absorbs a photon (incident from any of the two directions), and re-emits the photon randomly in any of the two directions, with almost the same frequency. Assume that this process happens once every $\\tau$ units of time.<br><br>B-3 Considering the momentum of the atom after such a process for the two possible outcomes, calculate the average power absorbed by the atom.<br><br>B-4 Consider the force calculated in Task B-2 and calculate the output power. Then, calculate the average value of $v^2$ at equilibrium. Using your knowledge of the kinetic theory of gases estimate the temperature of the atoms.<br><br>B-5 Estimate this temperature, for an atom 100 times heavier than a hydrogen atom. Assume that $\\omega_L = 2 \\times 10^{16} \\, \\text{rad/s}, \\tau = 5 \\times 10^{-9} \\, \\text{s}$, and $\\alpha = 4$.",
+        "solution": "B-1. From the uncertainty principle we know:<br> $$ \\Delta E \\times \\Delta t \\simeq \\hbar $$ <br>Here $\\Delta t$ is the time $\\tau$ and $\\Delta E = \\hbar \\Delta \\omega$. So:<br> $$ \\hbar \\Delta \\omega \\times \\tau \\simeq \\hbar \\rightarrow \\Delta \\omega \\simeq \\frac{1}{\\tau} = \\Gamma $$ <br><br>B-2. We denote the forward and backward collision rates by $s_+$ and $s_-$ respectively. Let us proceed in the atom’s frame of reference. Ignoring the terms of the order $v^2/c^2$, the Doppler effect can be written in the following form:<br> $$ \\omega' = \\omega \\left(1 + \\frac{v}{c}\\right) $$ <br>Taking the atom’s velocity in the positive $x$ - direction, we have:<br> $$ \\omega_+ = \\omega_L \\left(1 + \\frac{v}{c}\\right) $$ <br> $$ \\omega_- = \\omega_L \\left(1 - \\frac{v}{c}\\right) $$ <br>So:<br> $$ s_+ = s_L + \\alpha \\left(\\omega_L \\left(1 + \\frac{v}{c}\\right) - \\omega_L\\right) = s_L + \\alpha \\omega_L \\frac{v}{c} $$ <br> $$ s_- = s_L + \\alpha \\left(\\omega_L \\left(1 - \\frac{v}{c}\\right) - \\omega_L\\right) = s_L - \\alpha \\omega_L \\frac{v}{c} $$ <br>The momentum transfer per unit time from the oncoming photons to the atom is equal to:<br> $$ \\pi_+ = s_+ \\times (-\\hbar k_+) $$ <br>For the backward photons we have:<br> $$ \\pi_- = s_- \\times (+\\hbar k_-) $$ <br>Where $k_\\pm = \\frac{\\hbar \\omega_\\pm}{c}$.<br>The total momentum transferred to the atom per unit time is equal to:<br> $$ \\pi_+ + \\pi_- = -2\\hbar k_L \\frac{v}{c} \\omega_L \\alpha \\left(1 + \\frac{s_L}{\\alpha \\omega_L}\\right) $$ <br>Where with the approximation $s_L \\ll \\alpha \\omega_L$, we will arrive at:<br> $$ \\pi_+ + \\pi_- = -2\\hbar k_L \\frac{v}{c} \\omega_L \\alpha $$ <br>Note that as the atom is heavy, its velocity almost doesn’t change after the absorption of the photon. Therefore, there will be almost no Doppler shifting in the re-emitted photon and hence, on average there will be no momentum transfer to the atom during the re-emission process.<br>The above expression is, in fact, the force. Since $v > 0$, we have:<br> $$ F = -(2\\alpha \\hbar k_L^2) v $$ <br>The same result holds for $v < 0$. This is in the atom’s reference frame. However, as we have kept only up to the first order in $v/c$, the same result holds in the lab frame:<br> $$ F = -(2\\alpha \\hbar k_L^2) v $$ <br><br>B-3. The atom’s momentum before the collision is zero. After the collision it will be (assuming the photon’s momentum is in the $x$ - direction):<br> $$ P_1 = \\hbar k_L $$ <br>After re-emitting the photon, we may have two equally likely outcomes for the final momentum:<br>1. The photon is emitted in the positive $x$ - direction which causes the atom’s momentum to become zero<br>2. The photon is emitted in the negative $x$ - direction which causes the atom’s momentum to become: $P_f = +2\\hbar k_L$ <br>Thus, the mean final energy is equal to:<br> $$ \\langle E_f \\rangle = \\left\\langle \\frac{P_f^2}{2m} \\right\\rangle = \\frac{1}{2} \\times 0 + \\frac{1}{2} \\times \\frac{4\\hbar^2 k_L^2}{2m} = \\frac{\\hbar^2 k_L^2}{m} $$ <br>This process occurs during the time $\\tau$. So, the input power (the power gained by the atom as a result of this process) is equal to:<br> $$ P_{\\text{in}} = \\frac{\\hbar^2 k_L^2}{m\\tau} $$ <br><br>B-4. The output power (the power lost by the atom through collision with laser photons) can be written as:<br> $$ P_{\\text{out}} = F \\cdot v = -2\\alpha \\hbar k_L^2 v^2 $$ <br>At equilibrium we should have:<br> $$ P_{\\text{out}} + P_{\\text{in}} = 0 \\rightarrow \\frac{\\hbar^2 k_L^2}{m\\tau} = 2\\alpha \\hbar k_L^2 \\overline{v^2} \\rightarrow \\overline{v^2} = \\frac{\\hbar \\Gamma}{2\\alpha m} $$ <br>And the temperature of this system is equal to:<br> $$ \\frac{1}{2} m \\overline{v^2} = \\frac{1}{2} k_B T \\rightarrow T = \\frac{\\hbar \\Gamma}{2\\alpha k_B} $$ <br><br>B-5. Considering the given data:<br> $$ T = \\frac{1.055 \\times 10^{-34} \\, \\text{J}\\cdot\\text{s}}{2 \\times 4 \\times 1.381 \\times 10^{-23} \\, \\text{J/K} \\times 5 \\times 10^{-9} \\, \\text{s}} = 2 \\times 10^{-4} \\, \\text{K} $$",
+        "maxPoints": 4.4,
+        "subparts": [
+          {
+            "description": "Value of $\\Gamma$: $\\Gamma = \\frac{1}{\\tau}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions for $s_+$ and $s_-$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions for $\\pi_+$ and $\\pi_-$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for force $F$: $F = -(2\\alpha \\hbar k_L^2) v$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Outcomes for momentum",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Input power $P_{in}$: $P_{\\text{in}} = \\frac{\\hbar^2 k_L^2}{m\\tau}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Output power $P_{out}$: $P_{\\text{out}} = -2\\alpha \\hbar k_L^2 v^2$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Average value $\\overline{v^2}$: $\\overline{v^2} = \\frac{\\hbar \\Gamma}{2\\alpha m}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Temperature $T$: $T = \\frac{\\hbar \\Gamma}{2\\alpha k_B}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $T$ (for heavy atom): $2 \\times 10^{-4} \\, \\text{K}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Black Widow Pulsar",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A",
+        "description": "A-1 Write $\\varphi(x, y)$ in terms of $M_1, M_2, G$, and $a$.<br><br>A-2 Assuming $M_1 > M_2$, plot the function $\\varphi(x, 0)$ qualitatively.<br><br>Suppose (just for task A-3) $M_2 = M_1/3$ and assume that $M_2$ is surrounded by a rarefied gas of very low density. The mass of this gas is insignificant and we ignore its gravitational effects. If the size of this gas envelope becomes greater than a specific limit, the gas will overflow onto $M_1$. Suppose the overflow occurs through $x = x_0$ on the $x$ - axis.<br><br>A-3 Find the numerical value of $\\frac{x_0}{a}$, up to two significant figures. You may use the calculator.<br><br>Take the rotational period of the stars around their center of mass to be $P$. Assume that mass flows from $M_2$ to $M_1$ at a very small rate of $dM_1/dt = \\beta$. This rate is so small that in each period of rotation, the distance between the two stars can be assumed to be constant. However, after a long period of time, the distance between the two stars changes, while the motion remains circular.<br><br>A-4 Calculate the rate of change of $a$ and $P$ in terms of $\\beta, M_1, M_2, G$, and $a$.<br><br>The gas separated from $M_2$ forms a disk rotating around $M_1$ and heats up due to friction (Figure 1-a). As the gas loses energy, it spirals inward toward $M_1$ and finally falls onto it. In the steady state, the mass flows at the constant rate of $\\beta$, from $M_2$ to the disc and from the disc onto $M_1$. At the same time, the heated disk emits thermal radiation as a blackbody. This disk forms very close to the neutron star so the gravitational pull of the $M_2$ star can be ignored for the analysis of the disk’s motion. Also, ignore the heat capacity of the gas.<br><br>A-5 Determine the temperature of the disc at distance $r$ from the center of the star $M_1$ in terms of $\\beta, M_1, G$, and $\\sigma$ (Stefan-Boltzmann constant).<br><br>In the binary system PSR J2215+5135, the mass of the neutron star is $M_{\\text{NS}} = 2.27 \\, M_\\odot$ and the mass of its companion star is $M_S = 0.33 \\, M_\\odot$, where $M_\\odot = 1.98 \\times 10^{30} \\, \\text{kg}$ is the mass of the Sun. The rotational period is $P = 4.14 \\, \\text{hr}$, and the Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/\\text{m}^2\\text{K}^4$, and the gravitational constant is $G = 6.67 \\times 10^{-11} \\, \\text{m}^3/\\text{kgs}^2$. Assume that the mass flow rate to the neutron star is $\\beta = \\dot{M}_{\\text{NS}} = 9 \\times 10^{-10} \\, M_\\odot \\text{yr}^{-1}$.<br><br>A-6 Calculate the temperature of the disc at the radius $r = \\frac{a}{10}$ in kelvins.<br><br>Assume that after a sudden explosion, the $M_1$ star ejects a part of its mass out of the binary system at a very high speed, and its mass becomes $M_1'$. Take the magnitude of the velocity of $M_1'$ relative to $M_2$ to be $v'$ after the explosion.<br><br>A-7 Determine the maximum value of $v'$, in terms of $M_1', M_2, G$, and $a$, that allows the new binary system to stay bounded. Assuming that the explosion is isotropic, what is the minimum value of $M_1'$ for the binary system to remain bounded?",
+        "solution": "A-1. Assume $a_1$ and $a_2$, are respectively, the distances of $M_1$ and $M_2$ from the center of mass:<br> $$ \\begin{cases} M_1 a_1 = M_2 a_2 \\\\ a_1 + a_2 = a \\end{cases} \\rightarrow a_1 = \\frac{M_2}{M} a, a_2 = \\frac{M_1}{M} a : M = M_1 + M_2 $$ <br>In the rotating coordinate system, a centrifugal potential has to be added to the gravitational potential of the two masses:<br> $$ U = -\\frac{1}{2} \\omega^2 r^2 \\quad \\quad \\omega = \\sqrt{\\frac{GM}{a^3}} $$ <br> $$ \\varphi(x, y) = -\\frac{GM_1}{\\sqrt{(x + a_1)^2 + y^2}} - \\frac{GM_2}{\\sqrt{(x - a_2)^2 + y^2}} - \\frac{1}{2} \\omega^2 (x^2 + y^2) $$ <br> $$ \\varphi(x, y) = -\\frac{GM_1}{\\sqrt{\\left(x + \\frac{M_2}{M}a\\right)^2 + y^2}} - \\frac{GM_2}{\\sqrt{\\left(x - \\frac{M_1}{M}a\\right)^2 + y^2}} - \\frac{1}{2} \\frac{GM}{a^3} (x^2 + y^2) $$ <br><br>A-2. We set $y = 0$ in the previous equation, and obtain:<br> $$ \\varphi(x, 0) = -\\frac{GM_1}{\\left|x + \\frac{M_2}{M}a\\right|} - \\frac{GM_2}{\\left|x - \\frac{M_1}{M}a\\right|} - \\frac{1}{2} \\frac{GM}{a^3} x^2 $$ <br>We draw the diagram noting that:<br>1. The function has asymptotes at $x = -a_1$ and $x = a_2$, and it tends to $ - \\infty$ at both sides of these asymptotes.<br>2. The function has three maxima which are called Lagrange points.<br>3. The function goes to $ - \\infty$ for $x \\rightarrow \\pm \\infty$ <br><br>A-3. Let $\\bar{x} = x/a$, and denote the Lagrange point in the middle (between $\\bar{x} = 0$ and $\\bar{x} = 0.75)$ by $\\bar{x}_0$, we have $\\frac{d\\varphi}{d\\bar{x}}(\\bar{x}_0) = 0$. Using the given ratios:<br> $$ \\varphi(\\bar{x}, 0) = \\frac{GM}{a} \\left[-\\frac{3}{4\\left(\\bar{x} + \\frac{1}{4}\\right)} + \\frac{1}{4\\left(\\bar{x} - \\frac{3}{4}\\right)} - \\frac{1}{2} \\bar{x}^2\\right] $$ <br>Let $f(\\bar{x}) = \\frac{a}{GM} \\frac{d\\varphi}{d\\bar{x}}$, then we have to solve for $f(\\bar{x}_0) = 0$. We have $f(0) > 0$ and $f(0.5) < 0$, so the answer lies between 0 and 0.5. For the midpoint, we have $f(\\bar{x}_0 = 0.25) > 0$ so $0.25 < \\bar{x}_0 < 0.5$, so by trial and error:<br> $$ f(0.25) > 0 \\rightarrow 0.25 < \\bar{x}_0 < 0.5 \\rightarrow f(0.375) < 0 \\rightarrow \\dots \\rightarrow 0.358 < \\bar{x}_0 < 0.361 $$ <br> $$ \\rightarrow f(0.360) > 0 \\rightarrow 0.360 < \\bar{x}_0 < 0.361 \\rightarrow \\frac{x_0}{a} = \\bar{x}_0 \\approx 0.36 $$ <br>So, up to two significant figures the answer is 0.36.<br><br>A-4. The angular momentum of the system is:<br> $$ J = \\mu a V = \\mu a^2 \\omega = \\frac{M_1 M_2}{M} a^2 \\sqrt{\\frac{GM}{a^3}} = \\sqrt{\\frac{GM_1^2 M_2^2}{M} a} $$ <br>where $\\mu$ is the reduced mass and $V$ is the relative velocity of the two point masses. Taking the logarithm of both sides we’ll have:<br> $$ \\ln J = \\frac{1}{2} \\left[\\ln \\frac{G}{M} + 2 \\ln M_1 + 2 \\ln M_2 + \\ln a\\right] $$ <br>For slowly-varying quantities we’ll obtain:<br> $$ \\frac{\\dot{J}}{J} = \\frac{\\dot{M}_1}{M_1} + \\frac{\\dot{M}_2}{M_2} + \\frac{1}{2} \\frac{\\dot{a}}{a} $$ <br>because the total mass is a constant and $\\dot{M}_1 + \\dot{M}_2 = 0;$ therefore:<br> $$ \\frac{\\dot{a}}{a} = -2 \\frac{\\dot{M}_1}{M_1} \\left(1 - \\frac{M_1}{M_2}\\right) \\rightarrow \\dot{a} = -2\\beta a \\left(\\frac{1}{M_1} - \\frac{1}{M_2}\\right) $$ <br>For the period we’ll have:<br> $$ P = 2\\pi \\sqrt{\\frac{a^3}{GM}} \\rightarrow \\frac{\\dot{P}}{P} = \\frac{3}{2} \\frac{\\dot{a}}{a} = -3 \\frac{\\dot{M}_1}{M_1} \\left(1 - \\frac{M_1}{M_2}\\right) \\rightarrow \\dot{P} = -6\\pi \\sqrt{\\frac{a^3}{GM}} \\beta \\left(\\frac{1}{M_1} - \\frac{1}{M_2}\\right) $$ <br><br>A-5. In an infinitesimally thin ring with an inner radius of $r$ and an outer radius $r + dr$, energy is leaving at a rate of $ - \\frac{GM_1 \\beta}{2r}$ and entering at a rate $ - \\frac{GM_1 \\beta}{2r} + \\frac{GM_1 \\beta}{2r^2} dr$. For the ring to stay in equilibrium, the excess energy of $\\frac{GM_1 \\beta}{2r}$ per unit time must leave the system as radiation, so:<br> $$ dP = \\frac{GM_1 \\beta}{2r^2} dr = \\sigma T^4 2(2\\pi r dr) = 4\\pi \\sigma T^4 r dr \\rightarrow T = \\left(\\frac{GM_1 \\beta}{8\\pi \\sigma r^3}\\right)^{\\frac{1}{4}} $$ <br><br>A-6. From $P = 2\\pi \\sqrt{\\frac{a^3}{GM}}$ we’ll have:<br> $$ a = \\left[\\frac{P^2 G (M_S + M_{\\text{NS}})}{4\\pi^2}\\right]^{\\frac{1}{3}} $$ <br>Using the result of Part A.5, the temperature is:<br> $$ T = \\left(\\frac{GM_{\\text{NS}} \\beta}{8\\pi \\sigma r^3}\\right)^{\\frac{1}{4}} = \\left(\\frac{500 \\pi M_{\\text{NS}} \\beta}{\\sigma P^2 (M_S + M_{\\text{NS}})}\\right)^{\\frac{1}{4}} = 9 \\times 10^3 \\, \\text{K} $$ <br><br>A-7. For the system to remain bounded, the total mechanical energy of the system must be negative:<br> $$ E' = \\frac{1}{2} \\mu' v'^2 - \\frac{GM_1' M_2}{a} < 0 \\rightarrow v' < \\sqrt{\\frac{2G(M_1' + M_2)}{a}} $$ <br>For an isotropic explosion, we would have $v' = v = \\sqrt{\\frac{GM}{a}}$ therefore:<br> $$ \\sqrt{\\frac{G(M_1 + M_2)}{a}} < \\sqrt{\\frac{2G(M_1' + M_2)}{a}} $$ <br>and:<br> $$ \\frac{M_1 - M_2}{2} < M_1' $$ <br> $$ v'_{\\max} = \\sqrt{\\frac{2G(M_1' + M_2)}{a}} $$ <br> $$ M'_{1\\min} = \\frac{M_1 - M_2}{2} $$",
+        "maxPoints": 5.0,
+        "subparts": [
+          {
+            "description": "Expression for $\\Phi(x,y)$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Plot of $\\varphi(x,0)$",
+            "points": 0.7,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation for $\\frac{x_0}{a}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical result",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Rate of change $\\dot{a}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Rate of change $\\dot{P}$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Temperature $T$ (Correct approach/Energy relation)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Temperature $T$ (Correct solution)",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $a$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Formula for $T$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Numerical value of $T$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Maximum value $v'_{\\max}$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Intermediate step $E'<0$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Condition $v'=v$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Minimum mass $M'_{1min}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B",
+        "description": "B-1 Determine the gravitational acceleration $g(r)$ near the center of the star in terms of $r$ and the constants $G$ and $\\rho_c$.<br><br>B-2 Derive a (differential) equation for determining $\\rho(r)$ at equilibrium, and write it in the following form: $\\frac{d}{dr} \\left[ h_1(\\rho, r) \\frac{d\\rho}{dr} \\right] + h_2(r)\\rho = 0$. Find the functions $h_1$ and $h_2$.<br><br>B-3 Construct a quantity $r_0$ of the form $r_0 = G^l p_c^m \\rho_c^n$ with the dimension of length.<br><br>B-4 Rewrite the (differential) equation of task B-2 in the following form:<br> $$ \\frac{d}{dx} \\left[A_1(u, x) \\frac{du}{dx}\\right] + A_2(x)u(x) = 0, $$ <br>where $x = \\frac{r}{r_0}$ and $u = \\frac{\\rho}{\\rho_c}$. Find the functions $A_1(u, x)$ and $A_2(x)$.<br><br>B-5 For $\\gamma = 2$ one finds $u(x) = \\frac{f(x)}{x}$. Determine $f(x)$.<br><br>Assume that for a particular star $\\frac{du}{dx}$, as a function of $x$, is given by the curve given in Figure 2.<br><br>B-6 Use the behavior of the curve in Figure 2, in the vicinity of the point $x = 0$, to find $\\gamma$ up to 3 significant figures. Use the given ruler if necessary.<br><br>To analyze the stability of the system, we assume that the star deviates slightly from its equilibrium state: we assume that the spherical shell, which was in equilibrium at radius $r$, now has a radius $\\tilde{r}$, similarly the parameters $g, p$, and $\\rho$ have changed to $\\tilde{g}, \\tilde{p}$, and $\\tilde{\rho}$ respectively. For convenience, we shall only consider small $r$ - ’s near the center of the star, for which we can assume that $\\tilde{r} = r(1 + \\epsilon(t))$, where $\\epsilon(t) \\ll 1$.<br><br>B-7 Find $\\tilde{p}$ and $\\tilde{g}$ in terms of $\\rho$ and $g$ to the first order in $\\epsilon$.<br><br>B-8 Using Newton's equation of motion for the spherical layer with the equilibrium radius of $r$ find $\\frac{d^2\\tilde{r}}{dt^2}$ in terms of $\\tilde{g}, \\tilde{\\rho}, K, \\gamma$, and $\\frac{\\partial \\tilde{\\rho}}{\\partial \\tilde{r}}$ (By $\\frac{\\partial \\tilde{\\rho}}{\\partial \\tilde{r}}$ we mean derivative of $\\tilde{\\rho}$ with respect to $\\tilde{r}$ at constant $t$.)<br><br>B-9 Obtain $\\frac{d^2\\epsilon}{dt^2}$ in terms of $\\epsilon$ and the constants given in the problem. Find the minimum value of $\\gamma$ for a stable equilibrium, and find the oscillation's angular frequency of the star.",
+        "solution": "B-1. Using Newton’s law of gravity:<br> $$ g = -\\frac{4\\pi G \\int_0^r r'^2 \\rho(r') dr'}{r^2} \\cong -\\frac{4\\pi G \\rho_c r}{3} $$ <br><br>B-2. Balance of forces for a differential element of volume with a surface area of $A$ and thickness $\\Delta r$ between radii $r$ and $r + \\Delta r$ is as follows:<br> $$ \\vec{F} = -\\frac{GM(\\vec{r})\\rho}{r^2} A \\Delta r - \\Delta p A = 0 $$ <br>in which $M(r)$ is the mass of the part of the star confined within the radius $r$. As $\\Delta r$ is small, we can write:<br> $$ \\frac{G\\rho}{r^2} \\left(\\int 4\\pi r'^2 \\rho(r') dr'\\right) = -\\frac{dp(r)}{dr} = -K\\gamma\\rho^{\\gamma-1} \\frac{d\\rho}{dr} $$ <br>Multiplying both sides of the equation by $\\frac{r^2}{4\\pi G \\rho}$ and taking the derivative once again, we get:<br> $$ \\frac{d}{dr} \\left[r^2 \\rho^{\\gamma-2} \\frac{d\\rho}{dr}\\right] + \\frac{4\\pi G r^2}{K\\gamma} \\rho(r) = 0 $$ <br> $$ h_1(\\rho, r) = r^2 \\rho^{\\gamma-2} $$ <br> $$ h_2(r) = \\frac{4\\pi G r^2}{K\\gamma} $$ <br><br>B-3.<br> $$ [\\rho_c] = ML^{-3}, [p_c] = ML^{-1}T^{-2}, [G] = M^{-1}L^3T^{-2} $$ <br> $$ [G^l p_c^m \\rho_c^n] = (M^{-1}L^3T^{-2})^l (ML^{-1}T^{-2})^m (ML^{-3})^n = L $$ <br> $$ \\begin{cases} -l + n + m = 0 \\\\ 3l - 3n - m = 1 \\\\ -2l - 2m = 0 \\end{cases} \\rightarrow \\begin{cases} l = -\\frac{1}{2} \\\\ m = \\frac{1}{2} \\\\ n = -1 \\end{cases} \\rightarrow r_0 = G^{-\\frac{1}{2}} p_c^{\\frac{1}{2}} \\rho_c^{-1} $$ <br><br>B-4.<br> $$ \\frac{K\\gamma\\rho_c^{\\gamma-1}}{4\\pi G r_0^2 x^2} \\frac{d}{dx} \\left[x^2 u^{\\gamma-2} \\frac{du}{dx}\\right] = -\\rho_c u(r) $$ <br> $$ \\frac{K\\gamma\\rho_c^{\\gamma-2}}{4\\pi G r_0^2 x^2} \\frac{d}{dx} \\left[x^2 u^{\\gamma-2} \\frac{du}{dx}\\right] = \\frac{\\gamma}{4\\pi x^2} \\frac{d}{dx} \\left[x^2 u^{\\gamma-2} \\frac{du}{dx}\\right] = -u $$ <br> $$ \\frac{d}{dx} \\left[x^2 u^{\\gamma-2} \\frac{du}{dx}\\right] + \\frac{4\\pi x^2}{\\gamma} u = 0 $$ <br> $$ A_1(u, x) = x^2 u^{\\gamma-2} $$ <br> $$ A_2(x) = \\frac{4\\pi x^2}{\\gamma} $$ <br><br>B-5.<br> $$ \\gamma = 2 \\rightarrow \\frac{d}{dx} \\left[x^2 \\frac{du}{dx}\\right] = -2\\pi x^2 u(x) \\rightarrow f''(x) = -2\\pi f(x) \\rightarrow f(x) = \\frac{\\sin(\\sqrt{2\\pi} x)}{\\sqrt{2\\pi}} $$ <br>(Note: The solution says $\\sin(\\sqrt{2\\pi}x)/\\sqrt{2\\pi}$ which fits $u(x) = \\sin(\\sqrt{2\\pi}x)/(\\sqrt{2\\pi}x) \\to 1$ at $x=0)$ <br><br>B-6.<br> $$ \\frac{d^2u}{dx^2} + \\frac{(\\gamma - 2)}{u} \\left(\\frac{du}{dx}\\right)^2 + \\frac{2}{x} \\left(\\frac{du}{dx}\\right) + \\frac{4\\pi}{\\gamma} u^{3-\\gamma} = 0 $$ <br> $$ u'(0) = 0 \\quad , \\quad \\lim_{x \\to 0} \\frac{u'(x)}{x} = u''(0) $$ <br> $$ u''(0) + 2u''(0) + \\frac{4\\pi}{\\gamma} = 0 \\rightarrow \\gamma = -\\frac{4\\pi}{3u''(0)} $$ <br> $$ \\gamma \\sim [1.64, 1.70] $$ <br><br>B-7.<br> $$ M(r) = \\int_0^{\\tilde{r}(r,t)} 4\\pi r'^2 \\tilde{\\rho}(r', t) dr' = \\int_0^r 4\\pi r'^2 \\rho(r') dr' $$ <br> $$ 4\\pi \\tilde{r}^2 \\tilde{\\rho}(\\tilde{r}) = 4\\pi \\tilde{r}^2 \\tilde{\\rho}(\\tilde{r}, t) \\frac{\\partial \\tilde{r}}{\\partial r} \\rightarrow \\frac{\\tilde{\\rho}}{\\rho} = \\frac{r^2}{\\tilde{r}^2} \\left(\\frac{\\partial \\tilde{r}}{\\partial r}\\right)^{-1} = (1 + \\epsilon)^{-3} \\cong 1 - 3\\epsilon $$ <br> $$ \\frac{\\tilde{g}}{g} = \\frac{\\frac{GM}{\\tilde{r}^2}}{\\frac{GM}{r^2}} = \\frac{1}{\\tilde{r}^2} \\frac{1}{r^2} = (1 + \\epsilon)^{-2} \\cong 1 - 2\\epsilon $$ <br> $$ \\tilde{g} \\cong g(1 - 2\\epsilon) $$ <br> $$ \\tilde{\\rho} \\cong \\rho(1 - 3\\epsilon) $$ <br><br>B-8. we have<br> $$ \\frac{\\partial \\tilde{p}}{\\partial \\tilde{r}} = \\tilde{\\rho}(\\tilde{g} - \\ddot{\\tilde{r}}) $$ <br>And<br> $$ \\tilde{p} = K \\tilde{\\rho}^\\gamma $$ <br>So:<br> $$ \\ddot{\\tilde{r}} = \\tilde{g} - \\frac{\\left(\\frac{\\partial \\tilde{p}}{\\partial \\tilde{r}}\\right)}{\\tilde{\\rho}} = \\tilde{g} - K\\gamma\\tilde{\\rho}^{\\gamma-2} \\frac{\\partial \\tilde{\\rho}}{\\partial \\tilde{r}} $$ <br> $$ \\frac{d^2\\tilde{r}}{dt^2} = \\tilde{g} - K\\gamma\\tilde{\\rho}^{\\gamma-2} \\frac{\\partial \\tilde{\\rho}}{\\partial \\tilde{r}} $$ <br><br>B-9. Using of the results in B.7 and B.8, we have:<br> $$ \\frac{d^2\\tilde{r}}{dt^2} = \\ddot{\\tilde{r}} = \\tilde{g} - K\\gamma\\tilde{\\rho}^{\\gamma-2} \\frac{\\partial \\tilde{\\rho}}{\\partial \\tilde{r}} = g(1 - 2\\epsilon) - K\\gamma\\rho^{\\gamma-2} \\frac{\\partial \\rho}{\\partial r} \\left(\\frac{(1 - 3\\epsilon)^{\\gamma-1}}{(1 + \\epsilon)}\\right) $$ <br> $$ = g(1 - 2\\epsilon) - K\\gamma\\rho^{\\gamma-2} \\frac{\\partial \\rho}{\\partial r} (1 - 3(\\gamma - 1)\\epsilon - \\epsilon) $$ <br>Equilibrium requires:<br> $$ g - K\\gamma\\rho^{\\gamma-2} \\frac{\\partial \\rho}{\\partial r} = 0 \\Rightarrow K\\gamma\\rho^{\\gamma-2} \\frac{\\partial \\rho}{\\partial r} = g $$ <br>therefore:<br> $$ \\ddot{\\tilde{r}} = r\\ddot{\\epsilon} = g(1 - 2\\epsilon) - g(1 - 3(\\gamma - 1)\\epsilon - \\epsilon) = g(3\\gamma - 4)\\epsilon $$ <br>and:<br> $$ \\ddot{\\epsilon} = \\frac{g}{r} (3\\gamma - 4)\\epsilon $$ <br> $$ \\ddot{\\epsilon} = -\\frac{4\\pi G \\rho_c}{3} (3\\gamma - 4)\\epsilon $$ <br>Stability requires that:<br> $$ 3\\gamma - 4 > 0 \\Rightarrow \\gamma > \\frac{4}{3} $$ <br>and the angular velocity of the oscillations will be:<br> $$ \\omega = \\sqrt{\\frac{4\\pi G \\rho_c}{3} (3\\gamma - 4)} $$",
+        "maxPoints": 5.0,
+        "subparts": [
+          {
+            "description": "Expression for $g$",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Differential equation components $(h_1, h_2)$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expression for $r_0$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Differential equation with $A_1, A_2$",
+            "points": 0.3,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Function $f(x)$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Value of $\\gamma$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Expressions for $\\tilde{p}$ and $\\tilde{g}$",
+            "points": 0.9,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation for $\\ddot{\\tilde{r}}$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "Equation for $\\ddot{\\epsilon}$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\gamma_{\\min}$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          },
+          {
+            "description": "$\\omega$",
+            "points": 0.1,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
