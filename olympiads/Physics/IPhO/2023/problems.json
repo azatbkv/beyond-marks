@@ -1,0 +1,474 @@
+[
+  {
+    "number": 1,
+    "name": "Characterization of Soil Colloids",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "Consider that a water molecule collides with the particle at $t = t_0$, giving impulse $I_0$, and $F(t) = 0$ afterward. If $v(t) = 0$ before the collision, $v(t) = v_0 e^{-(t-t_0)/\\tau}$ for $t > t_0$. Determine $v_0$ and $\\tau$, using $I_0$ and necessary parameters in Eq.(1).",
+        "solution": "The relation between the impulse and the momentum change is given by $M v_0 = I_0$. Therefore,<br> $$ v_0 = \\frac{I_0}{M}. \\quad (\\text{S1.1}) $$ <br>For the situation considered here, the equation of motion reads<br> $$ M\\dot{v} = -\\gamma v(t). \\quad (\\text{S1.2}) $$ <br>Substituting the form of the solution given in the question sheet, $v(t) = v_0 e^{-(t-t_0)/\\tau}$, we obtain<br> $$ \\tau = \\frac{M}{\\gamma}. \\quad (\\text{S1.3}) $$",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Determination of $v_0$ and $\\tau$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.2",
+        "description": "Actually, water molecules collide with the particle one after another. Suppose the $i$th collision gives the impulse $I_i$ at time $t_i$ and determine $v(t)$ on condition that $t > 0$ and $v(0) = 0$. Also give the inequality specifying the range of $t_i$ that needs to be considered for a given $t$. In the answer sheet, it is not necessary to specify this range in the expression for $v(t)$.",
+        "solution": "Thanks to the linearity of Eq. (S1.2), we can use the superposition principle, which tells us that $v(t)$ is given by the sum of solutions for single collision events that occur before time $t$. This immediately gives the solution as<br> $$ v(t) = \\sum_i \\frac{I_i}{M} e^{-(t-t_i)/\\tau}, \\quad (\\text{S1.4}) $$ <br>where the sum is taken in the range of $i$ that satisfies $0 < t_i < t$.<br>It is also not difficult to figure out this superposition principle, by considering the effect of a single collision as well as the velocity change between two consecutive collisions. From A.1, it is straightforward to show that the velocity right after the $i$th collision is given by<br> $$ v(t_i) = v_0(t_i) + \\frac{I_i}{M}, \\quad (\\text{S1.5}) $$ <br>where $v_0(t_i)$ is the velocity right before the collision. Also, since there is no collision during $t_i < t < t_{i+1}$, we have<br> $$ v(t) = \\left(v_0(t_i) + \\frac{I_i}{M}\\right) e^{-(t-t_i)/\\tau}. \\quad (\\text{S1.6}) $$ <br>In particular,<br> $$ v_0(t_{i+1}) = \\left(v_0(t_i) + \\frac{I_i}{M}\\right) e^{-(t_{i+1}-t_i)/\\tau}. \\quad (\\text{S1.7}) $$ <br>Therefore, with $v_0(t_1) = 0$, we obtain<br> $$ v_0(t_i) = \\sum_{j=1}^{i-1} \\frac{I_j}{M} e^{-(t_i-t_j)/\\tau} \\quad (\\text{S1.8}) $$ <br>and, for $t_i < t < t_{i+1}$,<br> $$ v(t) = \\sum_{j=1}^{i} \\frac{I_j}{M} e^{-(t-t_j)/\\tau}. \\quad (\\text{S1.9}) $$ <br>This is equivalent to Eq. (S1.4).",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Determination of $v(t)$ and the range of $t_i$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "Determine $\\langle \\Delta x(t) \\rangle$ and $\\langle \\Delta x(t)^2 \\rangle$ using $C$, $\\delta$, and $t$.",
+        "solution": "From the definition of the model, we have<br> $$ \\Delta x(t) = \\sum_{n=1}^N v_n \\delta. \\quad (\\text{S1.10}) $$ <br>Taking the average and using $\\langle v_n \\rangle = 0$, we obtain<br> $$ \\langle \\Delta x(t) \\rangle = 0. \\quad (\\text{S1.11}) $$ <br>For the mean square displacement, computing the square of Eq. (S1.10) and taking the average, we obtain<br> $$ \\langle \\Delta x(t)^2 \\rangle = \\sum_{m=1}^N \\sum_{n=1}^N \\langle v_m v_n \\rangle \\delta^2. \\quad (\\text{S1.12}) $$ <br>Using $\\langle v_m v_n \\rangle = C$ for $n=m$ and $0$ otherwise, we find<br> $$ \\langle \\Delta x(t)^2 \\rangle = \\sum_{n=1}^N C \\delta^2 = N C \\delta^2. \\quad (\\text{S1.13}) $$ <br>Since $N \\delta = t$, we obtain<br> $$ \\langle \\Delta x(t)^2 \\rangle = C \\delta t. \\quad (\\text{S1.14}) $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Determination of $\\langle \\Delta x(t) \\rangle$ and $\\langle \\Delta x(t)^2 \\rangle$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.2",
+        "description": "The quantity $\\langle \\Delta x(t)^2 \\rangle$ is called the mean square displacement (MSD). It is a characteristic observable of the Brownian motion, which corresponds to the limiting case $\\delta \\to 0$. From this, we can show $C \\propto \\delta^{\\alpha}$ and $\\langle \\Delta x(t)^2 \\rangle \\propto t^{\\beta}$. Determine the values of $\\alpha$ and $\\beta$.",
+        "solution": "As described in the question sheet, the mean square displacement $\\langle \\Delta x(t)^2 \\rangle$ is a characteristic observable of the Brownian motion, which of course takes a finite value for a given $t$. For the model considered here, we have Eq. (S1.14), but we need to consider the limit $\\delta \\to 0$ to describe the Brownian motion in this model. This requires that $C \\delta$ remains finite, so that $C \\propto \\delta^{-1}$. It also follows that $\\langle \\Delta x(t)^2 \\rangle \\propto t$.<br> $\\triangleright$ Note: The continuous time limit $\\delta \\to 0$ of the present model corresponds to what is called the overdamped Langevin equation. This reads, in the absence of external force as considered here,<br> $$ \\gamma \\frac{dx}{dt} = \\xi(t) \\quad (\\text{S1.15}) $$ <br>with a Gaussian noise $\\xi(t)$ that satisfies<br> $$ \\langle \\xi(t) \\rangle = 0, \\quad \\langle \\xi(t) \\xi(t') \\rangle = 2 D \\delta(t-t') \\quad (\\text{S1.16}) $$ <br>with the diffusion coefficient $D$. Here, $\\delta(t)$ (not to confuse with $\\delta$ in the problem) is called the delta function, which satisfies $\\delta(t) = 0$ for $t \\neq 0$ and $\\delta(0) = \\infty$ but $\\int_a^b \\delta(t) dt = 1$ for any $a < 0$ and $b > 0$.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Values of $\\alpha$ and $\\beta$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "Express $N_+(x_0)$ using necessary quantities from $v$, $\\delta$, $n(x_0)$, and $\\frac{dn}{dx}(x_0)$.",
+        "solution": "For particles with velocity $v (> 0)$, only those in the range $x_0 - v \\delta \\leq x \\leq x_0$ pass the position $x_0$ during a time interval $\\delta$. Therefore, the number of such particles per unit cross-sectional area and per unit time is given by<br> $$ N_+(x_0) = \\frac{1}{\\delta} \\int_{x_0-v\\delta}^{x_0} \\frac{1}{2} n(x) dx \\quad (\\text{S1.17}) $$ <br>Using the Taylor expansion $n(x) \\simeq n(x_0) + (x-x_0) \\frac{dn}{dx}(x_0)$ and integrating, we obtain<br> $$ N_+(x_0) = \\frac{1}{2} n(x_0) v - \\frac{1}{4} \\frac{dn}{dx}(x_0) v^2 \\delta. \\quad (\\text{S1.18}) $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for $N_+(x_0)$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "Determine $J_D(x_0)$ using necessary quantities from $C$, $\\delta$, $n(x_0)$, and $\\frac{dn}{dx}(x_0)$. Using this and Eq.(4), express $D$ in terms of $C$ and $\\delta$, and $\\langle \\Delta x(t)^2 \\rangle$ in terms of $D$ and $t$.",
+        "solution": "Let $N_-(x_0)$ be the counterpart of $N_+(x_0)$ for particles with velocity $ - v$, then<br> $$ N_-(x_0) = \\frac{1}{2} n(x_0) v + \\frac{1}{4} \\frac{dn}{dx}(x_0) v^2 \\delta. \\quad (\\text{S1.19}) $$ <br>With this equation, Eq. (S1.18), and $J_D(x_0) = \\langle N_+(x_0) - N_-(x_0) \\rangle$, we obtain<br> $$ J_D(x_0) = -\\frac{1}{2} \\frac{dn}{dx}(x_0) \\langle v^2 \\rangle \\delta = -\\frac{1}{2} \\frac{dn}{dx}(x_0) C \\delta. \\quad (\\text{S1.20}) $$ <br>Comparing this with Eq. (4) in the question sheet for $x=x_0$, $J_D(x_0) = -D \\frac{dn}{dx}(x_0)$, we obtain<br> $$ D = \\frac{1}{2} C \\delta. \\quad (\\text{S1.21}) $$ <br>Plugging this into the result of B.1, we obtain<br> $$ \\langle \\Delta x(t)^2 \\rangle = 2 D t. \\quad (\\text{S1.22}) $$",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Determination of $J_D(x_0)$, $D$, and $\\langle \\Delta x(t)^2 \\rangle$",
+            "points": 0.7,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "Express $\\frac{dn}{dx}(x)$ using $n(x)$, $T$, $Q$, $E$, and $k$.",
+        "solution": "The force balance sketched in Fig. 2 is expressed by the following equation:<br> $$ \\Pi(x) A + n(x) A \\Delta x Q E = \\Pi(x+\\Delta x) A. \\quad (\\text{S1.23}) $$ <br>Using the van 't Hoff equation for the osmotic pressure, $\\Pi(x) = n(x) kT$, and carrying out the Taylor expansion of $n(x+\\Delta x)$, we obtain<br> $$ \\frac{dn}{dx} = \\frac{n(x)}{kT} QE. \\quad (\\text{S1.24}) $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for $\\frac{dn}{dx}$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.4",
+        "description": "To determine $u$, we use Eq.(1) with $F_{\\text{ext}}(t) = QE$. Since $v(t)$ is fluctuating, we consider $\\langle v(t) \\rangle$. Assuming $\\langle v(0) \\rangle = 0$ and using $\\langle F(t) \\rangle = 0$, evaluate $\\langle v(t) \\rangle$ and obtain $u = \\lim_{t\\to\\infty} \\langle v(t) \\rangle$.",
+        "solution": "The equation of motion for $\\langle v(t) \\rangle$ is<br> $$ M \\frac{d\\langle v(t) \\rangle}{dt} = -\\gamma \\langle v(t) \\rangle + QE. \\quad (\\text{S1.25}) $$ <br>By solving this with the initial condition $\\langle v(0) \\rangle = 0$, we obtain<br> $$ \\langle v(t) \\rangle = \\frac{QE}{\\gamma} (1 - e^{-t/\\tau}). \\quad (\\text{S1.26}) $$ <br>Therefore,<br> $$ u = \\lim_{t\\to\\infty} \\langle v(t) \\rangle = \\frac{QE}{\\gamma}. \\quad (\\text{S1.27}) $$ <br><br> $\\triangleright$ Note: The student is expected to surmise that the solution to Eq. (S1.25) has a functional form analogous to that to Eq. (S1.2), whose solution is given in the question sheet.",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Evaluation of $\\langle v(t) \\rangle$ and $u$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.5",
+        "description": "The flux balance reads $J_D(x) + J_Q(x) = 0$. Express the diffusion coefficient $D$ in terms of $k$, $\\gamma$, and $T$.",
+        "solution": "From the result of C.4 and Eq. (5) in the question sheet, we have<br> $$ J_D(x) = - D \\frac{QE}{kT} n(x). \\quad (\\text{S1.28}) $$ <br>From the result of C.4 and Eq. (5) in the question sheet, we have<br> $$ J_Q(x) = \\frac{QE}{\\gamma} n(x). \\quad (\\text{S1.29}) $$ <br>Plugging these into the flux balance condition, $J_D(x) + J_Q(x) = 0$, we obtain<br> $$ D = \\frac{kT}{\\gamma}. \\quad (\\text{S1.30}) $$",
+        "maxPoints": 0.5,
+        "subparts": [
+          {
+            "description": "Expression for $D$",
+            "points": 0.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.1",
+        "description": "Estimate the value of $N_A$ without using the fact that it is the Avogadro constant, up to two significant digits from the data in Fig.3. The gas constant is $R = 8.31 \\, \\text{J}/\\text{K} \\cdot \\text{mol}$. Do not use the value of the Boltzmann constant $k$ given in General Instructions. As for the Avogadro constant, you might obtain a value different from that in General Instructions.",
+        "solution": "Combining the results of C.2 and C.5, $k = R/N_A$, $\\gamma = 6 \\pi a \\eta$, we obtain the following equation that links the mean square displacement to $N_A$:<br> $$ \\langle \\Delta x^2 \\rangle = \\frac{RT \\Delta t}{3 \\pi a \\eta N_A}. \\quad (\\text{S1.31}) $$ <br>From the data given in the question sheet, the mean square displacement is estimated at $\\langle \\Delta x^2 \\rangle = 6.34 \\, \\mu\\text{m}^2$. Plugging this and the values of the parameters given in the question sheet, we obtain<br> $$ N_A = 5.6 \\times 10^{23} \\, \\text{mol}^{-1}. \\quad (\\text{S1.32}) $$ <br><br> $\\triangleright$ Note: In 1908, Jean Baptiste Perrin (1870-1942) carried out such an observation and obtained an estimate of $N_A$, which turned out to be consistent with the values known at that time by other approaches. This convinced the community of the fact that molecules and hence atoms do exist as constituents of matter. Perrin was awarded the Nobel Prize in Physics in 1926 for ``his work on the discontinuous structure of matter, and especially for his discovery of sedimentation equilibrium''. For more details, see, e.g., S. G. Brush, ``A History of Random Processes: I. Brownian Movement from Brown to Perrin'', Archive for History of Exact Sciences, volume 5, pages 1-36 (1968).<br> $\\triangleright$ Note: On May 20, 2019, the definition of physical constants including the Avogadro constant $N_A$ was changed. As a result, $N_A$ is now defined by a fixed value, not to be determined through measurements.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Estimation of $N_A$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.2",
+        "description": "Express the MSD $\\langle \\Delta x(t)^2 \\rangle$ in terms of $u$, $D$, and $t$. Obtain approximate power laws for small $t$ and large $t$, as well as the characteristic time $t_*$ where this change occurs. Draw a rough graph of MSD in a log-log plot, indicating the approximate location of $t_*$.",
+        "solution": "Using $\\Delta x(t) = \\sum_{n=1}^N (u + v_n) \\delta$ and Eq. (3) in the question sheet, we obtain<br> $$ \\langle \\Delta x^2 \\rangle = (ut)^2 + 2 D t \\quad (\\text{S1.33}) $$ <br>for general $t$. This can be rewritten as<br> $$ \\langle \\Delta x^2 \\rangle = u^2 t \\left( t + \\frac{2D}{u^2} \\right) = u^2 t (t + t_*), \\quad (\\text{S1.34}) $$ <br>with $t_* = 2D/u^2$. Therefore,<br> $$ \\langle \\Delta x^2 \\rangle \\propto \\begin{cases} t & \\text{for } t \\ll t_* \\\\ t^2 & \\text{for } t \\gg t_* \\end{cases} \\quad (\\text{S1.35}) $$ <br>An example of the graph to answer:<br>[Graph described in solution sheet showing log-log plot with slope 1 then slope 2]",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Expression for MSD, power laws, characteristic time $t_*$, and graph",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "D.3",
+        "description": "Figure 5 displays the MSD $\\langle \\Delta x(t)^2 \\rangle$ of those microbes, showing different power laws for small, large, and intermidiate $t$, as indicated by dashed lines. Obtain the power law for each time range and express it using necessary quantities from $D$, $u_0$, $\\delta_0$, and $t$.",
+        "solution": "Since the microbe does not change the swimming direction for $t \\ll \\delta_0$, we can use the result of D.2 just by replacing $u$ by $u_0$. By contrast, for $t \\gg \\delta_0$, the motion of the microbe can be described by the model considered in PART B, though its parameter $\\delta$ is not an artificial parameter anymore but is now a quantity that characterizes the microbe's motion, $\\delta_0$. The parameter $C$ is given by $C = u_0^2$. Plugging this into Eq. (S1.14) and collecting all these results, we obtain<br> $$ \\langle \\Delta x^2 \\rangle = \\begin{cases} 2 D t & \\text{for } t \\ll 2D/u_0^2 \\\\ u_0^2 t^2 & \\text{for } 2D/u_0^2 \\ll t \\ll \\delta_0 \\\\ u_0^2 \\delta_0 t & \\text{for } \\delta_0 \\ll t \\end{cases} \\quad (\\text{S1.36}) $$ <br><br> $\\triangleright$ Note: More precisely, one can show $\\langle \\Delta x^2 \\rangle = (u_0^2 \\delta_0 + 2D) t$ for $t \\gg \\delta_0$. However, in order for the intermediate regime to exist, we have $2D/u_0^2 \\ll \\delta_0$, from which it follows that $u_0^2 \\delta_0 \\gg 2D$ and the expression in Eq. (S1.36) is a good approximation.<br> $\\triangleright$ Note: The motion of the microbe described here is called the run-and-tumble motion, except that it is usually assumed that the microbe changes the swimming direction (``tumbling'') at random time intervals. Some bacteria including Escherichia coli is known to swim in this manner.",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Power laws for small, intermediate, and large $t$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "E.1",
+        "description": "Addition of sodium chloride (NaCl) to the suspension causes colloidal particles to coagulate. Determine the lowest concentration $c$ of NaCl necessary for coagulation. It is sufficient to consider two particles without thermal fluctuations, i.e., $F(t) = 0$ in Eq.(1), and assume that the terminal velocity for the given potential force is reached instantaneously.",
+        "solution": "The interaction energy $U(d)$ has a barrier if $c$ is small enough, but the barrier disappears if $c$ exceeds a threshold. This threshold is the critical concentration to derive in this question. The condition for the barrier to disappear is given by<br> $$ \\min U'(d) = 0. \\quad (\\text{S1.37}) $$ <br>This can be expressed by the following two equations:<br> $$ U'(d) = \\frac{A}{d^2} - \\frac{B \\epsilon (kT)^2}{q^2 \\lambda} e^{-d/\\lambda} = 0, \\quad (\\text{S1.38}) $$ <br> $$ U''(d) = -\\frac{2A}{d^3} + \\frac{B \\epsilon (kT)^2}{q^2 \\lambda^2} e^{-d/\\lambda} = 0. \\quad (\\text{S1.39}) $$ <br>Solving these, we obtain<br> $$ d = 2\\lambda = \\sqrt{\\frac{Aq^2\\lambda}{B \\epsilon (kT)^2}} \\quad (\\text{S1.40}) $$ <br>and therefore<br> $$ \\lambda = \\frac{\\epsilon^2 A q^2}{4 B \\epsilon (kT)^2}. \\quad (\\text{S1.41}) $$ <br>Plugging this into $c = \\frac{\\epsilon k T}{2 N_A q^2} \\lambda^{-2}$, we obtain<br> $$ c = \\frac{8 B^2 \\epsilon^3 (kT)^5}{e^4 N_A A^2 q^6}. \\quad (\\text{S1.42}) $$ <br><br> $\\triangleright$ Note: In the literature, it is also common to consider that the critical concentration is reached when the energy barrier becomes as low as the energy for $d \\to \\infty$, i.e., $\\max U(d) = 0$, although this does not meet the requirements given in the question sheet. If this condition is used instead, we find $c = \\frac{B^2 \\epsilon^3 (kT)^5}{2 e^2 N_A A^2 q^6}$. This differs from Eq. (S1.42) only by a factor $e^2/8 \\approx 0.92$.",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Determination of concentration $c$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Neutron Stars",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "Under the condition of $Z = N$, determine $A$ for maximizing the binding energy per nucleon, $B/A$.",
+        "solution": "The given binding energy is often called the Weizsäcker-Bethe mass formula, and the physical interpretation of the volume and the surface terms is based on the liquid drop model. The formula works quite well except for the shell effects. Find $A$ to minimize the binding energy per mass number, i.e.,<br> $$ \\frac{B}{A} = a_V - a_S A^{-1/3} - \\frac{a_C}{4} A^{2/3}. \\quad (\\text{S2.1}) $$ <br>As long as $A$ is small, the second term is dominantly increasing with increasing $A$, and it is eventually taken over by the third term which is decreasing. Therefore, the extremal corresponds to the maximum of $B/A$. One can explicitly carry out<br> $$ \\frac{d(B/A)}{dA} = 0 \\quad (\\text{S2.2}) $$ <br>to find the following condition,<br> $$ \\frac{a_S}{3} A^{-4/3} - \\frac{a_C}{6} A^{-1/3} = 0. \\quad (\\text{S2.3}) $$ <br>The solution is<br> $$ A = \\frac{2a_S}{a_C}. \\quad (\\text{S2.4}) $$ <br>From the given numerical values, $A = 50$ (which must be an integer) is concluded.<br> $\\triangleright$ Note: In reality $B/A$ has a maximum for $A$ ranging from $^{56}\\text{Fe}$ to $^{62}\\text{Ni}$. The discrepancy from the answer in this problem is understood by the approximation of dropping the pairing energy and disregarding a mass difference between the proton and the neutron.",
+        "maxPoints": 0.9,
+        "subparts": [
+          {
+            "description": "Determination of $A$",
+            "points": 0.9,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.2",
+        "description": "Under the condition of fixed $A$, the atomic number of the most stable nucleus $Z^*$ is determined by maximizing $B(Z, A-Z)$. For $A=197$, calculate $Z^*$ using Eq. (1).",
+        "solution": "Take the differentiation of $B(Z, A-Z)/A$ with respect to $Z$ for a fixed $A$, which leads to<br> $$ -2a_C \\frac{Z^*}{A^{1/3}} - 4 a_{\\text{sym}} \\frac{2 Z^* - A}{A} = 0. \\quad (\\text{S2.5}) $$ <br>By solving this in terms of $Z^*$, one finds<br> $$ Z^* = \\frac{1}{1 + \\frac{a_C}{4 a_{\\text{sym}}} A^{2/3}} \\cdot \\frac{A}{2}. \\quad (\\text{S2.6}) $$ <br>From this expression one can understand that $Z^* \\simeq N$ as long as $A$ is small enough, while $Z^*$ becomes far smaller than $N$ for large $A$. It is obvious from the explicit form that the symmetry energy tends to favor $Z=N$ but the Coulomb interaction tends to favor $Z \\to 0$, and the balance between these competing effects determines $Z^*$. Nuclei with too many neutrons (protons) would go through the $\\beta^-$ decay (the $\\beta^+$ decay or the electron capture) toward the stable $(Z, N)$.",
+        "maxPoints": 0.9,
+        "subparts": [
+          {
+            "description": "Calculation of $Z^*$",
+            "points": 0.9,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "A.3",
+        "description": "A nucleus having large $A$ breaks up into lighter nuclei through fission in order to minimize the total rest-mass energy. For simplicity, we consider one of multiple ways to break a nucleus with $(Z, N)$ into two equal nuclei, which occurs when the following energy relation holds,<br> $$ m(Z, N) c^2 > 2m(Z/2, N/2) c^2. $$ <br>When this relation is written as<br> $$ Z^2/A > C_{\\text{fission}} \\frac{a_S}{a_C}, $$ <br>obtain $C_{\\text{fission}}$ up to two significant digits.",
+        "solution": "Plugging the binding energy into the given inequality, one sees that the volume terms cancel due to volume conservation. Then, the condition involves only $a_S$ and $a_C$ which are related as<br> $$ a_S \\left[ A^{2/3} - 2 \\left(\\frac{A}{2}\\right)^{2/3} \\right] + a_C \\left[ \\frac{Z^2}{A^{1/3}} - 2 \\frac{(Z/2)^2}{(A/2)^{1/3}} \\right] > 0. \\quad (\\text{S2.7}) $$ <br>As guided in the problem, the above inequality becomes as simple as<br> $$ \\frac{Z^2}{A} > \\frac{2^{1/3}-1}{1 - 2^{-2/3}} \\cdot \\frac{a_S}{a_C}. \\quad (\\text{S2.8}) $$ <br>Therefore, the numerical coefficient turns out to be $0.7$.<br> $\\triangleright$ Note: The physical interpretation of this result may need some explanations. Using the values of $a_S$ and $a_C$, one finds that such a symmetric fission process is possible for $Z^2/A \\gtrsim 18$. For example, lead (Pb) with $Z=82$ and $A=208$ is a stable element among several isotopes. Now, one can compute $82^2/208 \\approx 32$, which is larger than the threshold $18$. The key to resolving this gap is the potential barrier from the deformation. When a heavy nucleus splits into two fragments, the shape and the surface should change from the stable configuration (which is not necessarily spherical due to interaction) and thus the surface energy increases. Although some heavy elements are energetically unstable, the lifetime necessary to overcome the potential barrier can be very large.",
+        "maxPoints": 0.7,
+        "subparts": [
+          {
+            "description": "Calculation of $C_{\\text{fission}}$",
+            "points": 0.7,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "We assume that $N = A$ and $Z = 0$ is realized for sufficiently large $A$ and Eq. (1) continues to hold with the addition of the gravitational binding energy. The binding energy due to gravity is<br> $$ B_{\\text{grav}} = \\frac{3}{5} \\frac{GM^2}{R}, $$ <br>where $M = m_N A$ and $R = R_0 A^{1/3}$ with $R_0 \\simeq 1.1 \\times 10^{-15} \\text{ m} = 1.1 \\text{ fm}$ are the mass and the radius of the nucleus, respectively.<br>For $B_{\\text{grav}} = a_{\\text{grav}} A^{5/3}$, obtain $a_{\\text{grav}}$ in the MeV unit up to the first significant digit. Then, ignoring the surface term, estimate $A_c$ up to the first significant digit. In the calculation, use $m_N c^2 \\simeq 939 \\text{ MeV}$ and $G = \\hbar c / M_P^2$ where $M_P c^2 \\simeq 1.22 \\times 10^{22} \\text{ MeV}$ and $\\hbar c \\simeq 197 \\text{ MeV} \\cdot \\text{fm}$.",
+        "solution": "The expression apart from the parametric dependence on $A$ can be identified as<br> $$ a_{\\text{grav}} = \\frac{3}{5} \\frac{Gm_N^2}{R_0}, \\quad (\\text{S2.9}) $$ <br>which is re-expressed in terms of $M_P$ using the given relation to $G$, leading to<br> $$ a_{\\text{grav}} = \\frac{3}{5} \\frac{\\hbar c m_N^2}{R_0 M_P^2} = \\frac{3}{5} \\cdot \\frac{197 \\, \\text{fm} \\cdot \\text{MeV} \\times (939 \\, \\text{MeV}/c^2)^2}{1.1 \\, \\text{fm} \\times (1.22 \\times 10^{22} \\, \\text{MeV}/c^2)^2} \\simeq 6.4 \\times 10^{-37} \\, \\text{MeV}. \\quad (\\text{S2.10}) $$ <br>Here, $M_P$ is a quantity often called the Planck mass. The gravitational effect is extremely tiny as compared to the typical scale in nuclear physics and this scale difference is manifest for this expression of $G$ with $M_P$ in the MeV unit.<br>The stability is judged from the condition that the binding energy should be positive, i.e.,<br> $$ B_{\\text{total}}(A) = a_V A - a_{\\text{sym}} A + a_{\\text{grav}} A^{5/3} > 0. \\quad (\\text{S2.11}) $$ <br>This inequality can be translated into $A > A_c$ with $A_c$ given by<br> $$ A_c = \\left( \\frac{a_{\\text{sym}} - a_V}{a_{\\text{grav}}} \\right)^{3/2} \\simeq 4.4 \\times 10^{55}. \\quad (\\text{S2.12}) $$ <br><br> $\\triangleright$ Note: One may think that one neutron drip is a process with the least change in the surface area and thus the smallest barrier. This leads to a condition, $B_{\\text{total}}(A) > B_{\\text{total}}(A-1)$ or approximately $dB_{\\text{total}}(A)/dA > 0$, which is satisfied in a window with $B_{\\text{total}} < 0$. This condition, $dB_{\\text{total}}/dA = 0$, results in smaller $A_c$ but it is nontrivial whether such an unstable initial state could be prepared in the nature. The neutron star is born in the Type-II (core-collapse) supernovae, and a baby star called the proto-neutron star is an energetic state at high temperature. Neutrinos bring heat out from the proto-neutron star within the time scale of $\\mathcal{O}(10)$ seconds. What is the possible smallest mass of the neutron star? This is not completely understood partly because the computer simulation of the supernovae is a big challenge even today. Although the neutron star mass can become much smaller than $M_{\\odot}$ theoretically, the simulation and the observation favor the mass $\\gtrsim 1.4 M_{\\odot}$.",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Calculation of $a_{\\text{grav}}$ and $A_c$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "As shown in the figure below, under the constant gravitational acceleration $g$ we place two levels I and II with the height difference $\\Delta h(> 0)$. Set the identical clocks at I, II, and $F$, the free-falling system, denoted by clock-I, clock-II, and clock-$F$, respectively. We assume that an observer sits with clock-$F$, and initially $F$ is placed at the same height as that of clock-I and its velocity is zero. Since the clocks are identical, they register equal time intervals, $\\Delta \\tau_F = \\Delta \\tau_{\\text{I}}$. Then, we let $F$ fall freely, and work in the frame of $F$, which is considered to be inertial. In this frame, clock-II passes by clock-$F$ with velocity $v$, so that the time dilation of clock-II can be determined by the Lorentz transformation. When time $\\Delta \\tau_{\\text{I}}$ elapses on clock-$F$, time $\\Delta \\tau_{\\text{II}}$ elapses on clock-II.<br>Determine $\\Delta \\tau_{\\text{II}}$ in terms of $\\Delta \\tau_{\\text{I}}$ up to the first order in $\\Delta \\phi/c^2$, where $\\Delta \\phi = g \\Delta h$ is a difference of the gravitational potential, i.e., the gravitational potential energy per unit mass.",
+        "solution": "From the energy conservation, the free-falling system earns the kinetic energy $\\frac{1}{2} m v^2$ from the potential energy $mg \\Delta h$, and the velocity takes<br> $$ v^2 = 2 g \\Delta h = 2 \\Delta \\phi. \\quad (\\text{S2.13}) $$ <br>The time delay can be derived from the standard arguments. Suppose that Clock-II passes two infinitesimally separate points, $z$ and $z+\\Delta z$, in F at time $t$ and $t+\\Delta \\tau_{\\text{II}}$, then the time interval registered by Clock-II is<br> $$ \\Delta \\tau_{\\text{II}} = \\frac{\\gamma}{c} (c \\Delta \\tau_{\\text{F}} - \\beta \\Delta z), \\quad (\\text{S2.14}) $$ <br>where the Lorentz transformation is used with $\\beta = v/c$ and $\\gamma = 1/\\sqrt{1-\\beta^2}$. Because $\\Delta z / \\Delta \\tau_{\\text{F}} = v$ and $\\Delta \\tau_{\\text{F}} = \\Delta \\tau_{\\text{I}}$, the above expression is written as<br> $$ \\Delta \\tau_{\\text{II}} = \\gamma (1 - \\beta^2) \\Delta \\tau_{\\text{F}} = \\sqrt{1 - \\beta^2} \\Delta \\tau_{\\text{I}}. \\quad (\\text{S2.15}) $$ <br>Using the expression of $v^2$, one finally arrives at<br> $$ \\Delta \\tau_{\\text{II}} = \\sqrt{1 - 2 \\frac{\\Delta \\phi}{c^2}} \\Delta \\tau_{\\text{I}} \\simeq \\left( 1 - \\frac{\\Delta \\phi}{c^2} \\right) \\Delta \\tau_{\\text{I}}. \\quad (\\text{S2.16}) $$",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Determination of $\\Delta \\tau_{\\text{II}}$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "Under the gravitational potential $\\phi$, time delays change the effective speed of light, $c_{\\text{eff}}$, observed at the infinity, though the local speed of light is $c$. When $\\phi(r=\\infty) = 0$, $c_{\\text{eff}}$ can be given up to the first order in $\\phi/c^2$ as<br> $$ c_{\\text{eff}} \\approx \\left( 1 + \\frac{2\\phi}{c^2} \\right) c $$ <br>including the effect of space distortion, which was not featured in C.1. We note that the light path can be approximated as a straight line.<br>As shown in Fig. 1 (a), we take the $x$ - axis along the light path from the neutron star N to the Earth E and place $x=0$ at the point where the White Dwarf W is the closest to the light path. Let $x_N (< 0)$ be the $x$ - coordinate of N, $x_E (> 0)$ be that of E, and $d$ be the distance between W and the light path.<br>Estimate the changes of the arrival time $\\Delta t$ of the light from N to E caused by the White Dwarf with mass $M_{\\text{WD}}$ and evaluate the answer in a simple form disregarding higher order terms of the following small quantities: $d/|x_N| \\ll 1$, $d/x_E \\ll 1$, and $GM_{\\text{WD}}/(c^2 d) \\ll 1$. If necessary, use the following formula.<br> $$ \\int \\frac{dx}{\\sqrt{x^2+d^2}} = \\frac{1}{2} \\log \\left( \\frac{\\sqrt{x^2+d^2}+x}{\\sqrt{x^2+d^2}-x} \\right) + C. $$",
+        "solution": "In terms of the effective speed of light, the total time necessary for the light propagation from N to E is<br> $$ t_{\\text{E-N}} = \\int_{x_N}^{x_E} \\frac{dx}{c_{\\text{eff}}(x)}. \\quad (\\text{S2.17}) $$ <br>The denominator is expanded in terms of the gravitational potential and the leading-order correction is found to be<br> $$ t_{\\text{E-N}} \\simeq \\frac{1}{c} \\int_{x_N}^{x_E} dx \\left( 1 + \\frac{2 G M_{\\text{WD}}}{c^2 \\sqrt{x^2 + d^2}} \\right) = \\frac{x_E - x_N}{c} + \\Delta t, \\quad (\\text{S2.18}) $$ <br>where the time delay $\\Delta t$ is identified as<br> $$ \\Delta t = \\frac{2 G M_{\\text{WD}}}{c^3} \\int_{x_N}^{x_E} \\frac{dx}{\\sqrt{x^2 + d^2}} = \\left. \\frac{G M_{\\text{WD}}}{c^3} \\log \\left( \\frac{\\sqrt{x^2 + d^2} + x}{\\sqrt{x^2 + d^2} - x} \\right) \\right|_{x=x_N}^{x=x_E}. \\quad (\\text{S2.19}) $$ <br>Inside the logarithm, the following approximations are made:<br> $$ \\sqrt{x_N^2 + d^2} + x_N \\simeq \\frac{d^2}{2|x_N|}, \\quad \\sqrt{x_N^2 + d^2} - x_N \\simeq 2 |x_N|, \\quad (\\text{S2.20}) $$ <br>and<br> $$ \\sqrt{x_E^2 + d^2} - x_E \\simeq \\frac{d^2}{2x_E}, \\quad \\sqrt{x_E^2 + d^2} + x_E \\simeq 2 x_E. \\quad (\\text{S2.21}) $$ <br>Then, the simple form of approximated $\\Delta t$ is<br> $$ \\Delta t \\simeq \\frac{G M_{\\text{WD}}}{c^3} \\log \\left( \\frac{2 x_E \\cdot 2|x_N|}{d^2/(2x_E) \\cdot d^2/(2|x_N|)} \\right) = \\frac{2 G M_{\\text{WD}}}{c^3} \\log \\left( \\frac{4 |x_N| x_E}{d^2} \\right). \\quad (\\text{S2.22}) $$",
+        "maxPoints": 1.8,
+        "subparts": [
+          {
+            "description": "Estimation of $\\Delta t$",
+            "points": 1.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "As shown below, in a binary star system N and W are assumed to be moving in circular orbits with zero eccentricity around the center of mass $G$ on the orbit plane. Let $\\varepsilon$ be the orbital inclination angle measured from the orbit plane to the line directed toward E from $G$, and let $L$ be the length between N and W and $M_{\\text{WD}}$ be the mass of the White Dwarf. In the following, we assume $\\varepsilon \\ll 1$.<br>We observe light pulses from N on E far away from N. The light path to E varies with time depending on the configuration of N and W. The delay in the time interval of arriving pulses on E has the maximum value $\\Delta t_{\\max}$ for $x_N \\simeq -L$ and the minimum value $\\Delta t_{\\min}$ for $x_N \\simeq L$ (see Fig. 1 (b) for the configuration). Calculate $\\Delta t_{\\max} - \\Delta t_{\\min}$ in a simple form disregarding higher order terms of small quantities as done in C.2. We note that the delays due to gravity from stellar objects other than W are assumed to cancel out in $\\Delta t_{\\max} - \\Delta t_{\\min}$.",
+        "solution": "Because $|x_N| = L \\cos \\varepsilon \\simeq L$ and $d = L \\sin \\varepsilon \\simeq L \\varepsilon$ for $\\Delta t_{\\max}$, the answer of C.2 gives<br> $$ \\Delta t_{\\max} = \\frac{2 G M_{\\text{WD}}}{c^3} \\log(4 x_E / L \\varepsilon^2) \\quad (\\text{S2.23}) $$ <br>For $\\Delta t_{\\min}$ the sign of $x_N$ is changed. Although the expression of $\\Delta t$ is intact, the approximation takes a different form as<br> $$ \\sqrt{x_N^2 + d^2} + x_N \\simeq 2 x_N, \\quad \\sqrt{x_N^2 + d^2} - x_N \\simeq \\frac{d^2}{2 x_N}. \\quad (\\text{S2.24}) $$ <br>Then, the approximated form of $\\Delta t_{\\min}$ is<br> $$ \\Delta t_{\\min} \\simeq \\frac{G M_{\\text{WD}}}{c^3} \\log \\left( \\frac{2 x_E \\cdot d^2/(2x_N)}{d^2/(2x_E) \\cdot 2 x_N} \\right) = \\frac{2 G M_{\\text{WD}}}{c^3} \\log (x_E / L), \\quad (\\text{S2.25}) $$ <br>where $x_N \\simeq L$ is used in the last expression. In the difference, $\\Delta t_{\\max} - \\Delta t_{\\min}$, one sees that $L$ and $x_E$ disappear.",
+        "maxPoints": 1.8,
+        "subparts": [
+          {
+            "description": "Calculation of $\\Delta t_{\\max} - \\Delta t_{\\min}$",
+            "points": 1.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.4",
+        "description": "The below figure shows the observed time delays as a function of the orbital phase $\\varphi$ for the binary star system with $L \\approx 6 \\times 10^6 \\text{ km}$ and $\\cos \\varepsilon \\approx 0.99989$. Estimate $M_{\\text{WD}}$ in terms of the solar mass $M_{\\odot}$ and show the results for $M_{\\text{WD}}/M_{\\odot}$ up to the first significant digit. Here the approximate relation, $GM_{\\odot}/c^3 \\approx 5 \\, \\mu\\text{s}$, can be used.",
+        "solution": "Using the expansion, $\\cos \\varepsilon \\simeq 1 - \\frac{1}{2} \\varepsilon^2$, one can evaluate<br> $$ \\varepsilon^2 \\simeq 2 \\times (1 - \\cos \\varepsilon) = 0.00022. \\quad (\\text{S2.26}) $$ <br>From the graph the difference in time delays is roughly read out as<br> $$ \\Delta t_{\\max} - \\Delta t_{\\min} \\approx 50 \\, \\mu\\text{s} \\quad (\\text{S2.27}) $$ <br>From these numerical values, $M_{\\text{WD}}$ is solved as<br> $$ M_{\\text{WD}} = M_{\\odot} \\left( \\frac{2 G M_{\\odot}}{c^3} \\right)^{-1} \\frac{\\Delta t_{\\max} - \\Delta t_{\\min}}{\\log(4/\\varepsilon^2)} \\simeq \\frac{50 \\, \\mu\\text{s}}{10 \\, \\mu\\text{s} \\log(4/0.00022)} M_{\\odot} \\simeq 0.5 M_{\\odot}. \\quad (\\text{S2.28}) $$ <br><br> $\\triangleright$ Note: The data in this problem roughly correspond to PSR J1614-2230 [see P.B. Demorest et al., Nature 467, 1080-1083 (2010)]. From the Shapiro delay measurement, the White Dwarf mass was estimated as $0.500 \\pm 0.006 M_{\\odot}$. With the Keplerian orbital parameters in the binary system, the neutron star mass was considered to be $1.97 \\pm 0.04 M_{\\odot}$, which was the heaviest neutron star at that time. Since then, several candidates for heavier neutron stars have been found.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Estimation of $M_{\\text{WD}}/M_{\\odot}$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.5",
+        "description": "In the binary system of neutron stars, two stars release energy and angular momentum by emitting gravitational waves and eventually collide to merge. For simplicity, let us consider only a circular motion with the radius $R$ and the angular velocity $\\omega$ and then $\\omega = \\chi R^p$ holds with the constant $\\chi$ depending on neither $\\omega$ nor $R$ if relativistic effects are ignored. Determine the value for $p$.",
+        "solution": "For the circular orbit with the radius $R$, the equation of motion is<br> $$ m R \\omega^2 = G \\frac{mM}{R^2}, \\quad (\\text{S2.29}) $$ <br>if $M$ is sufficiently large. From this it is easy to see<br> $$ R^3 \\omega^2 = GM = (\\text{const.}) \\quad (\\text{S2.30}) $$ <br>This is nothing but Kepler's third law and the relation holds for more general elliptical orbits around the center of mass.",
+        "maxPoints": 0.4,
+        "subparts": [
+          {
+            "description": "Value of $p$",
+            "points": 0.4,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.6",
+        "description": "The amplitude of the emitted gravitational wave from the binary system in C.5 is proportional to $R^2 \\omega^2$. Figure below qualitatively shows four different temporal profiles of the observed gravitational waves before the two-star collision. Select the most appropriate profile from (a) to (d).",
+        "solution": "The sum of the kinetic energy and the potential energy is<br> $$ E = \\frac{1}{2} m R^2 \\omega^2 - G \\frac{mM}{R}. \\quad (\\text{S2.31}) $$ <br>From the equation of motion this is rewritten as<br> $$ E = - \\frac{1}{2} G \\frac{mM}{R}. \\quad (\\text{S2.32}) $$ <br>Therefore, when $E$ decreases due to gravitational wave emission, $R$ should decrease. Then, $\\omega$ should increase. Since the amplitude is proportional to $R^2 \\omega^2 \\propto R^{-1}$, it should increase. In summary, both the frequency and the amplitude should increase as time goes on, as illustrated in (b).",
+        "maxPoints": 0.2,
+        "subparts": [
+          {
+            "description": "Selection of the profile",
+            "points": 0.2,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Water and Objects",
+    "maxPoints": 10.0,
+    "weightedMaxPoints": 10.0,
+    "parts": [
+      {
+        "number": "A.1",
+        "description": "The radius $a$ of both water drops before the merger is $100 \\, \\mu\\text{m}$. The density of water $\\rho$ is $1.00 \\times 10^3 \\, \\text{kg/m}^3$. The surface tension $\\gamma$ is $7.27 \\times 10^{-2} \\, \\text{J/m}^2$. A portion $k$ of the difference of the surface energy before and after the merger, $\\Delta E$, is transformed into the kinetic energy of the jumped water drop. Then, determine the initial jump-up velocity, $v$, of the merged water drop in two significant digits under the following assumptions:<br> $k = 0.06$ <br> Before and after merger, the total volume of water is conserved.",
+        "solution": "The surface energy per drop before the merger is<br> $$ E = 4 \\pi a^2 \\gamma. \\quad (\\text{S3.1}) $$ <br>Therefore, the surface energy difference becomes<br> $$ \\Delta E = 4 \\pi (2 - 2^{2/3}) a^2 \\gamma. \\quad (\\text{S3.2}) $$ <br>The transfer of surface energy to kinetic energy is represented by<br> $$ M v^2 / 2 = k \\Delta E, \\quad (\\text{S3.3}) $$ <br>where $k = 0.06$ and $M = 4 \\pi a^3 \\rho / 3 \\times 2 = 8 \\pi a^3 \\rho / 3$ is the mass of the drop after the merger. The numerical computation gives<br> $$ v = \\sqrt{\\frac{2 k \\Delta E}{M}} = \\sqrt{3 (2 - 2^{2/3}) \\frac{k \\gamma}{\\rho a}} = \\sqrt{3 (2 - 2^{2/3}) \\times \\frac{0.06 \\times (7.27 \\times 10^{-2})}{(1.0 \\times 10^3) \\times (100 \\times 10^{-6})}} = 0.232 \\, \\text{m/s}. \\quad (\\text{S3.4}) $$ <br><br> $\\triangleright$ Note: We point out an interesting phenomenon related to this question. On a superhydrophobic surface, when small droplets merge, they release surface energy, causing the surface area to shrink. This energy release propels the merged droplet to jump up. This phenomenon mirrors the natural mechanism seen in cicadas. Cicadas' wings, which possess superhydrophobic surfaces, facilitate the removal of water droplets upon coalescence. This process serves as a natural self-cleaning system, converting surface energy to kinetic energy, as reported in the following paper: Wisdom et. al., Proc. Natl. Acad. Sci. USA 110, 7992-7997 (2013).",
+        "maxPoints": 2.0,
+        "subparts": [
+          {
+            "description": "Calculation of $v$",
+            "points": 2.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.1",
+        "description": "We consider a hydrophilic board case, as shown in Fig.2(a). We note that the water pressure, $P$, satisfies the conditions $P < P_0$ for $z > 0$ and $P = P_0$ for $z = 0$. Then, express $P$ at $z$ in terms of $\\rho, g, z$, and $P_0$.",
+        "solution": "Consider a vertical upright column-shaped water block as shown in the hatched area of Fig. S3-1. The vertical force balance with respect to this block per unit area leads to $P + \\rho g z = P_0$.",
+        "maxPoints": 0.6,
+        "subparts": [
+          {
+            "description": "Expression for $P$",
+            "points": 0.6,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.2",
+        "description": "We consider a water block whose cutout is shown as shaded in Fig.3(a). Its $xz$ plane cross-section is shown in a hatched area in Fig.3(b). Let $z_1$ and $z_2$ respectively be the left and right edge coordinates of the boundary (water surface) between the water block and the air.<br>Obtain a horizontal component $(x$ component) of the net force per unit length along the $y$ - axis, $f_x$, which is exerted on the water block due to the pressure, in terms of $\\rho, g, z_1$, and $z_2$. Note that $P_0$ results in no net horizontal force on the water block.",
+        "solution": "Because the atmospheric pressure $P_0$ exerts no net horizontal force on the water block, we have<br> $$ f_x = \\int_{z_2}^{z_1} (-\\rho g z) dz = \\frac{1}{2} \\rho g (z_2^2 - z_1^2). \\quad (\\text{S3.5}) $$ <br>This force acts in the leftward direction.<br><br> $\\triangleright$ Note: The reason why $P_0$ exerts no net horizontal force is understood as follows. Consider a small area (infinitesimally divided piece) near the surface, which is regarded as a right-angled triangle (see Fig. S3-2).<br>The horizontal component of the combined force exerted on the right-angled triangle ABC per unit length along the $y$ - axis by atmospheric pressure is<br> $$ P_0 \\times \\text{AB} - P_0 \\times \\text{AC} \\times \\frac{\\text{AB}}{\\text{AC}} = 0 $$ <br>Integrating infinitesimal pieces over a finite domain yields a finite volume of water, while the net force remains zero.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Expression for $f_x$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.3",
+        "description": "Surface tension acting on the water block is balanced with the force $f_x$ discussed in B.2. We respectively define $\\theta_1$ and $\\theta_2$ as the angles between the water surface and the horizontal plane at the left and right edges. Express $f_x$ in terms of $\\gamma$, $\\theta_1$, and $\\theta_2$.",
+        "solution": "The horizontal component of the surface tension acting on the water block is $\\gamma \\cos \\theta_2 - \\gamma \\cos \\theta_1$. Thus, the horizontal force balance is expressed as<br> $$ f_x + \\gamma \\cos \\theta_2 - \\gamma \\cos \\theta_1 = 0. \\quad (\\text{S3.6}) $$",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Expression for $f_x$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.4",
+        "description": "The following equation holds at an arbitrary point $(x, z)$ on the water surface,<br> $$ \\frac{1}{2} \\left( \\frac{z}{\\ell} \\right)^a + \\cos \\theta(x) = \\text{constant}. \\quad (1) $$ <br>Determine the exponent $a$ and express the constant $\\ell$ in terms of $\\gamma$ and $\\rho$. Note that this equation holds regardless of hydrophilic or hydrophobic board materials.",
+        "solution": "From the results of B.2 and B.3, we have<br> $$ \\frac{1}{2} \\rho g z_1^2 + \\gamma \\cos \\theta_1 = \\frac{1}{2} \\rho g z_2^2 + \\gamma \\cos \\theta_2. \\quad (\\text{S3.7}) $$ <br>Since this equation holds at an arbitrary point $(x, z)$ on the water surface, we conclude<br> $$ \\frac{1}{2} \\rho g z^2 + \\gamma \\cos \\theta = \\text{constant}, \\quad (\\text{S3.8}) $$ <br>which is written as<br> $$ \\frac{1}{2} \\left( \\frac{z}{\\ell} \\right)^a + \\cos \\theta(x) = \\text{constant}, \\quad (\\text{S3.9}) $$ <br>with $a = 2$ and $\\ell = \\sqrt{\\frac{\\gamma}{\\rho g}}.$ <br><br> $\\triangleright$ Note: The equation (S3.9) is a kind of conservation law. The constant $\\ell$ is called the capillary length.",
+        "maxPoints": 0.8,
+        "subparts": [
+          {
+            "description": "Determination of $a$ and $\\ell$",
+            "points": 0.8,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "B.5",
+        "description": "In Eq. (1) in B.4, we assume that variation of the water surface is slow, i.e., $|z'(x)| \\ll 1$, so that we can expand $\\cos \\theta(x)$ with respect to $z'(x)$ up to the second order. Then, differentiating the resultant equation with respect to $x$, we obtain the differential equation satisfied by $z(x)$. Solve this differential equation and determine $z(x)$ for $x \\geq 0$ in terms of $\\tan \\theta_0$ and $\\ell$. Note that the vertical directions of Figs. 2 and 3 are exaggerated for better view and they do not satisfy the condition, $|z'(x)| \\ll 1$.",
+        "solution": "The derivative of the water surface coordinate $z$, denoted by $z'$, is associated with the angle of inclination $\\theta$, given by the equation: $z' = \\tan \\theta$. This relation yields<br> $$ \\cos \\theta = \\frac{1}{\\sqrt{1 + (z')^2}}, \\quad (\\text{S3.10}) $$ <br>which leads to<br> $$ \\cos \\theta \\simeq 1 - \\frac{1}{2} (z')^2. \\quad (\\text{S3.11}) $$ <br>Plugging this into Eq. (S3.9), we obtain<br> $$ \\frac{z^2}{\\ell^2} - z'^2 = \\text{const}. \\quad (\\text{S3.12}) $$ <br>Taking the derivative of both sides with respect to $x$, we have<br> $$ z'' = \\frac{z}{\\ell^2}, \\quad (\\text{S3.13}) $$ <br>which is the differential equation that determines the water surface form.<br>Its general solution is<br> $$ z = A e^{x/\\ell} + B e^{-x/\\ell}. \\quad (\\text{S3.14}) $$ <br>The boundary condition, $z(\\infty) = 0$, leads to $A = 0$.<br>The boundary condition, $z'(0) = \\tan \\theta_0$, leads to $B = -\\ell \\tan \\theta_0$.<br>Thus, $z(x) = -\\ell \\tan \\theta_0 e^{-x/\\ell}$.",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Expression for $z(x)$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.1",
+        "description": "At the contact points of the rod B and the water surface, we define the $z$ - coordinates $z_a$ and $z_b$, and the angles $\\theta_a$ and $\\theta_b$, as shown in Fig.5. Determine the horizontal force component, $F_x$, on the rod B per unit length along the $y$ - axis in terms of $\\theta_a, \\theta_b, z_a, z_b, \\rho, g$, and $\\gamma$.",
+        "solution": "The horizontal component of the force due to the pressure is<br> $$ \\int_{z_a}^{z_b} (\\rho g z) dz = \\frac{1}{2} \\rho g (z_b^2 - z_a^2) \\quad (\\text{S3.15}) $$ <br>Let $z_{\\text{bottom}}$ be the $z$ - coordinate at the bottom of the rod. Then, we have<br> $$ F_x = \\int_{z_{\\text{bottom}}}^{z_a} (-\\rho g z) dz + \\left( - \\int_{z_{\\text{bottom}}}^{z_b} (-\\rho g z) dz \\right) = \\int_{z_a}^{z_b} (\\rho g z) dz \\quad (\\text{S3.16}) $$ <br><br> $\\triangleright$ Note: The fact that the contribution due to the pressure does not depend on the shape of the cross-section can be demonstrated as follows. The pressure at the point $s$ on the contour $C$ along the cross-sectional boundary is<br> $$ -P \\hat{n} ds = (-P_0 + \\rho g z) \\hat{n} ds. \\quad (\\text{S3.17}) $$ <br>Let $\\hat{x}$ be the unit vector pointing the positive $x$ - direction and noting $\\hat{x} \\cdot \\hat{n} ds = dz$ (see Fig. S3-3), we obtain its horizontal component as<br> $$ -P \\hat{n} \\cdot \\hat{x} ds = -P_0 dz + \\rho g z dz. \\quad (\\text{S3.18}) $$ <br>Integrating along the contour $C$. We obtain<br> $$ \\int_{z_a}^{z_b} (\\rho g z) dz = \\frac{1}{2} \\rho g (z_b^2 - z_a^2) \\quad (\\text{S3.19}) $$ <br>Combined with surface tension, we get: $F_x = \\frac{1}{2} \\rho g (z_b^2 - z_a^2) + \\gamma (\\cos \\theta_b - \\cos \\theta_a)$.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Expression for $F_x$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.2",
+        "description": "We define the $z$ - coordinate of the water surface, $z_0$, at the midpoint of two rods in the $xz$ plane. Express the force $F_x$ obtained in C.1 without using $\\theta_a, \\theta_b, z_a$, and $z_b$.",
+        "solution": "By applying the boundary conditions to Eq. (S3.8), we obtain<br> $$ \\frac{1}{2} \\rho g z_a^2 + \\gamma \\cos \\theta_a = \\frac{1}{2} \\rho g z_0^2 + \\gamma \\quad (\\text{S3.20}) $$ <br> $$ \\frac{1}{2} \\rho g z_b^2 + \\gamma \\cos \\theta_b = \\gamma \\quad (\\text{S3.21}) $$ <br>Then, $F_x = -\\frac{1}{2} \\rho g z_0^2$ is obtained by subtracting (S3.20) from (S3.21).<br><br> $\\triangleright$ Note: The physical background of this problem is as follows. When a single rod is placed on the water surface, the shape of the water surface on both sides of the rod remains the same. In other words, the rod is placed in an environment that exhibits the left-right symmetry. Then, there is no force acting on the rod. On the other hand, when two rods are placed on the water surface, the left-right symmetry of the water surface is broken from the perspective of each rod. As a result, an attractive force is generated.<br>The displacement of the water surface at the midpoint between the two rods differs from that of a horizontal water surface. This deviation is represented by $z_0$. That is to say, $z_0$ plays the role of a symmetry breaking parameter (see Fig. S3-4).<br>The fact that the attractive force between the two rods is determined solely by this parameter suggests that the symmetry breaking directly becomes the origin of the force. This corresponds to the fundamental principle in physics that relates symmetry breaking to force generation.",
+        "maxPoints": 1.5,
+        "subparts": [
+          {
+            "description": "Expression for $F_x$",
+            "points": 1.5,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      },
+      {
+        "number": "C.3",
+        "description": "Let $x_a$ be the $x$ - coordinate of the contact point between the water surface and the left side of the rod B. Using the differential equation obtained in B.5, express the water level coordinate $z_0$ of the midpoint of these two rods A and B in terms of $x_a$ and $z_a$. You can use the constant $\\ell$ introduced in B.4.",
+        "solution": "The general solution for the water surface height is given by the equation<br> $$ z(x) = A e^{x/\\ell} + B e^{-x/\\ell}. \\quad (\\text{S3.22}) $$ <br>By considering the left-right symmetry, we find<br> $$ A = B. \\quad (\\text{S3.23}) $$ <br>Applying the boundary condition $z(0) = z_0$, we obtain<br> $$ A + B = z_0. \\quad (\\text{S3.24}) $$ <br>We thus have<br> $$ A = z_0/2, \\quad B = z_0/2. \\quad (\\text{S3.25}) $$ <br>Substituting $x=x_a$, $z(x_a)=z_a$, we find $z_0 = \\frac{2z_a}{e^{x_a/\\ell} + e^{-x_a/\\ell}}$.",
+        "maxPoints": 1.0,
+        "subparts": [
+          {
+            "description": "Expression for $z_0$",
+            "points": 1.0,
+            "type": "closed",
+            "childSubparts": []
+          }
+        ]
+      }
+    ]
+  }
+]
